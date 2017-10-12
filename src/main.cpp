@@ -15,37 +15,18 @@ int main(int argc, char const *argv[])
 	//Setar as cordenadas destinos dos flits...
 
 	//Sinais do controle de fluxo
-	sc_signal < sc_int<32> > in_ack_BN;
-	sc_signal < sc_int<32> > in_ack_BS;
-	sc_signal < sc_int<32> > in_ack_BL;
-	sc_signal < sc_int<32> > in_ack_BO;
+	sc_signal < sc_int<32> > in_ack;
+	sc_signal < sc_int<32> > in_val;
 
-	sc_signal < sc_int<32> > in_val_BN;
-	sc_signal < sc_int<32> > in_val_BS;
-	sc_signal < sc_int<32> > in_val_BL;
-	sc_signal < sc_int<32> > in_val_BO;
 
 	//Sinais do controle de fluxo para o buffer
-	sc_signal < sc_int<32> > wr_BN;
-	sc_signal < sc_int<32> > wr_BS;
-	sc_signal < sc_int<32> > wr_BL;
-	sc_signal < sc_int<32> > wr_BO;
-
-	sc_signal < sc_int<32> > wok_BN;
-	sc_signal < sc_int<32> > wok_BS;
-	sc_signal < sc_int<32> > wok_BL;
-	sc_signal < sc_int<32> > wok_BO;	
+	sc_signal < sc_int<32> > wr;
+	sc_signal < sc_int<32> > wok;
+	
 
 //****************************************
-	sc_signal < sc_int<32> > rd_BN;
-	sc_signal < sc_int<32> > rd_BS;
-	sc_signal < sc_int<32> > rd_BL;
-	sc_signal < sc_int<32> > rd_BO;
-
-	sc_signal < sc_int<32> > rok_BN;
-	sc_signal < sc_int<32> > rok_BS;
-	sc_signal < sc_int<32> > rok_BL;
-	sc_signal < sc_int<32> > rok_BO;
+	sc_signal < sc_int<32> > rd;
+	sc_signal < sc_int<32> > rok;
 //****************************************
 
 
@@ -62,7 +43,6 @@ int main(int argc, char const *argv[])
 	roteador roteador7("rot7");
 	roteador roteador8("rot8");
 	roteador roteador9("rot9");
-
 // Alocando os roteadores no vetor rede
 	rede[0][0] = &roteador1;	
 	rede[0][1] = &roteador2;	
@@ -73,6 +53,18 @@ int main(int argc, char const *argv[])
 	rede[2][0] = &roteador7;	
 	rede[2][1] = &roteador8;	
 	rede[2][2] = &roteador9;
+
+	rede[0][0]->in_val(in_val);
+	rede[0][1]->in_val(in_val);
+	rede[0][2]->in_val(in_val);
+	rede[1][0]->in_val(in_val);
+	rede[1][1]->in_val(in_val);
+	rede[1][2]->in_val(in_val);
+	rede[2][0]->in_val(in_val);
+	rede[2][1]->in_val(in_val);
+	rede[2][2]->in_val(in_val);
+
+
 
 	
 
