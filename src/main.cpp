@@ -11,6 +11,9 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
+
+
+
 	Pacote pct;
 	//Setar as cordenadas destinos dos flits...
 
@@ -64,9 +67,331 @@ int main(int argc, char const *argv[])
 	rede[2][1]->in_val(in_val);
 	rede[2][2]->in_val(in_val);
 
+	rede[0][0]->in_ack(in_ack);
+	rede[0][1]->in_ack(in_ack);
+	rede[0][2]->in_ack(in_ack);
+	rede[1][0]->in_ack(in_ack);
+	rede[1][1]->in_ack(in_ack);
+	rede[1][2]->in_ack(in_ack);
+	rede[2][0]->in_ack(in_ack);
+	rede[2][1]->in_ack(in_ack);
+	rede[2][2]->in_ack(in_ack);
+
+	rede[0][0]->buffer_norte->wr(wr);
+	rede[0][1]->buffer_norte->wr(wr);
+	rede[0][2]->buffer_norte->wr(wr);
+	rede[1][0]->buffer_norte->wr(wr);
+	rede[1][1]->buffer_norte->wr(wr);
+	rede[1][2]->buffer_norte->wr(wr);
+	rede[2][0]->buffer_norte->wr(wr);
+	rede[2][1]->buffer_norte->wr(wr);
+	rede[2][2]->buffer_norte->wr(wr);
+
+	rede[0][0]->buffer_sul->wr(wr);
+	rede[0][1]->buffer_sul->wr(wr);
+	rede[0][2]->buffer_sul->wr(wr);
+	rede[1][0]->buffer_sul->wr(wr);
+	rede[1][1]->buffer_sul->wr(wr);
+	rede[1][2]->buffer_sul->wr(wr);
+	rede[2][0]->buffer_sul->wr(wr);
+	rede[2][1]->buffer_sul->wr(wr);
+	rede[2][2]->buffer_sul->wr(wr);
+
+	rede[0][0]->buffer_leste->wr(wr);
+	rede[0][1]->buffer_leste->wr(wr);
+	rede[0][2]->buffer_leste->wr(wr);
+	rede[1][0]->buffer_leste->wr(wr);
+	rede[1][1]->buffer_leste->wr(wr);
+	rede[1][2]->buffer_leste->wr(wr);
+	rede[2][0]->buffer_leste->wr(wr);
+	rede[2][1]->buffer_leste->wr(wr);
+	rede[2][2]->buffer_leste->wr(wr);
+
+	rede[0][0]->buffer_oeste->wr(wr);
+	rede[0][1]->buffer_oeste->wr(wr);
+	rede[0][2]->buffer_oeste->wr(wr);
+	rede[1][0]->buffer_oeste->wr(wr);
+	rede[1][1]->buffer_oeste->wr(wr);
+	rede[1][2]->buffer_oeste->wr(wr);
+	rede[2][0]->buffer_oeste->wr(wr);
+	rede[2][1]->buffer_oeste->wr(wr);
+	rede[2][2]->buffer_oeste->wr(wr);
+
+	rede[0][0]->buffer_local->wr(wr);
+	rede[0][1]->buffer_local->wr(wr);
+	rede[0][2]->buffer_local->wr(wr);
+	rede[1][0]->buffer_local->wr(wr);
+	rede[1][1]->buffer_local->wr(wr);
+	rede[1][2]->buffer_local->wr(wr);
+	rede[2][0]->buffer_local->wr(wr);
+	rede[2][1]->buffer_local->wr(wr);
+	rede[2][2]->buffer_local->wr(wr);
+
+
+	rede[0][0]->buffer_norte->wok(wok);
+	rede[0][1]->buffer_norte->wok(wok);
+	rede[0][2]->buffer_norte->wok(wok);
+	rede[1][0]->buffer_norte->wok(wok);
+	rede[1][1]->buffer_norte->wok(wok);
+	rede[1][2]->buffer_norte->wok(wok);
+	rede[2][0]->buffer_norte->wok(wok);
+	rede[2][1]->buffer_norte->wok(wok);
+	rede[2][2]->buffer_norte->wok(wok);
+
+	rede[0][0]->buffer_sul->wok(wok);
+	rede[0][1]->buffer_sul->wok(wok);
+	rede[0][2]->buffer_sul->wok(wok);
+	rede[1][0]->buffer_sul->wok(wok);
+	rede[1][1]->buffer_sul->wok(wok);
+	rede[1][2]->buffer_sul->wok(wok);
+	rede[2][0]->buffer_sul->wok(wok);
+	rede[2][1]->buffer_sul->wok(wok);
+	rede[2][2]->buffer_sul->wok(wok);
+
+	rede[0][0]->buffer_leste->wok(wok);
+	rede[0][1]->buffer_leste->wok(wok);
+	rede[0][2]->buffer_leste->wok(wok);
+	rede[1][0]->buffer_leste->wok(wok);
+	rede[1][1]->buffer_leste->wok(wok);
+	rede[1][2]->buffer_leste->wok(wok);
+	rede[2][0]->buffer_leste->wok(wok);
+	rede[2][1]->buffer_leste->wok(wok);
+	rede[2][2]->buffer_leste->wok(wok);
+
+	rede[0][0]->buffer_oeste->wok(wok);
+	rede[0][1]->buffer_oeste->wok(wok);
+	rede[0][2]->buffer_oeste->wok(wok);
+	rede[1][0]->buffer_oeste->wok(wok);
+	rede[1][1]->buffer_oeste->wok(wok);
+	rede[1][2]->buffer_oeste->wok(wok);
+	rede[2][0]->buffer_oeste->wok(wok);
+	rede[2][1]->buffer_oeste->wok(wok);
+	rede[2][2]->buffer_oeste->wok(wok);
+
+	rede[0][0]->buffer_local->wok(wok);
+	rede[0][1]->buffer_local->wok(wok);
+	rede[0][2]->buffer_local->wok(wok);
+	rede[1][0]->buffer_local->wok(wok);
+	rede[1][1]->buffer_local->wok(wok);
+	rede[1][2]->buffer_local->wok(wok);
+	rede[2][0]->buffer_local->wok(wok);
+	rede[2][1]->buffer_local->wok(wok);
+	rede[2][2]->buffer_local->wok(wok);
+
+	rede[0][0]->cf_buffer_norte->in_val(in_val);
+	rede[0][1]->cf_buffer_norte->in_val(in_val);
+	rede[0][2]->cf_buffer_norte->in_val(in_val);
+	rede[1][0]->cf_buffer_norte->in_val(in_val);
+	rede[1][1]->cf_buffer_norte->in_val(in_val);
+	rede[1][2]->cf_buffer_norte->in_val(in_val);
+	rede[2][0]->cf_buffer_norte->in_val(in_val);
+	rede[2][1]->cf_buffer_norte->in_val(in_val);
+	rede[2][2]->cf_buffer_norte->in_val(in_val);
+
+	rede[0][0]->cf_buffer_sul->in_val(in_val);
+	rede[0][1]->cf_buffer_sul->in_val(in_val);
+	rede[0][2]->cf_buffer_sul->in_val(in_val);
+	rede[1][0]->cf_buffer_sul->in_val(in_val);
+	rede[1][1]->cf_buffer_sul->in_val(in_val);
+	rede[1][2]->cf_buffer_sul->in_val(in_val);
+	rede[2][0]->cf_buffer_sul->in_val(in_val);
+	rede[2][1]->cf_buffer_sul->in_val(in_val);
+	rede[2][2]->cf_buffer_sul->in_val(in_val);
 
 
 	
+	rede[0][0]->cf_buffer_leste->in_val(in_val);
+	rede[0][1]->cf_buffer_leste->in_val(in_val);
+	rede[0][2]->cf_buffer_leste->in_val(in_val);
+	rede[1][0]->cf_buffer_leste->in_val(in_val);
+	rede[1][1]->cf_buffer_leste->in_val(in_val);
+	rede[1][2]->cf_buffer_leste->in_val(in_val);
+	rede[2][0]->cf_buffer_leste->in_val(in_val);
+	rede[2][1]->cf_buffer_leste->in_val(in_val);
+	rede[2][2]->cf_buffer_leste->in_val(in_val);
+
+	
+	rede[0][0]->cf_buffer_oeste->in_val(in_val);
+	rede[0][1]->cf_buffer_oeste->in_val(in_val);
+	rede[0][2]->cf_buffer_oeste->in_val(in_val);
+	rede[1][0]->cf_buffer_oeste->in_val(in_val);
+	rede[1][1]->cf_buffer_oeste->in_val(in_val);
+	rede[1][2]->cf_buffer_oeste->in_val(in_val);
+	rede[2][0]->cf_buffer_oeste->in_val(in_val);
+	rede[2][1]->cf_buffer_oeste->in_val(in_val);
+	rede[2][2]->cf_buffer_oeste->in_val(in_val);
+
+	rede[0][0]->cf_buffer_local->in_val(in_val);
+	rede[0][1]->cf_buffer_local->in_val(in_val);
+	rede[0][2]->cf_buffer_local->in_val(in_val);
+	rede[1][0]->cf_buffer_local->in_val(in_val);
+	rede[1][1]->cf_buffer_local->in_val(in_val);
+	rede[1][2]->cf_buffer_local->in_val(in_val);
+	rede[2][0]->cf_buffer_local->in_val(in_val);
+	rede[2][1]->cf_buffer_local->in_val(in_val);
+	rede[2][2]->cf_buffer_local->in_val(in_val);
+
+
+	rede[0][0]->cf_buffer_norte->in_ack(in_ack);
+	rede[0][1]->cf_buffer_norte->in_ack(in_ack);
+	rede[0][2]->cf_buffer_norte->in_ack(in_ack);
+	rede[1][0]->cf_buffer_norte->in_ack(in_ack);
+	rede[1][1]->cf_buffer_norte->in_ack(in_ack);
+	rede[1][2]->cf_buffer_norte->in_ack(in_ack);
+	rede[2][0]->cf_buffer_norte->in_ack(in_ack);
+	rede[2][1]->cf_buffer_norte->in_ack(in_ack);
+	rede[2][2]->cf_buffer_norte->in_ack(in_ack);
+
+	rede[0][0]->cf_buffer_sul->in_ack(in_ack);
+	rede[0][1]->cf_buffer_sul->in_ack(in_ack);
+	rede[0][2]->cf_buffer_sul->in_ack(in_ack);
+	rede[1][0]->cf_buffer_sul->in_ack(in_ack);
+	rede[1][1]->cf_buffer_sul->in_ack(in_ack);
+	rede[1][2]->cf_buffer_sul->in_ack(in_ack);
+	rede[2][0]->cf_buffer_sul->in_ack(in_ack);
+	rede[2][1]->cf_buffer_sul->in_ack(in_ack);
+	rede[2][2]->cf_buffer_sul->in_ack(in_ack);
+
+
+	
+	rede[0][0]->cf_buffer_leste->in_ack(in_ack);
+	rede[0][1]->cf_buffer_leste->in_ack(in_ack);
+	rede[0][2]->cf_buffer_leste->in_ack(in_ack);
+	rede[1][0]->cf_buffer_leste->in_ack(in_ack);
+	rede[1][1]->cf_buffer_leste->in_ack(in_ack);
+	rede[1][2]->cf_buffer_leste->in_ack(in_ack);
+	rede[2][0]->cf_buffer_leste->in_ack(in_ack);
+	rede[2][1]->cf_buffer_leste->in_ack(in_ack);
+	rede[2][2]->cf_buffer_leste->in_ack(in_ack);
+
+	
+	rede[0][0]->cf_buffer_oeste->in_ack(in_ack);
+	rede[0][1]->cf_buffer_oeste->in_ack(in_ack);
+	rede[0][2]->cf_buffer_oeste->in_ack(in_ack);
+	rede[1][0]->cf_buffer_oeste->in_ack(in_ack);
+	rede[1][1]->cf_buffer_oeste->in_ack(in_ack);
+	rede[1][2]->cf_buffer_oeste->in_ack(in_ack);
+	rede[2][0]->cf_buffer_oeste->in_ack(in_ack);
+	rede[2][1]->cf_buffer_oeste->in_ack(in_ack);
+	rede[2][2]->cf_buffer_oeste->in_ack(in_ack);
+
+	rede[0][0]->cf_buffer_local->in_ack(in_ack);
+	rede[0][1]->cf_buffer_local->in_ack(in_ack);
+	rede[0][2]->cf_buffer_local->in_ack(in_ack);
+	rede[1][0]->cf_buffer_local->in_ack(in_ack);
+	rede[1][1]->cf_buffer_local->in_ack(in_ack);
+	rede[1][2]->cf_buffer_local->in_ack(in_ack);
+	rede[2][0]->cf_buffer_local->in_ack(in_ack);
+	rede[2][1]->cf_buffer_local->in_ack(in_ack);
+	rede[2][2]->cf_buffer_local->in_ack(in_ack);
+
+
+	rede[0][0]->cf_buffer_norte->wok(wok);
+	rede[0][1]->cf_buffer_norte->wok(wok);
+	rede[0][2]->cf_buffer_norte->wok(wok);
+	rede[1][0]->cf_buffer_norte->wok(wok);
+	rede[1][1]->cf_buffer_norte->wok(wok);
+	rede[1][2]->cf_buffer_norte->wok(wok);
+	rede[2][0]->cf_buffer_norte->wok(wok);
+	rede[2][1]->cf_buffer_norte->wok(wok);
+	rede[2][2]->cf_buffer_norte->wok(wok);
+
+	rede[0][0]->cf_buffer_sul->wok(wok);
+	rede[0][1]->cf_buffer_sul->wok(wok);
+	rede[0][2]->cf_buffer_sul->wok(wok);
+	rede[1][0]->cf_buffer_sul->wok(wok);
+	rede[1][1]->cf_buffer_sul->wok(wok);
+	rede[1][2]->cf_buffer_sul->wok(wok);
+	rede[2][0]->cf_buffer_sul->wok(wok);
+	rede[2][1]->cf_buffer_sul->wok(wok);
+	rede[2][2]->cf_buffer_sul->wok(wok);
+
+
+	
+	rede[0][0]->cf_buffer_leste->wok(wok);
+	rede[0][1]->cf_buffer_leste->wok(wok);
+	rede[0][2]->cf_buffer_leste->wok(wok);
+	rede[1][0]->cf_buffer_leste->wok(wok);
+	rede[1][1]->cf_buffer_leste->wok(wok);
+	rede[1][2]->cf_buffer_leste->wok(wok);
+	rede[2][0]->cf_buffer_leste->wok(wok);
+	rede[2][1]->cf_buffer_leste->wok(wok);
+	rede[2][2]->cf_buffer_leste->wok(wok);
+
+	
+	rede[0][0]->cf_buffer_oeste->wok(wok);
+	rede[0][1]->cf_buffer_oeste->wok(wok);
+	rede[0][2]->cf_buffer_oeste->wok(wok);
+	rede[1][0]->cf_buffer_oeste->wok(wok);
+	rede[1][1]->cf_buffer_oeste->wok(wok);
+	rede[1][2]->cf_buffer_oeste->wok(wok);
+	rede[2][0]->cf_buffer_oeste->wok(wok);
+	rede[2][1]->cf_buffer_oeste->wok(wok);
+	rede[2][2]->cf_buffer_oeste->wok(wok);
+
+	rede[0][0]->cf_buffer_local->wok(wok);
+	rede[0][1]->cf_buffer_local->wok(wok);
+	rede[0][2]->cf_buffer_local->wok(wok);
+	rede[1][0]->cf_buffer_local->wok(wok);
+	rede[1][1]->cf_buffer_local->wok(wok);
+	rede[1][2]->cf_buffer_local->wok(wok);
+	rede[2][0]->cf_buffer_local->wok(wok);
+	rede[2][1]->cf_buffer_local->wok(wok);
+	rede[2][2]->cf_buffer_local->wok(wok);
+
+	rede[0][0]->cf_buffer_norte->wr(wr);
+	rede[0][1]->cf_buffer_norte->wr(wr);
+	rede[0][2]->cf_buffer_norte->wr(wr);
+	rede[1][0]->cf_buffer_norte->wr(wr);
+	rede[1][1]->cf_buffer_norte->wr(wr);
+	rede[1][2]->cf_buffer_norte->wr(wr);
+	rede[2][0]->cf_buffer_norte->wr(wr);
+	rede[2][1]->cf_buffer_norte->wr(wr);
+	rede[2][2]->cf_buffer_norte->wr(wr);
+
+	rede[0][0]->cf_buffer_sul->wr(wr);
+	rede[0][1]->cf_buffer_sul->wr(wr);
+	rede[0][2]->cf_buffer_sul->wr(wr);
+	rede[1][0]->cf_buffer_sul->wr(wr);
+	rede[1][1]->cf_buffer_sul->wr(wr);
+	rede[1][2]->cf_buffer_sul->wr(wr);
+	rede[2][0]->cf_buffer_sul->wr(wr);
+	rede[2][1]->cf_buffer_sul->wr(wr);
+	rede[2][2]->cf_buffer_sul->wr(wr);
+
+
+	
+	rede[0][0]->cf_buffer_leste->wr(wr);
+	rede[0][1]->cf_buffer_leste->wr(wr);
+	rede[0][2]->cf_buffer_leste->wr(wr);
+	rede[1][0]->cf_buffer_leste->wr(wr);
+	rede[1][1]->cf_buffer_leste->wr(wr);
+	rede[1][2]->cf_buffer_leste->wr(wr);
+	rede[2][0]->cf_buffer_leste->wr(wr);
+	rede[2][1]->cf_buffer_leste->wr(wr);
+	rede[2][2]->cf_buffer_leste->wr(wr);
+
+	
+	rede[0][0]->cf_buffer_oeste->wr(wr);
+	rede[0][1]->cf_buffer_oeste->wr(wr);
+	rede[0][2]->cf_buffer_oeste->wr(wr);
+	rede[1][0]->cf_buffer_oeste->wr(wr);
+	rede[1][1]->cf_buffer_oeste->wr(wr);
+	rede[1][2]->cf_buffer_oeste->wr(wr);
+	rede[2][0]->cf_buffer_oeste->wr(wr);
+	rede[2][1]->cf_buffer_oeste->wr(wr);
+	rede[2][2]->cf_buffer_oeste->wr(wr);
+
+	rede[0][0]->cf_buffer_local->wr(wr);
+	rede[0][1]->cf_buffer_local->wr(wr);
+	rede[0][2]->cf_buffer_local->wr(wr);
+	rede[1][0]->cf_buffer_local->wr(wr);
+	rede[1][1]->cf_buffer_local->wr(wr);
+	rede[1][2]->cf_buffer_local->wr(wr);
+	rede[2][0]->cf_buffer_local->wr(wr);
+	rede[2][1]->cf_buffer_local->wr(wr);
+	rede[2][2]->cf_buffer_local->wr(wr);
 
 	return 0;
+
 }

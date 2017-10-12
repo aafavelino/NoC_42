@@ -24,8 +24,8 @@ public:
 	sc_in < sc_int<32> > in_val; // Entrada para o controle de fluxo
 	sc_out< sc_int<32> > in_ack; // Saída do controle de fluxo 
 
-	sc_out< sc_int<32> > x_rok; // É a variável que solicita se pode mandar para o outro roteador ao chaveamento (Arbitro)
-	sc_uint<32> rd; // É a resposta que vem do arbitro 
+	sc_int<32> x_rok; // É a variável que solicita se pode mandar para o outro roteador ao chaveamento (Arbitro)
+	sc_int<32> rd; // É a resposta que vem do arbitro 
 
 	
 	Arbitro arbitro_centralizado;
