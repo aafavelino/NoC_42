@@ -8,7 +8,15 @@
 #include "roteador.h"
 
 
-#define TAM_REDE 1
+#define LARGURA_REDE 2
+#define ALTURA_REDE 2
+#define QUANT_ROTEADORES 4
+
+#define NORTH 0
+#define EAST 1
+#define SOUTH 2
+#define WEST 3
+#define LOCAL 4
 
 using namespace std;
 
@@ -21,109 +29,118 @@ int main(int argc, char const *argv[])
 	pct.flit[0].cordenadas_f.x = 2;
 	pct.flit[0].cordenadas_f.y = 2;
 
-
 //Sinais do controle de fluxo
-	sc_signal < sc_int<32> > in_ack[5];
-	sc_signal < sc_int<32> > in_val[5];
-
+	sc_signal < sc_int<32> > in_ack[QUANT_ROTEADORES][2][5];
+	sc_signal < sc_int<32> > in_val[QUANT_ROTEADORES][2][5];
 //Sinais do controle de fluxo para o buffer
-	sc_signal < sc_int<32> > wr[5];
-	sc_signal < sc_int<32> > wok[5];
-
+	sc_signal < sc_int<32> > wr[QUANT_ROTEADORES][2][5];
+	sc_signal < sc_int<32> > wok[QUANT_ROTEADORES][2][5];
 // Sinais da outra ponta do buffer
-	sc_signal < sc_int<32> > rok[5];
-	sc_signal < sc_int<32> > rd[5];
+	sc_signal < sc_int<32> > rok[QUANT_ROTEADORES][2][5];
+	sc_signal < sc_int<32> > rd[QUANT_ROTEADORES][2][5];
 
 
 //Sinais do ROTEADOR
-sc_signal < sc_int<32> > in_ack_r[9];
-sc_signal < sc_int<32> > in_val_r[9];
+sc_signal < sc_int<32> > in_ack_r[QUANT_ROTEADORES];
+sc_signal < sc_int<32> > in_val_r[QUANT_ROTEADORES];
 
 
 
-// Criar uma Rede 4x4
-	roteador *rede[1][1];
+// Criar uma Rede Altura X Largura
+	roteador *rede[ALTURA_REDE][LARGURA_REDE];
+	
 
 // Criando os roteadores para alocar na rede
 	roteador roteador1("roteador1");
+	roteador roteador2("roteador2");
+	roteador roteador3("roteador3");
+	roteador roteador4("roteador4");
 
-// Alocando os roteadores no vetor rede
+// Alocando os roteadores na matriz rede
 	rede[0][0] = &roteador1;	
-
-
-
+	rede[0][1] = &roteador2;	
+	rede[1][0] = &roteador3;	
+	rede[1][1] = &roteador4;	
 
 
 // Ligando os SINAIS
 	//SINAIS DOS ROTEADORES
 	rede[0][0]->in_val(in_val_r[0]);
 	rede[0][0]->in_ack(in_ack_r[0]);
+	rede[0][1]->in_val(in_val_r[1]);
+	rede[0][1]->in_ack(in_ack_r[1]);
+	rede[1][0]->in_val(in_val_r[2]);
+	rede[1][0]->in_ack(in_ack_r[2]);
+	rede[1][1]->in_val(in_val_r[3]);
+	rede[1][1]->in_ack(in_ack_r[3]);
+
+
 	//SINAIS DOS COMPONENTES DOS ROTEADORES
-	for (int x = 0; x < TAM_REDE; ++x)
-		for (int y = 0; y < TAM_REDE; ++y){
+	for (int x = 0; x < ALTURA_REDE; ++x)
+		for (int y = 0; y < LARGURA_REDE; ++y){
 			//Controle de fluxo Local
-			rede[x][y]->cf_buffer_local->in_val(in_val[4]);
-			rede[x][y]->cf_buffer_local->in_ack(in_ack[4]);
-			rede[x][y]->cf_buffer_local->wr(wr[4]);
-			rede[x][y]->cf_buffer_local->wok(wok[4]);
+			rede[x][y]->cf_buffer_local->in_val(in_val[x][y][LOCAL]);
+			rede[x][y]->cf_buffer_local->in_ack(in_ack[x][y][LOCAL]);
+			rede[x][y]->cf_buffer_local->wr(wr[x][y][LOCAL]);
+			rede[x][y]->cf_buffer_local->wok(wok[x][y][LOCAL]);
 			//Controle de fluxo oeste
-			rede[x][y]->cf_buffer_oeste->in_val(in_val[3]);
-			rede[x][y]->cf_buffer_oeste->in_ack(in_ack[3]);
-			rede[x][y]->cf_buffer_oeste->wr(wr[3]);
-			rede[x][y]->cf_buffer_oeste->wok(wok[3]);
+			rede[x][y]->cf_buffer_oeste->in_val(in_val[x][y][WEST]);
+			rede[x][y]->cf_buffer_oeste->in_ack(in_ack[x][y][WEST]);
+			rede[x][y]->cf_buffer_oeste->wr(wr[x][y][WEST]);
+			rede[x][y]->cf_buffer_oeste->wok(wok[x][y][WEST]);
 			//Controle de fluxo leste
-			rede[x][y]->cf_buffer_leste->in_val(in_val[1]);
-			rede[x][y]->cf_buffer_leste->in_ack(in_ack[1]);
-			rede[x][y]->cf_buffer_leste->wr(wr[1]);
-			rede[x][y]->cf_buffer_leste->wok(wok[1]);
+			rede[x][y]->cf_buffer_leste->in_val(in_val[x][y][EAST]);
+			rede[x][y]->cf_buffer_leste->in_ack(in_ack[x][y][EAST]);
+			rede[x][y]->cf_buffer_leste->wr(wr[x][y][EAST]);
+			rede[x][y]->cf_buffer_leste->wok(wok[x][y][EAST]);
 			//Controle de fluxo sul
-			rede[x][y]->cf_buffer_sul->in_val(in_val[2]);
-			rede[x][y]->cf_buffer_sul->in_ack(in_ack[2]);
-			rede[x][y]->cf_buffer_sul->wr(wr[2]);
-			rede[x][y]->cf_buffer_sul->wok(wok[2]);
+			rede[x][y]->cf_buffer_sul->in_val(in_val[x][y][SOUTH]);
+			rede[x][y]->cf_buffer_sul->in_ack(in_ack[x][y][SOUTH]);
+			rede[x][y]->cf_buffer_sul->wr(wr[x][y][SOUTH]);
+			rede[x][y]->cf_buffer_sul->wok(wok[x][y][SOUTH]);
 			//Controle de fluxo norte
-			rede[x][y]->cf_buffer_norte->in_val(in_val[0]);
-			rede[x][y]->cf_buffer_norte->in_ack(in_ack[0]);
-			rede[x][y]->cf_buffer_norte->wr(wr[0]);
-			rede[x][y]->cf_buffer_norte->wok(wok[0]);
+			rede[x][y]->cf_buffer_norte->in_val(in_val[x][y][NORTH]);
+			rede[x][y]->cf_buffer_norte->in_ack(in_ack[x][y][NORTH]);
+			rede[x][y]->cf_buffer_norte->wr(wr[x][y][NORTH]);
+			rede[x][y]->cf_buffer_norte->wok(wok[x][y][NORTH]);
 		//*********SINAIS DOS BUFFERS********
 			//Buffer Local
-			rede[0][0]->buffer_local->wr(wr[4]);
-			rede[0][0]->buffer_local->wok(wok[4]);
-			rede[0][0]->buffer_local->rok(rok[4]);
-			rede[0][0]->buffer_local->rd(rd[4]);
+			rede[x][y]->buffer_local->wr(wr[x][y][LOCAL]);
+			rede[x][y]->buffer_local->wok(wok[x][y][LOCAL]);
+			rede[x][y]->buffer_local->rok(rok[x][y][LOCAL]);
+			rede[x][y]->buffer_local->rd(rd[x][y][LOCAL]);
 			//Buffer oeste
-			rede[0][0]->buffer_oeste->wr(wr[3]);
-			rede[0][0]->buffer_oeste->wok(wok[3]);
-			rede[0][0]->buffer_oeste->rok(rok[3]);
-			rede[0][0]->buffer_oeste->rd(rd[3]);			
+			rede[x][y]->buffer_oeste->wr(wr[x][y][WEST]);
+			rede[x][y]->buffer_oeste->wok(wok[x][y][WEST]);
+			rede[x][y]->buffer_oeste->rok(rok[x][y][WEST]);
+			rede[x][y]->buffer_oeste->rd(rd[x][y][WEST]);			
 			//Buffer leste
-			rede[0][0]->buffer_leste->wr(wr[1]);
-			rede[0][0]->buffer_leste->wok(wok[1]);
-			rede[0][0]->buffer_leste->rok(rok[1]);
-			rede[0][0]->buffer_leste->rd(rd[1]);			
+			rede[x][y]->buffer_leste->wr(wr[x][y][EAST]);
+			rede[x][y]->buffer_leste->wok(wok[x][y][EAST]);
+			rede[x][y]->buffer_leste->rok(rok[x][y][EAST]);
+			rede[x][y]->buffer_leste->rd(rd[x][y][EAST]);			
 			//Buffer sul
-			rede[0][0]->buffer_sul->wr(wr[2]);
-			rede[0][0]->buffer_sul->wok(wok[2]);
-			rede[0][0]->buffer_sul->rok(rok[2]);
-			rede[0][0]->buffer_sul->rd(rd[2]);
+			rede[x][y]->buffer_sul->wr(wr[x][y][SOUTH]);
+			rede[x][y]->buffer_sul->wok(wok[x][y][SOUTH]);
+			rede[x][y]->buffer_sul->rok(rok[x][y][SOUTH]);
+			rede[x][y]->buffer_sul->rd(rd[x][y][SOUTH]);
 			//Buffer norte
-			rede[0][0]->buffer_norte->wr(wr[0]);
-			rede[0][0]->buffer_norte->wok(wok[0]);
-			rede[0][0]->buffer_norte->rok(rok[0]);
-			rede[0][0]->buffer_norte->rd(rd[0]);
+			rede[x][y]->buffer_norte->wr(wr[x][y][NORTH]);
+			rede[x][y]->buffer_norte->wok(wok[x][y][NORTH]);
+			rede[x][y]->buffer_norte->rok(rok[x][y][NORTH]);
+			rede[x][y]->buffer_norte->rd(rd[x][y][NORTH]);
 		}
 
 
+	//Setando as Cordenadas dos roteadores
 
-	
-	
+	for (int x = 0; x < ALTURA_REDE; ++x)
+		for (int y = 0; y < LARGURA_REDE; ++y) {	
+			rede[x][y]->roteamento_norte.cordenada.x = x;
+			rede[x][y]->roteamento_norte.cordenada.y = y;
+		}
 
-
-	//Cordenadas do roteador 1
-	rede[0][0]->roteamento_norte.cordenada.x = 0;
-	rede[0][0]->roteamento_norte.cordenada.y = 0;
-
+	cout << "CORDENADA TESTE >>>>>" << rede[1][1]->roteamento_norte.cordenada.y << endl;
 
 	// Setando um flit inicial para teste...
 	std::cout << "Dados do primeiro flit a ser enviado... " << endl;
