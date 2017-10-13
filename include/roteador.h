@@ -47,12 +47,6 @@ public:
 	Roteamento roteamento_leste;
 	Roteamento roteamento_oeste;
 
-	controle_fluxo *cf_saida_norte;
-	controle_fluxo *cf_saida_sul;
-	controle_fluxo *cf_saida_leste;
-	controle_fluxo *cf_saida_oeste;
-	controle_fluxo *cf_saida_local;
-
 
 	void execute() {
 
@@ -62,23 +56,18 @@ public:
 	}
 
 	SC_CTOR(roteador) {
-		buffer_norte = new Buffer("bufferN");
-		buffer_sul = new Buffer("bufferS");
-		buffer_leste = new Buffer("bufferL");
-		buffer_oeste = new Buffer("bufferO");
+		buffer_norte = new Buffer("bufferNorte");
+		buffer_sul = new Buffer("bufferSul");
+		buffer_leste = new Buffer("bufferLeste");
+		buffer_oeste = new Buffer("bufferOeste");
 		buffer_local = new Buffer("bufferLocal");
 		
-		cf_buffer_norte = new controle_fluxo("cf_buffer_N");
-		cf_buffer_sul = new controle_fluxo("cf_buffer_S");
-		cf_buffer_leste = new controle_fluxo("cf_buffer_L");
-		cf_buffer_oeste = new controle_fluxo("cf_buffer_O");
+		cf_buffer_norte = new controle_fluxo("cf_buffer_Norte");
+		cf_buffer_sul = new controle_fluxo("cf_buffer_Sul");
+		cf_buffer_leste = new controle_fluxo("cf_buffer_Leste");
+		cf_buffer_oeste = new controle_fluxo("cf_buffer_Oeste");
 		cf_buffer_local = new controle_fluxo("cf_buffer_Local");
 
-		cf_saida_norte = new controle_fluxo("cf_saida_N");
-		cf_saida_sul = new controle_fluxo("cf_saida_S");
-		cf_saida_leste = new controle_fluxo("cf_saida_L");
-		cf_saida_oeste = new controle_fluxo("cf_saida_O");
-		cf_saida_local = new controle_fluxo("cf_saida_Local");
 
         SC_METHOD(execute);
         SC_METHOD(arbitragem);
