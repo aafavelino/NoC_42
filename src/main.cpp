@@ -7,6 +7,7 @@
 #include "roteamento.h"
 #include "roteador.h"
 
+
 using namespace std;
 
 int main(int argc, char const *argv[])
@@ -16,6 +17,9 @@ int main(int argc, char const *argv[])
 
 	Pacote pct;
 	//Setar as cordenadas destinos dos flits...
+	pct.flit[0].cordenadas_f.x = 2;
+	pct.flit[0].cordenadas_f.y = 2;
+
 
 	//Sinais do controle de fluxo
 	sc_signal < sc_int<32> > in_ack;
@@ -371,7 +375,6 @@ int main(int argc, char const *argv[])
 	rede[2][1]->cf_buffer_leste->wr(wr);
 	rede[2][2]->cf_buffer_leste->wr(wr);
 
-	
 	rede[0][0]->cf_buffer_oeste->wr(wr);
 	rede[0][1]->cf_buffer_oeste->wr(wr);
 	rede[0][2]->cf_buffer_oeste->wr(wr);
@@ -391,6 +394,44 @@ int main(int argc, char const *argv[])
 	rede[2][0]->cf_buffer_local->wr(wr);
 	rede[2][1]->cf_buffer_local->wr(wr);
 	rede[2][2]->cf_buffer_local->wr(wr);
+
+		//Cordenadas do roteador 1
+	rede[0][0]->roteamento_norte.cordenada.x = 0;
+	rede[0][0]->roteamento_norte.cordenada.y = 0;
+
+	//Cordenadas do roteador 2
+	rede[0][1]->roteamento_norte.cordenada.x = 0;
+	rede[0][1]->roteamento_norte.cordenada.y = 1;
+
+	//Cordenadas do roteador 3
+	rede[0][2]->roteamento_norte.cordenada.x = 0;
+	rede[0][2]->roteamento_norte.cordenada.y = 2;
+	
+	//Cordenadas do roteador 4
+	rede[1][0]->roteamento_norte.cordenada.x = 1;
+	rede[1][0]->roteamento_norte.cordenada.y = 0;
+	
+	//Cordenadas do roteador 5
+	rede[1][1]->roteamento_norte.cordenada.x = 1;
+	rede[1][1]->roteamento_norte.cordenada.y = 1;
+	
+	//Cordenadas do roteador 6
+	rede[1][2]->roteamento_norte.cordenada.x = 1;
+	rede[1][2]->roteamento_norte.cordenada.y = 2;
+	
+	//Cordenadas do roteador 7
+	rede[2][0]->roteamento_norte.cordenada.x = 2;
+	rede[2][0]->roteamento_norte.cordenada.y = 0;
+	
+	//Cordenadas do roteador 8
+	rede[2][1]->roteamento_norte.cordenada.x = 2;
+	rede[2][1]->roteamento_norte.cordenada.y = 1;
+	
+	//Cordenadas do roteador 9
+	rede[2][2]->roteamento_norte.cordenada.x = 2;
+	rede[2][2]->roteamento_norte.cordenada.y = 2;
+
+
 
 	return 0;
 
