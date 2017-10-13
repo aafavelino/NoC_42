@@ -24,59 +24,80 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
 
+/**
+ * Por fazer.:
+ *	-- Pegar tamanho da rede pelo argv[1].
+ *  -- Pegar quantidade de pacotes da rede pelo argv[2].
+ *	-- Ver o que deve setar manualmente...
+ */
+
+//***********************************************************************	
+// Dados dos pacotes e dos flits AINDA MANUALMENTE
+// Criando um pacote de flits
 	Pacote pct;
 //Setar as cordenadas destinos dos flits...
 	pct.flit[0].cordenadas_f.x = 2;
 	pct.flit[0].cordenadas_f.y = 2;
+//***********************************************************************
 
+
+
+
+//***********************************************************************
 //Sinais do controle de fluxo
-	sc_signal < sc_int<32> > in_ack[QUANT_ROTEADORES][2][5];
-	sc_signal < sc_int<32> > in_val[QUANT_ROTEADORES][2][5];
+	sc_signal < sc_int<32> > in_ack[ALTURA_REDE][LARGURA_REDE][5];
+	sc_signal < sc_int<32> > in_val[ALTURA_REDE][LARGURA_REDE][5];
 //Sinais do controle de fluxo para o buffer
-	sc_signal < sc_int<32> > wr[QUANT_ROTEADORES][2][5];
-	sc_signal < sc_int<32> > wok[QUANT_ROTEADORES][2][5];
+	sc_signal < sc_int<32> > wr[ALTURA_REDE][LARGURA_REDE][5];
+	sc_signal < sc_int<32> > wok[ALTURA_REDE][LARGURA_REDE][5];
 // Sinais da outra ponta do buffer
-	sc_signal < sc_int<32> > rok[QUANT_ROTEADORES][2][5];
-	sc_signal < sc_int<32> > rd[QUANT_ROTEADORES][2][5];
+	sc_signal < sc_int<32> > rok[ALTURA_REDE][LARGURA_REDE][5];
+	sc_signal < sc_int<32> > rd[ALTURA_REDE][LARGURA_REDE][5];
 
-
-//Sinais do ROTEADOR
+//Sinais de cada ROTEADOR
 sc_signal < sc_int<32> > in_ack_r[QUANT_ROTEADORES];
 sc_signal < sc_int<32> > in_val_r[QUANT_ROTEADORES];
 
 
+//***********************************************************************
 
-// Criar uma Rede Altura X Largura
+
+
+
+
+
+
+// Criando uma Rede Altura X Largura
 	roteador *rede[ALTURA_REDE][LARGURA_REDE];
 	
-
-// Criando os roteadores para alocar na rede
+// Criando os roteadores para alocar na rede MANUALMENTE AINDA
 	roteador roteador1("roteador1");
 	roteador roteador2("roteador2");
 	roteador roteador3("roteador3");
 	roteador roteador4("roteador4");
 
-// Alocando os roteadores na matriz rede
+// Alocando os roteadores na matriz rede MANUALMENTE AINDA
 	rede[0][0] = &roteador1;	
 	rede[0][1] = &roteador2;	
 	rede[1][0] = &roteador3;	
 	rede[1][1] = &roteador4;	
 
 
-// Ligando os SINAIS
+//***********************************************************************
+//***********************Ligando os SINAIS*******************************
 	//SINAIS DOS ROTEADORES
-	rede[0][0]->in_val(in_val_r[0]);
-	rede[0][0]->in_ack(in_ack_r[0]);
-	rede[0][1]->in_val(in_val_r[1]);
-	rede[0][1]->in_ack(in_ack_r[1]);
-	rede[1][0]->in_val(in_val_r[2]);
-	rede[1][0]->in_ack(in_ack_r[2]);
-	rede[1][1]->in_val(in_val_r[3]);
-	rede[1][1]->in_ack(in_ack_r[3]);
-
+	int aux_cont_rot = 0;
+	for (int x = 0; x < ALTURA_REDE; ++x){
+		for (int y = 0; y < LARGURA_REDE; ++y){
+			rede[x][y]->in_val(in_val_r[aux_cont_rot]);
+			rede[x][y]->in_ack(in_ack_r[aux_cont_rot]);
+			//std::cout << "[" << x << "][" << y << "] = " <<  aux_cont_rot<< endl;
+			aux_cont_rot++;
+		}
+	}
 
 	//SINAIS DOS COMPONENTES DOS ROTEADORES
-	for (int x = 0; x < ALTURA_REDE; ++x)
+	for (int x = 0; x < ALTURA_REDE; ++x){
 		for (int y = 0; y < LARGURA_REDE; ++y){
 			//Controle de fluxo Local
 			rede[x][y]->cf_buffer_local->in_val(in_val[x][y][LOCAL]);
@@ -130,30 +151,29 @@ sc_signal < sc_int<32> > in_val_r[QUANT_ROTEADORES];
 			rede[x][y]->buffer_norte->rok(rok[x][y][NORTH]);
 			rede[x][y]->buffer_norte->rd(rd[x][y][NORTH]);
 		}
+	}
+//***********************************************************************
 
 
-	//Setando as Cordenadas dos roteadores
 
-	for (int x = 0; x < ALTURA_REDE; ++x)
+	//Setando as Cordenadas dos roteadores Ex.: roteador1 se encontra em rede[0][0]
+	for (int x = 0; x < ALTURA_REDE; ++x){
 		for (int y = 0; y < LARGURA_REDE; ++y) {	
 			rede[x][y]->roteamento_norte.cordenada.x = x;
 			rede[x][y]->roteamento_norte.cordenada.y = y;
 		}
-
-	cout << "CORDENADA TESTE >>>>>" << rede[1][1]->roteamento_norte.cordenada.y << endl;
+	}
 
 	// Setando um flit inicial para teste...
 	std::cout << "Dados do primeiro flit a ser enviado... " << endl;
-
 	rede[0][0]->in_data = pct.flit[0];
-
 	std::cout << "Cabeça: " << rede[0][0]->in_data.cabeca << endl;
 	std::cout << "Terminador: " << rede[0][0]->in_data.terminador << endl;
 	std::cout << "Payload: " << rede[0][0]->in_data.payload << endl;
 	std::cout << "Cordenadas: " << rede[0][0]->in_data.cordenadas_f.x <<" "<< rede[0][0]->in_data.cordenadas_f.y << endl;
 
 
-	sc_start();
+	sc_start(); // Run the simulation till sc_stop is encountered
 
 
 
