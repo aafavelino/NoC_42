@@ -5,12 +5,9 @@ Roteamento::Roteamento()
 	
 }
 
-Roteamento::~Roteamento()
-{
-	
-}
 
-/// ta errado
+
+
 void Roteamento::rotear_xy()
 {
 	if (cordenada_destino.x > cordenada.x)

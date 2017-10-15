@@ -15,7 +15,7 @@
 
 SC_MODULE (roteador)
 {
-public:
+
 
 	Flit in_data; //n+2
 	Flit din; //din do buffer que é data + bop + eop
@@ -48,12 +48,8 @@ public:
 	Roteamento roteamento_oeste;
 
 
-	void execute() {
-
-	}
-	void arbitragem() {
-
-	}
+	void execute();
+	
 
 	SC_CTOR(roteador) {
 		buffer_norte = new Buffer("bufferNorte");
@@ -70,7 +66,7 @@ public:
 
 
         SC_METHOD(execute);
-        SC_METHOD(arbitragem);
+        
         
 		sensitive << in_val;
 		

@@ -32,7 +32,6 @@ public:
 	int portaDestino; //NSLO
 
 	Roteamento();
-	~Roteamento();
 	void rotear_xy();
 	
 };

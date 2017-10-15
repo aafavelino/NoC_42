@@ -4,13 +4,13 @@
 
 //Funcionando
 void Buffer::add() {
-	if (wr.read() == 1)
+	if (wr == 1)
 	{
 		if (flits.size() == this->length){
-			wok.write(0); // error, value not added
+			wok = 0; // error, value not added
 		} else {
 			this->flits.push(din);
-			wok.write(1);
+			wok = 1;
 		}	
 	}
 	
@@ -18,10 +18,10 @@ void Buffer::add() {
 //Funcionando
 void Buffer::remove() {
 	if (flits.size() < 1){
-		rok.write(0); // queue is empty. Nothing to remove
-	} else if (rd.read() == 1){
+		rok = 0; // queue is empty. Nothing to remove
+	} else if (rd == 1){
 		flits.pop();
-		rok.write(1);
+		rok = 1;
 	}
 }
 

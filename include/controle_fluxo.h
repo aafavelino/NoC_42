@@ -7,11 +7,11 @@
 SC_MODULE (controle_fluxo)
 {
 
-	sc_in < sc_int<32> > in_val; //Entrada pra ver se no buffer terá espaço 
+	sc_int<32> in_val; //Entrada pra ver se no buffer terá espaço 
 	sc_out< sc_int<32> > in_ack; //Retorno da solicitação se terá espaço
 
 	sc_out< sc_int<32> > wr; //Saída que vai para o buffer
-	sc_in < sc_int<32> > wok; //Entrada que vem do buffer
+	sc_int<32> wok; //Entrada que vem do buffer
 
 
 	void request();
@@ -19,9 +19,8 @@ SC_MODULE (controle_fluxo)
 
 	SC_CTOR(controle_fluxo){
 		SC_METHOD(request);
-		sensitive << in_val;
 		SC_METHOD(response);
-		sensitive << wok;
+		
 	}
 	
 };
