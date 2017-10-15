@@ -26,10 +26,9 @@ SC_MODULE (roteador)
 
 	sc_int<32> x_rok; // É a variável que solicita se pode mandar para o outro roteador ao chaveamento (Arbitro)
 	sc_int<32> rd; // É a resposta que vem do arbitro 
-
 	
 	Arbitro arbitro_centralizado;
-
+	
 	Buffer *buffer_norte;
 	Buffer *buffer_sul;
 	Buffer *buffer_leste;
@@ -46,6 +45,7 @@ SC_MODULE (roteador)
 	Roteamento roteamento_sul;
 	Roteamento roteamento_leste;
 	Roteamento roteamento_oeste;
+	Roteamento roteamento_local;
 
 
 	void execute();
@@ -66,8 +66,6 @@ SC_MODULE (roteador)
 
 
         SC_METHOD(execute);
-        
-        
 		sensitive << in_val;
 		
     }
