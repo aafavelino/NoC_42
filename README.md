@@ -2,6 +2,8 @@
 
 ## Transaction-Level Modeling (TLM 2.0)
 
+Modelo TLM da rede SOCin
+
 ### Projeto de Pesquisa em Redes em chip
 
 |  Aluno                        | Adelino Afonso Fernandes Avelino  |
