@@ -1,15 +1,8 @@
 #include "buffer.h"
 
-
-
 //Funcionando
 void Buffer::add() {
-	if (wr == 1)
-	{
-		this->flits.push(din);
-		wok = 1;
-	}
-	
+	this->flits.push(din);	
 }
 //Funcionando
 void Buffer::remove() {

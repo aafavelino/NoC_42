@@ -7,19 +7,15 @@
 SC_MODULE (controle_fluxo)
 {
 
-	sc_int<32> in_val; //Entrada pra ver se no buffer terá espaço 
-	sc_int<32> in_ack; //Retorno da solicitação se terá espaço
+	sc_in <bool> in_val; //Entrada pra ver se no buffer terá espaço 
+	sc_out<bool> in_ack; //Retorno da solicitação se terá espaço
 
-	sc_int<32>  wr; //Saída que vai para o buffer
-	sc_int<32> wok; //Entrada que vem do buffer
-
-	void request();
-	void response();
+	sc_out<bool> out_cf_buffer; //Saída que vai para o buffer
+	sc_in <bool> in_cf_buffer; //Entrada que vem do buffer
 
 	SC_CTOR(controle_fluxo){
 
-		SC_METHOD(request);
-		SC_METHOD(response);
+
 		
 	}
 	
