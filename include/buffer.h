@@ -18,8 +18,8 @@ public:
 	Flit din; //Entrada data + bop + eop
 	Flit dout; //Saída que vai para o roteamento
 
-	sc_in <bool>  in_bf_controle_fluxo; //Entrada que vem do controle de fluxo
-	sc_out<bool>  out_bf_controle_fluxo; //Saída que volta para o buffer
+	sc_in <int>  in_bf_controle_fluxo; //Entrada que vem do controle de fluxo
+	sc_out<int>  out_bf_controle_fluxo; //Saída que volta para o buffer
 	sc_int<32>   rd; //Entrada que vem do chaveamento
 	sc_int<32>   rok; //Saída ?
 	

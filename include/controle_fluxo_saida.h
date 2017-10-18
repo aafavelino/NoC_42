@@ -7,16 +7,15 @@
 SC_MODULE (controle_fluxo_saida)
 {
 
-	sc_in <bool> rok; //Entrada pra ver se no buffer terá espaço 
-	sc_out<bool> rd; //Retorno da solicitação se terá espaço
+	sc_out<int> val; //Saída que vai para o cf
+	sc_in <int> ack; //Entrada que vem do cf
 
-	sc_out<bool> val; //Saída que vai para o cf
-	sc_in <bool> ack; //Entrada que vem do cf
+	sc_in <int> rok; //Entrada pra ver se no buffer terá espaço 
+	sc_out<int> rd; //Retorno da solicitação se terá espaço
 
 
-	SC_CTOR(controle_fluxo_saida){
 
-		
+	SC_CTOR(controle_fluxo_saida){		
 	}
 	
 };
