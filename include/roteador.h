@@ -16,6 +16,7 @@
 
 SC_MODULE (roteador)
 {
+	//Da comunicação entre roteadores
 	sc_signal <int> val_cf_norte_to_sul_wire[2]; //Sai do norte e entra no sul
 	sc_signal <int> val_cf_sul_to_norte_wire[2]; //Sai do sul e entra no norte
 	sc_signal <int> val_cf_leste_to_oeste_wire[2]; //Sai do leste e entra no oeste
@@ -26,7 +27,7 @@ SC_MODULE (roteador)
 	sc_signal <int> ack_cf_leste_to_oeste_wire[2]; //Sai do leste e entra no oeste
 	sc_signal <int> ack_cf_oeste_to_leste_wire[2]; //Sai do oeste e entra no leste
 
-
+	//Do controle de fluxo de saída
 	sc_signal <int> rd_cf_norte[2];
 	sc_signal <int> rd_cf_sul[2];
 	sc_signal <int> rd_cf_leste[2];
@@ -37,10 +38,20 @@ SC_MODULE (roteador)
 	sc_signal <int> rok_cf_leste[2];
 	sc_signal <int> rok_cf_oeste[2];
 
-	//TESTES...
-	//sc_in <int> in_cff; 
-	//sc_out<int> out_cff; 
-	sc_signal <int> roteia;
+
+	//Sinais do cf para o buffer
+	sc_signal <int> wr_norte;
+	sc_signal <int> wr_sul;
+	sc_signal <int> wr_leste;
+	sc_signal <int> wr_oeste;
+	sc_signal <int> wr_local;
+
+	sc_signal <int> wok_norte;
+	sc_signal <int> wok_sul;
+	sc_signal <int> wok_leste;
+	sc_signal <int> wok_oeste;
+	sc_signal <int> wok_local;
+
 
 
 
@@ -68,6 +79,10 @@ SC_MODULE (roteador)
 	controle_fluxo_saida *cf_saida_leste;
 	controle_fluxo_saida *cf_saida_oeste;
 
+	Buffer *buffer_norte;
+	Buffer *buffer_sul;
+	Buffer *buffer_leste;
+	Buffer *buffer_oeste;
 
 	void execute();
 
@@ -85,10 +100,14 @@ SC_MODULE (roteador)
 		cf_saida_leste = new controle_fluxo_saida("cf_saida_Leste");
 		cf_saida_oeste = new controle_fluxo_saida("cf_saida_Oeste");
 		//cf_saida_local = new controle_fluxo_saida("cf_saida_Local");	
-
+		
+		buffer_norte = new Buffer("Buffer_norte");
+		buffer_sul = new Buffer("Buffer_sul");
+		buffer_leste = new Buffer("Buffer_leste");
+		buffer_oeste = new Buffer("Buffer_oeste");
 
         SC_METHOD(execute);
-		//sensitive << in_cff;
+		
 		
     }
 

@@ -127,6 +127,9 @@ int sc_main (int argc, char* argv[]) {
 	rede[1][0]->cf_saida_sul->val(terra[46]);
 	rede[1][0]->cf_saida_sul->rok(terra[47]);
 //***********************************************************************
+	
+
+
 	// Roteador 2 para roteador 1
 	//Val
 	rede[0][1]->cf_saida_oeste->val(rede[0][1]->val_cf_oeste_to_leste_wire[0]);
@@ -212,9 +215,6 @@ int sc_main (int argc, char* argv[]) {
 
 
 
-
-
-
 	// Roteador 3 para roteador 1
 	//Val
 	rede[1][0]->cf_saida_norte->val(rede[1][0]->val_cf_norte_to_sul_wire[1]);
@@ -239,28 +239,96 @@ int sc_main (int argc, char* argv[]) {
 	rede[0][0]->cf_saida_sul->rok(rede[0][0]->rok_cf_sul[1]);
 
 
+//Ligando sinais dos cfs para os buffers
+	//norte
+	rede[1][1]->buffer_norte->in_bf_controle_fluxo(rede[1][1]->wr_norte);
+	rede[1][1]->cf_norte->out_cf_buffer(rede[1][1]->wr_norte);
+	rede[1][1]->buffer_norte->out_bf_controle_fluxo(rede[1][1]->wok_norte);
+	rede[1][1]->cf_norte->in_cf_buffer(rede[1][1]->wok_norte);
+
+	rede[1][0]->buffer_norte->in_bf_controle_fluxo(rede[1][0]->wr_norte);
+	rede[1][0]->cf_norte->out_cf_buffer(rede[1][0]->wr_norte);
+	rede[1][0]->buffer_norte->out_bf_controle_fluxo(rede[1][0]->wok_norte);
+	rede[1][0]->cf_norte->in_cf_buffer(rede[1][0]->wok_norte);
+
+	rede[0][1]->buffer_norte->in_bf_controle_fluxo(rede[0][1]->wr_norte);
+	rede[0][1]->cf_norte->out_cf_buffer(rede[0][1]->wr_norte);
+	rede[0][1]->buffer_norte->out_bf_controle_fluxo(rede[0][1]->wok_norte);
+	rede[0][1]->cf_norte->in_cf_buffer(rede[0][1]->wok_norte);
+
+	rede[0][0]->buffer_norte->in_bf_controle_fluxo(rede[0][0]->wr_norte);
+	rede[0][0]->cf_norte->out_cf_buffer(rede[0][0]->wr_norte);
+	rede[0][0]->buffer_norte->out_bf_controle_fluxo(rede[0][0]->wok_norte);
+	rede[0][0]->cf_norte->in_cf_buffer(rede[0][0]->wok_norte);
+
+	//Sul
+	rede[1][1]->buffer_sul->in_bf_controle_fluxo(rede[1][1]->wr_sul);
+	rede[1][1]->cf_sul->out_cf_buffer(rede[1][1]->wr_sul);
+	rede[1][1]->buffer_sul->out_bf_controle_fluxo(rede[1][1]->wok_sul);
+	rede[1][1]->cf_sul->in_cf_buffer(rede[1][1]->wok_sul);
+
+	rede[1][0]->buffer_sul->in_bf_controle_fluxo(rede[1][0]->wr_sul);
+	rede[1][0]->cf_sul->out_cf_buffer(rede[1][0]->wr_sul);
+	rede[1][0]->buffer_sul->out_bf_controle_fluxo(rede[1][0]->wok_sul);
+	rede[1][0]->cf_sul->in_cf_buffer(rede[1][0]->wok_sul);
+
+	rede[0][1]->buffer_sul->in_bf_controle_fluxo(rede[0][1]->wr_sul);
+	rede[0][1]->cf_sul->out_cf_buffer(rede[0][1]->wr_sul);
+	rede[0][1]->buffer_sul->out_bf_controle_fluxo(rede[0][1]->wok_sul);
+	rede[0][1]->cf_sul->in_cf_buffer(rede[0][1]->wok_sul);
+
+	rede[0][0]->buffer_sul->in_bf_controle_fluxo(rede[0][0]->wr_sul);
+	rede[0][0]->cf_sul->out_cf_buffer(rede[0][0]->wr_sul);
+	rede[0][0]->buffer_sul->out_bf_controle_fluxo(rede[0][0]->wok_sul);
+	rede[0][0]->cf_sul->in_cf_buffer(rede[0][0]->wok_sul);
+
+	//Leste
+	rede[1][1]->buffer_leste->in_bf_controle_fluxo(rede[1][1]->wr_leste);
+	rede[1][1]->cf_leste->out_cf_buffer(rede[1][1]->wr_leste);
+	rede[1][1]->buffer_leste->out_bf_controle_fluxo(rede[1][1]->wok_leste);
+	rede[1][1]->cf_leste->in_cf_buffer(rede[1][1]->wok_leste);
+
+	rede[1][0]->buffer_leste->in_bf_controle_fluxo(rede[1][0]->wr_leste);
+	rede[1][0]->cf_leste->out_cf_buffer(rede[1][0]->wr_leste);
+	rede[1][0]->buffer_leste->out_bf_controle_fluxo(rede[1][0]->wok_leste);
+	rede[1][0]->cf_leste->in_cf_buffer(rede[1][0]->wok_leste);
+
+	rede[0][1]->buffer_leste->in_bf_controle_fluxo(rede[0][1]->wr_leste);
+	rede[0][1]->cf_leste->out_cf_buffer(rede[0][1]->wr_leste);
+	rede[0][1]->buffer_leste->out_bf_controle_fluxo(rede[0][1]->wok_leste);
+	rede[0][1]->cf_leste->in_cf_buffer(rede[0][1]->wok_leste);
+
+	rede[0][0]->buffer_leste->in_bf_controle_fluxo(rede[0][0]->wr_leste);
+	rede[0][0]->cf_leste->out_cf_buffer(rede[0][0]->wr_leste);
+	rede[0][0]->buffer_leste->out_bf_controle_fluxo(rede[0][0]->wok_leste);
+	rede[0][0]->cf_leste->in_cf_buffer(rede[0][0]->wok_leste);
+
+	//Oeste
+	rede[1][1]->buffer_oeste->in_bf_controle_fluxo(rede[1][1]->wr_oeste);
+	rede[1][1]->cf_oeste->out_cf_buffer(rede[1][1]->wr_oeste);
+	rede[1][1]->buffer_oeste->out_bf_controle_fluxo(rede[1][1]->wok_oeste);
+	rede[1][1]->cf_oeste->in_cf_buffer(rede[1][1]->wok_oeste);
+
+	rede[1][0]->buffer_oeste->in_bf_controle_fluxo(rede[1][0]->wr_oeste);
+	rede[1][0]->cf_oeste->out_cf_buffer(rede[1][0]->wr_oeste);
+	rede[1][0]->buffer_oeste->out_bf_controle_fluxo(rede[1][0]->wok_oeste);
+	rede[1][0]->cf_oeste->in_cf_buffer(rede[1][0]->wok_oeste);
+
+	rede[0][1]->buffer_oeste->in_bf_controle_fluxo(rede[0][1]->wr_oeste);
+	rede[0][1]->cf_oeste->out_cf_buffer(rede[0][1]->wr_oeste);
+	rede[0][1]->buffer_oeste->out_bf_controle_fluxo(rede[0][1]->wok_oeste);
+	rede[0][1]->cf_oeste->in_cf_buffer(rede[0][1]->wok_oeste);
+
+	rede[0][0]->buffer_oeste->in_bf_controle_fluxo(rede[0][0]->wr_oeste);
+	rede[0][0]->cf_oeste->out_cf_buffer(rede[0][0]->wr_oeste);
+	rede[0][0]->buffer_oeste->out_bf_controle_fluxo(rede[0][0]->wok_oeste);
+	rede[0][0]->cf_oeste->in_cf_buffer(rede[0][0]->wok_oeste);
 
 
-/*
 
-	rede[0][1]->in_cff(rede[0][1]->roteia);
-	rede[0][0]->out_cff(rede[0][1]->roteia);
-	
-	rede[0][0]->in_cff(rede[0][0]->roteia);
-	rede[0][1]->out_cff(rede[0][0]->roteia);
-*/
 
-	
-
-	
-
-	
-//	rede[0][1]->roteia = 20;
 	sc_start();
-//cout << "rede[0][0]->  " << rede[0][0]->out_cff.read() << endl;		
-//	rede[0][1]->roteia = 50;
-//	sc_start();
-//cout << "rede[0][0]->  " << rede[0][0]->out_cff.read() << endl;		
+		
   
 
   return 0;// Terminate simulation
