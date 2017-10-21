@@ -45,8 +45,6 @@ SC_MODULE (roteador)
 	sc_signal <int> wok_local;
 
 
-
-
 	Flit in_data; //n+2 data + bop + eop
 	Flit out_data; // Saída do roteamento n+2
 
@@ -79,9 +77,7 @@ SC_MODULE (roteador)
 
 	void execute();
 
-	SC_CTOR(roteador) {
-
-	    
+	SC_CTOR(roteador) { 
 		cf_norte = new controle_fluxo("cf_buffer_Norte");
 		cf_sul = new controle_fluxo("cf_buffer_Sul");
 		cf_leste = new controle_fluxo("cf_buffer_Leste");
@@ -100,9 +96,14 @@ SC_MODULE (roteador)
 		buffer_oeste = new Buffer("Buffer_oeste");
 		buffer_local = new Buffer("Buffer_local");
 
+		
+
         SC_METHOD(execute);
-		
-		
+	        sensitive << cf_sul->in_val; 
+	        sensitive << cf_norte->in_val; 
+	        sensitive << cf_leste->in_val; 
+	        sensitive << cf_oeste->in_val; 
+	        sensitive << cf_local->in_val;	
     }
 
 	
