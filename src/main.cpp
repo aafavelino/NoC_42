@@ -334,40 +334,44 @@ int sc_main (int argc, char* argv[]) {
 	rede[0][0]->roteamento_norte.cordenada_destino.y = pct.flit[0].cordenadas_f.y;
 
 
+
+
+
+
 	rede[0][0]->buffer_norte->din = pct.flit[0];
 	rede[0][0]->roteamento_norte.rotear_xy();
 
 
-	//rede[0][0]->roteamento_norte.portaDestino;
-	rede[0][0]->arbitro_centralizado.portaDestino = rede[0][0]->roteamento_norte.portaDestino;
-	rede[0][0]->arbitro_centralizado.setPrioridade();
-	//std::cout <<"porta destino " << rede[0][0]->arbitro_centralizado.buffercircular[0] << endl;
 	
 
 
+
+	
+	rede[0][0]->arbitro_centralizado.portaDestino = rede[0][0]->roteamento_norte.portaDestino;
+	rede[0][0]->arbitro_centralizado.setPrioridade();
 	rede[0][0]->cf_saida_leste->val.write(1);
 
 
 
 
-	//rede[1][1]->wok_local = 30;
-	//rede[0][1]->val_cf_sul_to_norte_wire = 1;
-	//rede[0][0]->val_cf_leste_to_oeste_wire = 1;
+	
+
+
+	
+	
+
+
+
 	sc_start();
-	std::cout << "controle fluxo " << rede[0][1]->cf_oeste->in_val.read() << endl;
+
 
 	if (rede[0][1]->cf_oeste->in_val.read() == 1)
 	{
 		
 		rede[0][1]->buffer_oeste->out_bf_controle_fluxo.write(rede[0][1]->buffer_oeste->isEmpty());
 	}
-	sc_start();
-	//std::cout << rede[1][1]->cf_norte->out_cf_buffer.read() << endl;
-	//std::cout << rede[1][1]->buffer_norte->in_bf_controle_fluxo.read() << endl;
-	std::cout << "controle fluxo 1 " << rede[0][1]->cf_oeste->in_cf_buffer.read() << endl;
-	std::cout << "BUFFER OESTE " << rede[0][1]->buffer_oeste->in_bf_controle_fluxo.read() << endl;
 
-
+	std::cout << "\n \ncontrole fluxo saida  LESTE " << rede[0][0]->cf_saida_leste->ack.read() << endl;
 
 
 
