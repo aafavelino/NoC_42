@@ -29,6 +29,7 @@ void roteador::execute() {
 		cf_norte->out_cf_buffer.write(1);
 		sc_start();
 		if (buffer_norte->in_bf_controle_fluxo.read() == 1)
+			std::cout << "vazio? " << buffer_norte->isEmpty() << endl;
 			buffer_norte->out_bf_controle_fluxo.write(buffer_norte->isEmpty());
 		sc_start();
 		if (cf_norte->in_cf_buffer.read() == 1)
