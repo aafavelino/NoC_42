@@ -346,6 +346,9 @@ int sc_main (int argc, char* argv[]) {
 
 	sc_start();
 
+
+
+
 	if (rede[0][0]->cf_saida_leste->ack.read() == 1)
 	{
 		std::cout << "Gravar no buffer oeste r2" << endl;
@@ -358,12 +361,47 @@ int sc_main (int argc, char* argv[]) {
 		rede[0][1]->arbitro_centralizado.portaDestino = rede[0][1]->roteamento_oeste.portaDestino;
 		rede[0][1]->arbitro_centralizado.setPrioridade();
 		// teste
-		rede[0][1]->cf_saida_sul->val.write(1);
-		sc_start();
+
 
 		if ((rede[0][1]->roteamento_oeste.cordenada.x == pct.flit[0].cordenadas_f.x) and (rede[0][1]->roteamento_oeste.cordenada.y == pct.flit[0].cordenadas_f.y))
 		{
-			cout << "hhhh" << endl;
+			cout << "Chegou" << endl;\
+			//jogar no buffer local
+		} else {
+			if (rede[0][1]->arbitro_centralizado.portaDestino == 3)
+				rede[0][1]->cf_saida_oeste->val.write(1);
+			if (rede[0][1]->arbitro_centralizado.portaDestino == 2)
+				rede[0][1]->cf_saida_sul->val.write(1);		
+
+			sc_start();
+		}
+
+	} 
+
+	if (rede[0][0]->cf_saida_sul->ack.read() == 1)
+	{
+		std::cout << "Gravar no buffer oeste r2" << endl;
+		//rede[0][1]->buffer_oeste->din = pct.flit[0];
+		rede[1][0]->roteamento_norte.cordenada_destino.x = pct.flit[0].cordenadas_f.x;
+		rede[1][0]->roteamento_norte.cordenada_destino.y = pct.flit[0].cordenadas_f.y;
+
+		rede[1][0]->roteamento_norte.rotear_xy();
+	
+		rede[1][0]->arbitro_centralizado.portaDestino = rede[1][0]->roteamento_norte.portaDestino;
+		rede[1][0]->arbitro_centralizado.setPrioridade();
+		// teste
+
+
+		if ((rede[1][0]->roteamento_norte.cordenada.x == pct.flit[0].cordenadas_f.x) and (rede[1][0]->roteamento_norte.cordenada.y == pct.flit[0].cordenadas_f.y))
+		{
+			cout << "Chegou" << endl;\
+			//jogar no buffer local
+		} else {
+			if (rede[1][0]->arbitro_centralizado.portaDestino == 1)
+				rede[1][0]->cf_saida_leste->val.write(1);
+
+
+			sc_start();
 		}
 
 	} 
@@ -385,7 +423,11 @@ int sc_main (int argc, char* argv[]) {
 
 		if ((rede[1][1]->roteamento_oeste.cordenada.x == pct.flit[0].cordenadas_f.x) and (rede[1][1]->roteamento_oeste.cordenada.y == pct.flit[0].cordenadas_f.y))
 		{
-			cout << "hhhh" << endl;
+			cout << "Chegou..." << endl;
+		} else {
+			if (rede[1][1]->arbitro_centralizado.portaDestino == 3)
+				rede[1][1]->cf_saida_oeste->val.write(1);
+			sc_start();
 		}
 
 	} 
@@ -393,8 +435,95 @@ int sc_main (int argc, char* argv[]) {
 	//std::cout << "\n \ncontrole fluxo saida  LESTE " << rede[0][0]->cf_saida_leste->ack.read() << endl;
 	//std::cout << "\n \ncontrole fluxo saida  sul " << rede[0][1]->cf_saida_sul->ack.read() << endl;
 
+
+	if (rede[0][1]->cf_saida_oeste->ack.read() == 1)
+	{
+		std::cout << "Gravar no buffer oeste r2" << endl;
+		//rede[0][1]->buffer_oeste->din = pct.flit[0];
+		rede[0][0]->roteamento_leste.cordenada_destino.x = pct.flit[0].cordenadas_f.x;
+		rede[0][0]->roteamento_leste.cordenada_destino.y = pct.flit[0].cordenadas_f.y;
+
+		rede[0][0]->roteamento_leste.rotear_xy();
+	
+		rede[0][0]->arbitro_centralizado.portaDestino = rede[0][0]->roteamento_leste.portaDestino;
+		rede[0][0]->arbitro_centralizado.setPrioridade();
+		// teste
+
+
+		if ((rede[0][0]->roteamento_leste.cordenada.x == pct.flit[0].cordenadas_f.x) and (rede[0][1]->roteamento_leste.cordenada.y == pct.flit[0].cordenadas_f.y))
+		{
+			cout << "Chegou" << endl;
+			//jogar no buffer local
+		} else {
+			if (rede[0][0]->arbitro_centralizado.portaDestino == 1)
+				rede[0][0]->cf_saida_leste->val.write(1);
+			if (rede[0][0]->arbitro_centralizado.portaDestino == 2)
+				rede[0][0]->cf_saida_sul->val.write(1);		
+
+			sc_start();
+		}
+
+	} 	
+
+
+
+
+	if (rede[1][1]->cf_saida_norte->ack.read() == 1)
+	{
+		std::cout << "Gravar no buffer sul r2" << endl;
+		//rede[0][1]->buffer_oeste->din = pct.flit[0];
+		rede[0][1]->roteamento_sul.cordenada_destino.x = pct.flit[0].cordenadas_f.x;
+		rede[0][1]->roteamento_sul.cordenada_destino.y = pct.flit[0].cordenadas_f.y;
+
+		rede[0][1]->roteamento_sul.rotear_xy();
+	
+		rede[0][1]->arbitro_centralizado.portaDestino = rede[0][1]->roteamento_sul.portaDestino;
+		rede[0][1]->arbitro_centralizado.setPrioridade();
+		// teste
+
+
+		if ((rede[0][1]->roteamento_sul.cordenada.x == pct.flit[0].cordenadas_f.x) and (rede[0][1]->roteamento_sul.cordenada.y == pct.flit[0].cordenadas_f.y))
+		{
+			cout << "Chegou" << endl;
+			//jogar no buffer local
+		} else {
+			if (rede[0][1]->arbitro_centralizado.portaDestino == 3)
+				rede[0][1]->cf_saida_oeste->val.write(1);
 	
 
+			sc_start();
+		}
+
+	} 	
+
+
+	if (rede[1][1]->cf_saida_oeste->ack.read() == 1)
+	{
+		std::cout << "Gravar no buffer leste r3" << endl;
+		//rede[0][1]->buffer_oeste->din = pct.flit[0];
+		rede[1][0]->roteamento_leste.cordenada_destino.x = pct.flit[0].cordenadas_f.x;
+		rede[1][0]->roteamento_leste.cordenada_destino.y = pct.flit[0].cordenadas_f.y;
+
+		rede[1][0]->roteamento_leste.rotear_xy();
+	
+		rede[1][0]->arbitro_centralizado.portaDestino = rede[1][0]->roteamento_leste.portaDestino;
+		rede[1][0]->arbitro_centralizado.setPrioridade();
+		// teste
+
+
+		if ((rede[1][0]->roteamento_leste.cordenada.x == pct.flit[0].cordenadas_f.x) and (rede[1][0]->roteamento_leste.cordenada.y == pct.flit[0].cordenadas_f.y))
+		{
+			cout << "Chegou" << endl;
+			//jogar no buffer local
+		} else {
+			if (rede[1][0]->arbitro_centralizado.portaDestino == 0)
+				rede[1][0]->cf_saida_norte->val.write(1);
+	
+
+			sc_start();
+		}
+
+	} 	
 
 
 
