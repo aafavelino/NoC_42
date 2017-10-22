@@ -11,7 +11,7 @@ void roteador::execute() {
 		sc_start();
 		if (cf_leste->in_cf_buffer.read() == 1)
 			cf_leste->in_ack.write(1);	
-	} else
+	} 
 	if (cf_oeste->in_val.read() == 1)
 	{
 		std::cout << "oeste" << endl;
@@ -22,7 +22,7 @@ void roteador::execute() {
 		sc_start();
 		if (cf_oeste->in_cf_buffer.read() == 1)
 			cf_oeste->in_ack.write(1);	
-	} else
+	} 
 	if (cf_norte->in_val.read() == 1)
 	{
 		std::cout << "norte" << endl;
@@ -33,7 +33,7 @@ void roteador::execute() {
 		sc_start();
 		if (cf_norte->in_cf_buffer.read() == 1)
 			cf_norte->in_ack.write(1);			
-	} else
+	} 
 	if (cf_sul->in_val.read() == 1)
 	{
 		/* EXECUTA ALGUMA COISA AQUI */
@@ -45,7 +45,7 @@ void roteador::execute() {
 		sc_start();
 		if (cf_sul->in_cf_buffer.read() == 1)
 			cf_sul->in_ack.write(1);	
-	} else	
+	} 	
 	if (cf_local->in_val.read() == 1)
 	{
 		std::cout << "local" << endl;
@@ -55,23 +55,24 @@ void roteador::execute() {
 }
 
 
-
+/*
 
 void roteador::gravar() {
 	if (cf_saida_leste->ack.read() == 1)
 	{
 		std::cout << "Gravar no buffer leste" << endl;
-	} else
+
+	} 
 	if (cf_saida_oeste->ack.read() == 1)
 	{
 		std::cout << "Gravar no buffer oeste" << endl;
 		
-	} else
+	} 
 	if (cf_saida_norte->ack.read() == 1)
 	{
 		std::cout << "Gravar no buffer norte" << endl;
 		
-	} else
+	} 
 	if (cf_saida_sul->ack.read() == 1)
 	{
 		std::cout << "Gravar no buffer sul" << endl;
@@ -80,4 +81,4 @@ void roteador::gravar() {
 
 
 	
-}
+}*/
