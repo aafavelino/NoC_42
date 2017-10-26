@@ -117,6 +117,28 @@ SC_MODULE (roteador)
 		buffer_oeste->out_bf_controle_fluxo(wok_oeste);
 		cf_oeste->in_cf_buffer(wok_oeste);		
 
+		buffer_local->in_bf_controle_fluxo(wr_local);
+		cf_local->out_cf_buffer(wr_local);
+		buffer_local->out_bf_controle_fluxo(wok_local);
+		cf_local->in_cf_buffer(wok_local);		
+
+
+cf_saida_oeste->val(val_cf_oeste_to_leste_wire);
+cf_saida_oeste->ack(ack_cf_oeste_to_leste_wire);
+cf_saida_sul->val(val_cf_sul_to_norte_wire);
+cf_saida_sul->ack(ack_cf_sul_to_norte_wire);
+
+cf_saida_leste->val(val_cf_leste_to_oeste_wire);
+cf_saida_leste->ack(ack_cf_leste_to_oeste_wire);
+cf_saida_norte->val(val_cf_norte_to_sul_wire);
+cf_saida_norte->ack(ack_cf_norte_to_sul_wire);
+
+// Ligação das entradas dos cf's locais
+	cf_local->in_val(val_cf_local_to_local_wire);
+	cf_local->in_ack(ack_cf_local_to_local_wire);
+
+
+
         SC_METHOD(execute);
 	        sensitive << cf_sul->in_val; 
 	        sensitive << cf_norte->in_val; 
