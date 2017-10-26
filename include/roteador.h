@@ -97,7 +97,25 @@ SC_MODULE (roteador)
 		buffer_oeste = new Buffer("Buffer_oeste");
 		buffer_local = new Buffer("Buffer_local");
 
-		
+		buffer_norte->in_bf_controle_fluxo(wr_norte);
+		cf_norte->out_cf_buffer(wr_norte);
+		buffer_norte->out_bf_controle_fluxo(wok_norte);
+		cf_norte->in_cf_buffer(wok_norte);		
+
+		buffer_sul->in_bf_controle_fluxo(wr_sul);
+		cf_sul->out_cf_buffer(wr_sul);
+		buffer_sul->out_bf_controle_fluxo(wok_sul);
+		cf_sul->in_cf_buffer(wok_sul);		
+
+		buffer_leste->in_bf_controle_fluxo(wr_leste);
+		cf_leste->out_cf_buffer(wr_leste);
+		buffer_leste->out_bf_controle_fluxo(wok_leste);
+		cf_leste->in_cf_buffer(wok_leste);		
+
+		buffer_oeste->in_bf_controle_fluxo(wr_oeste);
+		cf_oeste->out_cf_buffer(wr_oeste);
+		buffer_oeste->out_bf_controle_fluxo(wok_oeste);
+		cf_oeste->in_cf_buffer(wok_oeste);		
 
         SC_METHOD(execute);
 	        sensitive << cf_sul->in_val; 

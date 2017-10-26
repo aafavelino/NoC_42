@@ -2,6 +2,9 @@
 #include "roteador.h"
 #include "pacote.h"
 
+// Não tá simples, nem manutenível
+// Tem que melhorar o código
+// refactorring 
 
 #define LARGURA_REDE 2
 #define ALTURA_REDE 2
@@ -190,7 +193,7 @@ int sc_main (int argc, char* argv[]) {
 	rede[0][0]->cf_saida_sul->ack(rede[0][0]->ack_cf_sul_to_norte_wire);
 	rede[1][0]->cf_norte->in_ack(rede[0][0]->ack_cf_sul_to_norte_wire);
 	
-
+/*
 
 //Ligando sinais dos cfs para os buffers
 	//norte
@@ -277,7 +280,7 @@ int sc_main (int argc, char* argv[]) {
 	rede[0][0]->buffer_oeste->out_bf_controle_fluxo(rede[0][0]->wok_oeste);
 	rede[0][0]->cf_oeste->in_cf_buffer(rede[0][0]->wok_oeste);
 
-
+*/
 // Ligação das entradas dos cf's locais
 	rede[0][0]->cf_local->in_val(rede[0][0]->val_cf_local_to_local_wire);
 	rede[0][0]->cf_local->in_ack(rede[0][0]->ack_cf_local_to_local_wire);
