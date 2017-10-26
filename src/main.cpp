@@ -63,7 +63,6 @@ int sc_main (int argc, char* argv[]) {
 
 //<<<<SINAIS NULOS QUE NAO SAO USADOS>>>>
 
-
 	rede[0][0]->cf_oeste->in_ack(terra[1]);
 	rede[0][0]->cf_oeste->in_val(terra[2]);
 	rede[0][0]->cf_norte->in_ack(terra[3]);
@@ -84,8 +83,6 @@ int sc_main (int argc, char* argv[]) {
 	rede[1][0]->cf_oeste->in_ack(terra[15]);
 	rede[1][0]->cf_oeste->in_val(terra[16]);
 
-
-
 //***********************************************************************
 	
 
@@ -102,9 +99,6 @@ int sc_main (int argc, char* argv[]) {
 	//ack
 	rede[0][1]->cf_oeste->in_ack(rede[0][0]->ack_cf_leste_to_oeste_wire);
 	
-
-
-
 	// Roteador 4 para roteador 3
 	//Val
 	rede[1][0]->cf_leste->in_val(rede[1][1]->val_cf_oeste_to_leste_wire);
@@ -117,12 +111,6 @@ int sc_main (int argc, char* argv[]) {
 	//ack
 	rede[1][1]->cf_oeste->in_ack(rede[1][0]->ack_cf_leste_to_oeste_wire);
 	
-
-
-
-
-
-
 	// Roteador 4 para roteador 2
 	//Val
 	rede[0][1]->cf_sul->in_val(rede[1][1]->val_cf_norte_to_sul_wire);
@@ -135,14 +123,6 @@ int sc_main (int argc, char* argv[]) {
 	//ack
 	rede[1][1]->cf_norte->in_ack(rede[0][1]->ack_cf_sul_to_norte_wire);
 	
-
-
-
-
-
-
-
-
 	// Roteador 3 para roteador 1
 	//Val	
 	rede[0][0]->cf_sul->in_val(rede[1][0]->val_cf_norte_to_sul_wire);
@@ -155,11 +135,6 @@ int sc_main (int argc, char* argv[]) {
 	//ack
 	rede[1][0]->cf_norte->in_ack(rede[0][0]->ack_cf_sul_to_norte_wire);
 	
-
-			
-
-
-
 	//Setando as Cordenadas dos roteadores Ex.: roteador1 se encontra em rede[0][0]
 	for (int x = 0; x < ALTURA_REDE; ++x){
 		for (int y = 0; y < LARGURA_REDE; ++y) {	
@@ -221,8 +196,7 @@ int sc_main (int argc, char* argv[]) {
 
 		} else {
 			if (rede[0][1]->arbitro_centralizado.portaDestino == 2)
-				rede[0][1]->cf_saida_sul->val.write(1);		
-
+				rede[0][1]->cf_saida_sul->val.write(1);
 			sc_start();
 		}
 
@@ -253,8 +227,6 @@ int sc_main (int argc, char* argv[]) {
 		} else {
 			if (rede[1][0]->arbitro_centralizado.portaDestino == 1)
 				rede[1][0]->cf_saida_leste->val.write(1);
-
-
 			sc_start();
 		}
 
@@ -287,10 +259,6 @@ int sc_main (int argc, char* argv[]) {
 
 	} 
 
-	//std::cout << "\n \ncontrole fluxo saida  LESTE " << rede[0][0]->cf_saida_leste->ack.read() << endl;
-	//std::cout << "\n \ncontrole fluxo saida  sul " << rede[0][1]->cf_saida_sul->ack.read() << endl;
-
-
 	if (rede[0][1]->cf_saida_oeste->ack.read() == 1)
 	{
 		std::cout << "Gravar no buffer oeste r2" << endl;
@@ -316,7 +284,6 @@ int sc_main (int argc, char* argv[]) {
 		} else {
 			if (rede[0][0]->arbitro_centralizado.portaDestino == 2)
 				rede[0][0]->cf_saida_sul->val.write(1);		
-
 			sc_start();
 		}
 
@@ -350,8 +317,6 @@ int sc_main (int argc, char* argv[]) {
 		} else {
 			if (rede[0][1]->arbitro_centralizado.portaDestino == 3)
 				rede[0][1]->cf_saida_oeste->val.write(1);
-	
-
 			sc_start();
 		}
 
@@ -383,9 +348,6 @@ int sc_main (int argc, char* argv[]) {
 		} else {
 			if (rede[1][0]->arbitro_centralizado.portaDestino == 0)
 				rede[1][0]->cf_saida_norte->val.write(1);
-
-	
-
 			sc_start();
 		}
 
@@ -418,8 +380,6 @@ int sc_main (int argc, char* argv[]) {
 		} else {
 			if (rede[0][0]->arbitro_centralizado.portaDestino == 1)
 				rede[0][0]->cf_saida_leste->val.write(1);
-	
-
 			sc_start();
 		}
 
@@ -451,14 +411,10 @@ int sc_main (int argc, char* argv[]) {
 		} else {
 			if (rede[1][1]->arbitro_centralizado.portaDestino == 1)
 				rede[1][1]->cf_saida_norte->val.write(1);
-	
-
 			sc_start();
 		}
 
 	} 	
-
-
 
   return 0;// Terminate simulation
 }

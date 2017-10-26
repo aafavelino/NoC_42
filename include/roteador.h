@@ -96,7 +96,8 @@ SC_MODULE (roteador)
 		buffer_leste = new Buffer("Buffer_leste");
 		buffer_oeste = new Buffer("Buffer_oeste");
 		buffer_local = new Buffer("Buffer_local");
-
+	
+		// Ligação de tudo do buffer local e controle de fluxo local 
 		buffer_norte->in_bf_controle_fluxo(wr_norte);
 		cf_norte->out_cf_buffer(wr_norte);
 		buffer_norte->out_bf_controle_fluxo(wok_norte);
@@ -122,20 +123,20 @@ SC_MODULE (roteador)
 		buffer_local->out_bf_controle_fluxo(wok_local);
 		cf_local->in_cf_buffer(wok_local);		
 
+		//Ligação dos controles de fluxo internos...
+		cf_saida_oeste->val(val_cf_oeste_to_leste_wire);
+		cf_saida_oeste->ack(ack_cf_oeste_to_leste_wire);
+		cf_saida_sul->val(val_cf_sul_to_norte_wire);
+		cf_saida_sul->ack(ack_cf_sul_to_norte_wire);
 
-cf_saida_oeste->val(val_cf_oeste_to_leste_wire);
-cf_saida_oeste->ack(ack_cf_oeste_to_leste_wire);
-cf_saida_sul->val(val_cf_sul_to_norte_wire);
-cf_saida_sul->ack(ack_cf_sul_to_norte_wire);
+		cf_saida_leste->val(val_cf_leste_to_oeste_wire);
+		cf_saida_leste->ack(ack_cf_leste_to_oeste_wire);
+		cf_saida_norte->val(val_cf_norte_to_sul_wire);
+		cf_saida_norte->ack(ack_cf_norte_to_sul_wire);
 
-cf_saida_leste->val(val_cf_leste_to_oeste_wire);
-cf_saida_leste->ack(ack_cf_leste_to_oeste_wire);
-cf_saida_norte->val(val_cf_norte_to_sul_wire);
-cf_saida_norte->ack(ack_cf_norte_to_sul_wire);
-
-// Ligação das entradas dos cf's locais
-	cf_local->in_val(val_cf_local_to_local_wire);
-	cf_local->in_ack(ack_cf_local_to_local_wire);
+		// Ligação das entradas dos cf's locais
+		cf_local->in_val(val_cf_local_to_local_wire);
+		cf_local->in_ack(ack_cf_local_to_local_wire);
 
 
 
