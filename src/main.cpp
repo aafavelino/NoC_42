@@ -56,6 +56,9 @@ int sc_main (int argc, char* argv[]) {
 // Aterramentos
 //***********************************************************************
 	sc_signal<int> terra[100];
+	sc_signal<int> ground_connection_val[100];
+	sc_signal<int> ground_connection_ack[100];
+
 //***********************************************************************
 
 
@@ -63,25 +66,67 @@ int sc_main (int argc, char* argv[]) {
 
 //<<<<SINAIS NULOS QUE NAO SAO USADOS>>>>
 
-	rede[0][0]->cf_oeste->in_ack(terra[1]);
-	rede[0][0]->cf_oeste->in_val(terra[2]);
-	rede[0][0]->cf_norte->in_ack(terra[3]);
-	rede[0][0]->cf_norte->in_val(terra[4]);
+	//rede[0][0]->cf_oeste->in_ack(terra[1]);
+	//rede[0][0]->cf_oeste->in_val(terra[2]);
+	//rede[0][0]->cf_norte->in_ack(terra[3]);
+	//rede[0][0]->cf_norte->in_val(terra[4]);
 	
-	rede[0][1]->cf_leste->in_ack(terra[5]);
-	rede[0][1]->cf_leste->in_val(terra[6]);
-	rede[0][1]->cf_norte->in_ack(terra[7]);
-	rede[0][1]->cf_norte->in_val(terra[8]);
+	//rede[0][1]->cf_leste->in_ack(terra[5]);
+	//rede[0][1]->cf_leste->in_val(terra[6]);
+	//rede[0][1]->cf_norte->in_ack(terra[7]);
+	//rede[0][1]->cf_norte->in_val(terra[8]);
 
-	rede[1][1]->cf_sul->in_ack(terra[9]);
-	rede[1][1]->cf_sul->in_val(terra[10]);
-	rede[1][1]->cf_leste->in_ack(terra[11]);
-	rede[1][1]->cf_leste->in_val(terra[12]);
+	//rede[1][1]->cf_sul->in_ack(terra[9]);
+	//rede[1][1]->cf_sul->in_val(terra[10]);
+	//rede[1][1]->cf_leste->in_ack(terra[11]);
+	//rede[1][1]->cf_leste->in_val(terra[12]);
 
-	rede[1][0]->cf_sul->in_ack(terra[13]);
-	rede[1][0]->cf_sul->in_val(terra[14]);
-	rede[1][0]->cf_oeste->in_ack(terra[15]);
-	rede[1][0]->cf_oeste->in_val(terra[16]);
+	//rede[1][0]->cf_sul->in_ack(terra[13]);
+	//rede[1][0]->cf_sul->in_val(terra[14]);
+	//rede[1][0]->cf_oeste->in_ack(terra[15]);
+	//rede[1][0]->cf_oeste->in_val(terra[16]);
+
+	int cont = 0;
+	for (int i = 0; i < ALTURA_REDE; ++i)
+	{
+		for (int j = 0; j < LARGURA_REDE; ++j)
+		{
+			if (i == 0)
+			{	
+				
+				cout << "rede[" << i << "][" << j << "]->cf_norte->in_val(ground_connection_val[" << cont<< "])"  << endl;
+				cout << "rede[" << i << "][" << j << "]->cf_norte->in_ack(ground_connection_val[" << cont<< "])"  << endl;
+				rede[i][j]->cf_norte->in_val(ground_connection_val[cont]);
+				rede[i][j]->cf_norte->in_ack(ground_connection_ack[cont]);
+				cont++;
+			}
+			if (j == 0)
+			{	
+				cout << "rede[" << i << "][" << j << "]->cf_oeste->in_val(ground_connection_val[" << cont<< "])"  << endl;
+				cout << "rede[" << i << "][" << j << "]->cf_oeste->in_ack(ground_connection_val[" << cont<< "])"  << endl;				
+				rede[i][j]->cf_oeste->in_val(ground_connection_val[cont]);
+				rede[i][j]->cf_oeste->in_ack(ground_connection_ack[cont]);
+				cont++;
+			}
+			if (i == ALTURA_REDE-1)
+			{	
+				cout << "rede[" << i << "][" << j << "]->cf_sul->in_val(ground_connection_val[" << cont<< "])"  << endl;
+				cout << "rede[" << i << "][" << j << "]->cf_sul->in_ack(ground_connection_val[" << cont<< "])"  << endl;				
+				rede[i][j]->cf_sul->in_val(ground_connection_val[cont]);
+				rede[i][j]->cf_sul->in_ack(ground_connection_ack[cont]);
+				cont++;
+			}
+			if (j == LARGURA_REDE-1)
+			{	
+				cout << "rede[" << i << "][" << j << "]->cf_leste->in_val(ground_connection_val[" << cont<< "])"  << endl;
+				cout << "rede[" << i << "][" << j << "]->cf_leste->in_ack(ground_connection_val[" << cont<< "])"  << endl;				
+				rede[i][j]->cf_leste->in_val(ground_connection_val[cont]);
+				rede[i][j]->cf_leste->in_ack(ground_connection_ack[cont]);
+				cont++;
+			}
+
+		}
+	}
 
 //***********************************************************************
 	
@@ -411,7 +456,7 @@ int sc_main (int argc, char* argv[]) {
 		} else {
 			if (rede[1][1]->arbitro_centralizado.portaDestino == 1)
 				rede[1][1]->cf_saida_norte->val.write(1);
-			sc_start();
+			sc_start(10, SC_NS );
 		}
 
 	} 	

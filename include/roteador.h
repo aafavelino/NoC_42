@@ -6,6 +6,7 @@
 #include "controle_fluxo_saida.h"
 #include "buffer.h"
 #include "flit.h"
+#include <time.h>
 
 #define NORTH 0
 #define EAST 1
@@ -16,6 +17,7 @@
 
 SC_MODULE (roteador)
 {
+	
 	//Da comunicação entre roteadores
 	sc_signal <int> val_cf_norte_to_sul_wire; //Sai do norte e entra no sul
 	sc_signal <int> val_cf_sul_to_norte_wire; //Sai do sul e entra no norte
