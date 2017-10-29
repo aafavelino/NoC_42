@@ -1,3 +1,6 @@
+#ifndef _ROTEADOR_H_
+#define _ROTEADOR_H_
+
 #include <iostream>
 #include <systemc.h>
 #include "arbitro.h"
@@ -158,3 +161,4 @@ SC_MODULE (roteador)
 
 	
 };
+#endif

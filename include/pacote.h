@@ -1,3 +1,6 @@
+#ifndef _PACOTE_H_
+#define _PACOTE_H_ 
+
 #include <iostream>
 #include "flit.h"
 #include <systemc.h>
@@ -10,3 +13,4 @@ public:
 	//~Pacote();
 	
 };
+#endif

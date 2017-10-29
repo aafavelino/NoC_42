@@ -1,3 +1,6 @@
+#ifndef _ARBITRO_H_
+#define _ARBITRO_H_ 
+
 #include <iostream>
 #include <systemc.h>
 
@@ -19,3 +22,5 @@ public:
 	int checkPrioridade();
 	
 };
+
+#endif
