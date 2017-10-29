@@ -4,11 +4,8 @@
 #include <systemc.h>
 #include <vector>
 #include "roteador.h"
-//#include "pacote.h"
 
-// Não tá simples, nem manutenível
-// Tem que melhorar o código
-// refactorring 
+
 
 #define LARGURA_REDE 2
 #define ALTURA_REDE 2

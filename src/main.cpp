@@ -4,19 +4,6 @@
 #include "pacote.h"
 #include "system.h"
 
-// Não tá simples, nem manutenível
-// Tem que melhorar o código
-// refactorring 
-
-#define LARGURA_REDE 2
-#define ALTURA_REDE 2
-
-#define NORTH 0
-#define EAST 1
-#define SOUTH 2
-#define WEST 3
-#define LOCAL 4
-
 using namespace std;
 //aqui
 
