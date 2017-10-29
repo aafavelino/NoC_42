@@ -60,32 +60,7 @@ int sc_main (int argc, char* argv[]) {
 	sc_signal<int> ground_connection_ack[100];
 
 //***********************************************************************
-
-
-
-
 //<<<<SINAIS NULOS QUE NAO SAO USADOS>>>>
-
-	//rede[0][0]->cf_oeste->in_ack(terra[1]);
-	//rede[0][0]->cf_oeste->in_val(terra[2]);
-	//rede[0][0]->cf_norte->in_ack(terra[3]);
-	//rede[0][0]->cf_norte->in_val(terra[4]);
-	
-	//rede[0][1]->cf_leste->in_ack(terra[5]);
-	//rede[0][1]->cf_leste->in_val(terra[6]);
-	//rede[0][1]->cf_norte->in_ack(terra[7]);
-	//rede[0][1]->cf_norte->in_val(terra[8]);
-
-	//rede[1][1]->cf_sul->in_ack(terra[9]);
-	//rede[1][1]->cf_sul->in_val(terra[10]);
-	//rede[1][1]->cf_leste->in_ack(terra[11]);
-	//rede[1][1]->cf_leste->in_val(terra[12]);
-
-	//rede[1][0]->cf_sul->in_ack(terra[13]);
-	//rede[1][0]->cf_sul->in_val(terra[14]);
-	//rede[1][0]->cf_oeste->in_ack(terra[15]);
-	//rede[1][0]->cf_oeste->in_val(terra[16]);
-
 	int cont = 0;
 	for (int i = 0; i < ALTURA_REDE; ++i)
 	{
@@ -130,56 +105,35 @@ int sc_main (int argc, char* argv[]) {
 
 //***********************************************************************
 	
+	for (int i = 0; i < ALTURA_REDE; ++i)
+	{
+		for (int j = 0; j < LARGURA_REDE; ++j)
+		{
+			if (j != LARGURA_REDE-1)
+			{
+				rede[i][j]->cf_leste->in_val(rede[i][j+1]->val_cf_oeste_to_leste_wire);
+				rede[i][j]->cf_leste->in_ack(rede[i][j+1]->ack_cf_oeste_to_leste_wire);
+			}
+			if (j != 0)
+			{
+				rede[i][j]->cf_oeste->in_val(rede[i][j-1]->val_cf_leste_to_oeste_wire);
+				rede[i][j]->cf_oeste->in_ack(rede[i][j-1]->ack_cf_leste_to_oeste_wire);
+				
+			}
+			if (i != ALTURA_REDE-1)
+			{
+				rede[i][j]->cf_sul->in_val(rede[i+1][j]->val_cf_norte_to_sul_wire);
+				rede[i][j]->cf_sul->in_ack(rede[i+1][j]->ack_cf_norte_to_sul_wire);
+			}
+			if (i != 0)
+			{
+				rede[i][j]->cf_norte->in_val(rede[i-1][j]->val_cf_sul_to_norte_wire);
+				rede[i][j]->cf_norte->in_ack(rede[i-1][j]->ack_cf_sul_to_norte_wire);
+			}
 
+		}
+	}
 
-	// Roteador 2 para roteador 1
-	//Val
-	rede[0][0]->cf_leste->in_val(rede[0][1]->val_cf_oeste_to_leste_wire);
-	//ack
-	rede[0][0]->cf_leste->in_ack(rede[0][1]->ack_cf_oeste_to_leste_wire);
-
-	// Roteador 1 para roteador 2
-	//Val
-	rede[0][1]->cf_oeste->in_val(rede[0][0]->val_cf_leste_to_oeste_wire);
-	//ack
-	rede[0][1]->cf_oeste->in_ack(rede[0][0]->ack_cf_leste_to_oeste_wire);
-	
-	// Roteador 4 para roteador 3
-	//Val
-	rede[1][0]->cf_leste->in_val(rede[1][1]->val_cf_oeste_to_leste_wire);
-	//ack
-	rede[1][0]->cf_leste->in_ack(rede[1][1]->ack_cf_oeste_to_leste_wire);
-
-	// Roteador 3 para roteador 4
-	//Val
-	rede[1][1]->cf_oeste->in_val(rede[1][0]->val_cf_leste_to_oeste_wire);
-	//ack
-	rede[1][1]->cf_oeste->in_ack(rede[1][0]->ack_cf_leste_to_oeste_wire);
-	
-	// Roteador 4 para roteador 2
-	//Val
-	rede[0][1]->cf_sul->in_val(rede[1][1]->val_cf_norte_to_sul_wire);
-	//ack
-	rede[0][1]->cf_sul->in_ack(rede[1][1]->ack_cf_norte_to_sul_wire);
-
-	// Roteador 2 para roteador 4
-	//Val
-	rede[1][1]->cf_norte->in_val(rede[0][1]->val_cf_sul_to_norte_wire);
-	//ack
-	rede[1][1]->cf_norte->in_ack(rede[0][1]->ack_cf_sul_to_norte_wire);
-	
-	// Roteador 3 para roteador 1
-	//Val	
-	rede[0][0]->cf_sul->in_val(rede[1][0]->val_cf_norte_to_sul_wire);
-	//ack	
-	rede[0][0]->cf_sul->in_ack(rede[1][0]->ack_cf_norte_to_sul_wire);
-
-	// Roteador 1 para roteador 3
-	//Val
-	rede[1][0]->cf_norte->in_val(rede[0][0]->val_cf_sul_to_norte_wire);
-	//ack
-	rede[1][0]->cf_norte->in_ack(rede[0][0]->ack_cf_sul_to_norte_wire);
-	
 	//Setando as Cordenadas dos roteadores Ex.: roteador1 se encontra em rede[0][0]
 	for (int x = 0; x < ALTURA_REDE; ++x){
 		for (int y = 0; y < LARGURA_REDE; ++y) {	
