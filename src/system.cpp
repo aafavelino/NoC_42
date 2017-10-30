@@ -4,21 +4,21 @@ void SYSTEM::comunicacao()
 {
 	Flit flit[1];
 	flit[0].cordenadas_f.x = 1;
-	flit[0].cordenadas_f.y = 1;
+	flit[0].cordenadas_f.y = 0;
 
 	//Setando as cordenadas do primeiro flit
-	rede[0][0]->roteamento_leste.cordenada_destino.x =  flit[0].cordenadas_f.x;
-	rede[0][0]->roteamento_leste.cordenada_destino.y =  flit[0].cordenadas_f.y;
+	rede[0][0]->roteamento_sul.cordenada_destino.x =  flit[0].cordenadas_f.x;
+	rede[0][0]->roteamento_sul.cordenada_destino.y =  flit[0].cordenadas_f.y;
 	//Alocando o flit no buffer
-	rede[0][0]->buffer_leste->din =  flit[0];
+	rede[0][0]->buffer_sul->din =  flit[0];
 	//Roteando
-	rede[0][0]->roteamento_leste.rotear_xy();
+	rede[0][0]->roteamento_sul.rotear_xy();
 	//Recebendo na porta destino do arbitro 
 	rede[0][0]->arbitro_centralizado.portaDestino = rede[0][0]->roteamento_norte.portaDestino;
 	//Colocando no buffer circular
 	rede[0][0]->arbitro_centralizado.setPrioridade();
 
-	rede[0][0]->cf_saida_leste->val.write(1);
+	rede[0][0]->cf_saida_sul->val.write(1);
 
 	sc_start();
 
@@ -32,12 +32,12 @@ while(true){
 		rede[0][1]->buffer_oeste->add();
 		rede[0][1]->roteamento_oeste.cordenada_destino.x =  rede[0][1]->buffer_oeste->din.cordenadas_f.x;
 		rede[0][1]->roteamento_oeste.cordenada_destino.y =  rede[0][1]->buffer_oeste->din.cordenadas_f.y;
-		cout << "->>>>>>>>>>>>>>>>>>>>>>>>>>> " << rede[0][1]->buffer_oeste->din.cordenadas_f.x << " " << rede[0][1]->buffer_oeste->din.cordenadas_f.y  << endl;
-		cout << "->>>>>>>>>>>>>>>>>>>>>>>>>>> " << rede[0][1]->roteamento_oeste.cordenada_destino.x << " " << rede[0][1]->roteamento_oeste.cordenada_destino.y  << endl;
+		//cout << "->>>>>>>>>>>>>>>>>>>>>>>>>>> " << rede[0][1]->buffer_oeste->din.cordenadas_f.x << " " << rede[0][1]->buffer_oeste->din.cordenadas_f.y  << endl;
+		//cout << "->>>>>>>>>>>>>>>>>>>>>>>>>>> " << rede[0][1]->roteamento_oeste.cordenada_destino.x << " " << rede[0][1]->roteamento_oeste.cordenada_destino.y  << endl;
 		
 		rede[0][1]->roteamento_oeste.rotear_xy();
 
-		cout << "->>>>>>>>>>>>>>>>>>>>>>>>>>> " << rede[0][1]->roteamento_oeste.cordenada_destino.x << " " << rede[0][1]->roteamento_oeste.cordenada_destino.y  << endl;
+		//cout << "->>>>>>>>>>>>>>>>>>>>>>>>>>> " << rede[0][1]->roteamento_oeste.cordenada_destino.x << " " << rede[0][1]->roteamento_oeste.cordenada_destino.y  << endl;
 	
 		rede[0][1]->arbitro_centralizado.portaDestino = rede[0][1]->roteamento_oeste.portaDestino;
 		rede[0][1]->arbitro_centralizado.setPrioridade();
@@ -54,8 +54,12 @@ while(true){
 
 
 		} else {
-			if (rede[0][1]->arbitro_centralizado.portaDestino == 2)
+			if (rede[0][1]->arbitro_centralizado.portaDestino == 2) {
 				rede[0][1]->cf_saida_sul->val.write(1);
+				rede[0][1]->buffer_sul->din = rede[0][1]->buffer_oeste->flits.front();
+				rede[0][1]->buffer_oeste->remove();
+				rede[0][1]->buffer_sul->add();
+			}
 			if(sc_pending_activity())
   				sc_start();
 			
@@ -86,8 +90,12 @@ while(true){
 			rede[1][0]->buffer_norte->remove();
 			rede[1][0]->buffer_local->add();
 		} else {
-			if (rede[1][0]->arbitro_centralizado.portaDestino == 1)
+			if (rede[1][0]->arbitro_centralizado.portaDestino == 1) {
 				rede[1][0]->cf_saida_leste->val.write(1);
+				rede[1][0]->buffer_leste->din = rede[0][1]->buffer_norte->flits.front();
+				rede[1][0]->buffer_norte->remove();
+				rede[1][0]->buffer_leste->add();
+			}
 			if(sc_pending_activity())
   				sc_start();
 
@@ -107,7 +115,8 @@ while(true){
 	
 		rede[1][1]->arbitro_centralizado.portaDestino = rede[1][1]->roteamento_norte.portaDestino;
 		rede[1][1]->arbitro_centralizado.setPrioridade();
-
+		cout << rede[1][1]->roteamento_norte.cordenada.x << " " << rede[1][1]->buffer_norte->din.cordenadas_f.x << endl;
+		cout << rede[1][1]->roteamento_norte.cordenada.y << " " << rede[1][1]->buffer_norte->din.cordenadas_f.y << endl;
 		if ((rede[1][1]->roteamento_norte.cordenada.x ==  rede[1][1]->buffer_norte->din.cordenadas_f.x) and (rede[1][1]->roteamento_norte.cordenada.y ==  rede[1][1]->buffer_norte->din.cordenadas_f.y))
 		{
 			cout << "Chegou..." << endl;
@@ -115,8 +124,12 @@ while(true){
 			rede[1][1]->buffer_norte->remove();
 			rede[1][1]->buffer_local->add();
 		} else {
-			if (rede[1][1]->arbitro_centralizado.portaDestino == 3)
+			if (rede[1][1]->arbitro_centralizado.portaDestino == 3) {
 				rede[1][1]->cf_saida_oeste->val.write(1);
+				rede[1][1]->buffer_oeste->din = rede[1][1]->buffer_norte->flits.front();
+				rede[1][1]->buffer_norte->remove();
+				rede[1][1]->buffer_oeste->add();
+			}
 			if(sc_pending_activity())
   				sc_start();
 		}
@@ -146,8 +159,12 @@ while(true){
 			rede[0][0]->buffer_local->add();			
 
 		} else {
-			if (rede[0][0]->arbitro_centralizado.portaDestino == 2)
+			if (rede[0][0]->arbitro_centralizado.portaDestino == 2) {
 				rede[0][0]->cf_saida_sul->val.write(1);		
+				rede[0][0]->buffer_sul->din = rede[0][0]->buffer_leste->flits.front();
+				rede[0][0]->buffer_leste->remove();
+				rede[0][0]->buffer_sul->add();
+			}
 			if(sc_pending_activity())
   				sc_start();
 		}
@@ -180,8 +197,12 @@ while(true){
 			rede[0][1]->buffer_sul->remove();
 			rede[0][1]->buffer_local->add();
 		} else {
-			if (rede[0][1]->arbitro_centralizado.portaDestino == 3)
+			if (rede[0][1]->arbitro_centralizado.portaDestino == 3) {
 				rede[0][1]->cf_saida_oeste->val.write(1);
+				rede[0][1]->buffer_oeste->din = rede[0][1]->buffer_sul->flits.front();
+				rede[0][1]->buffer_sul->remove();
+				rede[0][1]->buffer_oeste->add();
+			}
 			if(sc_pending_activity())
   				sc_start();
 		}
@@ -212,8 +233,12 @@ while(true){
 			rede[1][0]->buffer_leste->remove();
 			rede[1][0]->buffer_local->add();
 		} else {
-			if (rede[1][0]->arbitro_centralizado.portaDestino == 0)
+			if (rede[1][0]->arbitro_centralizado.portaDestino == 0) {
 				rede[1][0]->cf_saida_norte->val.write(1);
+				rede[1][0]->buffer_norte->din = rede[1][0]->buffer_leste->flits.front();
+				rede[1][0]->buffer_leste->remove();
+				rede[1][0]->buffer_norte->add();				
+			}
 			if(sc_pending_activity())
   				sc_start();
 		}
@@ -245,8 +270,12 @@ while(true){
 			rede[0][0]->buffer_sul->remove();
 			rede[0][0]->buffer_local->add();
 		} else {
-			if (rede[0][0]->arbitro_centralizado.portaDestino == 1)
+			if (rede[0][0]->arbitro_centralizado.portaDestino == 1){
 				rede[0][0]->cf_saida_leste->val.write(1);
+				rede[0][0]->buffer_leste->din = rede[0][0]->buffer_sul->flits.front();
+				rede[0][0]->buffer_sul->remove();
+				rede[0][0]->buffer_leste->add();				
+			}
 			if(sc_pending_activity())
   				sc_start();
 		}
@@ -277,8 +306,12 @@ while(true){
 			rede[1][0]->buffer_oeste->remove();
 			rede[1][0]->buffer_local->add();			
 		} else {
-			if (rede[1][1]->arbitro_centralizado.portaDestino == 1)
+			if (rede[1][1]->arbitro_centralizado.portaDestino == 1){
 				rede[1][1]->cf_saida_norte->val.write(1);
+				rede[1][0]->buffer_norte->din = rede[0][1]->buffer_oeste->flits.front();
+				rede[1][0]->buffer_oeste->remove();
+				rede[1][0]->buffer_norte->add();				
+			}
 			if(sc_pending_activity())
   				sc_start();
 		}
