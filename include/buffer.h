@@ -31,6 +31,7 @@ public:
 	int isEmpty();
 
 	SC_CTOR(Buffer) {
+		this->length = 5;
         SC_METHOD(add);
         SC_METHOD(remove);
     }

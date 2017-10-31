@@ -3,7 +3,7 @@
 void roteador::execute() {
 	if (cf_leste->in_val.read() == 1)
 	{
-		//std::cout << "leste" << endl;
+		std::cout << "leste" << endl;
 		cf_leste->out_cf_buffer.write(1);
 		if(sc_pending_activity())
   				sc_start();
@@ -17,7 +17,7 @@ void roteador::execute() {
 	} 
 	if (cf_oeste->in_val.read() == 1)
 	{
-		//std::cout << "oeste" << endl;
+		std::cout << "oeste" << endl;
 		cf_oeste->out_cf_buffer.write(1);
 		if(sc_pending_activity())
   				sc_start();
@@ -30,7 +30,7 @@ void roteador::execute() {
 	} 
 	if (cf_norte->in_val.read() == 1)
 	{
-		//std::cout << "norte" << endl;
+		std::cout << "norte" << endl;
 		cf_norte->out_cf_buffer.write(1);
 		if(sc_pending_activity())
   				sc_start();
@@ -45,7 +45,7 @@ void roteador::execute() {
 	if (cf_sul->in_val.read() == 1)
 	{
 		/* EXECUTA ALGUMA COISA AQUI */
-		//std::cout << "sul" << endl;
+		std::cout << "sul" << endl;
 		cf_sul->out_cf_buffer.write(1);
 		if(sc_pending_activity())
   				sc_start();
