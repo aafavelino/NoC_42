@@ -81,7 +81,7 @@ SC_MODULE (roteador)
 	Buffer *buffer_local;
 
 	void execute();
-	//void gravar();
+
 
 	SC_CTOR(roteador) { 
 		cf_norte = new controle_fluxo("cf_buffer_Norte");
@@ -151,12 +151,7 @@ SC_MODULE (roteador)
 	        sensitive << cf_leste->in_val; 
 	        sensitive << cf_oeste->in_val; 
 	        sensitive << cf_local->in_val;	
-/*
-        SC_METHOD(gravar);
-			sensitive << cf_saida_norte->ack;
-			sensitive << cf_saida_sul->ack;
-			sensitive << cf_saida_leste->ack;
-			sensitive << cf_saida_oeste->ack;*/
+
     }
 
 	

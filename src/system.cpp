@@ -5,26 +5,41 @@ void SYSTEM::comunicacao()
 
 
 	Flit flit[1];
-	flit[0].cordenadas_f.x = 1;
+	flit[0].cordenadas_f.x = 0;
 	flit[0].cordenadas_f.y = 0;
 
 	//Setando as cordenadas do primeiro flit
-	rede[0][0]->roteamento_sul.cordenada_destino.x =  flit[0].cordenadas_f.x;
-	rede[0][0]->roteamento_sul.cordenada_destino.y =  flit[0].cordenadas_f.y;
+	rede[4][4]->roteamento_oeste.cordenada_destino.x =  flit[0].cordenadas_f.x;
+	rede[4][4]->roteamento_oeste.cordenada_destino.y =  flit[0].cordenadas_f.y;
 	//Alocando o flit no buffer
-	rede[0][0]->buffer_sul->din =  flit[0];
+	rede[4][4]->buffer_oeste->din =  flit[0];
 	//Roteando
-	rede[0][0]->roteamento_sul.rotear_xy();
+	rede[4][4]->roteamento_oeste.rotear_xy();
 	//Recebendo na porta destino do arbitro 
-	rede[0][0]->arbitro_centralizado.portaDestino = rede[0][0]->roteamento_sul.portaDestino;
+	rede[4][4]->arbitro_centralizado.portaDestino = rede[4][4]->roteamento_oeste.portaDestino;
 	//Colocando no buffer circular
-	rede[0][0]->arbitro_centralizado.setPrioridade();
+	rede[4][4]->arbitro_centralizado.setPrioridade();
 
-	rede[0][0]->cf_saida_sul->val.write(1);
+	rede[4][4]->cf_saida_oeste->val.write(1);
+sc_start();
 
-	//if(sc_pending_activity())
+	//Setando as cordenadas do primeiro flit
+	rede[0][4]->roteamento_oeste.cordenada_destino.x =  flit[0].cordenadas_f.x;
+	rede[0][4]->roteamento_oeste.cordenada_destino.y =  flit[0].cordenadas_f.y;
+	//Alocando o flit no buffer
+	rede[0][4]->buffer_oeste->din =  flit[0];
+	//Roteando
+	rede[0][4]->roteamento_oeste.rotear_xy();
+	//Recebendo na porta destino do arbitro 
+	rede[0][4]->arbitro_centralizado.portaDestino = rede[0][4]->roteamento_oeste.portaDestino;
+	//Colocando no buffer circular
+	rede[0][4]->arbitro_centralizado.setPrioridade();
+
+	rede[0][4]->cf_saida_oeste->val.write(1);	
+
+	if(sc_pending_activity())
 		sc_start();
-
+while(true){
 for (int y = 0; y < ALTURA_REDE; ++y)
 	{
 		for (int x = 0; x < LARGURA_REDE; ++x)
@@ -33,6 +48,8 @@ for (int y = 0; y < ALTURA_REDE; ++y)
 
 			if (rede[y][x]->cf_saida_sul->ack.read() == 1)
 			{
+				rede[y][x]->ack_cf_sul_to_norte_wire = 0;
+				sc_start();
 				cout << "rede[" << y << "][" << x << "]->cf_saida_sul->ack.read()" << rede[y][x]->cf_saida_sul->ack.read() << endl;
 
 				rede[y+1][x]->buffer_norte->din = rede[y][x]->buffer_sul->din;
@@ -77,6 +94,8 @@ for (int y = 0; y < ALTURA_REDE; ++y)
 
 			if (rede[y][x]->cf_saida_leste->ack.read() == 1)
 			{
+				rede[y][x]->ack_cf_leste_to_oeste_wire = 0;
+				sc_start();
 				cout << "rede[" << y << "][" << x << "]->cf_saida_leste->ack.read()" << rede[y][x]->cf_saida_leste->ack.read() << endl;
 
 				rede[y][x+1]->buffer_oeste->din = rede[y][x]->buffer_leste->din;
@@ -118,6 +137,8 @@ for (int y = 0; y < ALTURA_REDE; ++y)
 
 			if (rede[y][x]->cf_saida_oeste->ack.read() == 1)
 			{
+				rede[y][x]->ack_cf_oeste_to_leste_wire = 0;
+				sc_start();				
 				cout << "rede[" << y << "][" << x << "]->cf_saida_oeste->ack.read()" << rede[y][x]->cf_saida_oeste->ack.read() << endl;
 
 				rede[y][x-1]->buffer_leste->din = rede[y][x]->buffer_oeste->din;
@@ -162,6 +183,8 @@ for (int y = 0; y < ALTURA_REDE; ++y)
 
 			if (rede[y][x]->cf_saida_norte->ack.read() == 1)
 			{
+				rede[y][x]->ack_cf_norte_to_sul_wire = 0;
+				sc_start();				
 				cout << "rede[" << y << "][" << x << "]->cf_saida_norte->ack.read()" << rede[y][x]->cf_saida_norte->ack.read() << endl;
 
 				rede[y-1][x]->buffer_sul->din = rede[y][x]->buffer_norte->din;
@@ -207,5 +230,6 @@ for (int y = 0; y < ALTURA_REDE; ++y)
 	}
 			//if (sc_pending_activity())
 			//sc_start();
+}
 	
 }

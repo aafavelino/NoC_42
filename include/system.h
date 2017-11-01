@@ -7,8 +7,8 @@
 
 
 
-#define LARGURA_REDE 2
-#define ALTURA_REDE 2
+#define LARGURA_REDE 5
+#define ALTURA_REDE 5
 
 #define NORTH 0
 #define EAST 1
