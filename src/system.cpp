@@ -1,12 +1,14 @@
 #include "system.h"
-
 void SYSTEM::comunicacao() 
 {
 
 
-	Flit flit[1];
+	Flit flit[2];
 	flit[0].cordenadas_f.x = 0;
 	flit[0].cordenadas_f.y = 0;
+	flit[1].cordenadas_f.x = 0;
+	flit[1].cordenadas_f.y = 1;
+
 
 	//Setando as cordenadas do primeiro flit
 	rede[4][4]->roteamento_oeste.cordenada_destino.x =  flit[0].cordenadas_f.x;
@@ -21,13 +23,12 @@ void SYSTEM::comunicacao()
 	rede[4][4]->arbitro_centralizado.setPrioridade();
 
 	rede[4][4]->cf_saida_oeste->val.write(1);
-sc_start();
 
 	//Setando as cordenadas do primeiro flit
-	rede[0][4]->roteamento_oeste.cordenada_destino.x =  flit[0].cordenadas_f.x;
-	rede[0][4]->roteamento_oeste.cordenada_destino.y =  flit[0].cordenadas_f.y;
+	rede[0][4]->roteamento_oeste.cordenada_destino.x =  flit[1].cordenadas_f.x;
+	rede[0][4]->roteamento_oeste.cordenada_destino.y =  flit[1].cordenadas_f.y;
 	//Alocando o flit no buffer
-	rede[0][4]->buffer_oeste->din =  flit[0];
+	rede[0][4]->buffer_oeste->din =  flit[1];
 	//Roteando
 	rede[0][4]->roteamento_oeste.rotear_xy();
 	//Recebendo na porta destino do arbitro 
@@ -39,7 +40,8 @@ sc_start();
 
 	if(sc_pending_activity())
 		sc_start();
-while(true){
+
+
 for (int y = 0; y < ALTURA_REDE; ++y)
 	{
 		for (int x = 0; x < LARGURA_REDE; ++x)
@@ -48,9 +50,7 @@ for (int y = 0; y < ALTURA_REDE; ++y)
 
 			if (rede[y][x]->cf_saida_sul->ack.read() == 1)
 			{
-				rede[y][x]->ack_cf_sul_to_norte_wire = 0;
-				sc_start();
-				cout << "rede[" << y << "][" << x << "]->cf_saida_sul->ack.read()" << rede[y][x]->cf_saida_sul->ack.read() << endl;
+				cout << "[" << y << "][" << x << "]"  << endl;
 
 				rede[y+1][x]->buffer_norte->din = rede[y][x]->buffer_sul->din;
 				rede[y+1][x]->buffer_norte->add();
@@ -85,18 +85,14 @@ for (int y = 0; y < ALTURA_REDE; ++y)
 						rede[y+1][x]->buffer_sul->din =  rede[y][x]->buffer_sul->din;
 
 					}
-
-					if (sc_pending_activity())
-						 sc_start();
-
-				}				
+				}
+				rede[y][x]->ack_cf_sul_to_norte_wire = 0;							
 			}
 
 			if (rede[y][x]->cf_saida_leste->ack.read() == 1)
 			{
-				rede[y][x]->ack_cf_leste_to_oeste_wire = 0;
-				sc_start();
-				cout << "rede[" << y << "][" << x << "]->cf_saida_leste->ack.read()" << rede[y][x]->cf_saida_leste->ack.read() << endl;
+				
+				cout << "[" << y << "][" << x << "]"  << endl;
 
 				rede[y][x+1]->buffer_oeste->din = rede[y][x]->buffer_leste->din;
 				rede[y][x+1]->buffer_oeste->add();
@@ -128,18 +124,14 @@ for (int y = 0; y < ALTURA_REDE; ++y)
 						rede[y][x+1]->cf_saida_sul->val.write(1);
 						rede[y][x+1]->buffer_sul->din =  rede[y][x]->buffer_leste->din;
 					}
-
-					if (sc_pending_activity())
-						sc_start();
-
-				}				
+				}		
+				rede[y][x]->ack_cf_leste_to_oeste_wire = 0;	
 			}
 
 			if (rede[y][x]->cf_saida_oeste->ack.read() == 1)
 			{
-				rede[y][x]->ack_cf_oeste_to_leste_wire = 0;
-				sc_start();				
-				cout << "rede[" << y << "][" << x << "]->cf_saida_oeste->ack.read()" << rede[y][x]->cf_saida_oeste->ack.read() << endl;
+			
+				cout << "[" << y << "][" << x << "]"  << endl;
 
 				rede[y][x-1]->buffer_leste->din = rede[y][x]->buffer_oeste->din;
 				rede[y][x-1]->buffer_leste->add();
@@ -173,19 +165,14 @@ for (int y = 0; y < ALTURA_REDE; ++y)
 						rede[y][x-1]->buffer_sul->din =  rede[y][x]->buffer_oeste->din;
 
 					}
-
-					if (sc_pending_activity())
-						sc_start();
-
-				}					
-
+				}	
+				rede[y][x]->ack_cf_oeste_to_leste_wire = 0;
 			}
 
 			if (rede[y][x]->cf_saida_norte->ack.read() == 1)
 			{
-				rede[y][x]->ack_cf_norte_to_sul_wire = 0;
-				sc_start();				
-				cout << "rede[" << y << "][" << x << "]->cf_saida_norte->ack.read()" << rede[y][x]->cf_saida_norte->ack.read() << endl;
+	
+				cout << "[" << y << "][" << x << "]"  << endl;
 
 				rede[y-1][x]->buffer_sul->din = rede[y][x]->buffer_norte->din;
 				rede[y-1][x]->buffer_sul->add();
@@ -217,19 +204,9 @@ for (int y = 0; y < ALTURA_REDE; ++y)
 						rede[y-1][x]->cf_saida_norte->val.write(1);
 						rede[y-1][x]->buffer_norte->din =  rede[y][x]->buffer_norte->din;
 					}
-
-					if (sc_pending_activity())
-						sc_start();
-
 				}
+				rede[y][x]->ack_cf_norte_to_sul_wire = 0;
 			}			
-
-
 		}
-
-	}
-			//if (sc_pending_activity())
-			//sc_start();
-}
-	
+	}		
 }

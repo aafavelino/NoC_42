@@ -59,32 +59,32 @@ SC_MODULE (SYSTEM)
 				if (i == 0)
 				{	
 					
-					//cout << "rede[" << i << "][" << j << "]->cf_norte->in_val(ground_connection_val[" << cont<< "])"  << endl;
-					//cout << "rede[" << i << "][" << j << "]->cf_norte->in_ack(ground_connection_val[" << cont<< "])"  << endl;
+					cout << "rede[" << i << "][" << j << "]->cf_norte->in_val(ground_connection_val[" << cont<< "])"  << endl;
+					cout << "rede[" << i << "][" << j << "]->cf_norte->in_ack(ground_connection_val[" << cont<< "])"  << endl;
 					rede[i][j]->cf_norte->in_val(ground_connection_val[cont]);
 					rede[i][j]->cf_norte->in_ack(ground_connection_ack[cont]);
 					cont++;
 				}
 				if (j == 0)
 				{	
-					//cout << "rede[" << i << "][" << j << "]->cf_oeste->in_val(ground_connection_val[" << cont<< "])"  << endl;
-					//cout << "rede[" << i << "][" << j << "]->cf_oeste->in_ack(ground_connection_val[" << cont<< "])"  << endl;				
+					cout << "rede[" << i << "][" << j << "]->cf_oeste->in_val(ground_connection_val[" << cont<< "])"  << endl;
+					cout << "rede[" << i << "][" << j << "]->cf_oeste->in_ack(ground_connection_val[" << cont<< "])"  << endl;				
 					rede[i][j]->cf_oeste->in_val(ground_connection_val[cont]);
 					rede[i][j]->cf_oeste->in_ack(ground_connection_ack[cont]);
 					cont++;
 				}
 				if (i == ALTURA_REDE-1)
 				{	
-					//cout << "rede[" << i << "][" << j << "]->cf_sul->in_val(ground_connection_val[" << cont<< "])"  << endl;
-					//cout << "rede[" << i << "][" << j << "]->cf_sul->in_ack(ground_connection_val[" << cont<< "])"  << endl;				
+					cout << "rede[" << i << "][" << j << "]->cf_sul->in_val(ground_connection_val[" << cont<< "])"  << endl;
+					cout << "rede[" << i << "][" << j << "]->cf_sul->in_ack(ground_connection_val[" << cont<< "])"  << endl;				
 					rede[i][j]->cf_sul->in_val(ground_connection_val[cont]);
 					rede[i][j]->cf_sul->in_ack(ground_connection_ack[cont]);
 					cont++;
 				}
 				if (j == LARGURA_REDE-1)
 				{	
-					//cout << "rede[" << i << "][" << j << "]->cf_leste->in_val(ground_connection_val[" << cont<< "])"  << endl;
-					//cout << "rede[" << i << "][" << j << "]->cf_leste->in_ack(ground_connection_val[" << cont<< "])"  << endl;				
+					cout << "rede[" << i << "][" << j << "]->cf_leste->in_val(ground_connection_val[" << cont<< "])"  << endl;
+					cout << "rede[" << i << "][" << j << "]->cf_leste->in_ack(ground_connection_val[" << cont<< "])"  << endl;				
 					rede[i][j]->cf_leste->in_val(ground_connection_val[cont]);
 					rede[i][j]->cf_leste->in_ack(ground_connection_ack[cont]);
 					cont++;
@@ -138,6 +138,16 @@ SC_MODULE (SYSTEM)
 			}
 		}
 		SC_METHOD(comunicacao);
+		for (int x = 0; x < ALTURA_REDE; ++x){
+			for (int y = 0; y < LARGURA_REDE; ++y) {
+				sensitive << rede[x][y]->buffer_norte->in_bf_controle_fluxo;
+				sensitive << rede[x][y]->buffer_sul->in_bf_controle_fluxo;
+				sensitive << rede[x][y]->buffer_leste->in_bf_controle_fluxo;
+				sensitive << rede[x][y]->buffer_oeste->in_bf_controle_fluxo;
+			}
+		}
+			
+			
 	}
 
 };

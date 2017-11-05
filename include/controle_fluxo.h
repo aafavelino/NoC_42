@@ -14,9 +14,6 @@ SC_MODULE (controle_fluxo)
 	sc_in <int> in_cf_buffer; //Entrada que vem do buffer
 
 	SC_CTOR(controle_fluxo){
-
-
-		
 	}
 	
 };

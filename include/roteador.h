@@ -80,7 +80,9 @@ SC_MODULE (roteador)
 	Buffer *buffer_oeste;
 	Buffer *buffer_local;
 
-	void execute();
+	void execute_controle_fluxo();
+	void execute_buffer();
+	void execute_buffer_retorno();
 
 
 	SC_CTOR(roteador) { 
@@ -145,12 +147,29 @@ SC_MODULE (roteador)
 
 
 
-        SC_METHOD(execute);
-	        sensitive << cf_sul->in_val; 
+        SC_METHOD(execute_controle_fluxo);
 	        sensitive << cf_norte->in_val; 
+	        sensitive << cf_sul->in_val;
 	        sensitive << cf_leste->in_val; 
 	        sensitive << cf_oeste->in_val; 
 	        sensitive << cf_local->in_val;	
+        
+
+        SC_METHOD(execute_buffer);
+        	sensitive << buffer_norte->in_bf_controle_fluxo;
+        	sensitive << buffer_sul->in_bf_controle_fluxo;
+        	sensitive << buffer_leste->in_bf_controle_fluxo;
+        	sensitive << buffer_oeste->in_bf_controle_fluxo;
+        	sensitive << buffer_local->in_bf_controle_fluxo;
+        
+        SC_METHOD(execute_buffer_retorno);
+        	sensitive << cf_norte->in_cf_buffer;
+        	sensitive << cf_sul->in_cf_buffer;
+        	sensitive << cf_leste->in_cf_buffer;
+        	sensitive << cf_oeste->in_cf_buffer;
+        	sensitive << cf_local->in_cf_buffer;
+ 
+
 
     }
 

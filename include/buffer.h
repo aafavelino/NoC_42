@@ -20,8 +20,7 @@ public:
 
 	sc_in <int>  in_bf_controle_fluxo; //Entrada que vem do controle de fluxo
 	sc_out<int>  out_bf_controle_fluxo; //Saída que volta para o buffer
-	sc_int<32>   rd; //Entrada que vem do chaveamento
-	sc_int<32>   rok; //Saída ?
+
 	
 	sc_int<32> length;
 
