@@ -17,7 +17,6 @@ public:
 	int buffercircular[5];
 
 	Arbitro();
-	~Arbitro();
 	void setPrioridade();
 	int checkPrioridade();
 	

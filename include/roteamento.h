@@ -13,7 +13,6 @@
 class Roteamento 
 {
 public:
-	//Acho que falta colocar o n+2
 	Flit in_data; //n+2
 
 	struct cordenada_local

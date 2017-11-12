@@ -5,10 +5,6 @@ Arbitro::Arbitro() {
 		buffercircular[i] = 0;
 }
 
-Arbitro::~Arbitro() {
-	
-}
-
 void Arbitro::setPrioridade()
 {
 	if (buffercircular[portaDestino] == 0)

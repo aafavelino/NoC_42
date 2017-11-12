@@ -11,7 +11,6 @@ public:
 	int payload;
 	struct cordenadas
 	{
-	public:
 		int x;
 		int y;
 	}cordenadas_f;

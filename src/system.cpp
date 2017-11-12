@@ -42,7 +42,7 @@ void SYSTEM::comunicacao()
 		sc_start();
 
 
-for (int y = 0; y < ALTURA_REDE; ++y)
+	for (int y = 0; y < ALTURA_REDE; ++y)
 	{
 		for (int x = 0; x < LARGURA_REDE; ++x)
 		{	
@@ -58,7 +58,6 @@ for (int y = 0; y < ALTURA_REDE; ++y)
 				rede[y+1][x]->roteamento_norte.cordenada_destino.y = rede[y+1][x]->buffer_norte->din.cordenadas_f.y;
 				
 				rede[y+1][x]->roteamento_norte.rotear_xy();
-				cout << "rede norte" << endl;
 
 				rede[y+1][x]->arbitro_centralizado.portaDestino = rede[y+1][x]->roteamento_norte.portaDestino;
 				rede[y+1][x]->arbitro_centralizado.setPrioridade();
@@ -100,7 +99,6 @@ for (int y = 0; y < ALTURA_REDE; ++y)
 				rede[y][x+1]->roteamento_oeste.cordenada_destino.y = rede[y][x+1]->buffer_oeste->din.cordenadas_f.y;
 				
 				rede[y][x+1]->roteamento_oeste.rotear_xy();
-				cout << "opaaa " << endl;
 
 				rede[y][x+1]->arbitro_centralizado.portaDestino = rede[y][x+1]->roteamento_oeste.portaDestino;
 				rede[y][x+1]->arbitro_centralizado.setPrioridade();
