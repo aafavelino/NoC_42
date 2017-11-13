@@ -10,10 +10,10 @@
 #define LARGURA_REDE 5
 #define ALTURA_REDE 5
 
-#define NORTH 0
-#define EAST 1
-#define SOUTH 2
-#define WEST 3
+#define NORTE 0
+#define LESTE 1
+#define SUL 2
+#define OESTE 3
 #define LOCAL 4
 
 using namespace std;
@@ -30,6 +30,7 @@ SC_MODULE (SYSTEM)
 	sc_signal<int> ground_connection_ack[100];
 
 	void comunicacao ();
+	void injeta_flits();
 
 	SC_CTOR(SYSTEM) 
 	{ 
@@ -118,6 +119,7 @@ SC_MODULE (SYSTEM)
 					rede[i][j]->cf_norte->in_val(rede[i-1][j]->val_cf_sul_to_norte_wire);
 					rede[i][j]->cf_norte->in_ack(rede[i-1][j]->ack_cf_sul_to_norte_wire);
 				}
+
 
 			}
 		}

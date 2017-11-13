@@ -15,19 +15,19 @@ int Arbitro::checkPrioridade()
 {
 	for (int i = 0; i < 5; ++i)
 	{
-		if (buffercircular[i] == 1 and i == 4)
+		if (buffercircular[i] == 1 and i == LOCAL)
 		{
 			return i;
-		} else if (buffercircular[i] == 1 and i == 3)
+		} else if (buffercircular[i] == 1 and i == OESTE)
 		{
 			return i;
-		} else if (buffercircular[i] == 1 and i == 2)
+		} else if (buffercircular[i] == 1 and i == SUL)
 		{
 			return i;
-		} else if (buffercircular[i] == 1 and i == 1)
+		} else if (buffercircular[i] == 1 and i == LESTE)
 		{
 			return i;
-		} else if (buffercircular[i] == 1 and i == 0)
+		} else if (buffercircular[i] == 1 and i == NORTE)
 		{
 			return i;
 		}

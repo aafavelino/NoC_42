@@ -2,45 +2,8 @@
 void SYSTEM::comunicacao() 
 {
 
-
-	Flit flit[2];
-	flit[0].cordenadas_f.x = 0;
-	flit[0].cordenadas_f.y = 0;
-	flit[1].cordenadas_f.x = 0;
-	flit[1].cordenadas_f.y = 1;
-
-
-	//Setando as cordenadas do primeiro flit
-	rede[4][4]->roteamento_oeste.cordenada_destino.x =  flit[0].cordenadas_f.x;
-	rede[4][4]->roteamento_oeste.cordenada_destino.y =  flit[0].cordenadas_f.y;
-	//Alocando o flit no buffer
-	rede[4][4]->buffer_oeste->din =  flit[0];
-	//Roteando
-	rede[4][4]->roteamento_oeste.rotear_xy();
-	//Recebendo na porta destino do arbitro 
-	rede[4][4]->arbitro_centralizado.portaDestino = rede[4][4]->roteamento_oeste.portaDestino;
-	//Colocando no buffer circular
-	rede[4][4]->arbitro_centralizado.setPrioridade();
-
-	rede[4][4]->cf_saida_oeste->val.write(1);
-
-	//Setando as cordenadas do primeiro flit
-	rede[0][4]->roteamento_oeste.cordenada_destino.x =  flit[1].cordenadas_f.x;
-	rede[0][4]->roteamento_oeste.cordenada_destino.y =  flit[1].cordenadas_f.y;
-	//Alocando o flit no buffer
-	rede[0][4]->buffer_oeste->din =  flit[1];
-	//Roteando
-	rede[0][4]->roteamento_oeste.rotear_xy();
-	//Recebendo na porta destino do arbitro 
-	rede[0][4]->arbitro_centralizado.portaDestino = rede[0][4]->roteamento_oeste.portaDestino;
-	//Colocando no buffer circular
-	rede[0][4]->arbitro_centralizado.setPrioridade();
-
-	rede[0][4]->cf_saida_oeste->val.write(1);	
-
-	if(sc_pending_activity())
-		sc_start();
-
+	injeta_flits();
+	sc_start();
 
 	for (int y = 0; y < ALTURA_REDE; ++y)
 	{
@@ -62,6 +25,7 @@ void SYSTEM::comunicacao()
 				rede[y+1][x]->arbitro_centralizado.portaDestino = rede[y+1][x]->roteamento_norte.portaDestino;
 				rede[y+1][x]->arbitro_centralizado.setPrioridade();
 
+
 				if ((rede[y+1][x]->roteamento_norte.cordenada.x == rede[y+1][x]->buffer_norte->din.cordenadas_f.x) and (rede[y+1][x]->roteamento_norte.cordenada.y == rede[y+1][x]->buffer_norte->din.cordenadas_f.y))
 				{
 					std::cout << ">>> Chegou..." << std::endl;
@@ -69,17 +33,17 @@ void SYSTEM::comunicacao()
 					rede[y+1][x]->buffer_norte->remove();
 					rede[y+1][x]->buffer_local->add();
 				} else {
-					if (rede[y+1][x]->arbitro_centralizado.portaDestino == WEST){
+					if (rede[y+1][x]->arbitro_centralizado.portaDestino == OESTE){
 						rede[y+1][x]->cf_saida_oeste->val.write(1);
 						rede[y+1][x]->buffer_oeste->din =  rede[y][x]->buffer_sul->din;
 
 					}
-					if (rede[y+1][x]->arbitro_centralizado.portaDestino == EAST){
+					if (rede[y+1][x]->arbitro_centralizado.portaDestino == LESTE){
 						rede[y+1][x]->cf_saida_leste->val.write(1);
 						rede[y+1][x]->buffer_leste->din =  rede[y][x]->buffer_sul->din;
 
 					}
-					if (rede[y+1][x]->arbitro_centralizado.portaDestino == SOUTH){
+					if (rede[y+1][x]->arbitro_centralizado.portaDestino == SUL){
 						rede[y+1][x]->cf_saida_sul->val.write(1);
 						rede[y+1][x]->buffer_sul->din =  rede[y][x]->buffer_sul->din;
 
@@ -110,15 +74,15 @@ void SYSTEM::comunicacao()
 					rede[y][x+1]->buffer_oeste->remove();
 					rede[y][x+1]->buffer_local->add();
 				} else {
-					if (rede[y][x+1]->arbitro_centralizado.portaDestino == NORTH){
+					if (rede[y][x+1]->arbitro_centralizado.portaDestino == NORTE){
 						rede[y][x+1]->cf_saida_norte->val.write(1);
 						rede[y][x+1]->buffer_norte->din =  rede[y][x]->buffer_leste->din;
 					}
-					if (rede[y][x+1]->arbitro_centralizado.portaDestino == EAST){
+					if (rede[y][x+1]->arbitro_centralizado.portaDestino == LESTE){
 						rede[y][x+1]->cf_saida_leste->val.write(1);
 						rede[y][x+1]->buffer_leste->din =  rede[y][x]->buffer_leste->din;
 					} 				
-					if (rede[y][x+1]->arbitro_centralizado.portaDestino == SOUTH){
+					if (rede[y][x+1]->arbitro_centralizado.portaDestino == SUL){
 						rede[y][x+1]->cf_saida_sul->val.write(1);
 						rede[y][x+1]->buffer_sul->din =  rede[y][x]->buffer_leste->din;
 					}
@@ -148,17 +112,17 @@ void SYSTEM::comunicacao()
 					rede[y][x-1]->buffer_leste->remove();
 					rede[y][x-1]->buffer_local->add();
 				} else {
-					if (rede[y][x-1]->arbitro_centralizado.portaDestino == NORTH){
+					if (rede[y][x-1]->arbitro_centralizado.portaDestino == NORTE){
 						rede[y][x-1]->cf_saida_norte->val.write(1);
 						rede[y][x-1]->buffer_norte->din =  rede[y][x]->buffer_oeste->din;
 
 					}
-					if (rede[y][x-1]->arbitro_centralizado.portaDestino == WEST){
+					if (rede[y][x-1]->arbitro_centralizado.portaDestino == OESTE){
 						rede[y][x-1]->cf_saida_oeste->val.write(1);
 						rede[y][x-1]->buffer_oeste->din =  rede[y][x]->buffer_oeste->din;
 
 					}
-					if (rede[y][x-1]->arbitro_centralizado.portaDestino == SOUTH){
+					if (rede[y][x-1]->arbitro_centralizado.portaDestino == SUL){
 						rede[y][x-1]->cf_saida_sul->val.write(1);
 						rede[y][x-1]->buffer_sul->din =  rede[y][x]->buffer_oeste->din;
 
@@ -189,16 +153,16 @@ void SYSTEM::comunicacao()
 					rede[y-1][x]->buffer_sul->remove();
 					rede[y-1][x]->buffer_local->add();
 				} else {
-					if (rede[y-1][x]->arbitro_centralizado.portaDestino == WEST){
+					if (rede[y-1][x]->arbitro_centralizado.portaDestino == OESTE){
 						rede[y-1][x]->cf_saida_oeste->val.write(1);
 						rede[y-1][x]->buffer_oeste->din =  rede[y][x]->buffer_norte->din;
 
 					}
-					if (rede[y-1][x]->arbitro_centralizado.portaDestino == EAST){
+					if (rede[y-1][x]->arbitro_centralizado.portaDestino == LESTE){
 						rede[y-1][x]->cf_saida_leste->val.write(1);
 						rede[y-1][x]->buffer_leste->din =  rede[y][x]->buffer_norte->din;
 					}
-					if (rede[y-1][x]->arbitro_centralizado.portaDestino == NORTH){
+					if (rede[y-1][x]->arbitro_centralizado.portaDestino == NORTE){
 						rede[y-1][x]->cf_saida_norte->val.write(1);
 						rede[y-1][x]->buffer_norte->din =  rede[y][x]->buffer_norte->din;
 					}
@@ -207,4 +171,44 @@ void SYSTEM::comunicacao()
 			}			
 		}
 	}		
+}
+
+void SYSTEM::injeta_flits() {
+	Flit flit[3];
+	flit[0].cordenadas_f.x = 0;
+	flit[0].cordenadas_f.y = 0;
+	flit[1].cordenadas_f.x = 0;
+	flit[1].cordenadas_f.y = 1;
+	flit[2].cordenadas_f.x = 0;
+	flit[2].cordenadas_f.y = 0;
+
+	//Setando as cordenadas do primeiro flit
+	rede[4][4]->roteamento_oeste.cordenada_destino.x =  flit[0].cordenadas_f.x;
+	rede[4][4]->roteamento_oeste.cordenada_destino.y =  flit[0].cordenadas_f.y;
+	//Alocando o flit no buffer
+	rede[4][4]->buffer_oeste->din =  flit[0];
+	//Roteando
+	rede[4][4]->roteamento_oeste.rotear_xy();
+	//Recebendo na porta destino do arbitro 
+	rede[4][4]->arbitro_centralizado.portaDestino = rede[4][4]->roteamento_oeste.portaDestino;
+	//Colocando no buffer circular
+	rede[4][4]->arbitro_centralizado.setPrioridade();
+
+	rede[4][4]->cf_saida_oeste->val.write(1);
+
+	//Setando as cordenadas do primeiro flit
+	rede[0][4]->roteamento_oeste.cordenada_destino.x =  flit[1].cordenadas_f.x;
+	rede[0][4]->roteamento_oeste.cordenada_destino.y =  flit[1].cordenadas_f.y;
+	//Alocando o flit no buffer
+	rede[0][4]->buffer_oeste->din =  flit[1];
+	//Roteando
+	rede[0][4]->roteamento_oeste.rotear_xy();
+	//Recebendo na porta destino do arbitro 
+	rede[0][4]->arbitro_centralizado.portaDestino = rede[0][4]->roteamento_oeste.portaDestino;
+	//Colocando no buffer circular
+	rede[0][4]->arbitro_centralizado.setPrioridade();
+
+	rede[0][4]->cf_saida_oeste->val.write(1);
+
+
 }

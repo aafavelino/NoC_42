@@ -11,10 +11,10 @@
 #include "flit.h"
 #include <time.h>
 
-#define NORTH 0
-#define EAST 1
-#define SOUTH 2
-#define WEST 3
+#define NORTE 0
+#define LESTE 1
+#define SUL 2
+#define OESTE 3
 #define LOCAL 4
 
 

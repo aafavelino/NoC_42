@@ -10,7 +10,6 @@ public:
 	//Vetor de Flits com 10 flits
 	Flit flit[10];
 	Pacote();
-	//~Pacote();
 	
 };
 #endif
