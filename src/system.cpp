@@ -13,7 +13,7 @@ void SYSTEM::comunicacao()
 
 			if (rede[y][x]->cf_saida_sul->ack.read() == 1)
 			{
-				cout << "[" << y << "][" << x << "]"  << endl;
+				printf("[%d][%d]\n",y,x);
 
 				rede[y+1][x]->buffer_norte->din = rede[y][x]->buffer_sul->din;
 				rede[y+1][x]->buffer_norte->add();
@@ -28,7 +28,7 @@ void SYSTEM::comunicacao()
 
 				if ((rede[y+1][x]->roteamento_norte.cordenada.x == rede[y+1][x]->buffer_norte->din.cordenadas_f.x) and (rede[y+1][x]->roteamento_norte.cordenada.y == rede[y+1][x]->buffer_norte->din.cordenadas_f.y))
 				{
-					std::cout << ">>> Chegou..." << std::endl;
+					printf(">>> Chegou...");
 					rede[y+1][x]->buffer_local->din = rede[y+1][x]->buffer_norte->flits.front();
 					rede[y+1][x]->buffer_norte->remove();
 					rede[y+1][x]->buffer_local->add();
@@ -55,7 +55,7 @@ void SYSTEM::comunicacao()
 			if (rede[y][x]->cf_saida_leste->ack.read() == 1)
 			{
 				
-				cout << "[" << y << "][" << x << "]"  << endl;
+				printf("[%d][%d]\n",y,x);
 
 				rede[y][x+1]->buffer_oeste->din = rede[y][x]->buffer_leste->din;
 				rede[y][x+1]->buffer_oeste->add();
@@ -69,7 +69,7 @@ void SYSTEM::comunicacao()
 
 				if ((rede[y][x+1]->roteamento_oeste.cordenada.x == rede[y][x+1]->buffer_oeste->din.cordenadas_f.x) and (rede[y][x+1]->roteamento_oeste.cordenada.y == rede[y][x+1]->buffer_oeste->din.cordenadas_f.y))
 				{
-					std::cout << ">>> Chegou..." << std::endl;
+					printf(">>> Chegou...");
 					rede[y][x+1]->buffer_local->din = rede[y][x+1]->buffer_oeste->flits.front();
 					rede[y][x+1]->buffer_oeste->remove();
 					rede[y][x+1]->buffer_local->add();
@@ -93,7 +93,7 @@ void SYSTEM::comunicacao()
 			if (rede[y][x]->cf_saida_oeste->ack.read() == 1)
 			{
 			
-				cout << "[" << y << "][" << x << "]"  << endl;
+				printf("[%d][%d]\n",y,x);
 
 				rede[y][x-1]->buffer_leste->din = rede[y][x]->buffer_oeste->din;
 				rede[y][x-1]->buffer_leste->add();
@@ -107,7 +107,7 @@ void SYSTEM::comunicacao()
 
 				if ((rede[y][x-1]->roteamento_leste.cordenada.x == rede[y][x-1]->buffer_leste->din.cordenadas_f.x) and (rede[y][x-1]->roteamento_leste.cordenada.y == rede[y][x-1]->buffer_leste->din.cordenadas_f.y))
 				{
-					std::cout << ">>> Chegou..." << std::endl;
+					printf(">>> Chegou...");
 					rede[y][x-1]->buffer_local->din = rede[y][x-1]->buffer_leste->flits.front();
 					rede[y][x-1]->buffer_leste->remove();
 					rede[y][x-1]->buffer_local->add();
@@ -134,7 +134,8 @@ void SYSTEM::comunicacao()
 			if (rede[y][x]->cf_saida_norte->ack.read() == 1)
 			{
 	
-				cout << "[" << y << "][" << x << "]"  << endl;
+				
+				printf("[%d][%d]\n",y,x);
 
 				rede[y-1][x]->buffer_sul->din = rede[y][x]->buffer_norte->din;
 				rede[y-1][x]->buffer_sul->add();
@@ -148,7 +149,7 @@ void SYSTEM::comunicacao()
 
 				if ((rede[y-1][x]->roteamento_sul.cordenada.x == rede[y-1][x]->buffer_sul->din.cordenadas_f.x) and (rede[y-1][x]->roteamento_sul.cordenada.y == rede[y-1][x]->buffer_sul->din.cordenadas_f.y))
 				{
-					std::cout << ">>> Chegou..." << std::endl;
+					printf(">>> Chegou...");
 					rede[y-1][x]->buffer_local->din = rede[y-1][x]->buffer_sul->flits.front();
 					rede[y-1][x]->buffer_sul->remove();
 					rede[y-1][x]->buffer_local->add();

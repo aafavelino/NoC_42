@@ -10,21 +10,21 @@ void Roteamento::rotear_xy()
 	if (cordenada_destino.y > cordenada.y )
 	{
 		portaDestino = LESTE;
-		std::cout << "Porta no roteamento leste" << std::endl;
+		printf("Porta no roteamento leste\n");
 	} else if (cordenada_destino.y < cordenada.y)
 	{
 		portaDestino = OESTE;
-		std::cout << "Porta no roteamento Oeste" << std::endl;
+		printf("Porta no roteamento Oeste\n");
 	} else if (cordenada_destino.x > cordenada.x)
 	{
 		portaDestino = SUL;
-		std::cout << "Porta no roteamento sul" << std::endl;
+		printf("Porta no roteamento sul\n");
 	} else if (cordenada_destino.x < cordenada.x)
 	{
 		portaDestino = NORTE;
-		std::cout << "Porta no roteamento norte" << std::endl;
+		printf("Porta no roteamento norte\n");
 	} else {
-		std::cout << "local" << std::endl;
+		printf("local\n");
 		portaDestino = LOCAL;
 	}
 }

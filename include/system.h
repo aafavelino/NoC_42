@@ -60,32 +60,32 @@ SC_MODULE (SYSTEM)
 				if (i == 0)
 				{	
 					
-					// cout << "rede[" << i << "][" << j << "]->cf_norte->in_val(ground_connection_val[" << cont<< "])"  << endl;
-					// cout << "rede[" << i << "][" << j << "]->cf_norte->in_ack(ground_connection_val[" << cont<< "])"  << endl;
+					printf("rede[ %d ][ %d ]->cf_norte->in_val(ground_connection_val[%d]\n",i,j,cont);
+					printf("rede[ %d ][ %d ]->cf_norte->in_ack(ground_connection_val[%d]\n",i,j,cont);
 					rede[i][j]->cf_norte->in_val(ground_connection_val[cont]);
 					rede[i][j]->cf_norte->in_ack(ground_connection_ack[cont]);
 					cont++;
 				}
 				if (j == 0)
 				{	
-					// cout << "rede[" << i << "][" << j << "]->cf_oeste->in_val(ground_connection_val[" << cont<< "])"  << endl;
-					// cout << "rede[" << i << "][" << j << "]->cf_oeste->in_ack(ground_connection_val[" << cont<< "])"  << endl;				
+					printf("rede[ %d ][ %d ]->cf_oeste->in_val(ground_connection_val[%d]\n",i,j,cont);
+					printf("rede[ %d ][ %d ]->cf_oeste->in_ack(ground_connection_val[%d]\n",i,j,cont);				
 					rede[i][j]->cf_oeste->in_val(ground_connection_val[cont]);
 					rede[i][j]->cf_oeste->in_ack(ground_connection_ack[cont]);
 					cont++;
 				}
 				if (i == ALTURA_REDE-1)
 				{	
-					// cout << "rede[" << i << "][" << j << "]->cf_sul->in_val(ground_connection_val[" << cont<< "])"  << endl;
-					// cout << "rede[" << i << "][" << j << "]->cf_sul->in_ack(ground_connection_val[" << cont<< "])"  << endl;				
+					printf("rede[ %d ][ %d ]->cf_sul->in_val(ground_connection_val[ %d)\n",i,j,cont);					
+					printf("rede[ %d ][ %d ]->cf_sul->in_ack(ground_connection_val[ %d)\n",i,j,cont);			
 					rede[i][j]->cf_sul->in_val(ground_connection_val[cont]);
 					rede[i][j]->cf_sul->in_ack(ground_connection_ack[cont]);
 					cont++;
 				}
 				if (j == LARGURA_REDE-1)
 				{	
-					// cout << "rede[" << i << "][" << j << "]->cf_leste->in_val(ground_connection_val[" << cont<< "])"  << endl;
-					// cout << "rede[" << i << "][" << j << "]->cf_leste->in_ack(ground_connection_val[" << cont<< "])"  << endl;				
+					printf("rede[ %d ][ %d ]->cf_leste->in_val(ground_connection_val[%d]\n",i,j,cont);
+					printf("rede[ %d ][ %d ]->cf_leste->in_ack(ground_connection_val[%d]\n",i,j,cont);				
 					rede[i][j]->cf_leste->in_val(ground_connection_val[cont]);
 					rede[i][j]->cf_leste->in_ack(ground_connection_ack[cont]);
 					cont++;
