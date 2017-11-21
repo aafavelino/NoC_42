@@ -4,14 +4,9 @@
 
 Modelo TLM da rede SOCin
 
-### Memorização 
-*Esquema de filas buffer FIFO*
-
-### Controle de fluxo 
-*Handshake*
-
-### Arbitragem 
-*Dinâmica randômica*
+|    Memorização    |  Controle de fluxo |  Arbitragem  |
+|-------------------|--------------------|--------------|
+|		FIFO		|	   Handshake	 |  Randômica	|
 
 ### Projeto de Pesquisa em Redes em chip
 
