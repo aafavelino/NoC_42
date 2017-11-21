@@ -6,8 +6,10 @@ Modelo TLM da rede SOCin
 
 ###Memorização 
 *Esquema de filas buffer FIFO*
+
 ###Controle de fluxo 
 *Handshake*
+
 ###Arbitragem 
 *Dinâmica randômica*
 
