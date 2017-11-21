@@ -12,8 +12,6 @@ public:
 		int x;
 		int y;
 	}cordenadas_f;
-	
-	
 };
 
 #endif
