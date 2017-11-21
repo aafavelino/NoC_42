@@ -9,8 +9,6 @@ void SYSTEM::comunicacao()
 	{
 		for (int x = 0; x < LARGURA_REDE; ++x)
 		{	
-
-
 			if (rede[y][x]->cf_saida_sul->ack.read() == 1)
 			{
 				printf("[%d][%d]\n",y,x);
@@ -191,7 +189,6 @@ void SYSTEM::injeta_flits(int x, int y, int quantidade) {
 	//Colocando no buffer circular
 	rede[4][4]->arbitro_centralizado.setPrioridade();
 
-	//rede[4][4]->cf_saida_oeste->val.write(1);
 
 	if (rede[4][4]->roteamento_local.portaDestino == NORTE)
 	{
@@ -206,8 +203,4 @@ void SYSTEM::injeta_flits(int x, int y, int quantidade) {
 	{
 		rede[4][4]->cf_saida_oeste->val.write(1);
 	}
-
-
-
-
 }
