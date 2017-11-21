@@ -168,8 +168,6 @@ SC_MODULE (roteador)
         	sensitive << cf_leste->in_cf_buffer;
         	sensitive << cf_oeste->in_cf_buffer;
         	sensitive << cf_local->in_cf_buffer;
- 
-
 
     }
 

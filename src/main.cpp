@@ -1,7 +1,6 @@
 #include <systemc.h>
 #include <vector>
 #include "roteador.h"
-#include "pacote.h"
 #include "system.h"
 
 using namespace std;

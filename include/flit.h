@@ -6,8 +6,6 @@
 class Flit 
 {
 public:
-	int cabeca;
-	int terminador;
 	int payload;
 	struct cordenadas
 	{
