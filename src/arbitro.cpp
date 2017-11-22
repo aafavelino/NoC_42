@@ -3,12 +3,13 @@
 Arbitro::Arbitro() {
 	for (int i = 0; i < 5; ++i)
 		buffercircular[i] = 0;
+	prioridade = -1;
 }
 
 void Arbitro::setPrioridade()
 {
-	if (buffercircular[portaDestino] == 0)
-		buffercircular[portaDestino] = 1;
+	srand (time(NULL));
+	prioridade = rand() % 5;
 }
 
 int Arbitro::checkPrioridade()

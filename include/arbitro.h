@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <systemc.h>
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 
 #define NORTE 0
 #define LESTE 1
@@ -15,6 +17,7 @@ class Arbitro
 public:
 	sc_uint<32> portaDestino;
 	int buffercircular[5];
+	int prioridade;
 
 	Arbitro();
 	void setPrioridade();
