@@ -6,5 +6,7 @@
 using namespace std;
 
 int sc_main (int argc, char* argv[]) {
+	SYSTEM *teste = new SYSTEM("rede");
+	teste->comunicacao();
   	return 0;
 }
