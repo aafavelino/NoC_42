@@ -6,10 +6,40 @@ Arbitro::Arbitro() {
 	prioridade = -1;
 }
 
+void Arbitro::addSolicitacao(int port) 
+{
+	buffercircular[port] = 1;
+}
+
+void Arbitro::remSolicitacao(int port) 
+{
+	buffercircular[port] = 0;
+	// cout << "teste " << port  << endl;
+}
+
+
 void Arbitro::setPrioridade()
 {
+	int aux;
 	srand (time(NULL));
-	prioridade = rand() % 5;
+	aux = rand() % 5;
+	if (buffercircular[aux] != 0)
+	{
+		prioridade = aux;
+	
+	} 
+	else
+	{
+		for (int i = 0; i < 5; ++i)
+		{
+			if (buffercircular[i] != 0)
+			{
+				prioridade = i;
+				return;
+			}
+		}
+	}
+	//cout << "Prioridade: " << prioridade << endl;
 }
 
 int Arbitro::checkPrioridade()

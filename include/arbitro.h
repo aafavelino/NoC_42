@@ -20,6 +20,8 @@ public:
 	int prioridade;
 
 	Arbitro();
+	void addSolicitacao(int);
+	void remSolicitacao(int);
 	void setPrioridade();
 	int checkPrioridade();
 	

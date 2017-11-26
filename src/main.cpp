@@ -7,6 +7,11 @@ using namespace std;
 
 int sc_main (int argc, char* argv[]) {
 	SYSTEM *teste = new SYSTEM("rede");
-	sc_start();
+	//teste->injeta_flits(0, 0,10);
+	teste->injeta_flits(4, 0,10);
+	
+	teste->comunicacao();
+	
+
   	return 0;
 }

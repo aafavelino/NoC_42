@@ -67,7 +67,7 @@ SC_MODULE (roteador)
 	controle_fluxo *cf_sul;
 	controle_fluxo *cf_leste;
 	controle_fluxo *cf_oeste;
-	controle_fluxo *cf_local;
+	//controle_fluxo *cf_local;
 
 	controle_fluxo_saida *cf_saida_norte;
 	controle_fluxo_saida *cf_saida_sul;
@@ -83,6 +83,7 @@ SC_MODULE (roteador)
 	void execute_controle_fluxo();
 	void execute_buffer();
 	void execute_buffer_retorno();
+	
 
 
 	SC_CTOR(roteador) { 
@@ -90,7 +91,7 @@ SC_MODULE (roteador)
 		cf_sul = new controle_fluxo("cf_buffer_Sul");
 		cf_leste = new controle_fluxo("cf_buffer_Leste");
 		cf_oeste = new controle_fluxo("cf_buffer_Oeste");
-		cf_local = new controle_fluxo("cf_buffer_Local");
+		//cf_local = new controle_fluxo("cf_buffer_Local");
 
 		cf_saida_norte = new controle_fluxo_saida("cf_saida_Norte");
 		cf_saida_sul = new controle_fluxo_saida("cf_saida_Sul");
@@ -126,9 +127,9 @@ SC_MODULE (roteador)
 		cf_oeste->in_cf_buffer(wok_oeste);		
 
 		buffer_local->in_bf_controle_fluxo(wr_local);
-		cf_local->out_cf_buffer(wr_local);
+		//cf_local->out_cf_buffer(wr_local);
 		buffer_local->out_bf_controle_fluxo(wok_local);
-		cf_local->in_cf_buffer(wok_local);		
+		//cf_local->in_cf_buffer(wok_local);		
 
 		//Ligação dos controles de fluxo internos...
 		cf_saida_oeste->val(val_cf_oeste_to_leste_wire);
@@ -141,10 +142,6 @@ SC_MODULE (roteador)
 		cf_saida_norte->val(val_cf_norte_to_sul_wire);
 		cf_saida_norte->ack(ack_cf_norte_to_sul_wire);
 
-		// Ligação das entradas dos cf's locais
-		cf_local->in_val(val_cf_local_to_local_wire);
-		cf_local->in_ack(ack_cf_local_to_local_wire);
-
 
 
         SC_METHOD(execute_controle_fluxo);
@@ -152,7 +149,7 @@ SC_MODULE (roteador)
 	        sensitive << cf_sul->in_val;
 	        sensitive << cf_leste->in_val; 
 	        sensitive << cf_oeste->in_val; 
-	        sensitive << cf_local->in_val;	
+	        //sensitive << cf_local->in_val;	
         
 
         SC_METHOD(execute_buffer);
@@ -167,7 +164,8 @@ SC_MODULE (roteador)
         	sensitive << cf_sul->in_cf_buffer;
         	sensitive << cf_leste->in_cf_buffer;
         	sensitive << cf_oeste->in_cf_buffer;
-        	sensitive << cf_local->in_cf_buffer;
+        	//sensitive << cf_local->in_cf_buffer;
+
 
     }
 
