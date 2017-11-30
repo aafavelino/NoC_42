@@ -1,8 +1,9 @@
 #include "system.h"
 
 void SYSTEM::comunicacao() 
-{	
+{
 	sc_start();
+
 	for (int y = 0; y < ALTURA_REDE; y++)
 	{
 		for (int x = 0; x < LARGURA_REDE; x++)
@@ -223,7 +224,7 @@ void SYSTEM::comunicacao()
 }
 
 void SYSTEM::injeta_flits(int x, int y, int quantidade, int local_y , int local_x) {
-	Flit flit[3];
+	Flit flit[quantidade];
 	flit[0].cordenadas_f.x = x;
 	flit[0].cordenadas_f.y = y;
 	
@@ -278,4 +279,6 @@ void SYSTEM::injeta_flits(int x, int y, int quantidade, int local_y , int local_
 		rede[local_y][local_x]->buffer_local->add();
 
 	}
+
+
 }
