@@ -30,7 +30,7 @@ SC_MODULE (SYSTEM)
 	sc_signal<int> ground_connection_ack[100];
 
 	void comunicacao ();
-	void injeta_flits(int, int, int);
+	void injeta_flits(int, int, int, int, int);
 
 	SC_CTOR(SYSTEM) 
 	{ 

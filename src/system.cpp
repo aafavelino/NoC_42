@@ -222,56 +222,60 @@ void SYSTEM::comunicacao()
 	}
 }
 
-void SYSTEM::injeta_flits(int x, int y, int quantidade) {
+void SYSTEM::injeta_flits(int x, int y, int quantidade, int local_y , int local_x) {
 	Flit flit[3];
 	flit[0].cordenadas_f.x = x;
 	flit[0].cordenadas_f.y = y;
 	
 	//Alocando o flit no buffer
-	rede[0][0]->buffer_local->din =  flit[0];
+	rede[local_y][local_x]->buffer_local->din =  flit[0];
 
 	//Setando as cordenadas do primeiro flit
-	rede[0][0]->roteamento_local.cordenada_destino.x =  flit[0].cordenadas_f.x;
-	rede[0][0]->roteamento_local.cordenada_destino.y =  flit[0].cordenadas_f.y;
-	
+	rede[local_y][local_x]->roteamento_local.cordenada_destino.x =  flit[0].cordenadas_f.x;
+	rede[local_y][local_x]->roteamento_local.cordenada_destino.y =  flit[0].cordenadas_f.y;
 	
 	//Roteando
-	rede[0][0]->roteamento_local.rotear_xy();
+	rede[local_y][local_x]->roteamento_local.rotear_xy();
 
-	rede[0][0]->arbitro_centralizado.addSolicitacao(rede[0][0]->roteamento_local.portaDestino);
+	rede[local_y][local_x]->arbitro_centralizado.addSolicitacao(rede[local_y][local_x]->roteamento_local.portaDestino);
 
 
-	if (rede[0][0]->roteamento_local.portaDestino == NORTE)
+	if (rede[local_y][local_x]->roteamento_local.portaDestino == NORTE)
 	{
-		rede[0][0]->cf_saida_norte->val.write(1);
-		rede[0][0]->roteamento_norte.cordenada_destino.x =  flit[0].cordenadas_f.x;
-		rede[0][0]->roteamento_norte.cordenada_destino.y =  flit[0].cordenadas_f.y;	
-		rede[0][0]->buffer_norte->din = flit[0];
+		rede[local_y][local_x]->cf_saida_norte->val.write(1);
+		rede[local_y][local_x]->roteamento_norte.cordenada_destino.x =  flit[0].cordenadas_f.x;
+		rede[local_y][local_x]->roteamento_norte.cordenada_destino.y =  flit[0].cordenadas_f.y;	
+		rede[local_y][local_x]->buffer_norte->din = flit[0];
 
 		//cout << "NORTE" << endl;
-	} else if (rede[0][0]->roteamento_local.portaDestino == SUL)
+	} else if (rede[local_y][local_x]->roteamento_local.portaDestino == SUL)
 	{
-		rede[0][0]->cf_saida_sul->val.write(1);
-		rede[0][0]->roteamento_sul.cordenada_destino.x =  flit[0].cordenadas_f.x;
-		rede[0][0]->roteamento_sul.cordenada_destino.y =  flit[0].cordenadas_f.y;	
-		rede[0][0]->buffer_sul->din = flit[0];
+		rede[local_y][local_x]->cf_saida_sul->val.write(1);
+		rede[local_y][local_x]->roteamento_sul.cordenada_destino.x =  flit[0].cordenadas_f.x;
+		rede[local_y][local_x]->roteamento_sul.cordenada_destino.y =  flit[0].cordenadas_f.y;	
+		rede[local_y][local_x]->buffer_sul->din = flit[0];
 
-		cout << "SUL" << endl;
-	} else if (rede[0][0]->roteamento_local.portaDestino == LESTE)
+		//cout << "SUL" << endl;
+	} else if (rede[local_y][local_x]->roteamento_local.portaDestino == LESTE)
 	{
-		rede[0][0]->cf_saida_leste->val.write(1);
-		rede[0][0]->roteamento_leste.cordenada_destino.x =  flit[0].cordenadas_f.x;
-		rede[0][0]->roteamento_leste.cordenada_destino.y =  flit[0].cordenadas_f.y;	
-		rede[0][0]->buffer_leste->din = flit[0];
+		rede[local_y][local_x]->cf_saida_leste->val.write(1);
+		rede[local_y][local_x]->roteamento_leste.cordenada_destino.x =  flit[0].cordenadas_f.x;
+		rede[local_y][local_x]->roteamento_leste.cordenada_destino.y =  flit[0].cordenadas_f.y;	
+		rede[local_y][local_x]->buffer_leste->din = flit[0];
 
 		//cout << "LESTE" << endl;
-	} else if (rede[0][0]->roteamento_local.portaDestino == OESTE)
+	} else if (rede[local_y][local_x]->roteamento_local.portaDestino == OESTE)
 	{	
-		rede[0][0]->roteamento_oeste.cordenada_destino.x =  flit[0].cordenadas_f.x;
-		rede[0][0]->roteamento_oeste.cordenada_destino.y =  flit[0].cordenadas_f.y;	
-		rede[0][0]->buffer_oeste->din = flit[0];
-		rede[0][0]->cf_saida_oeste->val.write(1);
+		rede[local_y][local_x]->roteamento_oeste.cordenada_destino.x =  flit[0].cordenadas_f.x;
+		rede[local_y][local_x]->roteamento_oeste.cordenada_destino.y =  flit[0].cordenadas_f.y;	
+		rede[local_y][local_x]->buffer_oeste->din = flit[0];
+		rede[local_y][local_x]->cf_saida_oeste->val.write(1);
 
 		//cout << "OESTE" << endl;
+	} else {
+		printf("CHEGOUUUUU...\n");
+		rede[local_y][local_x]->buffer_local->din =	flit[0];
+		rede[local_y][local_x]->buffer_local->add();
+
 	}
 }
