@@ -9,6 +9,7 @@
 #include "controle_fluxo_saida.h"
 #include "buffer.h"
 #include "flit.h"
+#include "pacote.h"
 #include <time.h>
 
 #define NORTE 0

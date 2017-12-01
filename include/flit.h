@@ -6,7 +6,7 @@
 class Flit 
 {
 public:
-	int payload;
+	//int payload;
 	struct cordenadas
 	{
 		int x;
