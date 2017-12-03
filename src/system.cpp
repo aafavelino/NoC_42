@@ -1,17 +1,21 @@
 #include "system.h"
 
 int aux = 0;
+int cont = 0;
 
 void SYSTEM::comunicacao() 
 {
-	sc_start();
+	if( sc_pending_activity() )
+		sc_start();
 
 
+				
 
 	for (int y = 0; y < ALTURA_REDE; y++)
 	{
 		for (int x = 0; x < LARGURA_REDE; x++)
 		{
+
 			
 			//printf("[%d][%d]\n",y,x );
 
@@ -59,7 +63,7 @@ void SYSTEM::comunicacao()
 						rede[y-1][x]->buffer_norte->din = rede[y][x]->buffer_norte->din;
 					}				
 				}
-				rede[y][x]->ack_cf_norte_to_sul_wire = 0;
+				rede[y][x]->ack_cf_sul_to_norte_wire = 0;
 			}
 
 //*******************************************************************************************************************************************************************************************************************************************************************
@@ -84,6 +88,8 @@ void SYSTEM::comunicacao()
 
 				if ((rede[y+1][x]->roteamento_norte.cordenada.x == rede[y+1][x]->buffer_norte->din.cordenadas_f.x) and (rede[y+1][x]->roteamento_norte.cordenada.y == rede[y+1][x]->buffer_norte->din.cordenadas_f.y))
 				{
+					cont ++;
+					printf("%d\n", cont);
 					printf("CHEGOUUUUU...\n");
 					rede[y+1][x]->buffer_local->din = rede[y+1][x]->buffer_norte->flits.front();
 					rede[y+1][x]->buffer_norte->remove();
@@ -105,7 +111,7 @@ void SYSTEM::comunicacao()
 						rede[y+1][x]->buffer_sul->din = rede[y][x]->buffer_sul->din;
 					}				
 				}		
-				rede[y][x]->ack_cf_sul_to_norte_wire = 0;		
+				rede[y][x]->ack_cf_norte_to_sul_wire = 0;		
 			}
 
 
@@ -118,7 +124,7 @@ void SYSTEM::comunicacao()
 			{
 				printf("[%d][%d]--LESTE\n",y,x);
 				rede[y][x]->arbitro_centralizado.remSolicitacao(LESTE);
-
+				rede[0][0]->val_cf_leste_to_oeste_wire = 0;
 				//printf("%d\n", aux++);
 				rede[y][x+1]->buffer_oeste->din = rede[y][x]->buffer_leste->din;
 				rede[y][x+1]->buffer_oeste->add();
@@ -157,8 +163,9 @@ void SYSTEM::comunicacao()
 						rede[y][x+1]->cf_saida_sul->val.write(1);
 						rede[y][x+1]->buffer_sul->din = rede[y][x]->buffer_leste->din;
 					}				
-				}			
-				rede[y][x]->ack_cf_leste_to_oeste_wire = 0;		
+				}	
+				rede[y][x]->ack_cf_oeste_to_leste_wire = 0;
+
 			}
 
 
@@ -202,9 +209,9 @@ void SYSTEM::comunicacao()
 						rede[y][x-1]->buffer_sul->din = rede[y][x]->buffer_oeste->din;
 					}				
 				}	
-				rede[y][x]->ack_cf_oeste_to_leste_wire = 0;
-			}
+				rede[y][x]->ack_cf_leste_to_oeste_wire = 0;		
 
+			}
 		}
 	}
 }
@@ -253,6 +260,10 @@ void SYSTEM::injeta_flits(int x, int y, int quantidade, int local_y , int local_
 		rede[local_y][local_x]->buffer_leste->din =  pct->v[0];
 
 		//cout << "LESTE" << endl;
+		//cout << "lalala " << rede[0][0]->val_cf_leste_to_oeste_wire << endl;
+		
+
+
 	} else if (rede[local_y][local_x]->roteamento_local.portaDestino == OESTE)
 	{	
 		rede[local_y][local_x]->roteamento_oeste.cordenada_destino.x =   pct->v[0].cordenadas_f.x;
@@ -266,6 +277,13 @@ void SYSTEM::injeta_flits(int x, int y, int quantidade, int local_y , int local_
 		rede[local_y][local_x]->buffer_local->din =	 pct->v[0];
 		rede[local_y][local_x]->buffer_local->add();
 	}
+
+	
+		//sc_start();
+		//cout << "lalala " << rede[0][0]->val_cf_leste_to_oeste_wire << endl;
+
+
+		
 
 
 }

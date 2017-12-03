@@ -6,21 +6,27 @@ void roteador::execute_controle_fluxo()
 	{
 		//printf("Controle de fluxo no buffer norte\n");
 		cf_norte->out_cf_buffer.write(1);
+		val_cf_norte_to_sul_wire = 0;
 	}
 	if (cf_sul->in_val.read() == 1)
 	{
 		//printf("Controle de fluxo no buffer sul\n");
 		cf_sul->out_cf_buffer.write(1);
+		val_cf_sul_to_norte_wire = 0;
+
 	}
 	if (cf_leste->in_val.read() == 1)
 	{
 		//printf("Controle de fluxo no buffer leste\n");
 		cf_leste->out_cf_buffer.write(1);
+		val_cf_leste_to_oeste_wire = 0;
+
 	}
 	if (cf_oeste->in_val.read() == 1)
 	{
 		//printf("Controle de fluxo no buffer oeste\n");
 		cf_oeste->out_cf_buffer.write(1);
+		val_cf_oeste_to_leste_wire = 0;
 	}			
 }
 
