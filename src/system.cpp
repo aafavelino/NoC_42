@@ -72,7 +72,7 @@ void SYSTEM::comunicacao()
 			{	
 				printf("[%d][%d]--SUL\n",y,x);
 				rede[y][x]->arbitro_centralizado.remSolicitacao(SUL);
-				//printf("%d\n", aux++);
+				
 	
 				rede[y+1][x]->buffer_norte->din = rede[y][x]->buffer_sul->din;
 				rede[y+1][x]->buffer_norte->add();
@@ -88,8 +88,6 @@ void SYSTEM::comunicacao()
 
 				if ((rede[y+1][x]->roteamento_norte.cordenada.x == rede[y+1][x]->buffer_norte->din.cordenadas_f.x) and (rede[y+1][x]->roteamento_norte.cordenada.y == rede[y+1][x]->buffer_norte->din.cordenadas_f.y))
 				{
-					cont ++;
-					printf("%d\n", cont);
 					printf("CHEGOUUUUU...\n");
 					rede[y+1][x]->buffer_local->din = rede[y+1][x]->buffer_norte->flits.front();
 					rede[y+1][x]->buffer_norte->remove();
@@ -156,7 +154,6 @@ void SYSTEM::comunicacao()
 					{
 						rede[y][x+1]->cf_saida_leste->val.write(1);
 						rede[y][x+1]->buffer_leste->din = rede[y][x]->buffer_leste->din;
-						//sc_start();
 					}
 					if (rede[y][x+1]->roteamento_oeste.portaDestino == SUL)
 					{
@@ -260,10 +257,6 @@ void SYSTEM::injeta_flits(int x, int y, int quantidade, int local_y , int local_
 		rede[local_y][local_x]->buffer_leste->din =  pct->v[0];
 
 		//cout << "LESTE" << endl;
-		//cout << "lalala " << rede[0][0]->val_cf_leste_to_oeste_wire << endl;
-		
-
-
 	} else if (rede[local_y][local_x]->roteamento_local.portaDestino == OESTE)
 	{	
 		rede[local_y][local_x]->roteamento_oeste.cordenada_destino.x =   pct->v[0].cordenadas_f.x;
@@ -277,13 +270,4 @@ void SYSTEM::injeta_flits(int x, int y, int quantidade, int local_y , int local_
 		rede[local_y][local_x]->buffer_local->din =	 pct->v[0];
 		rede[local_y][local_x]->buffer_local->add();
 	}
-
-	
-		//sc_start();
-		//cout << "lalala " << rede[0][0]->val_cf_leste_to_oeste_wire << endl;
-
-
-		
-
-
 }
