@@ -8,7 +8,7 @@
 
 
 
-#define LARGURA_REDE 5
+#define LARGURA_REDE 5 
 #define ALTURA_REDE 5
 
 #define NORTE 0
@@ -31,7 +31,7 @@ SC_MODULE (SYSTEM)
 	sc_signal<int> ground_connection_ack[100];
 
 	void comunicacao ();
-	void injeta_flits(int, int, int, int, int);
+	void injeta_flits(int, int, int, int);
 
 	SC_CTOR(SYSTEM) 
 	{ 
@@ -39,8 +39,12 @@ SC_MODULE (SYSTEM)
 		const char* roteadores_nomes[] = {"roteador_01", "roteador_02", "roteador_03", "roteador_04", "roteador_05", "roteador_06", "roteador_07", "roteador_08", "roteador_09", "roteador_10",
 						              	  "roteador_11", "roteador_12", "roteador_13", "roteador_14", "roteador_15", "roteador_16", "roteador_17", "roteador_18", "roteador_19", "roteador_20",
 						                  "roteador_21", "roteador_22", "roteador_23", "roteador_24", "roteador_25", "roteador_26", "roteador_27", "roteador_28", "roteador_29", "roteador_30",
-						                  "roteador_31", "roteador_32", "roteador_33", "roteador_34", "roteador_35", "roteador_36", "roteador_37", "roteador_38", "roteador_39", "roteador_40",
-						                  "roteador_41", "roteador_42", "roteador_43", "roteador_44", "roteador_45", "roteador_46", "roteador_47", "roteador_48", "roteador_49", "roteador_50"};
+						                  "roteador_31", "roteador_32", "roteador_33", "roteador_34", "roteador_35", "roteador_36", "roteador_37", "roteador_38", "roteador_39", "roteador_40"};
+						                 /* "roteador_41", "roteador_42", "roteador_43", "roteador_44", "roteador_45", "roteador_46", "roteador_47", "roteador_48", "roteador_49", "roteador_50",
+						            	  "roteador_51", "roteador_52", "roteador_53", "roteador_54", "roteador_55", "roteador_56", "roteador_57", "roteador_58", "roteador_59", "roteador_60",
+						        		  "roteador_61", "roteador_62", "roteador_63", "roteador_64", "roteador_65", "roteador_66", "roteador_67", "roteador_68", "roteador_69", "roteador_70",
+						      			  "roteador_71", "roteador_72", "roteador_73", "roteador_74", "roteador_75", "roteador_76", "roteador_77", "roteador_78", "roteador_79", "roteador_80",
+						  				  "roteador_81", "roteador_82", "roteador_83", "roteador_84", "roteador_85", "roteador_86", "roteador_87", "roteador_88", "roteador_89", "roteador_90"};*/
 	 
 		int rt_cont = 0;
 	  	for (int i = 0; i < ALTURA_REDE; ++i)

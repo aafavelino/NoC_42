@@ -14,7 +14,6 @@ void Arbitro::addSolicitacao(int port)
 void Arbitro::remSolicitacao(int port) 
 {
 	buffercircular[port] = 0;
-	// cout << "teste " << port  << endl;
 }
 
 
@@ -39,7 +38,6 @@ void Arbitro::setPrioridade()
 			}
 		}
 	}
-	//cout << "Prioridade: " << prioridade << endl;
 }
 
 int Arbitro::checkPrioridade()

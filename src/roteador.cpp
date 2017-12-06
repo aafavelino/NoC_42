@@ -6,28 +6,32 @@ void roteador::execute_controle_fluxo()
 	{
 		//printf("Controle de fluxo no buffer norte\n");
 		cf_norte->out_cf_buffer.write(1);
-		val_cf_norte_to_sul_wire = 0;
+		
+
 	}
 	if (cf_sul->in_val.read() == 1)
 	{
-		//printf("Controle de fluxo no buffer sul\n");
+		printf("Controle de fluxo no buffer sul\n");
 		cf_sul->out_cf_buffer.write(1);
-		val_cf_sul_to_norte_wire = 0;
+		
 
 	}
 	if (cf_leste->in_val.read() == 1)
 	{
 		//printf("Controle de fluxo no buffer leste\n");
 		cf_leste->out_cf_buffer.write(1);
-		val_cf_leste_to_oeste_wire = 0;
+		
 
 	}
 	if (cf_oeste->in_val.read() == 1)
 	{
 		//printf("Controle de fluxo no buffer oeste\n");
 		cf_oeste->out_cf_buffer.write(1);
-		val_cf_oeste_to_leste_wire = 0;
-	}			
+		
+	}	
+	if( sc_pending_activity() )
+		sc_start();
+
 }
 
 void roteador::execute_buffer() 
@@ -36,22 +40,34 @@ void roteador::execute_buffer()
 	{
 		//printf("No buffer norte\n");
 		buffer_norte->out_bf_controle_fluxo.write(buffer_norte->isEmpty());
+		//cf_norte->out_cf_buffer.write(1);
+
+
 	}
 	if (buffer_sul->in_bf_controle_fluxo.read() == 1)
 	{
-		//printf("No buffer sul\n");
+		printf("No buffer sul\n");
 		buffer_sul->out_bf_controle_fluxo.write(buffer_sul->isEmpty());
+		//cf_sul->out_cf_buffer.write(0);
+
+
 	}
 	if (buffer_leste->in_bf_controle_fluxo.read() == 1)
 	{
-		//printf("No buffer leste\n");
+		// printf("No buffer leste\n");
 		buffer_leste->out_bf_controle_fluxo.write(buffer_leste->isEmpty());
+		//cf_leste->out_cf_buffer.write(1);
+
 	}
 	if (buffer_oeste->in_bf_controle_fluxo.read() == 1)
 	{
-		//printf("No buffer oeste\n");
+		// printf("No buffer oeste\n");
 		buffer_oeste->out_bf_controle_fluxo.write(buffer_oeste->isEmpty());
+		//cf_oeste->out_cf_buffer.write(1);
+
 	}
+	//if( sc_pending_activity() )
+	//	sc_start();
 }
 
 void roteador::execute_buffer_retorno() 
@@ -65,6 +81,7 @@ void roteador::execute_buffer_retorno()
 	{
 		//printf("Retorno do buffer sul\n");
 		cf_sul->in_ack.write(1);
+		buffer_sul->out_bf_controle_fluxo.write(0);
 	}
 	if (cf_leste->in_cf_buffer.read() == 1)
 	{
@@ -76,6 +93,10 @@ void roteador::execute_buffer_retorno()
 		//printf("Retorno do buffer oeste\n");
 		cf_oeste->in_ack.write(1);
 	}
+
+	// if( sc_pending_activity() )
+		// sc_start();
+
 }
 
 
