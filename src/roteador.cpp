@@ -29,8 +29,7 @@ void roteador::execute_controle_fluxo()
 		cf_oeste->out_cf_buffer.write(1);
 		
 	}	
-	if( sc_pending_activity() )
-		sc_start();
+
 
 }
 
@@ -80,7 +79,7 @@ void roteador::execute_buffer_retorno()
 	if (cf_sul->in_cf_buffer.read() == 1)
 	{
 		//printf("Retorno do buffer sul\n");
-		cf_sul->in_ack.write(1);
+		//cf_sul->in_ack.write(1);
 		buffer_sul->out_bf_controle_fluxo.write(0);
 	}
 	if (cf_leste->in_cf_buffer.read() == 1)
