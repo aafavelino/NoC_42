@@ -6,14 +6,7 @@
 #include "roteador.h"
 #include <iostream>
 #include <fstream>
-
-
-
-
-#define LARGURA_REDE 5 
-#define ALTURA_REDE 5
-
-
+#include "../constantes/constantes.h"
 
 using namespace std;
 
@@ -151,7 +144,17 @@ SC_MODULE (REDE)
 				rede[x][y]->roteamento_local.cordenada.x = x;
 				rede[x][y]->roteamento_local.cordenada.y = y;			
 			}
-		}	
+		}
+
+		SC_METHOD(comunicacao);
+			for (int x = 0; x < ALTURA_REDE; ++x){
+				for (int y = 0; y < LARGURA_REDE; ++y) {
+					sensitive << rede[x][y]->cf_saida_norte->out_ack;
+					sensitive << rede[x][y]->cf_saida_sul->out_ack;
+					sensitive << rede[x][y]->cf_saida_leste->out_ack;
+					sensitive << rede[x][y]->cf_saida_oeste->out_ack;
+				}
+			}	
 	}
 };
 

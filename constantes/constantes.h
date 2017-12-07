@@ -3,3 +3,9 @@
 #define SUL 2
 #define OESTE 3
 #define LOCAL 4
+
+
+// Dimensões da Rede
+
+#define LARGURA_REDE 5 
+#define ALTURA_REDE 5

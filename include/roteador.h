@@ -28,7 +28,6 @@ SC_MODULE (roteador)
 	sc_signal <int> ack_cf_sul_to_norte_wire; //Sai do sul e entra no norte
 	sc_signal <int> ack_cf_leste_to_oeste_wire; //Sai do leste e entra no oeste
 	sc_signal <int> ack_cf_oeste_to_leste_wire; //Sai do oeste e entra no leste
-	
 
 	// Ver isso aqui DEPOISSSS
 	Flit in_data; //n+2 data + bop + eop
