@@ -1,10 +1,5 @@
 #include "roteamento.h"
 
-Roteamento::Roteamento()
-{
-	
-}
-
 void Roteamento::rotear_xy()
 {	
 	if (cordenada_destino.y > cordenada.y )
