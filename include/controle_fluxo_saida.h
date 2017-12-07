@@ -7,8 +7,8 @@
 SC_MODULE (controle_fluxo_saida)
 {
 
-	sc_out<int> val; //Saída que vai para o cf
-	sc_in <int> ack; //Entrada que vem do cf
+	sc_out<int> out_val; //Saída que vai para o cf
+	sc_in <int> out_ack; //Entrada que vem do cf
 
 	sc_int<4> rok; //Entrada pra ver se no buffer terá espaço 
 	sc_int<4> rd; //Retorno da solicitação se terá espaço
