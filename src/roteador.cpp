@@ -4,7 +4,7 @@ void roteador::entrada_controle_de_fluxo()
 {
 	if (cf_norte->in_val.read() == 1)
 	{
-		//printf("Leitura do in_val pelo norte\n");
+		printf("Leitura do in_val pelo norte\n");
 		cf_norte->wr = 1;
 		entrada_buffer();
 		confirmacao_buffer();
@@ -113,12 +113,16 @@ void roteador::execute_retorno_controle_de_fluxo()
 {
 	if (cf_norte->wok == 1)
 	{
+		cout << "AQUI"<< endl << endl;
+		cf_norte->in_ack.write(1);
+		cf_norte->in_ack.write(0);
 		cf_norte->in_ack.write(1);
 		buffer_norte->wok = 0;
 		cf_norte->wok = 0;
 	}
 	if (cf_sul->wok == 1)
 	{
+
 		cf_sul->in_ack.write(1);
 		buffer_sul->wok = 0;
 		cf_sul->wok = 0;
