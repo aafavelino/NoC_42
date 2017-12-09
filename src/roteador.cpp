@@ -4,47 +4,55 @@ void roteador::entrada_controle_de_fluxo()
 {
 	if (cf_norte->in_val.read() == 1)
 	{
-		printf("Leitura do in_val pelo norte\n");
+		// printf("Leitura do in_val pelo norte\n");
 		cf_norte->wr = 1;
 		entrada_buffer();
 		confirmacao_buffer();
 		cf_norte->wok = buffer_norte->wok;
 		execute_retorno_controle_de_fluxo();
+		val_cf_sul_to_norte_wire = 0;
 
 	}
 	if (cf_sul->in_val.read() == 1)
 	{
-		//printf("Leitura do in_val pelo sul\n");
+		// printf("Leitura do in_val pelo sul\n");
 		cf_sul->wr = 1;
 		entrada_buffer();
 		confirmacao_buffer();
 		cf_sul->wok = buffer_sul->wok;
 		execute_retorno_controle_de_fluxo();
+		val_cf_norte_to_sul_wire = 0;
 
 
 	}
 	if (cf_leste->in_val.read() == 1)
 	{
-		//printf("Leitura do in_val pelo leste\n");
+		// printf("Leitura do in_val pelo leste\n");
 		cf_leste->wr = 1;
 		entrada_buffer();
 		confirmacao_buffer();
 		cf_leste->wok = buffer_leste->wok;
 		execute_retorno_controle_de_fluxo();
+		val_cf_oeste_to_leste_wire = 0;
+
+
 
 	}
 	if (cf_oeste->in_val.read() == 1)
 	{
-		//printf("Leitura do in_val pelo oeste\n");
+		// printf("Leitura do in_val pelo oeste\n");
 		cf_oeste->wr = 1;
 		entrada_buffer();
 		confirmacao_buffer();
 		cf_oeste->wok = buffer_oeste->wok;
 		execute_retorno_controle_de_fluxo();
+		val_cf_leste_to_oeste_wire = 0;
+
 
 	}	
 
 }
+
 // Após a solicitação do controle de fluxo é chamado esse método para verificar se há espaço no buffer e dar o retorno da comunicação com 
 // o controle de fluxo de sua respectiva direção.
 void roteador::entrada_buffer() 
@@ -53,13 +61,15 @@ void roteador::entrada_buffer()
 		buffer_norte->wr = 1;
 
 	if (cf_sul->wr == 1)
-		buffer_norte->wr = 1;
+		buffer_sul->wr = 1;
 
 	if (cf_leste->wr == 1)
-		buffer_norte->wr = 1;
+		buffer_leste->wr = 1;
 
-	if (cf_oeste->wr == 1)
-		buffer_norte->wr = 1;		
+	if (cf_oeste->wr == 1){
+		buffer_oeste->wr = 1;
+
+	}
 
 }
 
@@ -113,15 +123,13 @@ void roteador::execute_retorno_controle_de_fluxo()
 {
 	if (cf_norte->wok == 1)
 	{
-		cout << "AQUI"<< endl << endl;
-		cf_norte->in_ack.write(1);
-		cf_norte->in_ack.write(0);
 		cf_norte->in_ack.write(1);
 		buffer_norte->wok = 0;
 		cf_norte->wok = 0;
 	}
 	if (cf_sul->wok == 1)
 	{
+		
 
 		cf_sul->in_ack.write(1);
 		buffer_sul->wok = 0;
@@ -139,7 +147,6 @@ void roteador::execute_retorno_controle_de_fluxo()
 		cf_oeste->in_ack.write(1);
 		buffer_oeste->wok = 0;
 		cf_oeste->wok = 0;
-
 	}		
 } 
 
