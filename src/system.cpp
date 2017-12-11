@@ -195,7 +195,6 @@ void REDE::injeta_flits(int local_y , int local_x, int x, int y) {
 
 	Pacote *pct = new Pacote(x,y,1);
 
-
 	//Alocando o flit no buffer
 	rede[local_y][local_x]->buffer_local->din =  pct->v[0];
 
@@ -205,8 +204,6 @@ void REDE::injeta_flits(int local_y , int local_x, int x, int y) {
 	
 	//Roteando
 	rede[local_y][local_x]->roteamento_local.rotear_xy();
-
-	// rede[local_y][local_x]->arbitro_centralizado.addSolicitacao(rede[local_y][local_x]->roteamento_local.portaDestino);
 
 
 	if (rede[local_y][local_x]->roteamento_local.portaDestino == NORTE)
