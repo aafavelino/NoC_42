@@ -82,7 +82,7 @@ SC_MODULE (roteador)
 		cf_saida_sul = new controle_fluxo_saida("controle_de_fluxo_saida_Sul");
 		cf_saida_leste = new controle_fluxo_saida("controle_de_fluxo_saida_Leste");
 		cf_saida_oeste = new controle_fluxo_saida("controle_de_fluxo_saida_Oeste");
-			
+		
 		buffer_norte = new Buffer("Buffer_norte");
 		buffer_sul = new Buffer("Buffer_sul");
 		buffer_leste = new Buffer("Buffer_leste");
@@ -100,11 +100,11 @@ SC_MODULE (roteador)
 		cf_saida_oeste->out_ack(ack_cf_oeste_to_leste_wire);
 
 		SC_METHOD(entrada_controle_de_fluxo);
-			sensitive << cf_norte->in_val; 
-	        sensitive << cf_sul->in_val;
-	        sensitive << cf_leste->in_val; 
-	        sensitive << cf_oeste->in_val; 
-    }
+		sensitive << cf_norte->in_val; 
+		sensitive << cf_sul->in_val;
+		sensitive << cf_leste->in_val; 
+		sensitive << cf_oeste->in_val; 
+	}
 
 	
 };

@@ -12,7 +12,7 @@ SC_MODULE (Buffer)
 {
 
 public:
-	
+
 	std::queue<Flit> flits;
 
 	Flit din; //Entrada data + bop + eop
@@ -26,9 +26,9 @@ public:
 	int isEmpty();
 
 	SC_CTOR(Buffer) {
-        SC_METHOD(add);
-        SC_METHOD(remove);
-    }
+		SC_METHOD(add);
+		SC_METHOD(remove);
+	}
 
 	
 };

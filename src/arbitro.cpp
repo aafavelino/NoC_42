@@ -19,49 +19,44 @@ void Arbitro::remSolicitacao(int port)
 
 void Arbitro::setPrioridade()
 {
-	int aux;
-	srand (time(NULL));
-	aux = rand() % 5;
-	if (buffercircular[aux] != 0)
+
+	for (int i = 0; i < 5; ++i)
 	{
-		prioridade = aux;
-	
-	} 
-	else
-	{
-		for (int i = 0; i < 5; ++i)
+		if (buffercircular[i] == 1)
 		{
-			if (buffercircular[i] != 0)
-			{
-				prioridade = i;
-				return;
-			}
+			cout << "PRIO >>> " << buffercircular[i] <<" " <<i << endl;
+			prioridade = i;
+			return;
 		}
 	}
 }
 
 int Arbitro::checkPrioridade()
 {
-	for (int i = 0; i < 5; ++i)
-	{
-		if (buffercircular[i] == 1 and i == LOCAL)
-		{
-			return i;
-		} else if (buffercircular[i] == 1 and i == OESTE)
-		{
-			return i;
-		} else if (buffercircular[i] == 1 and i == SUL)
-		{
-			return i;
-		} else if (buffercircular[i] == 1 and i == LESTE)
-		{
-			return i;
-		} else if (buffercircular[i] == 1 and i == NORTE)
-		{
-			return i;
-		}
-	}
+	// for (int i = 0; i < 5; ++i)
+	// {
+	// 	if (buffercircular[i] == 1 and i == LOCAL)
+	// 	{
+	// 		return i;
+	// 	} else if (buffercircular[i] == 1 and i == OESTE)
+	// 	{
+	// 		return i;
+	// 	} else if (buffercircular[i] == 1 and i == SUL)
+	// 	{
+	// 		return i;
+	// 	} else if (buffercircular[i] == 1 and i == LESTE)
+	// 	{
+	// 		cout << "ARBITRO PORTA LESTE" << endl;
+	// 		return i;
+	// 	} else if (buffercircular[i] == 1 and i == NORTE)
+	// 	{
+	// 		return i;
+	// 	}
+	// }
+	
+	cout << "PRIORIDADE "<< prioridade << endl;
 
-	return -1;
+
+	return prioridade;
 
 }
