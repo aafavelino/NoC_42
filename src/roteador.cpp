@@ -40,7 +40,7 @@ void roteador::entrada_controle_de_fluxo()
 	}
 	if (cf_oeste->in_val.read() == 1)
 	{
-		printf("Leitura do in_val pelo oeste\n");
+		// printf("Leitura do in_val pelo oeste\n");
 		cf_oeste->wr = 1;
 		entrada_buffer();
 		confirmacao_buffer();
@@ -79,7 +79,7 @@ void roteador::confirmacao_buffer()
 	if (buffer_norte->wr == 1)
 	{
 		// Se tiver espaço no buffer retorna 1 para a variável wok do buffer para o controle de fluxo 
-		/*Ver a questão do tamanho do buffer com Kreutz*/buffer_norte->wok = 1;//buffer_norte->isEmpty();
+		buffer_norte->wok = buffer_norte->isEmpty();
 		if (buffer_norte->wok == 1){
 			cf_norte->wr = 0;
 			buffer_norte->wr = 0;
@@ -89,7 +89,7 @@ void roteador::confirmacao_buffer()
 	if (buffer_sul->wr == 1)
 	{
 		// Se tiver espaço no buffer retorna 1 para a variável wok do buffer para o controle de fluxo 
-		/*Ver a questão do tamanho do buffer com Kreutz*/buffer_sul->wok = 1;//buffer_sul->isEmpty();
+		buffer_sul->wok = buffer_sul->isEmpty();
 		if (buffer_sul->wok == 1){
 			cf_sul->wr = 0;
 			buffer_sul->wr = 0;
@@ -99,7 +99,7 @@ void roteador::confirmacao_buffer()
 	if (buffer_leste->wr == 1)
 	{
 		// Se tiver espaço no buffer retorna 1 para a variável wok do buffer para o controle de fluxo 
-		/*Ver a questão do tamanho do buffer com Kreutz*/buffer_leste->wok = 1;//buffer_leste->isEmpty();
+		buffer_leste->wok = buffer_leste->isEmpty();
 		if (buffer_leste->wok == 1){
 			cf_leste->wr = 0;
 			buffer_leste->wr = 0;
@@ -109,7 +109,7 @@ void roteador::confirmacao_buffer()
 	if (buffer_oeste->wr == 1)
 	{
 		// Se tiver espaço no buffer retorna 1 para a variável wok do buffer para o controle de fluxo 
-		/*Ver a questão do tamanho do buffer com Kreutz*/buffer_oeste->wok =1;// buffer_oeste->isEmpty();
+		buffer_oeste->wok = buffer_oeste->isEmpty();
 		if (buffer_oeste->wok == 1){
 			cf_oeste->wr = 0;
 			buffer_oeste->wr = 0;
@@ -132,8 +132,6 @@ void roteador::execute_retorno_controle_de_fluxo()
 
 	if (cf_sul->wok == 1)
 	{
-		
-
 		cf_sul->in_ack.write(1);
 		buffer_sul->wok = 0;
 		cf_sul->wok = 0;
@@ -154,8 +152,9 @@ void roteador::execute_retorno_controle_de_fluxo()
 		cf_oeste->in_ack.write(1);
 		buffer_oeste->wok = 0;
 		cf_oeste->wok = 0;
+		// printf("ONDE EU QUERIA\n");
 	} else {
-		printf("Sem espaço no buffer oeste\n");
+		// printf("Sem espaço no buffer oeste\n");
 	}
 } 
 

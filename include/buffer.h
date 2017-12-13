@@ -14,7 +14,8 @@ SC_MODULE (Buffer)
 public:
 
 	std::queue<Flit> flits;
-
+    int size;
+    
 	Flit din; //Entrada data + bop + eop
 	Flit dout; //Saída que vai para o roteamento
 
@@ -28,6 +29,7 @@ public:
 	SC_CTOR(Buffer) {
 		SC_METHOD(add);
 		SC_METHOD(remove);
+        size = 0;
 	}
 
 	
