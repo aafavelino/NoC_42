@@ -10,8 +10,6 @@ void roteador::entrada_controle_de_fluxo()
 		confirmacao_buffer();
 		cf_norte->wok = buffer_norte->wok;
 		execute_retorno_controle_de_fluxo();
-		// val_cf_sul_to_norte_wire = 0;	
-
 	}
 	if (cf_sul->in_val.read() == 1)
 	{
@@ -21,9 +19,6 @@ void roteador::entrada_controle_de_fluxo()
 		confirmacao_buffer();
 		cf_sul->wok = buffer_sul->wok;
 		execute_retorno_controle_de_fluxo();
-		// val_cf_norte_to_sul_wire = 0;
-		
-
 	}
 	if (cf_leste->in_val.read() == 1)
 	{
@@ -33,10 +28,6 @@ void roteador::entrada_controle_de_fluxo()
 		confirmacao_buffer();
 		cf_leste->wok = buffer_leste->wok;
 		execute_retorno_controle_de_fluxo();
-		// val_cf_oeste_to_leste_wire = 0;
-
-
-
 	}
 	if (cf_oeste->in_val.read() == 1)
 	{
@@ -46,11 +37,7 @@ void roteador::entrada_controle_de_fluxo()
 		confirmacao_buffer();
 		cf_oeste->wok = buffer_oeste->wok;
 		execute_retorno_controle_de_fluxo();
-		// val_cf_leste_to_oeste_wire = 0;
-
-
 	}	
-
 }
 
 // Após a solicitação do controle de fluxo é chamado esse método para verificar se há espaço no buffer e dar o retorno da comunicação com 
@@ -66,10 +53,8 @@ void roteador::entrada_buffer()
 	if (cf_leste->wr == 1)
 		buffer_leste->wr = 1;
 
-	if (cf_oeste->wr == 1){
+	if (cf_oeste->wr == 1)
 		buffer_oeste->wr = 1;
-
-	}
 
 }
 
@@ -126,8 +111,6 @@ void roteador::execute_retorno_controle_de_fluxo()
 		cf_norte->in_ack.write(1);
 		buffer_norte->wok = 0;
 		cf_norte->wok = 0;
-	} else {
-		//printf("Sem espaço no buffer norte\n");
 	}
 
 	if (cf_sul->wok == 1)
@@ -135,8 +118,6 @@ void roteador::execute_retorno_controle_de_fluxo()
 		cf_sul->in_ack.write(1);
 		buffer_sul->wok = 0;
 		cf_sul->wok = 0;
-	} else {
-		//printf("Sem espaço no buffer sul\n");
 	}
 	if (cf_leste->wok == 1)
 	{
@@ -144,17 +125,12 @@ void roteador::execute_retorno_controle_de_fluxo()
 		buffer_leste->wok = 0;
 		cf_leste->wok = 0;
 
-	} else {
-		//printf("Sem espaço no buffer leste\n");
 	}
 	if (cf_oeste->wok == 1)
 	{
 		cf_oeste->in_ack.write(1);
 		buffer_oeste->wok = 0;
 		cf_oeste->wok = 0;
-		// printf("ONDE EU QUERIA\n");
-	} else {
-		// printf("Sem espaço no buffer oeste\n");
 	}
 } 
 

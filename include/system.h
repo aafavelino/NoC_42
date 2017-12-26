@@ -21,7 +21,7 @@ SC_MODULE (REDE)
 	sc_signal<int> ground_connection_val[100];
 	sc_signal<int> ground_connection_ack[100];
 
-	void comunicacao();
+	void comunicacao_externa();
 	void injeta_flits(int, int, int, int);
 
 	SC_CTOR(REDE) 
@@ -146,7 +146,7 @@ SC_MODULE (REDE)
 		}
 	}
 
-	SC_METHOD(comunicacao);
+	SC_METHOD(comunicacao_externa);
 	for (int x = 0; x < ALTURA_REDE; ++x){
 		for (int y = 0; y < LARGURA_REDE; ++y) {
 			sensitive << rede[x][y]->cf_saida_norte->out_ack;
