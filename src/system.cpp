@@ -46,6 +46,7 @@ void REDE::comunicacao_externa()
 					{
 						rede[y-1][x]->cf_saida_oeste->out_val.write(1);
 						rede[y-1][x]->buffer_oeste->din = rede[y-1][x]->buffer_sul->flits.front();
+						rede[y-1][x]->buffer_oeste->add();
 						rede[y-1][x]->buffer_sul->remove();
 						rede[y-1][x]->arbitro_sul.remSolicitacao(OESTE);
 					}
@@ -53,6 +54,7 @@ void REDE::comunicacao_externa()
 					{
 						rede[y-1][x]->cf_saida_leste->out_val.write(1);
 						rede[y-1][x]->buffer_leste->din = rede[y-1][x]->buffer_sul->flits.front();
+						rede[y-1][x]->buffer_leste->add();
 						rede[y-1][x]->buffer_sul->remove();
 						rede[y-1][x]->arbitro_sul.remSolicitacao(LESTE);
 					}
@@ -60,6 +62,7 @@ void REDE::comunicacao_externa()
 					{
 						rede[y-1][x]->cf_saida_norte->out_val.write(1);
 						rede[y-1][x]->buffer_norte->din = rede[y-1][x]->buffer_sul->flits.front();
+						rede[y-1][x]->buffer_norte->add();
 						rede[y-1][x]->buffer_sul->remove();
 						rede[y-1][x]->arbitro_sul.remSolicitacao(NORTE);
 					}				
@@ -72,6 +75,7 @@ void REDE::comunicacao_externa()
 			if (rede[y][x]->cf_saida_sul->out_ack.read())
 			{
 				printf("[%d][%d]--SUL\n",y,x);
+				cout << rede[3][1]->cf_saida_leste->out_ack.read() << endl;
 				rede[y][x]->cf_saida_sul->out_val.write(0);
 
 				rede[y+1][x]->buffer_norte->din = rede[y][x]->buffer_sul->flits.front();
@@ -108,6 +112,7 @@ void REDE::comunicacao_externa()
 					{
 						rede[y+1][x]->cf_saida_oeste->out_val.write(1);
 						rede[y+1][x]->buffer_oeste->din = rede[y+1][x]->buffer_norte->flits.front();
+						rede[y+1][x]->buffer_oeste->add();
 						rede[y+1][x]->buffer_norte->remove();
 						rede[y+1][x]->arbitro_norte.remSolicitacao(OESTE);
 					}
@@ -115,6 +120,7 @@ void REDE::comunicacao_externa()
 					{
 						rede[y+1][x]->cf_saida_leste->out_val.write(1);
 						rede[y+1][x]->buffer_leste->din = rede[y+1][x]->buffer_norte->flits.front();
+						rede[y+1][x]->buffer_leste->add();
 						rede[y+1][x]->buffer_norte->remove();
 						rede[y+1][x]->arbitro_norte.remSolicitacao(LESTE);
 					}
@@ -122,6 +128,7 @@ void REDE::comunicacao_externa()
 					{
 						rede[y+1][x]->cf_saida_sul->out_val.write(1);
 						rede[y+1][x]->buffer_sul->din = rede[y+1][x]->buffer_norte->flits.front();
+						rede[y+1][x]->buffer_sul->add();
 						rede[y+1][x]->buffer_norte->remove();
 						rede[y+1][x]->arbitro_norte.remSolicitacao(SUL);
 					}				
@@ -136,6 +143,9 @@ void REDE::comunicacao_externa()
 				// cout << "Y= " << y << "X= " << x << " cf_saida_leste->out_ack.read()==  " << rede[y][x]->cf_saida_leste->out_ack.read() << endl;
 				printf("[%d][%d]--LESTE\n",y,x);
 				rede[y][x]->cf_saida_leste->out_val.write(0);
+
+				// cout << rede[3][1]->cf_saida_leste->out_ack.read() << endl;
+
 				
 				rede[y][x+1]->buffer_oeste->din = rede[y][x]->buffer_leste->flits.front();
 				rede[y][x]->buffer_leste->remove();
@@ -161,10 +171,17 @@ void REDE::comunicacao_externa()
 
 				if ((rede[y][x+1]->roteamento_oeste.cordenada.x == rede[y][x+1]->buffer_oeste->din.cordenadas_f.x) and (rede[y][x+1]->roteamento_oeste.cordenada.y == rede[y][x+1]->buffer_oeste->din.cordenadas_f.y))
 				{
-					printf("CHEGOUUUUU...\n");
-					rede[y][x+1]->buffer_local->din = rede[y][x+1]->buffer_oeste->flits.front();
-					rede[y][x+1]->buffer_oeste->remove();
-					rede[y][x+1]->buffer_local->add();
+					if (rede[y][x+1]->buffer_local->size < 4)
+					{
+						printf("CHEGOUUUUU...\n");
+						rede[y][x+1]->buffer_local->din = rede[y][x+1]->buffer_oeste->flits.front();
+						rede[y][x+1]->buffer_oeste->remove();
+						rede[y][x+1]->buffer_local->add();
+					} else
+					{
+						// printf("buffer cheio\n");
+					}
+
 				} else {
 					if ((rede[y][x+1]->roteamento_oeste.portaDestino == NORTE) and rede[y][x+1]->arbitro_oeste.checkPrioridade() == NORTE)
 					{
@@ -192,8 +209,9 @@ void REDE::comunicacao_externa()
 						rede[y][x+1]->arbitro_oeste.remSolicitacao(SUL);
 					}				
 				}					
-				// cout << "Teste " << endl;
+				cout << "Teste " << endl;
 				rede[y][x]->ack_cf_leste_to_oeste_wire = 0;
+
 
 			}
 
@@ -236,6 +254,7 @@ void REDE::comunicacao_externa()
 					{
 						rede[y][x-1]->cf_saida_norte->out_val.write(1);
 						rede[y][x-1]->buffer_norte->din = rede[y][x-1]->buffer_leste->flits.front();
+						rede[y][x-1]->buffer_norte->add();
 						rede[y][x-1]->buffer_leste->remove();
 						rede[y][x-1]->arbitro_leste.remSolicitacao(NORTE);
 					}
@@ -243,6 +262,7 @@ void REDE::comunicacao_externa()
 					{
 						rede[y][x-1]->cf_saida_oeste->out_val.write(1);
 						rede[y][x-1]->buffer_oeste->din = rede[y][x-1]->buffer_leste->flits.front();
+						rede[y][x-1]->buffer_oeste->add();
 						rede[y][x-1]->buffer_leste->remove();
 						rede[y][x-1]->arbitro_leste.remSolicitacao(OESTE);
 					}
@@ -250,6 +270,7 @@ void REDE::comunicacao_externa()
 					{
 						rede[y][x-1]->cf_saida_sul->out_val.write(1);
 						rede[y][x-1]->buffer_sul->din = rede[y][x-1]->buffer_leste->flits.front();
+						rede[y][x-1]->buffer_sul->add();
 						rede[y][x-1]->buffer_leste->remove();
 						rede[y][x-1]->arbitro_leste.remSolicitacao(SUL);
 					}				
@@ -308,7 +329,7 @@ void REDE::injeta_flits(int local_y , int local_x, int x, int y) {
 		rede[local_y][local_x]->buffer_leste->din =  pct->v[0];
 		rede[local_y][local_x]->buffer_leste->add();
 		rede[local_y][local_x]->cf_saida_leste->out_val.write(1);
-		// cout << "LESTE" << endl;
+		cout << "LESTE" << endl;
 	} else if (rede[local_y][local_x]->roteamento_local.portaDestino == OESTE)
 	{	
 		rede[local_y][local_x]->arbitro_oeste.addSolicitacao(OESTE);
