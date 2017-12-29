@@ -7,7 +7,7 @@
 
 // Dimensões da Rede
 
-#define LARGURA_REDE 5 
-#define ALTURA_REDE 5
+#define LARGURA_REDE 8
+#define ALTURA_REDE 8
 
 

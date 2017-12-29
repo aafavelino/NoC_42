@@ -3,6 +3,7 @@
 
 void REDE::comunicacao_externa() 
 {
+	
 	for (int y = 0; y < ALTURA_REDE; y++)
 	{
 		for (int x = 0; x < LARGURA_REDE; x++)
@@ -75,7 +76,7 @@ void REDE::comunicacao_externa()
 			if (rede[y][x]->cf_saida_sul->out_ack.read())
 			{
 				printf("[%d][%d]--SUL\n",y,x);
-				cout << rede[3][1]->cf_saida_leste->out_ack.read() << endl;
+				// cout << rede[3][1]->cf_saida_leste->out_ack.read() << endl;
 				rede[y][x]->cf_saida_sul->out_val.write(0);
 
 				rede[y+1][x]->buffer_norte->din = rede[y][x]->buffer_sul->flits.front();
@@ -209,7 +210,7 @@ void REDE::comunicacao_externa()
 						rede[y][x+1]->arbitro_oeste.remSolicitacao(SUL);
 					}				
 				}					
-				cout << "Teste " << endl;
+				
 				rede[y][x]->ack_cf_leste_to_oeste_wire = 0;
 
 
@@ -283,9 +284,9 @@ void REDE::comunicacao_externa()
 int xyz = 0;
 // 1º Local xy -> 2º Destino xy
 void REDE::injeta_flits(int local_y , int local_x, int x, int y) {
-
-	if (xyz < 5)
+	for (int i = 0; i < 6; ++i)
 	{
+
 
 	Pacote *pct = new Pacote(x,y,1);
 
@@ -345,7 +346,7 @@ void REDE::injeta_flits(int local_y , int local_x, int x, int y) {
 		rede[local_y][local_x]->buffer_local->din =	 pct->v[0];
 		rede[local_y][local_x]->buffer_local->add();
 	} 
-		//xyz++;
+	sc_start();	
+			/* code */
 	}
-
 }
