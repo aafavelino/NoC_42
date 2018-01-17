@@ -284,7 +284,7 @@ void REDE::comunicacao_externa()
 int xyz = 0;
 // 1º Local xy -> 2º Destino xy
 void REDE::injeta_flits(int local_y , int local_x, int x, int y) {
-	for (int i = 0; i < 8; ++i)
+	for (int i = 0; i < 6; ++i)
 	{
 
 
