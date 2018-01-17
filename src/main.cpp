@@ -8,7 +8,7 @@ using namespace std;
 int sc_main (int argc, char* argv[]) {
 	REDE *teste = new REDE("rede");
 
-		teste->injeta_flits(0,0, 4, 4);
+		teste->injeta_flits(4,4, 0, 0);
 		// teste->injeta_flits(0,2, 4, 4);
 		// teste->injeta_flits(0,4, 7, 7);
 		// teste->injeta_flits(4,4, 0, 0);

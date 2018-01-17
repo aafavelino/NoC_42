@@ -19,7 +19,7 @@ void REDE::comunicacao_externa()
 				//Setando as cordenadas
 				rede[y-1][x]->roteamento_sul.cordenada_destino.x = rede[y-1][x]->buffer_sul->din.cordenadas_f.x;
 				rede[y-1][x]->roteamento_sul.cordenada_destino.y = rede[y-1][x]->buffer_sul->din.cordenadas_f.y;
-				rede[y-1][x]->roteamento_sul.rotear_xy();
+				rede[y-1][x]->roteamento_sul.rotear_west_first();
 
 				if (rede[y-1][x]->roteamento_sul.portaDestino == OESTE)
 				{
@@ -85,7 +85,7 @@ void REDE::comunicacao_externa()
 				//Setando as cordenadas
 				rede[y+1][x]->roteamento_norte.cordenada_destino.x = rede[y+1][x]->buffer_norte->din.cordenadas_f.x;
 				rede[y+1][x]->roteamento_norte.cordenada_destino.y = rede[y+1][x]->buffer_norte->din.cordenadas_f.y;
-				rede[y+1][x]->roteamento_norte.rotear_xy();
+				rede[y+1][x]->roteamento_norte.rotear_west_first();
 
 				if (rede[y+1][x]->roteamento_norte.portaDestino == OESTE)
 				{
@@ -154,7 +154,7 @@ void REDE::comunicacao_externa()
 				//Setando as cordenadas
 				rede[y][x+1]->roteamento_oeste.cordenada_destino.x = rede[y][x+1]->buffer_oeste->din.cordenadas_f.x;
 				rede[y][x+1]->roteamento_oeste.cordenada_destino.y = rede[y][x+1]->buffer_oeste->din.cordenadas_f.y;
-				rede[y][x+1]->roteamento_oeste.rotear_xy();
+				rede[y][x+1]->roteamento_oeste.rotear_west_first();
 
 				if (rede[y][x+1]->roteamento_oeste.portaDestino == LESTE)
 				{
@@ -227,7 +227,7 @@ void REDE::comunicacao_externa()
 				//Setando as cordenadas
 				rede[y][x-1]->roteamento_leste.cordenada_destino.x = rede[y][x-1]->buffer_leste->din.cordenadas_f.x;
 				rede[y][x-1]->roteamento_leste.cordenada_destino.y = rede[y][x-1]->buffer_leste->din.cordenadas_f.y;
-				rede[y][x-1]->roteamento_leste.rotear_xy();
+				rede[y][x-1]->roteamento_leste.rotear_west_first();
 
 
 				if (rede[y][x-1]->roteamento_leste.portaDestino == OESTE)
@@ -298,7 +298,7 @@ void REDE::injeta_flits(int local_y , int local_x, int x, int y) {
 	rede[local_y][local_x]->roteamento_local.cordenada_destino.y =   pct->v[0].cordenadas_f.y;
 	
 	//Roteando
-	rede[local_y][local_x]->roteamento_local.rotear_xy();
+	rede[local_y][local_x]->roteamento_local.rotear_west_first();
 
 
 	if (rede[local_y][local_x]->roteamento_local.portaDestino == NORTE)
