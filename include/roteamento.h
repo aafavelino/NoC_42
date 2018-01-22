@@ -24,9 +24,14 @@ public:
 		int y;
 	} cordenada_destino;
 
-	int portaDestino; 
+	int portaDestino = -1;
+	int portaAnterior = -1; 
 
+	void rotear_west_first();
 	void rotear_xy();
+	void rotear_north_last();
+	void rotear_odd_even();
+	void rotear_negative_first();
 	
 };
 #endif
