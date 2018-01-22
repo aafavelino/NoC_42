@@ -51,7 +51,7 @@ void Roteamento::rotear_west_first()
 	}
 }
 
-void Roteamento::rotear_nort_last()
+void Roteamento::rotear_north_last()
 {
 	portaAnterior = portaDestino;
 
