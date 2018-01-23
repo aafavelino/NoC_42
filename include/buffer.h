@@ -12,23 +12,25 @@ SC_MODULE (Buffer)
 {
 
 public:
-	
-	std::queue<Flit> flits;
 
+	std::queue<Flit> flits;
+    int size;
+    
 	Flit din; //Entrada data + bop + eop
 	Flit dout; //Saída que vai para o roteamento
 
-	sc_in <int>  in_bf_controle_fluxo; //Entrada que vem do controle de fluxo
-	sc_out<int>  out_bf_controle_fluxo; //Saída que volta para o buffer
+	sc_int<4>  wr; //Entrada que vem do controle de fluxo
+	sc_int<4>  wok; //Saída que volta para o buffer
 
 	void add();
 	void remove();
 	int isEmpty();
 
 	SC_CTOR(Buffer) {
-        SC_METHOD(add);
-        SC_METHOD(remove);
-    }
+		SC_METHOD(add);
+		SC_METHOD(remove);
+        size = 0;
+	}
 
 	
 };

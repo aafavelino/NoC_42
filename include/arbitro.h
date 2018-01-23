@@ -5,12 +5,8 @@
 #include <systemc.h>
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
+#include "../constantes/constantes.h"
 
-#define NORTE 0
-#define LESTE 1
-#define SUL 2
-#define OESTE 3
-#define LOCAL 4
 
 class Arbitro 
 {
