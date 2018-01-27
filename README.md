@@ -4,10 +4,6 @@
 
 Modelo TLM da rede SOCin
 
-|    Memorização    |  Controle de fluxo |  Arbitragem  |
-|-------------------|--------------------|--------------|
-|		FIFO		|	   Handshake	 |  Round-robin	|
-
 ### Projeto de Pesquisa em Redes em chip
 
 |  Aluno                        | Adelino Afonso Fernandes Avelino  |
