@@ -193,8 +193,8 @@ void REDE::comunicacao_externa()
 
 				
 				rede[y][x+1]->buffer_oeste->din = rede[y][x]->buffer_leste->flits.front();
-				rede[y][x]->buffer_leste->remove();
 				rede[y][x+1]->buffer_oeste->add();
+				rede[y][x]->buffer_leste->remove();
 				//Setando as cordenadas
 				rede[y][x+1]->roteamento_oeste.cordenada_destino.x = rede[y][x+1]->buffer_oeste->flits.front().cordenadas_f.x;
 				rede[y][x+1]->roteamento_oeste.cordenada_destino.y = rede[y][x+1]->buffer_oeste->flits.front().cordenadas_f.y;
@@ -233,17 +233,17 @@ void REDE::comunicacao_externa()
 
 				if ((rede[y][x+1]->roteamento_oeste.cordenada.x == rede[y][x+1]->buffer_oeste->flits.front().cordenadas_f.x) and (rede[y][x+1]->roteamento_oeste.cordenada.y == rede[y][x+1]->buffer_oeste->flits.front().cordenadas_f.y))
 				{
-					if (rede[y][x+1]->buffer_local->size < 4)
-					{
+					// if (rede[y][x+1]->buffer_local->size < 4)
+					// {
 						rede[y][x]->ack_cf_leste_to_oeste_wire = 0;
 						printf("CHEGOUUUUU...\n");
 						rede[y][x+1]->buffer_local->din = rede[y][x+1]->buffer_oeste->flits.front();
 						rede[y][x+1]->buffer_oeste->remove();
 						rede[y][x+1]->buffer_local->add();
-					} else
-					{
-						// printf("buffer cheio\n");
-					}
+					// } else
+					// {
+					// 	printf("buffer cheio\n");
+					// }
 
 				} else {
 					if ((rede[y][x+1]->roteamento_oeste.portaDestino == NORTE) and rede[y][x+1]->arbitro_oeste.checkPrioridade() == NORTE and rede[y][x+1]->cf_saida_norte->out_ack.read() != 1)
@@ -448,7 +448,5 @@ void REDE::injeta_flits(int local_y , int local_x, int x, int y) {
 		rede[local_y][local_x]->buffer_local->din =	 pct->v[0];
 		rede[local_y][local_x]->buffer_local->add();
 	} 
-	// sc_start();	
-			/* code */
 	}
 }
