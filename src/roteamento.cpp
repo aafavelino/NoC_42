@@ -2,6 +2,8 @@
 
 void Roteamento::rotear_xy()
 {	
+	// cout << "Cord Destino y " << cordenada_destino.y << " Cord Destino x " << cordenada_destino.x << endl;
+	// cout << "Cord y " << cordenada.y << " Cord x " << cordenada.x << endl;
 	if (cordenada_destino.y > cordenada.y )
 	{
 		portaDestino = LESTE;
@@ -9,11 +11,12 @@ void Roteamento::rotear_xy()
 	} else if (cordenada_destino.y < cordenada.y)
 	{
 		portaDestino = OESTE;
-		//printf("Porta no roteamento Oeste\n");
+		// printf("Porta no roteamento Oeste\n");
 	} else if (cordenada_destino.x > cordenada.x)
 	{
+
 		portaDestino = SUL;
-		//printf("Porta no roteamento sul\n");
+		// printf("Porta no roteamento sul\n");
 	} else if (cordenada_destino.x < cordenada.x)
 	{
 		portaDestino = NORTE;

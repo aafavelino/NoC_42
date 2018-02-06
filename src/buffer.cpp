@@ -8,13 +8,17 @@ void Buffer::add() {
 //Funcionando
 void Buffer::remove() {
 	flits.pop();
-    size--;
+	if (size > 0)
+	{
+		size--;
+	}
+    
 }
 
 //Se estiver Vazio retorna 1, senão retorna 0
 int Buffer::isEmpty() {
     
 	// cout << "Buffer Size :" <<  ((this->size < 4) ? 1: 0 )<< "\n";
-	return (this->size < 4) ? 1: 0;
+	return (this->size < 10) ? 1: 0;
 }
 
