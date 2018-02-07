@@ -64,7 +64,7 @@ SC_MODULE (roteador)
 	Buffer *buffer_leste;
 	Buffer *buffer_oeste;
 	Buffer *buffer_local;
-
+	// Buffers de canais virtuais
 	Buffer *buffer_norte_canal_virtual;
 	Buffer *buffer_sul_canal_virtual;
 	Buffer *buffer_leste_canal_virtual;
