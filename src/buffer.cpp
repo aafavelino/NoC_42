@@ -8,7 +8,11 @@ void Buffer::add() {
 //Funcionando
 void Buffer::remove() {
 	flits.pop();
-    size--;
+	if (size > 0)
+	{
+		size--;
+	}
+    
 }
 
 //Se estiver Vazio retorna 1, senão retorna 0
