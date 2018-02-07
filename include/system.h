@@ -12,6 +12,10 @@ using namespace std;
 
 SC_MODULE (REDE)
 {
+	bool ver_leste = false;
+	bool ver_oeste = false;
+	bool ver_sul = false;
+	bool ver_norte = false;
 
 	// Criando uma Rede Altura x Largura
 	roteador *rede[ALTURA_REDE][LARGURA_REDE];
