@@ -9,16 +9,7 @@ void roteador::entrada_controle_de_fluxo()
 		entrada_buffer();
 		confirmacao_buffer();
 		cf_norte->wok = buffer_norte->wok;
-		if (cf_norte->wok != 0)
-		{
-			execute_retorno_controle_de_fluxo();
-		} else {
-			entrada_buffer_virtual();
-			confirmacao_buffer_virtual();
-			cf_norte->wok = buffer_norte_canal_virtual->wok;
-			execute_retorno_controle_de_fluxo_virtual();
-		}
-		
+		execute_retorno_controle_de_fluxo();
 	}
 	if (cf_sul->in_val.read() == 1)
 	{
@@ -27,15 +18,7 @@ void roteador::entrada_controle_de_fluxo()
 		entrada_buffer();
 		confirmacao_buffer();
 		cf_sul->wok = buffer_sul->wok;
-		if (cf_sul->wok != 0)
-		{
-			execute_retorno_controle_de_fluxo();
-		} else {
-			entrada_buffer_virtual();
-			confirmacao_buffer_virtual();
-			cf_sul->wok = buffer_sul_canal_virtual->wok;
-			execute_retorno_controle_de_fluxo_virtual();
-		}
+		execute_retorno_controle_de_fluxo();
 	}
 	if (cf_leste->in_val.read() == 1)
 	{
@@ -44,16 +27,7 @@ void roteador::entrada_controle_de_fluxo()
 		entrada_buffer();
 		confirmacao_buffer();
 		cf_leste->wok = buffer_leste->wok;
-		if (cf_leste->wok != 0)
-		{
-			execute_retorno_controle_de_fluxo();
-		} else {
-			entrada_buffer_virtual();
-			confirmacao_buffer_virtual();
-			cf_leste->wok = buffer_leste_canal_virtual->wok;
-			execute_retorno_controle_de_fluxo_virtual();
-		}
-		
+		execute_retorno_controle_de_fluxo();
 	}
 	if (cf_oeste->in_val.read() == 1)
 	{
@@ -62,16 +36,7 @@ void roteador::entrada_controle_de_fluxo()
 		entrada_buffer();
 		confirmacao_buffer();
 		cf_oeste->wok = buffer_oeste->wok;
-		if (cf_oeste != 0)
-		{
-			execute_retorno_controle_de_fluxo();
-		} else {
-			entrada_buffer_virtual();
-			confirmacao_buffer_virtual();
-			cf_oeste->wok = buffer_oeste_canal_virtual->wok;
-			execute_retorno_controle_de_fluxo_virtual();
-		}
-		
+		execute_retorno_controle_de_fluxo();
 	}	
 }
 
@@ -94,28 +59,18 @@ void roteador::entrada_buffer()
 }
 
 
-void roteador::entrada_buffer_virtual() 
-{
-	if (cf_norte->wr == 1)
-		buffer_norte_canal_virtual->wr = 1;
-
-	if (cf_sul->wr == 1)
-		buffer_sul_canal_virtual->wr = 1;
-
-	if (cf_leste->wr == 1)
-		buffer_leste_canal_virtual->wr = 1;
-
-	if (cf_oeste->wr == 1)
-		buffer_oeste_canal_virtual->wr = 1;
-
-}
-
 void roteador::confirmacao_buffer()
 {
 	if (buffer_norte->wr == 1)
 	{
 		// Se tiver espaço no buffer retorna 1 para a variável wok do buffer para o controle de fluxo 
-		buffer_norte->wok = buffer_norte->isEmpty();
+		if (buffer_norte->isEmpty() == 1)
+		{
+			buffer_norte->wok = 1;
+		} else if (buffer_norte->isEmpty_canais_virtuais() == 1)
+		{
+			buffer_norte->wok = 1;
+		}
 		if (buffer_norte->wok == 1){
 			cf_norte->wr = 0;
 			buffer_norte->wr = 0;
@@ -125,7 +80,13 @@ void roteador::confirmacao_buffer()
 	if (buffer_sul->wr == 1)
 	{
 		// Se tiver espaço no buffer retorna 1 para a variável wok do buffer para o controle de fluxo 
-		buffer_sul->wok = buffer_sul->isEmpty();
+		if (buffer_sul->isEmpty() == 1)
+		{
+			buffer_sul->wok = 1;
+		} else if (buffer_sul->isEmpty_canais_virtuais() == 1)
+		{
+			buffer_sul->wok = 1;
+		}
 		if (buffer_sul->wok == 1){
 			cf_sul->wr = 0;
 			buffer_sul->wr = 0;
@@ -135,7 +96,13 @@ void roteador::confirmacao_buffer()
 	if (buffer_leste->wr == 1)
 	{
 		// Se tiver espaço no buffer retorna 1 para a variável wok do buffer para o controle de fluxo 
-		buffer_leste->wok = buffer_leste->isEmpty();
+		if (buffer_leste->isEmpty() == 1)
+		{
+			buffer_leste->wok = 1;
+		} else if (buffer_leste->isEmpty_canais_virtuais() == 1)
+		{
+			buffer_leste->wok = 1;
+		}
 		if (buffer_leste->wok == 1){
 			cf_leste->wr = 0;
 			buffer_leste->wr = 0;
@@ -145,54 +112,16 @@ void roteador::confirmacao_buffer()
 	if (buffer_oeste->wr == 1)
 	{
 		// Se tiver espaço no buffer retorna 1 para a variável wok do buffer para o controle de fluxo 
-		buffer_oeste->wok = buffer_oeste->isEmpty();
+		if (buffer_oeste->isEmpty() == 1)
+		{
+			buffer_oeste->wok = 1;
+		} else if (buffer_oeste->isEmpty_canais_virtuais() == 1)
+		{
+			buffer_oeste->wok = 1;
+		}
 		if (buffer_oeste->wok == 1){
 			cf_oeste->wr = 0;
 			buffer_oeste->wr = 0;
-		}
-	}
-
-}
-
-void roteador::confirmacao_buffer_virtual()
-{
-	if (buffer_norte_canal_virtual->wr == 1)
-	{
-		// Se tiver espaço no buffer retorna 1 para a variável wok do buffer para o controle de fluxo 
-		buffer_norte_canal_virtual->wok = buffer_norte_canal_virtual->isEmpty();
-		if (buffer_norte_canal_virtual->wok == 1){
-			cf_norte->wr = 0;
-			buffer_norte_canal_virtual->wr = 0;
-		}		
-	}
-
-	if (buffer_sul_canal_virtual->wr == 1)
-	{
-		// Se tiver espaço no buffer retorna 1 para a variável wok do buffer para o controle de fluxo 
-		buffer_sul_canal_virtual->wok = buffer_sul_canal_virtual->isEmpty();
-		if (buffer_sul_canal_virtual->wok == 1){
-			cf_sul->wr = 0;
-			buffer_sul_canal_virtual->wr = 0;
-		}	
-	}
-
-	if (buffer_leste->wr == 1)
-	{
-		// Se tiver espaço no buffer retorna 1 para a variável wok do buffer para o controle de fluxo 
-		buffer_leste_canal_virtual->wok = buffer_leste_canal_virtual->isEmpty();
-		if (buffer_leste_canal_virtual->wok == 1){
-			cf_leste->wr = 0;
-			buffer_leste_canal_virtual->wr = 0;
-		}
-	}
-
-	if (buffer_oeste_canal_virtual->wr == 1)
-	{
-		// Se tiver espaço no buffer retorna 1 para a variável wok do buffer para o controle de fluxo 
-		buffer_oeste_canal_virtual->wok = buffer_oeste_canal_virtual->isEmpty();
-		if (buffer_oeste_canal_virtual->wok == 1){
-			cf_oeste->wr = 0;
-			buffer_oeste_canal_virtual->wr = 0;
 		}
 	}
 
@@ -228,37 +157,3 @@ void roteador::execute_retorno_controle_de_fluxo()
 		cf_oeste->wok = 0;
 	}
 } 
-
-
-
-void roteador::execute_retorno_controle_de_fluxo_virtual()
-{
-	if (cf_norte->wok == 1)
-	{
-		cf_norte->in_ack.write(1);
-		buffer_norte_canal_virtual->wok = 0;
-		cf_norte->wok = 0;
-	}
-
-	if (cf_sul->wok == 1)
-	{
-		cf_sul->in_ack.write(1);
-		buffer_sul_canal_virtual->wok = 0;
-		cf_sul->wok = 0;
-	}
-	if (cf_leste->wok == 1)
-	{
-		cf_leste->in_ack.write(1);
-		buffer_leste_canal_virtual->wok = 0;
-		cf_leste->wok = 0;
-
-	}
-	if (cf_oeste->wok == 1)
-	{
-		cf_oeste->in_ack.write(1);
-		buffer_oeste_canal_virtual->wok = 0;
-		cf_oeste->wok = 0;
-	}
-} 
-
-

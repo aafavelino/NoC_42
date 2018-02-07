@@ -11,46 +11,138 @@ void REDE::comunicacao_externa()
 			if (rede[y][x]->cf_leste->in_ack.read() == 1)
 			{
 				printf("[%d][%d]--LESTE\n",y,x);
-				rede[y][x]->buffer_leste->din = rede[y][x+1]->buffer_oeste->flits.front(); 
-				rede[y][x]->buffer_leste->add();
-				rede[y][x+1]->buffer_oeste->remove();
-				rede[y][x+1]->cf_saida_oeste->out_val.write(0);
-				rede[y][x]->cf_leste->in_ack = 0;
-				ver_leste = true;
+
+				rede[y][x+1]->roteamento_oeste.cordenada_destino.x = rede[y][x+1]->buffer_oeste->flits.front().cordenadas_f.x;
+				rede[y][x+1]->roteamento_oeste.cordenada_destino.y = rede[y][x+1]->buffer_oeste->flits.front().cordenadas_f.y;				
+
+				#ifdef NEGATIVE_FIRST
+				rede[y][x+1]->roteamento_oeste.rotear_negative_first();
+				#endif
+
+				#ifdef XY
+				rede[y][x+1]->roteamento_oeste.rotear_xy();
+				#endif	
+
+				#ifdef NORTH_LAST
+				rede[y][x+1]->roteamento_oeste.rotear_north_last();
+				#endif
+
+				#ifdef WEST_FIRST	
+				rede[y][x+1]->roteamento_oeste.rotear_west_first();
+				#endif	
+
+				if (rede[y][x+1]->roteamento_oeste.portaDestino == OESTE)
+				{
+					rede[y][x]->buffer_leste->din = rede[y][x+1]->buffer_oeste->flits.front(); 
+					rede[y][x]->buffer_leste->add();
+					rede[y][x+1]->buffer_oeste->remove();
+					rede[y][x+1]->cf_saida_oeste->out_val.write(0);
+					rede[y][x]->cf_leste->in_ack = 0;
+					ver_leste = true;
+				}
+
+
 			}
 
 
 			if (rede[y][x]->cf_oeste->in_ack.read() == 1)
 			{
 				printf("[%d][%d]--OESTE\n",y,x);
-				rede[y][x]->buffer_oeste->din = rede[y][x-1]->buffer_leste->flits.front();			 
-				rede[y][x]->buffer_oeste->add();
-				rede[y][x-1]->buffer_leste->remove();
-				rede[y][x-1]->cf_saida_leste->out_val.write(0);
-				rede[y][x]->cf_oeste->in_ack = 0;
-				ver_oeste = true;
+				rede[y][x-1]->roteamento_leste.cordenada_destino.x = rede[y][x-1]->buffer_leste->flits.front().cordenadas_f.x;
+				rede[y][x-1]->roteamento_leste.cordenada_destino.y = rede[y][x-1]->buffer_leste->flits.front().cordenadas_f.y;				
+
+				#ifdef NEGATIVE_FIRST
+				rede[y][x-1]->roteamento_leste.rotear_negative_first();
+				#endif
+
+				#ifdef XY
+				rede[y][x-1]->roteamento_leste.rotear_xy();
+				#endif	
+
+				#ifdef NORTH_LAST
+				rede[y][x-1]->roteamento_leste.rotear_north_last();
+				#endif
+
+				#ifdef WEST_FIRST	
+				rede[y][x-1]->roteamento_leste.rotear_west_first();
+				#endif	
+				if (rede[y][x-1]->roteamento_leste.portaDestino == LESTE)
+				{
+					rede[y][x]->buffer_oeste->din = rede[y][x-1]->buffer_leste->flits.front();			 
+					rede[y][x]->buffer_oeste->add();
+					rede[y][x-1]->buffer_leste->remove();
+					rede[y][x-1]->cf_saida_leste->out_val.write(0);
+					rede[y][x]->cf_oeste->in_ack = 0;
+					ver_oeste = true;
+				}							
+
 			}			
 
 			if (rede[y][x]->cf_sul->in_ack.read() == 1) 
 			{
 				printf("[%d][%d]--SUL\n",y,x);
-				rede[y][x]->buffer_sul->din = rede[y+1][x]->buffer_norte->flits.front();
-				rede[y][x]->buffer_sul->add();
-				rede[y+1][x]->buffer_norte->remove();
-				rede[y+1][x]->cf_saida_norte->out_val.write(0);
-				rede[y][x]->cf_sul->in_ack = 0;
-				ver_sul = true;
+
+				rede[y+1][x]->roteamento_norte.cordenada_destino.x = rede[y+1][x]->buffer_norte->flits.front().cordenadas_f.x;
+				rede[y+1][x]->roteamento_norte.cordenada_destino.y = rede[y+1][x]->buffer_norte->flits.front().cordenadas_f.y;								
+				
+				#ifdef NEGATIVE_FIRST
+				rede[y+1][x]->roteamento_norte.rotear_negative_first();
+				#endif
+
+				#ifdef XY
+				rede[y+1][x]->roteamento_norte.rotear_xy();
+				#endif	
+
+				#ifdef NORTH_LAST
+				rede[y+1][x]->roteamento_norte.rotear_north_last();
+				#endif
+
+				#ifdef WEST_FIRST	
+				rede[y+1][x]->roteamento_norte.rotear_west_first();
+				#endif	
+
+				if (rede[y+1][x]->roteamento_norte.portaDestino == NORTE)
+				{
+					rede[y][x]->buffer_sul->din = rede[y+1][x]->buffer_norte->flits.front();
+					rede[y][x]->buffer_sul->add();
+					rede[y+1][x]->buffer_norte->remove();
+					rede[y+1][x]->cf_saida_norte->out_val.write(0);
+					rede[y][x]->cf_sul->in_ack = 0;
+					ver_sul = true;					
+				}				
+
 			}
 
 			if (rede[y][x]->cf_norte->in_ack.read() == 1)
 			{
 				printf("[%d][%d]--NORTE\n",y,x);
-				rede[y][x]->buffer_norte->din = rede[y-1][x]->buffer_sul->flits.front();
-				rede[y][x]->buffer_norte->add();
-				rede[y-1][x]->buffer_sul->remove();
-				rede[y-1][x]->cf_saida_sul->out_val.write(0);
-				rede[y][x]->cf_norte->in_ack = 0;
-				ver_norte = true;
+				rede[y-1][x]->roteamento_sul.cordenada_destino.x = rede[y-1][x]->buffer_sul->flits.front().cordenadas_f.x;
+				rede[y-1][x]->roteamento_sul.cordenada_destino.y = rede[y-1][x]->buffer_sul->flits.front().cordenadas_f.y;								
+				
+				#ifdef NEGATIVE_FIRST
+				rede[y-1][x]->roteamento_sul.rotear_negative_first();
+				#endif
+
+				#ifdef XY
+				rede[y-1][x]->roteamento_sul.rotear_xy();
+				#endif	
+
+				#ifdef NORTH_LAST
+				rede[y-1][x]->roteamento_sul.rotear_north_last();
+				#endif
+
+				#ifdef WEST_FIRST	
+				rede[y-1][x]->roteamento_sul.rotear_west_first();
+				#endif	
+
+				if (rede[y-1][x]->roteamento_sul.portaDestino == SUL) {
+					rede[y][x]->buffer_norte->din = rede[y-1][x]->buffer_sul->flits.front();
+					rede[y][x]->buffer_norte->add();
+					rede[y-1][x]->buffer_sul->remove();
+					rede[y-1][x]->cf_saida_sul->out_val.write(0);
+					rede[y][x]->cf_norte->in_ack = 0;
+					ver_norte = true;
+				}
 			}					
 
 

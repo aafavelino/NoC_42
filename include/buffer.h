@@ -14,10 +14,12 @@ SC_MODULE (Buffer)
 public:
 
 	std::queue<Flit> flits;
+	std::queue<Flit> flits_canais_virtuais;
     int size;
+    int size_canais_virtuais;
     
 	Flit din; //Entrada data + bop + eop
-	Flit dout; //Saída que vai para o roteamento
+	Flit din_canais_virtuais; //Entrada data + bop + eop
 
 	sc_int<4>  wr; //Entrada que vem do controle de fluxo
 	sc_int<4>  wok; //Saída que volta para o buffer
@@ -25,11 +27,13 @@ public:
 	void add();
 	void remove();
 	int isEmpty();
+	int isEmpty_canais_virtuais();
 
 	SC_CTOR(Buffer) {
 		SC_METHOD(add);
 		SC_METHOD(remove);
         size = 0;
+        size_canais_virtuais = 0;
 	}
 
 	

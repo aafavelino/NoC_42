@@ -64,20 +64,12 @@ SC_MODULE (roteador)
 	Buffer *buffer_leste;
 	Buffer *buffer_oeste;
 	Buffer *buffer_local;
-	// Buffers de canais virtuais
-	Buffer *buffer_norte_canal_virtual;
-	Buffer *buffer_sul_canal_virtual;
-	Buffer *buffer_leste_canal_virtual;
-	Buffer *buffer_oeste_canal_virtual;
 		
 
 	void entrada_controle_de_fluxo();
 	void entrada_buffer();
-	void entrada_buffer_virtual();
 	void confirmacao_buffer();
-	void confirmacao_buffer_virtual();
 	void execute_retorno_controle_de_fluxo();
-	void execute_retorno_controle_de_fluxo_virtual();
 
 
 
@@ -97,12 +89,7 @@ SC_MODULE (roteador)
 		buffer_leste = new Buffer("Buffer_leste");
 		buffer_oeste = new Buffer("Buffer_oeste");
 		buffer_local = new Buffer("Buffer_local");
-
-
-		buffer_norte_canal_virtual = new Buffer("Buffer_norte_canal_virtual");
-		buffer_sul_canal_virtual = new Buffer("Buffer_sul_canal_virtual");
-		buffer_leste_canal_virtual = new Buffer("Buffer_leste_canal_virtual");
-		buffer_oeste_canal_virtual = new Buffer("Buffer_oeste_canal_virtual");		
+	
 
 		//Ligação dos controles de fluxo internos...
 		cf_saida_norte->out_val(val_cf_norte_to_sul_wire);
