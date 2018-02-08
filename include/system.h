@@ -27,6 +27,8 @@ SC_MODULE (REDE)
 
 	void comunicacao_externa();
 	void injeta_flits(int, int, int, int);
+	void roteamentos_macros_externa(int,int,int);
+	void roteamentos_macros_interna(int,int,int);
 
 	SC_CTOR(REDE) 
 	{ 

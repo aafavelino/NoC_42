@@ -26,6 +26,7 @@ public:
 
 	void add();
 	void remove();
+	void remove_canais_virtuais();
 	int isEmpty();
 	int isEmpty_canais_virtuais();
 

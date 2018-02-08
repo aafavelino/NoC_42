@@ -1,6 +1,152 @@
 #include "system.h"
 
+void REDE::roteamentos_macros_externa(int y, int x, int cordenada) {
+	switch(cordenada) 
+	{
+		case OESTE:
+			#ifdef NEGATIVE_FIRST
+			rede[y][x+1]->roteamento_oeste.rotear_negative_first();
+			#endif
 
+			#ifdef XY
+			rede[y][x+1]->roteamento_oeste.rotear_xy();
+			#endif	
+
+			#ifdef NORTH_LAST
+			rede[y][x+1]->roteamento_oeste.rotear_north_last();
+			#endif
+
+			#ifdef WEST_FIRST	
+			rede[y][x+1]->roteamento_oeste.rotear_west_first();
+			#endif	
+		break;
+		case LESTE:
+			#ifdef NEGATIVE_FIRST
+			rede[y][x-1]->roteamento_leste.rotear_negative_first();
+			#endif
+
+			#ifdef XY
+			rede[y][x-1]->roteamento_leste.rotear_xy();
+			#endif	
+
+			#ifdef NORTH_LAST
+			rede[y][x-1]->roteamento_leste.rotear_north_last();
+			#endif
+
+			#ifdef WEST_FIRST	
+			rede[y][x-1]->roteamento_leste.rotear_west_first();
+			#endif		
+		break;
+		case NORTE:
+			#ifdef NEGATIVE_FIRST
+			rede[y+1][x]->roteamento_norte.rotear_negative_first();
+			#endif
+
+			#ifdef XY
+			rede[y+1][x]->roteamento_norte.rotear_xy();
+			#endif	
+
+			#ifdef NORTH_LAST
+			rede[y+1][x]->roteamento_norte.rotear_north_last();
+			#endif
+
+			#ifdef WEST_FIRST	
+			rede[y+1][x]->roteamento_norte.rotear_west_first();
+			#endif		
+		break;
+		case SUL:
+			#ifdef NEGATIVE_FIRST
+			rede[y-1][x]->roteamento_sul.rotear_negative_first();
+			#endif
+
+			#ifdef XY
+			rede[y-1][x]->roteamento_sul.rotear_xy();
+			#endif	
+
+			#ifdef NORTH_LAST
+			rede[y-1][x]->roteamento_sul.rotear_north_last();
+			#endif
+
+			#ifdef WEST_FIRST	
+			rede[y-1][x]->roteamento_sul.rotear_west_first();
+			#endif			
+		break;
+	}
+}
+
+void REDE::roteamentos_macros_interna(int y, int x, int cordenada) {
+	switch(cordenada) 
+	{
+		case OESTE:
+			#ifdef NEGATIVE_FIRST
+			rede[y][x]->roteamento_oeste.rotear_negative_first();
+			#endif
+
+			#ifdef XY
+			rede[y][x]->roteamento_oeste.rotear_xy();
+			#endif	
+
+			#ifdef NORTH_LAST
+			rede[y][x]->roteamento_oeste.rotear_north_last();
+			#endif
+
+			#ifdef WEST_FIRST	
+			rede[y][x]->roteamento_oeste.rotear_west_first();
+			#endif	
+		break;
+		case LESTE:
+			#ifdef NEGATIVE_FIRST
+			rede[y][x]->roteamento_leste.rotear_negative_first();
+			#endif
+
+			#ifdef XY
+			rede[y][x]->roteamento_leste.rotear_xy();
+			#endif	
+
+			#ifdef NORTH_LAST
+			rede[y][x]->roteamento_leste.rotear_north_last();
+			#endif
+
+			#ifdef WEST_FIRST	
+			rede[y][x]->roteamento_leste.rotear_west_first();
+			#endif		
+		break;
+		case NORTE:
+			#ifdef NEGATIVE_FIRST
+			rede[y][x]->roteamento_norte.rotear_negative_first();
+			#endif
+
+			#ifdef XY
+			rede[y][x]->roteamento_norte.rotear_xy();
+			#endif	
+
+			#ifdef NORTH_LAST
+			rede[y][x]->roteamento_norte.rotear_north_last();
+			#endif
+
+			#ifdef WEST_FIRST	
+			rede[y][x]->roteamento_norte.rotear_west_first();
+			#endif		
+		break;
+		case SUL:
+			#ifdef NEGATIVE_FIRST
+			rede[y][x]->roteamento_sul.rotear_negative_first();
+			#endif
+
+			#ifdef XY
+			rede[y][x]->roteamento_sul.rotear_xy();
+			#endif	
+
+			#ifdef NORTH_LAST
+			rede[y][x]->roteamento_sul.rotear_north_last();
+			#endif
+
+			#ifdef WEST_FIRST	
+			rede[y][x]->roteamento_sul.rotear_west_first();
+			#endif			
+		break;
+	}
+}
 
 void REDE::comunicacao_externa() 
 {
@@ -11,25 +157,10 @@ void REDE::comunicacao_externa()
 			if (rede[y][x]->cf_leste->in_ack.read() == 1)
 			{
 				printf("[%d][%d]--LESTE\n",y,x);
-
+				// Verificar se vai do buffer normal ou do canal virtual
 				rede[y][x+1]->roteamento_oeste.cordenada_destino.x = rede[y][x+1]->buffer_oeste->flits.front().cordenadas_f.x;
 				rede[y][x+1]->roteamento_oeste.cordenada_destino.y = rede[y][x+1]->buffer_oeste->flits.front().cordenadas_f.y;				
-
-				#ifdef NEGATIVE_FIRST
-				rede[y][x+1]->roteamento_oeste.rotear_negative_first();
-				#endif
-
-				#ifdef XY
-				rede[y][x+1]->roteamento_oeste.rotear_xy();
-				#endif	
-
-				#ifdef NORTH_LAST
-				rede[y][x+1]->roteamento_oeste.rotear_north_last();
-				#endif
-
-				#ifdef WEST_FIRST	
-				rede[y][x+1]->roteamento_oeste.rotear_west_first();
-				#endif	
+				roteamentos_macros_externa(y,x,OESTE);
 
 				if (rede[y][x+1]->roteamento_oeste.portaDestino == OESTE)
 				{
@@ -39,6 +170,8 @@ void REDE::comunicacao_externa()
 					rede[y][x+1]->cf_saida_oeste->out_val.write(0);
 					rede[y][x]->cf_leste->in_ack = 0;
 					ver_leste = true;
+				} else {
+
 				}
 
 
@@ -51,21 +184,8 @@ void REDE::comunicacao_externa()
 				rede[y][x-1]->roteamento_leste.cordenada_destino.x = rede[y][x-1]->buffer_leste->flits.front().cordenadas_f.x;
 				rede[y][x-1]->roteamento_leste.cordenada_destino.y = rede[y][x-1]->buffer_leste->flits.front().cordenadas_f.y;				
 
-				#ifdef NEGATIVE_FIRST
-				rede[y][x-1]->roteamento_leste.rotear_negative_first();
-				#endif
+				roteamentos_macros_externa(y,x,LESTE);
 
-				#ifdef XY
-				rede[y][x-1]->roteamento_leste.rotear_xy();
-				#endif	
-
-				#ifdef NORTH_LAST
-				rede[y][x-1]->roteamento_leste.rotear_north_last();
-				#endif
-
-				#ifdef WEST_FIRST	
-				rede[y][x-1]->roteamento_leste.rotear_west_first();
-				#endif	
 				if (rede[y][x-1]->roteamento_leste.portaDestino == LESTE)
 				{
 					rede[y][x]->buffer_oeste->din = rede[y][x-1]->buffer_leste->flits.front();			 
@@ -85,21 +205,7 @@ void REDE::comunicacao_externa()
 				rede[y+1][x]->roteamento_norte.cordenada_destino.x = rede[y+1][x]->buffer_norte->flits.front().cordenadas_f.x;
 				rede[y+1][x]->roteamento_norte.cordenada_destino.y = rede[y+1][x]->buffer_norte->flits.front().cordenadas_f.y;								
 				
-				#ifdef NEGATIVE_FIRST
-				rede[y+1][x]->roteamento_norte.rotear_negative_first();
-				#endif
-
-				#ifdef XY
-				rede[y+1][x]->roteamento_norte.rotear_xy();
-				#endif	
-
-				#ifdef NORTH_LAST
-				rede[y+1][x]->roteamento_norte.rotear_north_last();
-				#endif
-
-				#ifdef WEST_FIRST	
-				rede[y+1][x]->roteamento_norte.rotear_west_first();
-				#endif	
+				roteamentos_macros_externa(y,x,NORTE);	
 
 				if (rede[y+1][x]->roteamento_norte.portaDestino == NORTE)
 				{
@@ -119,21 +225,7 @@ void REDE::comunicacao_externa()
 				rede[y-1][x]->roteamento_sul.cordenada_destino.x = rede[y-1][x]->buffer_sul->flits.front().cordenadas_f.x;
 				rede[y-1][x]->roteamento_sul.cordenada_destino.y = rede[y-1][x]->buffer_sul->flits.front().cordenadas_f.y;								
 				
-				#ifdef NEGATIVE_FIRST
-				rede[y-1][x]->roteamento_sul.rotear_negative_first();
-				#endif
-
-				#ifdef XY
-				rede[y-1][x]->roteamento_sul.rotear_xy();
-				#endif	
-
-				#ifdef NORTH_LAST
-				rede[y-1][x]->roteamento_sul.rotear_north_last();
-				#endif
-
-				#ifdef WEST_FIRST	
-				rede[y-1][x]->roteamento_sul.rotear_west_first();
-				#endif	
+				roteamentos_macros_externa(y,x, SUL);
 
 				if (rede[y-1][x]->roteamento_sul.portaDestino == SUL) {
 					rede[y][x]->buffer_norte->din = rede[y-1][x]->buffer_sul->flits.front();
@@ -150,22 +242,8 @@ void REDE::comunicacao_externa()
 			{
 				rede[y][x]->roteamento_norte.cordenada_destino.x = rede[y][x]->buffer_norte->flits.front().cordenadas_f.x;
 				rede[y][x]->roteamento_norte.cordenada_destino.y = rede[y][x]->buffer_norte->flits.front().cordenadas_f.y;								
-				
-				#ifdef NEGATIVE_FIRST
-				rede[y][x]->roteamento_norte.rotear_negative_first();
-				#endif
 
-				#ifdef XY
-				rede[y][x]->roteamento_norte.rotear_xy();
-				#endif	
-
-				#ifdef NORTH_LAST
-				rede[y][x]->roteamento_norte.rotear_north_last();
-				#endif
-
-				#ifdef WEST_FIRST	
-				rede[y][x]->roteamento_norte.rotear_west_first();
-				#endif	
+				roteamentos_macros_interna(y,x,NORTE);
 
 				if (rede[y][x]->roteamento_norte.portaDestino == LESTE)
 				{
@@ -233,22 +311,8 @@ void REDE::comunicacao_externa()
 			{
 				rede[y][x]->roteamento_sul.cordenada_destino.x = rede[y][x]->buffer_sul->flits.front().cordenadas_f.x;
 				rede[y][x]->roteamento_sul.cordenada_destino.y = rede[y][x]->buffer_sul->flits.front().cordenadas_f.y;								
-				
-				#ifdef NEGATIVE_FIRST
-				rede[y][x]->roteamento_sul.rotear_negative_first();
-				#endif
 
-				#ifdef XY
-				rede[y][x]->roteamento_sul.rotear_xy();
-				#endif	
-
-				#ifdef NORTH_LAST
-				rede[y][x]->roteamento_sul.rotear_north_last();
-				#endif
-
-				#ifdef WEST_FIRST	
-				rede[y][x]->roteamento_sul.rotear_west_first();
-				#endif	
+				roteamentos_macros_interna(y,x,SUL);
 
 				if (rede[y][x]->roteamento_sul.portaDestino == LESTE)
 				{
@@ -316,22 +380,9 @@ void REDE::comunicacao_externa()
 			{
 				rede[y][x]->roteamento_leste.cordenada_destino.x = rede[y][x]->buffer_leste->flits.front().cordenadas_f.x;
 				rede[y][x]->roteamento_leste.cordenada_destino.y = rede[y][x]->buffer_leste->flits.front().cordenadas_f.y;				
+	
+				roteamentos_macros_interna(y,x,LESTE);
 
-				#ifdef NEGATIVE_FIRST
-				rede[y][x]->roteamento_leste.rotear_negative_first();
-				#endif
-
-				#ifdef XY
-				rede[y][x]->roteamento_leste.rotear_xy();
-				#endif	
-
-				#ifdef NORTH_LAST
-				rede[y][x]->roteamento_leste.rotear_north_last();
-				#endif
-
-				#ifdef WEST_FIRST	
-				rede[y][x]->roteamento_leste.rotear_west_first();
-				#endif	
 
 				if (rede[y][x]->roteamento_leste.portaDestino == LESTE)
 				{
@@ -402,21 +453,8 @@ void REDE::comunicacao_externa()
 				rede[y][x]->roteamento_oeste.cordenada_destino.x = rede[y][x]->buffer_oeste->flits.front().cordenadas_f.x;
 				rede[y][x]->roteamento_oeste.cordenada_destino.y = rede[y][x]->buffer_oeste->flits.front().cordenadas_f.y;				
 
-				#ifdef NEGATIVE_FIRST
-				rede[y][x]->roteamento_oeste.rotear_negative_first();
-				#endif
+				roteamentos_macros_interna(y,x,OESTE);
 
-				#ifdef XY
-				rede[y][x]->roteamento_oeste.rotear_xy();
-				#endif	
-
-				#ifdef NORTH_LAST
-				rede[y][x]->roteamento_oeste.rotear_north_last();
-				#endif
-
-				#ifdef WEST_FIRST	
-				rede[y][x]->roteamento_oeste.rotear_west_first();
-				#endif	
 
 				if (rede[y][x]->roteamento_oeste.portaDestino == LESTE)
 				{

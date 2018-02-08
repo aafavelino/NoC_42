@@ -2,17 +2,28 @@
 
 //Funcionando
 void Buffer::add() {
-	this->flits.push(din);
-    size++;
+	if (isEmpty())
+	{
+		this->flits.push(din);
+    	size++;
+	} else if (isEmpty_canais_virtuais())
+	{
+		this->flits_canais_virtuais.push(din_canais_virtuais);
+    	size_canais_virtuais++;
+	}
+	
 }
-//Funcionando
+
 void Buffer::remove() {
 	flits.pop();
 	if (size > 0)
-	{
-		size--;
-	}
-    
+		size--;   
+}
+
+void Buffer::remove_canais_virtuais() {
+	flits_canais_virtuais.pop();
+	if (size_canais_virtuais > 0)
+		size_canais_virtuais--;   
 }
 
 //Se estiver Vazio retorna 1, senão retorna 0
