@@ -12,10 +12,15 @@ using namespace std;
 
 SC_MODULE (REDE)
 {
-	bool ver_leste = false;
-	bool ver_oeste = false;
-	bool ver_sul = false;
-	bool ver_norte = false;
+	bool ver_leste[ALTURA_REDE][LARGURA_REDE];
+	bool ver_oeste[ALTURA_REDE][LARGURA_REDE];
+	bool ver_sul[ALTURA_REDE][LARGURA_REDE];
+	bool ver_norte[ALTURA_REDE][LARGURA_REDE];
+
+	bool aux_rot_norte[2];
+	bool aux_rot_sul[2];
+	bool aux_rot_leste[2];
+	bool aux_rot_oeste[2];
 
 	// Criando uma Rede Altura x Largura
 	roteador *rede[ALTURA_REDE][LARGURA_REDE];
@@ -136,6 +141,14 @@ SC_MODULE (REDE)
 		}
 	}
 
+	for (int x = 0; x < ALTURA_REDE; ++x){
+		for (int y = 0; y < LARGURA_REDE; ++y) {	
+			ver_leste[x][y] = false;
+			ver_oeste[x][y] = false;
+			ver_sul[x][y] = false;
+			ver_norte[x][y] = false;
+		}
+	}
 		//Setando as Cordenadas dos roteadores Ex.: roteador1 se encontra em rede[0][0]
 	for (int x = 0; x < ALTURA_REDE; ++x){
 		for (int y = 0; y < LARGURA_REDE; ++y) {	
