@@ -170,212 +170,419 @@ void REDE::comunicacao_externa()
 				}				
 			}					
 
-			// Isso aqui pode dar errado... colocar pelo rede[y][x]...
+			// Isso aqui pode dar errado... colocar pelo rede[y][x]... (RESOLVIDO)
 			if (ver_norte[y][x])
 			{
-				rede[y][x]->roteamento_norte.cordenada_destino.x = rede[y][x]->buffer_norte->flits.front().cordenadas_f.x;
-				rede[y][x]->roteamento_norte.cordenada_destino.y = rede[y][x]->buffer_norte->flits.front().cordenadas_f.y;								
 
-				roteamentos_macros_interna(y,x,NORTE);
+				if (rede[y][x]->buffer_norte->size != 0)
+				{
+					rede[y][x]->roteamento_norte.cordenada_destino.x = rede[y][x]->buffer_norte->flits.front().cordenadas_f.x;
+					rede[y][x]->roteamento_norte.cordenada_destino.y = rede[y][x]->buffer_norte->flits.front().cordenadas_f.y;								
 
-				if (rede[y][x]->roteamento_norte.portaDestino == LESTE)
-				{
-					rede[y][x]->arbitro_norte.addSolicitacao(LESTE);
-					rede[y][x]->arbitro_norte.setPrioridade();
-				} else if (rede[y][x]->roteamento_norte.portaDestino == OESTE)
-				{
-					rede[y][x]->arbitro_norte.addSolicitacao(OESTE);
-					rede[y][x]->arbitro_norte.setPrioridade();
-				} else if (rede[y][x]->roteamento_norte.portaDestino == NORTE)
-				{
-					rede[y][x]->arbitro_norte.addSolicitacao(NORTE);
-					rede[y][x]->arbitro_norte.setPrioridade();
-				} else if (rede[y][x]->roteamento_norte.portaDestino == SUL)
-				{
-					rede[y][x]->arbitro_norte.addSolicitacao(SUL);
-					rede[y][x]->arbitro_norte.setPrioridade();
-				}
+					roteamentos_macros_interna(y,x,NORTE);
 
-				if (rede[y][x]->roteamento_norte.portaDestino == LOCAL)
-				{
-					ver_norte[y][x] = false;
-					printf("CHEGOUUUUU norte...\n");
-					rede[y][x]->buffer_local->din = rede[y][x]->buffer_norte->flits.front();
-					rede[y][x]->buffer_norte->remove();
-					rede[y][x]->buffer_local->add();				
+					if (rede[y][x]->roteamento_norte.portaDestino == LESTE)
+					{
+						rede[y][x]->arbitro_norte.addSolicitacao(LESTE);
+						rede[y][x]->arbitro_norte.setPrioridade();
+					} else if (rede[y][x]->roteamento_norte.portaDestino == OESTE)
+					{
+						rede[y][x]->arbitro_norte.addSolicitacao(OESTE);
+						rede[y][x]->arbitro_norte.setPrioridade();
+					} else if (rede[y][x]->roteamento_norte.portaDestino == NORTE)
+					{
+						rede[y][x]->arbitro_norte.addSolicitacao(NORTE);
+						rede[y][x]->arbitro_norte.setPrioridade();
+					} else if (rede[y][x]->roteamento_norte.portaDestino == SUL)
+					{
+						rede[y][x]->arbitro_norte.addSolicitacao(SUL);
+						rede[y][x]->arbitro_norte.setPrioridade();
+					}
+
+					if (rede[y][x]->roteamento_norte.portaDestino == LOCAL)
+					{
+						ver_norte[y][x] = false;
+						printf("CHEGOUUUUU norte...\n");
+						rede[y][x]->buffer_local->din = rede[y][x]->buffer_norte->flits.front();
+						rede[y][x]->buffer_norte->remove();
+						rede[y][x]->buffer_local->add();				
+					} else {
+						if (rede[y][x]->roteamento_norte.portaDestino == NORTE)
+						{
+							rede[y][x]->cf_saida_norte->out_val.write(1);
+						}
+						if (rede[y][x]->roteamento_norte.portaDestino == SUL and rede[y][x]->arbitro_norte.checkPrioridade() == SUL)
+						{
+							ver_norte[y][x] = false;
+							rede[y][x]->cf_saida_sul->out_val.write(1);
+							rede[y][x]->buffer_sul->din = rede[y][x]->buffer_norte->flits.front();
+							rede[y][x]->buffer_sul->add();
+							rede[y][x]->buffer_norte->remove();
+							rede[y][x]->arbitro_norte.remSolicitacao(SUL);
+						}
+						if (rede[y][x]->roteamento_norte.portaDestino == LESTE and rede[y][x]->arbitro_norte.checkPrioridade() == LESTE)
+						{
+							ver_norte[y][x] = false;
+							rede[y][x]->cf_saida_leste->out_val.write(1);			
+							rede[y][x]->buffer_leste->din = rede[y][x]->buffer_norte->flits.front();
+							rede[y][x]->buffer_leste->add();
+							rede[y][x]->buffer_norte->remove();	
+							rede[y][x]->arbitro_norte.remSolicitacao(LESTE);
+						}
+						if (rede[y][x]->roteamento_norte.portaDestino == OESTE and rede[y][x]->arbitro_norte.checkPrioridade() == OESTE)
+						{
+							ver_norte[y][x] = false;
+							rede[y][x]->cf_saida_oeste->out_val.write(1);
+							rede[y][x]->buffer_oeste->din = rede[y][x]->buffer_norte->flits.front();
+							rede[y][x]->buffer_oeste->add();
+							rede[y][x]->buffer_norte->remove();
+							rede[y][x]->arbitro_norte.remSolicitacao(OESTE);
+						}
+					}
 				} else {
-					if (rede[y][x]->roteamento_norte.portaDestino == NORTE)
+					rede[y][x]->roteamento_norte.cordenada_destino.x = rede[y][x]->buffer_norte->flits_canais_virtuais.front().cordenadas_f.x;
+					rede[y][x]->roteamento_norte.cordenada_destino.y = rede[y][x]->buffer_norte->flits_canais_virtuais.front().cordenadas_f.y;								
+
+					roteamentos_macros_interna(y,x,NORTE);
+
+					if (rede[y][x]->roteamento_norte.portaDestino == LESTE)
 					{
-						rede[y][x]->cf_saida_norte->out_val.write(1);
+						rede[y][x]->arbitro_norte.addSolicitacao(LESTE);
+						rede[y][x]->arbitro_norte.setPrioridade();
+					} else if (rede[y][x]->roteamento_norte.portaDestino == OESTE)
+					{
+						rede[y][x]->arbitro_norte.addSolicitacao(OESTE);
+						rede[y][x]->arbitro_norte.setPrioridade();
+					} else if (rede[y][x]->roteamento_norte.portaDestino == NORTE)
+					{
+						rede[y][x]->arbitro_norte.addSolicitacao(NORTE);
+						rede[y][x]->arbitro_norte.setPrioridade();
+					} else if (rede[y][x]->roteamento_norte.portaDestino == SUL)
+					{
+						rede[y][x]->arbitro_norte.addSolicitacao(SUL);
+						rede[y][x]->arbitro_norte.setPrioridade();
 					}
-					if (rede[y][x]->roteamento_norte.portaDestino == SUL and rede[y][x]->arbitro_norte.checkPrioridade() == SUL)
+
+					if (rede[y][x]->roteamento_norte.portaDestino == LOCAL)
 					{
 						ver_norte[y][x] = false;
-						rede[y][x]->cf_saida_sul->out_val.write(1);
-						rede[y][x]->buffer_sul->din = rede[y][x]->buffer_norte->flits.front();
-						rede[y][x]->buffer_sul->add();
-						rede[y][x]->buffer_norte->remove();
-						rede[y][x]->arbitro_norte.remSolicitacao(SUL);
-					}
-					if (rede[y][x]->roteamento_norte.portaDestino == LESTE and rede[y][x]->arbitro_norte.checkPrioridade() == LESTE)
-					{
-						ver_norte[y][x] = false;
-						rede[y][x]->cf_saida_leste->out_val.write(1);			
-						rede[y][x]->buffer_leste->din = rede[y][x]->buffer_norte->flits.front();
-						rede[y][x]->buffer_leste->add();
-						rede[y][x]->buffer_norte->remove();	
-						rede[y][x]->arbitro_norte.remSolicitacao(LESTE);
-					}
-					if (rede[y][x]->roteamento_norte.portaDestino == OESTE and rede[y][x]->arbitro_norte.checkPrioridade() == OESTE)
-					{
-						ver_norte[y][x] = false;
-						rede[y][x]->cf_saida_oeste->out_val.write(1);
-						rede[y][x]->buffer_oeste->din = rede[y][x]->buffer_norte->flits.front();
-						rede[y][x]->buffer_oeste->add();
-						rede[y][x]->buffer_norte->remove();
-						rede[y][x]->arbitro_norte.remSolicitacao(OESTE);
-					}
+						printf("CHEGOUUUUU norte...\n");
+						rede[y][x]->buffer_local->din = rede[y][x]->buffer_norte->flits_canais_virtuais.front();
+						rede[y][x]->buffer_norte->remove_canais_virtuais();
+						rede[y][x]->buffer_local->add();				
+					} else {
+						if (rede[y][x]->roteamento_norte.portaDestino == NORTE)
+						{
+							rede[y][x]->cf_saida_norte->out_val.write(1);
+						}
+						if (rede[y][x]->roteamento_norte.portaDestino == SUL and rede[y][x]->arbitro_norte.checkPrioridade() == SUL)
+						{
+							ver_norte[y][x] = false;
+							rede[y][x]->cf_saida_sul->out_val.write(1);
+							rede[y][x]->buffer_sul->din = rede[y][x]->buffer_norte->flits_canais_virtuais.front();
+							rede[y][x]->buffer_sul->add();
+							rede[y][x]->buffer_norte->remove_canais_virtuais();
+							rede[y][x]->arbitro_norte.remSolicitacao(SUL);
+						}
+						if (rede[y][x]->roteamento_norte.portaDestino == LESTE and rede[y][x]->arbitro_norte.checkPrioridade() == LESTE)
+						{
+							ver_norte[y][x] = false;
+							rede[y][x]->cf_saida_leste->out_val.write(1);			
+							rede[y][x]->buffer_leste->din = rede[y][x]->buffer_norte->flits_canais_virtuais.front();
+							rede[y][x]->buffer_leste->add();
+							rede[y][x]->buffer_norte->remove_canais_virtuais();	
+							rede[y][x]->arbitro_norte.remSolicitacao(LESTE);
+						}
+						if (rede[y][x]->roteamento_norte.portaDestino == OESTE and rede[y][x]->arbitro_norte.checkPrioridade() == OESTE)
+						{
+							ver_norte[y][x] = false;
+							rede[y][x]->cf_saida_oeste->out_val.write(1);
+							rede[y][x]->buffer_oeste->din = rede[y][x]->buffer_norte->flits_canais_virtuais.front();
+							rede[y][x]->buffer_oeste->add();
+							rede[y][x]->buffer_norte->remove_canais_virtuais();
+							rede[y][x]->arbitro_norte.remSolicitacao(OESTE);
+						}
+					}					
 				}
-
-
 			}
 
 			if (ver_sul[y][x])
 			{
-				rede[y][x]->roteamento_sul.cordenada_destino.x = rede[y][x]->buffer_sul->flits.front().cordenadas_f.x;
-				rede[y][x]->roteamento_sul.cordenada_destino.y = rede[y][x]->buffer_sul->flits.front().cordenadas_f.y;								
 
-				roteamentos_macros_interna(y,x,SUL);
 
-				if (rede[y][x]->roteamento_sul.portaDestino == LESTE)
+				if (rede[y][x]->buffer_sul->size != 0)
 				{
-					rede[y][x]->arbitro_sul.addSolicitacao(LESTE);
-					rede[y][x]->arbitro_sul.setPrioridade();
-				} else if (rede[y][x]->roteamento_sul.portaDestino == OESTE)
-				{
-					rede[y][x]->arbitro_sul.addSolicitacao(OESTE);
-					rede[y][x]->arbitro_sul.setPrioridade();
-				} else if (rede[y][x]->roteamento_sul.portaDestino == NORTE)
-				{
-					rede[y][x]->arbitro_sul.addSolicitacao(NORTE);
-					rede[y][x]->arbitro_sul.setPrioridade();
-				} else if (rede[y][x]->roteamento_sul.portaDestino == SUL)
-				{
-					rede[y][x]->arbitro_sul.addSolicitacao(SUL);
-					rede[y][x]->arbitro_sul.setPrioridade();
-				}
+					rede[y][x]->roteamento_sul.cordenada_destino.x = rede[y][x]->buffer_sul->flits.front().cordenadas_f.x;
+					rede[y][x]->roteamento_sul.cordenada_destino.y = rede[y][x]->buffer_sul->flits.front().cordenadas_f.y;								
 
-				if (rede[y][x]->roteamento_sul.portaDestino == LOCAL)
-				{
-					ver_sul[y][x] = false;
-					printf("CHEGOUUUUU sul...\n");
-					rede[y][x]->buffer_local->din = rede[y][x]->buffer_sul->flits.front();
-					rede[y][x]->buffer_sul->remove();
-					rede[y][x]->buffer_local->add();				
+					roteamentos_macros_interna(y,x,SUL);
+
+					if (rede[y][x]->roteamento_sul.portaDestino == LESTE)
+					{
+						rede[y][x]->arbitro_sul.addSolicitacao(LESTE);
+						rede[y][x]->arbitro_sul.setPrioridade();
+					} else if (rede[y][x]->roteamento_sul.portaDestino == OESTE)
+					{
+						rede[y][x]->arbitro_sul.addSolicitacao(OESTE);
+						rede[y][x]->arbitro_sul.setPrioridade();
+					} else if (rede[y][x]->roteamento_sul.portaDestino == NORTE)
+					{
+						rede[y][x]->arbitro_sul.addSolicitacao(NORTE);
+						rede[y][x]->arbitro_sul.setPrioridade();
+					} else if (rede[y][x]->roteamento_sul.portaDestino == SUL)
+					{
+						rede[y][x]->arbitro_sul.addSolicitacao(SUL);
+						rede[y][x]->arbitro_sul.setPrioridade();
+					}
+
+					if (rede[y][x]->roteamento_sul.portaDestino == LOCAL)
+					{
+						ver_sul[y][x] = false;
+						printf("CHEGOUUUUU sul...\n");
+						rede[y][x]->buffer_local->din = rede[y][x]->buffer_sul->flits.front();
+						rede[y][x]->buffer_sul->remove();
+						rede[y][x]->buffer_local->add();				
+					} else {
+						if (rede[y][x]->roteamento_sul.portaDestino == SUL)
+						{
+							rede[y][x]->cf_saida_sul->out_val.write(1);
+						}
+						if (rede[y][x]->roteamento_sul.portaDestino == NORTE  and rede[y][x]->arbitro_sul.checkPrioridade() == NORTE)
+						{
+							ver_sul[y][x] = false;
+							rede[y][x]->cf_saida_norte->out_val.write(1);
+							rede[y][x]->buffer_norte->din = rede[y][x]->buffer_sul->flits.front();
+							rede[y][x]->buffer_norte->add();
+							rede[y][x]->buffer_sul->remove();
+							rede[y][x]->arbitro_sul.remSolicitacao(SUL);
+						}
+						if (rede[y][x]->roteamento_sul.portaDestino == LESTE  and rede[y][x]->arbitro_sul.checkPrioridade() == LESTE)
+						{
+							ver_sul[y][x] = false;
+							rede[y][x]->cf_saida_leste->out_val.write(1);			
+							rede[y][x]->buffer_leste->din = rede[y][x]->buffer_sul->flits.front();
+							rede[y][x]->buffer_leste->add();
+							rede[y][x]->buffer_sul->remove();	
+							rede[y][x]->arbitro_sul.remSolicitacao(LESTE);
+						}
+						if (rede[y][x]->roteamento_sul.portaDestino == OESTE  and rede[y][x]->arbitro_sul.checkPrioridade() == OESTE)
+						{
+							ver_sul[y][x] = false;
+							rede[y][x]->cf_saida_oeste->out_val.write(1);
+							rede[y][x]->buffer_oeste->din = rede[y][x]->buffer_sul->flits.front();
+							rede[y][x]->buffer_oeste->add();
+							rede[y][x]->buffer_sul->remove();
+							rede[y][x]->arbitro_sul.remSolicitacao(OESTE);
+						}
+					}
 				} else {
-					if (rede[y][x]->roteamento_sul.portaDestino == SUL)
+					rede[y][x]->roteamento_sul.cordenada_destino.x = rede[y][x]->buffer_sul->flits_canais_virtuais.front().cordenadas_f.x;
+					rede[y][x]->roteamento_sul.cordenada_destino.y = rede[y][x]->buffer_sul->flits_canais_virtuais.front().cordenadas_f.y;								
+
+					roteamentos_macros_interna(y,x,SUL);
+
+					if (rede[y][x]->roteamento_sul.portaDestino == LESTE)
 					{
-						rede[y][x]->cf_saida_sul->out_val.write(1);
+						rede[y][x]->arbitro_sul.addSolicitacao(LESTE);
+						rede[y][x]->arbitro_sul.setPrioridade();
+					} else if (rede[y][x]->roteamento_sul.portaDestino == OESTE)
+					{
+						rede[y][x]->arbitro_sul.addSolicitacao(OESTE);
+						rede[y][x]->arbitro_sul.setPrioridade();
+					} else if (rede[y][x]->roteamento_sul.portaDestino == NORTE)
+					{
+						rede[y][x]->arbitro_sul.addSolicitacao(NORTE);
+						rede[y][x]->arbitro_sul.setPrioridade();
+					} else if (rede[y][x]->roteamento_sul.portaDestino == SUL)
+					{
+						rede[y][x]->arbitro_sul.addSolicitacao(SUL);
+						rede[y][x]->arbitro_sul.setPrioridade();
 					}
-					if (rede[y][x]->roteamento_sul.portaDestino == NORTE  and rede[y][x]->arbitro_sul.checkPrioridade() == NORTE)
+
+					if (rede[y][x]->roteamento_sul.portaDestino == LOCAL)
 					{
 						ver_sul[y][x] = false;
-						rede[y][x]->cf_saida_norte->out_val.write(1);
-						rede[y][x]->buffer_norte->din = rede[y][x]->buffer_sul->flits.front();
-						rede[y][x]->buffer_norte->add();
-						rede[y][x]->buffer_sul->remove();
-						rede[y][x]->arbitro_sul.remSolicitacao(SUL);
-					}
-					if (rede[y][x]->roteamento_sul.portaDestino == LESTE  and rede[y][x]->arbitro_sul.checkPrioridade() == LESTE)
-					{
-						ver_sul[y][x] = false;
-						rede[y][x]->cf_saida_leste->out_val.write(1);			
-						rede[y][x]->buffer_leste->din = rede[y][x]->buffer_sul->flits.front();
-						rede[y][x]->buffer_leste->add();
-						rede[y][x]->buffer_sul->remove();	
-						rede[y][x]->arbitro_sul.remSolicitacao(LESTE);
-					}
-					if (rede[y][x]->roteamento_sul.portaDestino == OESTE  and rede[y][x]->arbitro_sul.checkPrioridade() == OESTE)
-					{
-						ver_sul[y][x] = false;
-						rede[y][x]->cf_saida_oeste->out_val.write(1);
-						rede[y][x]->buffer_oeste->din = rede[y][x]->buffer_sul->flits.front();
-						rede[y][x]->buffer_oeste->add();
-						rede[y][x]->buffer_sul->remove();
-						rede[y][x]->arbitro_sul.remSolicitacao(OESTE);
+						printf("CHEGOUUUUU sul...\n");
+						rede[y][x]->buffer_local->din = rede[y][x]->buffer_sul->flits_canais_virtuais.front();
+						rede[y][x]->buffer_sul->remove_canais_virtuais();
+						rede[y][x]->buffer_local->add();				
+					} else {
+						if (rede[y][x]->roteamento_sul.portaDestino == SUL)
+						{
+							rede[y][x]->cf_saida_sul->out_val.write(1);
+						}
+						if (rede[y][x]->roteamento_sul.portaDestino == NORTE  and rede[y][x]->arbitro_sul.checkPrioridade() == NORTE)
+						{
+							ver_sul[y][x] = false;
+							rede[y][x]->cf_saida_norte->out_val.write(1);
+							rede[y][x]->buffer_norte->din = rede[y][x]->buffer_sul->flits_canais_virtuais.front();
+							rede[y][x]->buffer_norte->add();
+							rede[y][x]->buffer_sul->remove_canais_virtuais();
+							rede[y][x]->arbitro_sul.remSolicitacao(SUL);
+						}
+						if (rede[y][x]->roteamento_sul.portaDestino == LESTE  and rede[y][x]->arbitro_sul.checkPrioridade() == LESTE)
+						{
+							ver_sul[y][x] = false;
+							rede[y][x]->cf_saida_leste->out_val.write(1);			
+							rede[y][x]->buffer_leste->din = rede[y][x]->buffer_sul->flits_canais_virtuais.front();
+							rede[y][x]->buffer_leste->add();
+							rede[y][x]->buffer_sul->remove_canais_virtuais();	
+							rede[y][x]->arbitro_sul.remSolicitacao(LESTE);
+						}
+						if (rede[y][x]->roteamento_sul.portaDestino == OESTE  and rede[y][x]->arbitro_sul.checkPrioridade() == OESTE)
+						{
+							ver_sul[y][x] = false;
+							rede[y][x]->cf_saida_oeste->out_val.write(1);
+							rede[y][x]->buffer_oeste->din = rede[y][x]->buffer_sul->flits_canais_virtuais.front();
+							rede[y][x]->buffer_oeste->add();
+							rede[y][x]->buffer_sul->remove_canais_virtuais();
+							rede[y][x]->arbitro_sul.remSolicitacao(OESTE);
+						}
 					}
 				}
+
+
 			}
 
 
 
 			if (ver_leste[y][x])
 			{
-				rede[y][x]->roteamento_leste.cordenada_destino.x = rede[y][x]->buffer_leste->flits.front().cordenadas_f.x;
-				rede[y][x]->roteamento_leste.cordenada_destino.y = rede[y][x]->buffer_leste->flits.front().cordenadas_f.y;				
-	
-				roteamentos_macros_interna(y,x,LESTE);
+
+				if (rede[y][x]->buffer_leste->size != 0)
+				{
+					rede[y][x]->roteamento_leste.cordenada_destino.x = rede[y][x]->buffer_leste->flits.front().cordenadas_f.x;
+					rede[y][x]->roteamento_leste.cordenada_destino.y = rede[y][x]->buffer_leste->flits.front().cordenadas_f.y;				
+
+					roteamentos_macros_interna(y,x,LESTE);
 
 
-				if (rede[y][x]->roteamento_leste.portaDestino == LESTE)
-				{
-					rede[y][x]->arbitro_leste.addSolicitacao(LESTE);
-					rede[y][x]->arbitro_leste.setPrioridade();
-				} else if (rede[y][x]->roteamento_leste.portaDestino == OESTE)
-				{
-					rede[y][x]->arbitro_leste.addSolicitacao(OESTE);
-					rede[y][x]->arbitro_leste.setPrioridade();
-				} else if (rede[y][x]->roteamento_leste.portaDestino == NORTE)
-				{
-					rede[y][x]->arbitro_leste.addSolicitacao(NORTE);
-					rede[y][x]->arbitro_leste.setPrioridade();
-				} else if (rede[y][x]->roteamento_leste.portaDestino == SUL)
-				{
-					rede[y][x]->arbitro_leste.addSolicitacao(SUL);
-					rede[y][x]->arbitro_leste.setPrioridade();
-				}
-
-				if (rede[y][x]->roteamento_leste.portaDestino == LOCAL)
-				{
-					ver_leste[y][x] = false;
-					printf("CHEGOUUUUU leste...\n");
-					rede[y][x]->buffer_local->din = rede[y][x]->buffer_leste->flits.front();
-					rede[y][x]->buffer_leste->remove();
-					rede[y][x]->buffer_local->add();					
-				} else {
-					if (rede[y][x]->roteamento_leste.portaDestino == NORTE and rede[y][x]->arbitro_leste.checkPrioridade() == NORTE)
-					{
-						ver_leste[y][x] = false;
-						rede[y][x]->cf_saida_norte->out_val.write(1);
-						rede[y][x]->buffer_norte->din = rede[y][x]->buffer_leste->flits.front();
-						rede[y][x]->buffer_norte->add();
-						rede[y][x]->buffer_leste->remove();
-						rede[y][x]->arbitro_leste.remSolicitacao(NORTE);
-					}
 					if (rede[y][x]->roteamento_leste.portaDestino == LESTE)
 					{
-						rede[y][x]->cf_saida_leste->out_val.write(1);
-					}
-					if (rede[y][x]->roteamento_leste.portaDestino == SUL and rede[y][x]->arbitro_leste.checkPrioridade() == SUL)
+						rede[y][x]->arbitro_leste.addSolicitacao(LESTE);
+						rede[y][x]->arbitro_leste.setPrioridade();
+					} else if (rede[y][x]->roteamento_leste.portaDestino == OESTE)
 					{
-						ver_leste[y][x] = false;
-						rede[y][x]->cf_saida_sul->out_val.write(1);
-						rede[y][x]->buffer_sul->din = rede[y][x]->buffer_leste->flits.front();
-						rede[y][x]->buffer_sul->add();
-						rede[y][x]->buffer_leste->remove();
+						rede[y][x]->arbitro_leste.addSolicitacao(OESTE);
+						rede[y][x]->arbitro_leste.setPrioridade();
+					} else if (rede[y][x]->roteamento_leste.portaDestino == NORTE)
+					{
+						rede[y][x]->arbitro_leste.addSolicitacao(NORTE);
+						rede[y][x]->arbitro_leste.setPrioridade();
+					} else if (rede[y][x]->roteamento_leste.portaDestino == SUL)
+					{
+						rede[y][x]->arbitro_leste.addSolicitacao(SUL);
+						rede[y][x]->arbitro_leste.setPrioridade();
+					}
 
-						rede[y][x]->arbitro_leste.remSolicitacao(SUL);
-					}	
-					if (rede[y][x]->roteamento_leste.portaDestino == OESTE and rede[y][x]->arbitro_leste.checkPrioridade() == OESTE)
+					if (rede[y][x]->roteamento_leste.portaDestino == LOCAL)
 					{
 						ver_leste[y][x] = false;
-						rede[y][x]->cf_saida_oeste->out_val.write(1);
-						rede[y][x]->buffer_oeste->din = rede[y][x]->buffer_leste->flits.front();
-						rede[y][x]->buffer_oeste->add();
+						printf("CHEGOUUUUU leste...\n");
+						rede[y][x]->buffer_local->din = rede[y][x]->buffer_leste->flits.front();
 						rede[y][x]->buffer_leste->remove();
-						rede[y][x]->arbitro_leste.remSolicitacao(LESTE);
+						rede[y][x]->buffer_local->add();					
+					} else {
+						if (rede[y][x]->roteamento_leste.portaDestino == NORTE and rede[y][x]->arbitro_leste.checkPrioridade() == NORTE)
+						{
+							ver_leste[y][x] = false;
+							rede[y][x]->cf_saida_norte->out_val.write(1);
+							rede[y][x]->buffer_norte->din = rede[y][x]->buffer_leste->flits.front();
+							rede[y][x]->buffer_norte->add();
+							rede[y][x]->buffer_leste->remove();
+							rede[y][x]->arbitro_leste.remSolicitacao(NORTE);
+						}
+						if (rede[y][x]->roteamento_leste.portaDestino == LESTE)
+						{
+							rede[y][x]->cf_saida_leste->out_val.write(1);
+						}
+						if (rede[y][x]->roteamento_leste.portaDestino == SUL and rede[y][x]->arbitro_leste.checkPrioridade() == SUL)
+						{
+							ver_leste[y][x] = false;
+							rede[y][x]->cf_saida_sul->out_val.write(1);
+							rede[y][x]->buffer_sul->din = rede[y][x]->buffer_leste->flits.front();
+							rede[y][x]->buffer_sul->add();
+							rede[y][x]->buffer_leste->remove();
+
+							rede[y][x]->arbitro_leste.remSolicitacao(SUL);
+						}	
+						if (rede[y][x]->roteamento_leste.portaDestino == OESTE and rede[y][x]->arbitro_leste.checkPrioridade() == OESTE)
+						{
+							ver_leste[y][x] = false;
+							rede[y][x]->cf_saida_oeste->out_val.write(1);
+							rede[y][x]->buffer_oeste->din = rede[y][x]->buffer_leste->flits.front();
+							rede[y][x]->buffer_oeste->add();
+							rede[y][x]->buffer_leste->remove();
+							rede[y][x]->arbitro_leste.remSolicitacao(LESTE);
+						}
 					}
-				}
+				} else {
+					rede[y][x]->roteamento_leste.cordenada_destino.x = rede[y][x]->buffer_leste->flits_canais_virtuais.front().cordenadas_f.x;
+					rede[y][x]->roteamento_leste.cordenada_destino.y = rede[y][x]->buffer_leste->flits_canais_virtuais.front().cordenadas_f.y;				
+
+					roteamentos_macros_interna(y,x,LESTE);
+
+
+					if (rede[y][x]->roteamento_leste.portaDestino == LESTE)
+					{
+						rede[y][x]->arbitro_leste.addSolicitacao(LESTE);
+						rede[y][x]->arbitro_leste.setPrioridade();
+					} else if (rede[y][x]->roteamento_leste.portaDestino == OESTE)
+					{
+						rede[y][x]->arbitro_leste.addSolicitacao(OESTE);
+						rede[y][x]->arbitro_leste.setPrioridade();
+					} else if (rede[y][x]->roteamento_leste.portaDestino == NORTE)
+					{
+						rede[y][x]->arbitro_leste.addSolicitacao(NORTE);
+						rede[y][x]->arbitro_leste.setPrioridade();
+					} else if (rede[y][x]->roteamento_leste.portaDestino == SUL)
+					{
+						rede[y][x]->arbitro_leste.addSolicitacao(SUL);
+						rede[y][x]->arbitro_leste.setPrioridade();
+					}
+
+					if (rede[y][x]->roteamento_leste.portaDestino == LOCAL)
+					{
+						ver_leste[y][x] = false;
+						printf("CHEGOUUUUU leste...\n");
+						rede[y][x]->buffer_local->din = rede[y][x]->buffer_leste->flits_canais_virtuais.front();
+						rede[y][x]->buffer_leste->remove_canais_virtuais();
+						rede[y][x]->buffer_local->add();					
+					} else {
+						if (rede[y][x]->roteamento_leste.portaDestino == NORTE and rede[y][x]->arbitro_leste.checkPrioridade() == NORTE)
+						{
+							ver_leste[y][x] = false;
+							rede[y][x]->cf_saida_norte->out_val.write(1);
+							rede[y][x]->buffer_norte->din = rede[y][x]->buffer_leste->flits_canais_virtuais.front();
+							rede[y][x]->buffer_norte->add();
+							rede[y][x]->buffer_leste->remove_canais_virtuais();
+							rede[y][x]->arbitro_leste.remSolicitacao(NORTE);
+						}
+						if (rede[y][x]->roteamento_leste.portaDestino == LESTE)
+						{
+							rede[y][x]->cf_saida_leste->out_val.write(1);
+						}
+						if (rede[y][x]->roteamento_leste.portaDestino == SUL and rede[y][x]->arbitro_leste.checkPrioridade() == SUL)
+						{
+							ver_leste[y][x] = false;
+							rede[y][x]->cf_saida_sul->out_val.write(1);
+							rede[y][x]->buffer_sul->din = rede[y][x]->buffer_leste->flits_canais_virtuais.front();
+							rede[y][x]->buffer_sul->add();
+							rede[y][x]->buffer_leste->remove_canais_virtuais();
+
+							rede[y][x]->arbitro_leste.remSolicitacao(SUL);
+						}	
+						if (rede[y][x]->roteamento_leste.portaDestino == OESTE and rede[y][x]->arbitro_leste.checkPrioridade() == OESTE)
+						{
+							ver_leste[y][x] = false;
+							rede[y][x]->cf_saida_oeste->out_val.write(1);
+							rede[y][x]->buffer_oeste->din = rede[y][x]->buffer_leste->flits_canais_virtuais.front();
+							rede[y][x]->buffer_oeste->add();
+							rede[y][x]->buffer_leste->remove_canais_virtuais();
+							rede[y][x]->arbitro_leste.remSolicitacao(LESTE);
+						}
+					}
+				}	
 			}
 
 
@@ -383,73 +590,141 @@ void REDE::comunicacao_externa()
 
 			if (ver_oeste[y][x])
 			{
-				rede[y][x]->roteamento_oeste.cordenada_destino.x = rede[y][x]->buffer_oeste->flits.front().cordenadas_f.x;
-				rede[y][x]->roteamento_oeste.cordenada_destino.y = rede[y][x]->buffer_oeste->flits.front().cordenadas_f.y;				
 
-				roteamentos_macros_interna(y,x,OESTE);
+				if (rede[y][x]->buffer_oeste->size != 0)
+				{
+					rede[y][x]->roteamento_oeste.cordenada_destino.x = rede[y][x]->buffer_oeste->flits.front().cordenadas_f.x;
+					rede[y][x]->roteamento_oeste.cordenada_destino.y = rede[y][x]->buffer_oeste->flits.front().cordenadas_f.y;				
+
+					roteamentos_macros_interna(y,x,OESTE);
 
 
-				if (rede[y][x]->roteamento_oeste.portaDestino == LESTE)
-				{
-					rede[y][x]->arbitro_oeste.addSolicitacao(LESTE);
-					rede[y][x]->arbitro_oeste.setPrioridade();
-				} else if (rede[y][x]->roteamento_oeste.portaDestino == OESTE)
-				{
-					rede[y][x]->arbitro_oeste.addSolicitacao(OESTE);
-					rede[y][x]->arbitro_oeste.setPrioridade();
-				} else if (rede[y][x]->roteamento_oeste.portaDestino == NORTE)
-				{
-					rede[y][x]->arbitro_oeste.addSolicitacao(NORTE);
-					rede[y][x]->arbitro_oeste.setPrioridade();
-				} else if (rede[y][x]->roteamento_oeste.portaDestino == SUL)
-				{
-					rede[y][x]->arbitro_oeste.addSolicitacao(SUL);
-					rede[y][x]->arbitro_oeste.setPrioridade();
-				}
+					if (rede[y][x]->roteamento_oeste.portaDestino == LESTE)
+					{
+						rede[y][x]->arbitro_oeste.addSolicitacao(LESTE);
+						rede[y][x]->arbitro_oeste.setPrioridade();
+					} else if (rede[y][x]->roteamento_oeste.portaDestino == OESTE)
+					{
+						rede[y][x]->arbitro_oeste.addSolicitacao(OESTE);
+						rede[y][x]->arbitro_oeste.setPrioridade();
+					} else if (rede[y][x]->roteamento_oeste.portaDestino == NORTE)
+					{
+						rede[y][x]->arbitro_oeste.addSolicitacao(NORTE);
+						rede[y][x]->arbitro_oeste.setPrioridade();
+					} else if (rede[y][x]->roteamento_oeste.portaDestino == SUL)
+					{
+						rede[y][x]->arbitro_oeste.addSolicitacao(SUL);
+						rede[y][x]->arbitro_oeste.setPrioridade();
+					}
 
-				if (rede[y][x]->roteamento_oeste.portaDestino == LOCAL)
-				{
-					ver_oeste[y][x] = false;
-					printf("CHEGOUUUUU oeste...\n");
-					rede[y][x]->buffer_local->din = rede[y][x]->buffer_oeste->flits.front();
-					rede[y][x]->buffer_oeste->remove();
-					rede[y][x]->buffer_local->add();					
+					if (rede[y][x]->roteamento_oeste.portaDestino == LOCAL)
+					{
+						ver_oeste[y][x] = false;
+						printf("CHEGOUUUUU oeste...\n");
+						rede[y][x]->buffer_local->din = rede[y][x]->buffer_oeste->flits.front();
+						rede[y][x]->buffer_oeste->remove();
+						rede[y][x]->buffer_local->add();					
+					} else {
+						if (rede[y][x]->roteamento_oeste.portaDestino == NORTE and rede[y][x]->arbitro_oeste.checkPrioridade() == NORTE)
+						{
+							ver_oeste[y][x] = false;
+							rede[y][x]->cf_saida_norte->out_val.write(1);
+							rede[y][x]->buffer_norte->din = rede[y][x]->buffer_oeste->flits.front();
+							rede[y][x]->buffer_norte->add();
+							rede[y][x]->buffer_oeste->remove();
+							rede[y][x]->arbitro_oeste.remSolicitacao(NORTE);
+						}
+						if (rede[y][x]->roteamento_oeste.portaDestino == LESTE and rede[y][x]->arbitro_oeste.checkPrioridade() == LESTE)
+						{
+							ver_oeste[y][x] = false;
+							rede[y][x]->cf_saida_leste->out_val.write(1);			
+							rede[y][x]->buffer_leste->din = rede[y][x]->buffer_oeste->flits.front();
+							rede[y][x]->buffer_leste->add();
+							rede[y][x]->buffer_oeste->remove();	
+							rede[y][x]->arbitro_oeste.remSolicitacao(LESTE);
+						}
+						if (rede[y][x]->roteamento_oeste.portaDestino == SUL and rede[y][x]->arbitro_oeste.checkPrioridade() == SUL)
+						{
+							ver_oeste[y][x] = false;
+							rede[y][x]->cf_saida_sul->out_val.write(1);
+							rede[y][x]->buffer_sul->din = rede[y][x]->buffer_oeste->flits.front();
+							rede[y][x]->buffer_sul->add();
+							rede[y][x]->buffer_oeste->remove();
+							rede[y][x]->arbitro_oeste.remSolicitacao(SUL);
+						}	
+						if (rede[y][x]->roteamento_oeste.portaDestino == OESTE)
+						{
+							rede[y][x]->cf_saida_oeste->out_val.write(1);
+						}
+					}
 				} else {
-					if (rede[y][x]->roteamento_oeste.portaDestino == NORTE and rede[y][x]->arbitro_oeste.checkPrioridade() == NORTE)
-					{
-						ver_oeste[y][x] = false;
-						rede[y][x]->cf_saida_norte->out_val.write(1);
-						rede[y][x]->buffer_norte->din = rede[y][x]->buffer_oeste->flits.front();
-						rede[y][x]->buffer_norte->add();
-						rede[y][x]->buffer_oeste->remove();
-						rede[y][x]->arbitro_oeste.remSolicitacao(NORTE);
-					}
-					if (rede[y][x]->roteamento_oeste.portaDestino == LESTE and rede[y][x]->arbitro_oeste.checkPrioridade() == LESTE)
-					{
-						ver_oeste[y][x] = false;
-						rede[y][x]->cf_saida_leste->out_val.write(1);			
-						rede[y][x]->buffer_leste->din = rede[y][x]->buffer_oeste->flits.front();
-						rede[y][x]->buffer_leste->add();
-						rede[y][x]->buffer_oeste->remove();	
-						rede[y][x]->arbitro_oeste.remSolicitacao(LESTE);
-					}
-					if (rede[y][x]->roteamento_oeste.portaDestino == SUL and rede[y][x]->arbitro_oeste.checkPrioridade() == SUL)
-					{
-						ver_oeste[y][x] = false;
-						rede[y][x]->cf_saida_sul->out_val.write(1);
-						rede[y][x]->buffer_sul->din = rede[y][x]->buffer_oeste->flits.front();
-						rede[y][x]->buffer_sul->add();
-						rede[y][x]->buffer_oeste->remove();
-						rede[y][x]->arbitro_oeste.remSolicitacao(SUL);
-					}	
-					if (rede[y][x]->roteamento_oeste.portaDestino == OESTE)
-					{
-						rede[y][x]->cf_saida_oeste->out_val.write(1);
+					rede[y][x]->roteamento_oeste.cordenada_destino.x = rede[y][x]->buffer_oeste->flits_canais_virtuais.front().cordenadas_f.x;
+					rede[y][x]->roteamento_oeste.cordenada_destino.y = rede[y][x]->buffer_oeste->flits_canais_virtuais.front().cordenadas_f.y;				
 
+					roteamentos_macros_interna(y,x,OESTE);
+
+
+					if (rede[y][x]->roteamento_oeste.portaDestino == LESTE)
+					{
+						rede[y][x]->arbitro_oeste.addSolicitacao(LESTE);
+						rede[y][x]->arbitro_oeste.setPrioridade();
+					} else if (rede[y][x]->roteamento_oeste.portaDestino == OESTE)
+					{
+						rede[y][x]->arbitro_oeste.addSolicitacao(OESTE);
+						rede[y][x]->arbitro_oeste.setPrioridade();
+					} else if (rede[y][x]->roteamento_oeste.portaDestino == NORTE)
+					{
+						rede[y][x]->arbitro_oeste.addSolicitacao(NORTE);
+						rede[y][x]->arbitro_oeste.setPrioridade();
+					} else if (rede[y][x]->roteamento_oeste.portaDestino == SUL)
+					{
+						rede[y][x]->arbitro_oeste.addSolicitacao(SUL);
+						rede[y][x]->arbitro_oeste.setPrioridade();
 					}
+
+					if (rede[y][x]->roteamento_oeste.portaDestino == LOCAL)
+					{
+						ver_oeste[y][x] = false;
+						printf("CHEGOUUUUU oeste...\n");
+						rede[y][x]->buffer_local->din = rede[y][x]->buffer_oeste->flits_canais_virtuais.front();
+						rede[y][x]->buffer_oeste->remove_canais_virtuais();
+						rede[y][x]->buffer_local->add();					
+					} else {
+						if (rede[y][x]->roteamento_oeste.portaDestino == NORTE and rede[y][x]->arbitro_oeste.checkPrioridade() == NORTE)
+						{
+							ver_oeste[y][x] = false;
+							rede[y][x]->cf_saida_norte->out_val.write(1);
+							rede[y][x]->buffer_norte->din = rede[y][x]->buffer_oeste->flits_canais_virtuais.front();
+							rede[y][x]->buffer_norte->add();
+							rede[y][x]->buffer_oeste->remove_canais_virtuais();
+							rede[y][x]->arbitro_oeste.remSolicitacao(NORTE);
+						}
+						if (rede[y][x]->roteamento_oeste.portaDestino == LESTE and rede[y][x]->arbitro_oeste.checkPrioridade() == LESTE)
+						{
+							ver_oeste[y][x] = false;
+							rede[y][x]->cf_saida_leste->out_val.write(1);			
+							rede[y][x]->buffer_leste->din = rede[y][x]->buffer_oeste->flits_canais_virtuais.front();
+							rede[y][x]->buffer_leste->add();
+							rede[y][x]->buffer_oeste->remove_canais_virtuais();	
+							rede[y][x]->arbitro_oeste.remSolicitacao(LESTE);
+						}
+						if (rede[y][x]->roteamento_oeste.portaDestino == SUL and rede[y][x]->arbitro_oeste.checkPrioridade() == SUL)
+						{
+							ver_oeste[y][x] = false;
+							rede[y][x]->cf_saida_sul->out_val.write(1);
+							rede[y][x]->buffer_sul->din = rede[y][x]->buffer_oeste->flits_canais_virtuais.front();
+							rede[y][x]->buffer_sul->add();
+							rede[y][x]->buffer_oeste->remove_canais_virtuais();
+							rede[y][x]->arbitro_oeste.remSolicitacao(SUL);
+						}	
+						if (rede[y][x]->roteamento_oeste.portaDestino == OESTE)
+						{
+							rede[y][x]->cf_saida_oeste->out_val.write(1);
+
+						}
+					}						
 				}
 			}	
-
 
 
 		}
@@ -543,70 +818,70 @@ void REDE::roteamentos_macros_externa(int y, int x, int cordenada) {
 	{
 		case OESTE:
 			#ifdef NEGATIVE_FIRST
-			rede[y][x+1]->roteamento_oeste.rotear_negative_first();
+		rede[y][x+1]->roteamento_oeste.rotear_negative_first();
 			#endif
 
 			#ifdef XY
-			rede[y][x+1]->roteamento_oeste.rotear_xy();
+		rede[y][x+1]->roteamento_oeste.rotear_xy();
 			#endif	
 
 			#ifdef NORTH_LAST
-			rede[y][x+1]->roteamento_oeste.rotear_north_last();
+		rede[y][x+1]->roteamento_oeste.rotear_north_last();
 			#endif
 
 			#ifdef WEST_FIRST	
-			rede[y][x+1]->roteamento_oeste.rotear_west_first();
+		rede[y][x+1]->roteamento_oeste.rotear_west_first();
 			#endif	
 		break;
 		case LESTE:
 			#ifdef NEGATIVE_FIRST
-			rede[y][x-1]->roteamento_leste.rotear_negative_first();
+		rede[y][x-1]->roteamento_leste.rotear_negative_first();
 			#endif
 
 			#ifdef XY
-			rede[y][x-1]->roteamento_leste.rotear_xy();
+		rede[y][x-1]->roteamento_leste.rotear_xy();
 			#endif	
 
 			#ifdef NORTH_LAST
-			rede[y][x-1]->roteamento_leste.rotear_north_last();
+		rede[y][x-1]->roteamento_leste.rotear_north_last();
 			#endif
 
 			#ifdef WEST_FIRST	
-			rede[y][x-1]->roteamento_leste.rotear_west_first();
+		rede[y][x-1]->roteamento_leste.rotear_west_first();
 			#endif		
 		break;
 		case NORTE:
 			#ifdef NEGATIVE_FIRST
-			rede[y+1][x]->roteamento_norte.rotear_negative_first();
+		rede[y+1][x]->roteamento_norte.rotear_negative_first();
 			#endif
 
 			#ifdef XY
-			rede[y+1][x]->roteamento_norte.rotear_xy();
+		rede[y+1][x]->roteamento_norte.rotear_xy();
 			#endif	
 
 			#ifdef NORTH_LAST
-			rede[y+1][x]->roteamento_norte.rotear_north_last();
+		rede[y+1][x]->roteamento_norte.rotear_north_last();
 			#endif
 
 			#ifdef WEST_FIRST	
-			rede[y+1][x]->roteamento_norte.rotear_west_first();
+		rede[y+1][x]->roteamento_norte.rotear_west_first();
 			#endif		
 		break;
 		case SUL:
 			#ifdef NEGATIVE_FIRST
-			rede[y-1][x]->roteamento_sul.rotear_negative_first();
+		rede[y-1][x]->roteamento_sul.rotear_negative_first();
 			#endif
 
 			#ifdef XY
-			rede[y-1][x]->roteamento_sul.rotear_xy();
+		rede[y-1][x]->roteamento_sul.rotear_xy();
 			#endif	
 
 			#ifdef NORTH_LAST
-			rede[y-1][x]->roteamento_sul.rotear_north_last();
+		rede[y-1][x]->roteamento_sul.rotear_north_last();
 			#endif
 
 			#ifdef WEST_FIRST	
-			rede[y-1][x]->roteamento_sul.rotear_west_first();
+		rede[y-1][x]->roteamento_sul.rotear_west_first();
 			#endif			
 		break;
 	}
@@ -618,70 +893,70 @@ void REDE::roteamentos_macros_interna(int y, int x, int cordenada) {
 	{
 		case OESTE:
 			#ifdef NEGATIVE_FIRST
-			rede[y][x]->roteamento_oeste.rotear_negative_first();
+		rede[y][x]->roteamento_oeste.rotear_negative_first();
 			#endif
 
 			#ifdef XY
-			rede[y][x]->roteamento_oeste.rotear_xy();
+		rede[y][x]->roteamento_oeste.rotear_xy();
 			#endif	
 
 			#ifdef NORTH_LAST
-			rede[y][x]->roteamento_oeste.rotear_north_last();
+		rede[y][x]->roteamento_oeste.rotear_north_last();
 			#endif
 
 			#ifdef WEST_FIRST	
-			rede[y][x]->roteamento_oeste.rotear_west_first();
+		rede[y][x]->roteamento_oeste.rotear_west_first();
 			#endif	
 		break;
 		case LESTE:
 			#ifdef NEGATIVE_FIRST
-			rede[y][x]->roteamento_leste.rotear_negative_first();
+		rede[y][x]->roteamento_leste.rotear_negative_first();
 			#endif
 
 			#ifdef XY
-			rede[y][x]->roteamento_leste.rotear_xy();
+		rede[y][x]->roteamento_leste.rotear_xy();
 			#endif	
 
 			#ifdef NORTH_LAST
-			rede[y][x]->roteamento_leste.rotear_north_last();
+		rede[y][x]->roteamento_leste.rotear_north_last();
 			#endif
 
 			#ifdef WEST_FIRST	
-			rede[y][x]->roteamento_leste.rotear_west_first();
+		rede[y][x]->roteamento_leste.rotear_west_first();
 			#endif		
 		break;
 		case NORTE:
 			#ifdef NEGATIVE_FIRST
-			rede[y][x]->roteamento_norte.rotear_negative_first();
+		rede[y][x]->roteamento_norte.rotear_negative_first();
 			#endif
 
 			#ifdef XY
-			rede[y][x]->roteamento_norte.rotear_xy();
+		rede[y][x]->roteamento_norte.rotear_xy();
 			#endif	
 
 			#ifdef NORTH_LAST
-			rede[y][x]->roteamento_norte.rotear_north_last();
+		rede[y][x]->roteamento_norte.rotear_north_last();
 			#endif
 
 			#ifdef WEST_FIRST	
-			rede[y][x]->roteamento_norte.rotear_west_first();
+		rede[y][x]->roteamento_norte.rotear_west_first();
 			#endif		
 		break;
 		case SUL:
 			#ifdef NEGATIVE_FIRST
-			rede[y][x]->roteamento_sul.rotear_negative_first();
+		rede[y][x]->roteamento_sul.rotear_negative_first();
 			#endif
 
 			#ifdef XY
-			rede[y][x]->roteamento_sul.rotear_xy();
+		rede[y][x]->roteamento_sul.rotear_xy();
 			#endif	
 
 			#ifdef NORTH_LAST
-			rede[y][x]->roteamento_sul.rotear_north_last();
+		rede[y][x]->roteamento_sul.rotear_north_last();
 			#endif
 
 			#ifdef WEST_FIRST	
-			rede[y][x]->roteamento_sul.rotear_west_first();
+		rede[y][x]->roteamento_sul.rotear_west_first();
 			#endif			
 		break;
 	}
