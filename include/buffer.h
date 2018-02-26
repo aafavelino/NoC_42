@@ -1,3 +1,7 @@
+//
+// Created by Adelino on 30/11/17.
+//
+
 #ifndef _BUFFER_H_
 #define _BUFFER_H_ 
 

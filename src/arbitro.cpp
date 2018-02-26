@@ -1,3 +1,7 @@
+//
+// Created by Adelino on 30/11/17.
+//
+
 #include "arbitro.h"
 
 Arbitro::Arbitro() {
