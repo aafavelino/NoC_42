@@ -137,11 +137,6 @@ void Roteamento::rotear_negative_first()
 
 }
 
-void Roteamento::rotear_odd_even()
-{
-
-}
-
 
 
 

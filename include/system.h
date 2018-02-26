@@ -12,10 +12,14 @@ using namespace std;
 
 SC_MODULE (REDE)
 {
-	bool ver_leste = false;
-	bool ver_oeste = false;
-	bool ver_sul = false;
-	bool ver_norte = false;
+	bool ver_leste[ALTURA_REDE][LARGURA_REDE];
+	bool ver_oeste[ALTURA_REDE][LARGURA_REDE];
+	bool ver_sul[ALTURA_REDE][LARGURA_REDE];
+	bool ver_norte[ALTURA_REDE][LARGURA_REDE];
+
+	// Clock
+ 	sc_in<bool> Clk;
+	
 
 	// Criando uma Rede Altura x Largura
 	roteador *rede[ALTURA_REDE][LARGURA_REDE];
@@ -27,6 +31,8 @@ SC_MODULE (REDE)
 
 	void comunicacao_externa();
 	void injeta_flits(int, int, int, int);
+	void roteamentos_macros_externa(int,int,int);
+	void roteamentos_macros_interna(int,int,int);
 
 	SC_CTOR(REDE) 
 	{ 
@@ -134,6 +140,14 @@ SC_MODULE (REDE)
 		}
 	}
 
+	for (int x = 0; x < ALTURA_REDE; ++x){
+		for (int y = 0; y < LARGURA_REDE; ++y) {	
+			ver_leste[x][y] = false;
+			ver_oeste[x][y] = false;
+			ver_sul[x][y] = false;
+			ver_norte[x][y] = false;
+		}
+	}
 		//Setando as Cordenadas dos roteadores Ex.: roteador1 se encontra em rede[0][0]
 	for (int x = 0; x < ALTURA_REDE; ++x){
 		for (int y = 0; y < LARGURA_REDE; ++y) {	
@@ -151,6 +165,7 @@ SC_MODULE (REDE)
 	}
 
 	SC_METHOD(comunicacao_externa);
+	sensitive << Clk;
 	for (int x = 0; x < ALTURA_REDE; ++x){
 		for (int y = 0; y < LARGURA_REDE; ++y) {
 			sensitive << rede[x][y]->cf_saida_norte->out_ack;

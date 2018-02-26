@@ -6,7 +6,10 @@
 using namespace std;
 
 int sc_main (int argc, char* argv[]) {
+
+	sc_clock clock("clock", 10, SC_NS, 1, 10, SC_NS);
 	REDE *teste = new REDE("rede");
+	teste->Clk(clock);
 
 
 		// teste->injeta_flits(0,6, 6, 6);
@@ -32,9 +35,31 @@ int sc_main (int argc, char* argv[]) {
 		
 		
 		// teste->injeta_flits(2,1, 6, 6);
-		teste->injeta_flits(0,0, 6, 6);
+			// teste->injeta_flits(1,0, 0, 0); //chega                                                                       
+		
+
+
+		// teste->injeta_flits(0,0, 1, 0); //chega 
+		// teste->injeta_flits(0,0, 2, 0); 
+
+
+
+
+		// teste->injeta_flits(0,0, 0, 1); 
+
+
+		teste->injeta_flits(0,2, 0, 6); 
+
+
+		// teste->injeta_flits(0,1, 1, 0); //chega
+
+		teste->injeta_flits(0,0, 6, 6); //chega
+		teste->injeta_flits(0,0, 6, 6); //chega
+		// teste->injeta_flits(0,0, 6, 6); //chega
+		// teste->injeta_flits(0,0, 6, 6); //chega
+                                                                      
+		// teste->injeta_flits(0,0, 1, 0); //chega                                                                       
 		// teste->injeta_flits(6,6, 0, 0);
-		// teste->injeta_flits(6,3, 0, 0);
 		// teste->injeta_flits(1,6, 1, 0);
 		// teste->injeta_flits(1,0, 1, 6);	
 		// teste->injeta_flits(2,6, 2, 0);
