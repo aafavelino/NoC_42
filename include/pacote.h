@@ -11,15 +11,35 @@
 class Pacote 
 {
 public:
-	Flit v[10];
-	Pacote(int x, int y, int quantidade) {
-		Flit flit;
-		flit.cordenadas_f.x = x;
-		flit.cordenadas_f.y = y;
-		for (int i = 0; i < quantidade; ++i)
-		{
-			v[i] = flit;
-		}
+
+// 0 0 2 0 23 1 1
+// end
+
+
+// — sintaxes:
+
+
+// 1) Mesh padrão:  xs ys xd yd #flits idleCycles size
+//       xs: X source; xd: X dest
+//       xs: Y source; xd: Y dest
+//		 idleCycles: De quanto em quanto tempo é enviado 
+//       size: quantas vezes o pacote é reenviado pela rede.
+	int xs, ys;
+	int xd, yd;
+	int qt_flits;
+	int idleCycles;
+	int size;
+	Flit flits;
+	Pacote(int xs, int ys, int xd, int yd, int qt_flits, int idleCycles, int size) {
+		this->xs = xs;
+		this->ys = ys;
+		this->xd = xd;
+		this->yd = yd;
+		this->qt_flits = qt_flits;
+		this->idleCycles = idleCycles;
+		this->size = size;
+		flits.cordenadas_f.x = xd;
+		flits.cordenadas_f.y = yd;
 	}
 };
 

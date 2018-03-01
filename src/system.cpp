@@ -3,24 +3,38 @@
 //
 
 #include "system.h"
+int ciclos = 0;
 
 void REDE::comunicacao_externa() 
 {
-	cout << "opa" << endl;
 
 	for (int y = 0; y < ALTURA_REDE; y++)
 	{
+		if (y==0)
+		{
+			// cout << "ciclos: " << ciclos++ << endl;
+			ciclos++;
+			if (ciclos == 100)
+			{
+				cout << "sc_time_stamp()" << sc_time_stamp() << endl;
+				sc_stop();
+			}
+		}
+
 		for (int x = 0; x < LARGURA_REDE; x++)
 		{   
-
+			// cout << rede[0][0]->buffer_leste->size << endl;
 			if (rede[y][x]->cf_leste->in_ack.read() == 1)
 			{
 				printf("[%d][%d]--LESTE\n",y,x);
 				rede[y][x]->buffer_leste->din = rede[y][x+1]->buffer_oeste->flits.front(); 
 				rede[y][x]->buffer_leste->add();
 				rede[y][x+1]->buffer_oeste->remove();
-				rede[y][x+1]->cf_saida_oeste->out_val.write(0);
-				rede[y][x]->cf_leste->in_ack = 0;
+				if (rede[y][x+1]->buffer_oeste->size == 0)
+				{
+					rede[y][x+1]->cf_saida_oeste->out_val.write(0);
+					rede[y][x]->cf_leste->in_ack = 0;
+				}
 				ver_leste[y][x] = true;
 			}
 
@@ -30,8 +44,10 @@ void REDE::comunicacao_externa()
 				rede[y][x]->buffer_oeste->din = rede[y][x-1]->buffer_leste->flits.front();			 
 				rede[y][x]->buffer_oeste->add();
 				rede[y][x-1]->buffer_leste->remove();
-				rede[y][x-1]->cf_saida_leste->out_val.write(0);
-				rede[y][x]->cf_oeste->in_ack = 0;
+				if (rede[y][x-1]->buffer_leste->size == 0) {
+					rede[y][x-1]->cf_saida_leste->out_val.write(0);
+					rede[y][x]->cf_oeste->in_ack = 0;
+				}
 				ver_oeste[y][x] = true;
 			}			
 
@@ -41,8 +57,12 @@ void REDE::comunicacao_externa()
 				rede[y][x]->buffer_sul->din = rede[y+1][x]->buffer_norte->flits.front();
 				rede[y][x]->buffer_sul->add();
 				rede[y+1][x]->buffer_norte->remove();
-				rede[y+1][x]->cf_saida_norte->out_val.write(0);
-				rede[y][x]->cf_sul->in_ack = 0;
+				if (rede[y+1][x]->buffer_norte->size == 0)
+				{
+					rede[y+1][x]->cf_saida_norte->out_val.write(0);
+					rede[y][x]->cf_sul->in_ack = 0;
+				}
+
 				ver_sul[y][x] = true;
 			}
 
@@ -52,8 +72,10 @@ void REDE::comunicacao_externa()
 				rede[y][x]->buffer_norte->din = rede[y-1][x]->buffer_sul->flits.front();
 				rede[y][x]->buffer_norte->add();
 				rede[y-1][x]->buffer_sul->remove();
-				rede[y-1][x]->cf_saida_sul->out_val.write(0);
-				rede[y][x]->cf_norte->in_ack = 0;
+				if (rede[y-1][x]->buffer_sul->size == 0) {
+					rede[y-1][x]->cf_saida_sul->out_val.write(0);
+					rede[y][x]->cf_norte->in_ack = 0;
+				}
 				ver_norte[y][x] = true;
 			}					
 
@@ -100,6 +122,7 @@ void REDE::comunicacao_externa()
 				if (rede[y][x]->roteamento_norte.portaDestino == LOCAL)
 				{
 					ver_norte[y][x] = false;
+					cout << "sc_time_stamp()" << sc_time_stamp() << endl;
 					printf("CHEGOUUUUU norte...\n");
 					rede[y][x]->buffer_local->din = rede[y][x]->buffer_norte->flits.front();
 					rede[y][x]->buffer_norte->remove();
@@ -248,7 +271,7 @@ void REDE::comunicacao_externa()
 				rede[y][x]->roteamento_leste.rotear_west_first();
 				#endif	
 
-				cout << "Porta destino " << rede[y][x]->roteamento_leste.portaDestino << endl;
+				// cout << "Porta destino " << rede[y][x]->roteamento_leste.portaDestino << endl;
 
 				if (rede[y][x]->roteamento_leste.portaDestino == LESTE)
 				{
@@ -278,7 +301,7 @@ void REDE::comunicacao_externa()
 				} else {
 					if (rede[y][x]->roteamento_leste.portaDestino == NORTE and rede[y][x]->arbitro_leste.checkPrioridade() == NORTE)
 					{
-						cout << "Entrou pro norte" << endl;
+						// cout << "Entrou pro norte" << endl;
 						ver_leste[y][x] = false;
 						rede[y][x]->cf_saida_norte->out_val.write(1);
 						rede[y][x]->buffer_norte->din = rede[y][x]->buffer_leste->flits.front();
@@ -288,13 +311,13 @@ void REDE::comunicacao_externa()
 					}
 					if (rede[y][x]->roteamento_leste.portaDestino == LESTE)
 					{
-						cout << "Entrou pro leste" << endl;
+						// cout << "Entrou pro leste" << endl;
 
 						rede[y][x]->cf_saida_leste->out_val.write(1);
 					}
 					if (rede[y][x]->roteamento_leste.portaDestino == SUL and rede[y][x]->arbitro_leste.checkPrioridade() == SUL)
 					{
-						cout << "Entrou pro sul" << endl;
+						// cout << "Entrou pro sul" << endl;
 
 						ver_leste[y][x] = false;
 						rede[y][x]->cf_saida_sul->out_val.write(1);
@@ -306,7 +329,7 @@ void REDE::comunicacao_externa()
 					}	
 					if (rede[y][x]->roteamento_leste.portaDestino == OESTE and rede[y][x]->arbitro_leste.checkPrioridade() == OESTE)
 					{
-						cout << "Entrou pro oeste" << endl;
+						// cout << "Entrou pro oeste" << endl;
 
 						ver_leste[y][x] = false;
 						rede[y][x]->cf_saida_oeste->out_val.write(1);
@@ -405,19 +428,19 @@ void REDE::comunicacao_externa()
 		}
 	}
 }
-
+//Pacote(int xs, int ys, int xd, int yd, int qt_flits, int idleCycles, int size)
 
 // 1º Local xy -> 2º Destino xy
 void REDE::injeta_flits(int local_y , int local_x, int x, int y) {
 
-	Pacote *pct = new Pacote(x,y,1);
+	Pacote *pct = new Pacote(local_y, local_x, x,y,1,1,1);
 
 	//Alocando o flit no buffer
-	rede[local_y][local_x]->buffer_local->din =  pct->v[0];
+	rede[local_y][local_x]->buffer_local->din =  pct->flits;
 
 	//Setando as cordenadas do primeiro flit
-	rede[local_y][local_x]->roteamento_local.cordenada_destino.x =   pct->v[0].cordenadas_f.x;
-	rede[local_y][local_x]->roteamento_local.cordenada_destino.y =   pct->v[0].cordenadas_f.y;
+	rede[local_y][local_x]->roteamento_local.cordenada_destino.x =   pct->flits.cordenadas_f.x;
+	rede[local_y][local_x]->roteamento_local.cordenada_destino.y =   pct->flits.cordenadas_f.y;
 	
 	//Roteando
 	
@@ -441,47 +464,52 @@ void REDE::injeta_flits(int local_y , int local_x, int x, int y) {
 
 	if (rede[local_y][local_x]->roteamento_local.portaDestino == NORTE)
 	{
+		
 		rede[local_y][local_x]->arbitro_norte.addSolicitacao(NORTE);
 		rede[local_y][local_x]->arbitro_norte.setPrioridade();
-		rede[local_y][local_x]->roteamento_norte.cordenada_destino.x =   pct->v[0].cordenadas_f.x;
-		rede[local_y][local_x]->roteamento_norte.cordenada_destino.y =   pct->v[0].cordenadas_f.y;	
-		rede[local_y][local_x]->buffer_norte->din =  pct->v[0];
+		rede[local_y][local_x]->roteamento_norte.cordenada_destino.x =   pct->flits.cordenadas_f.x;
+		rede[local_y][local_x]->roteamento_norte.cordenada_destino.y =   pct->flits.cordenadas_f.y;	
+		rede[local_y][local_x]->buffer_norte->din =  pct->flits;
 		rede[local_y][local_x]->buffer_norte->add();
 		rede[local_y][local_x]->cf_saida_norte->out_val.write(1);
 		// cout << "NORTE" << endl;
 	} else if (rede[local_y][local_x]->roteamento_local.portaDestino == SUL)
 	{
+		
 		rede[local_y][local_x]->arbitro_sul.addSolicitacao(SUL);
 		rede[local_y][local_x]->arbitro_sul.setPrioridade();
-		rede[local_y][local_x]->roteamento_sul.cordenada_destino.x =   pct->v[0].cordenadas_f.x;
-		rede[local_y][local_x]->roteamento_sul.cordenada_destino.y =   pct->v[0].cordenadas_f.y;	
-		rede[local_y][local_x]->buffer_sul->din =  pct->v[0];
+		rede[local_y][local_x]->roteamento_sul.cordenada_destino.x =   pct->flits.cordenadas_f.x;
+		rede[local_y][local_x]->roteamento_sul.cordenada_destino.y =   pct->flits.cordenadas_f.y;	
+		rede[local_y][local_x]->buffer_sul->din =  pct->flits;
 		rede[local_y][local_x]->buffer_sul->add();
 		rede[local_y][local_x]->cf_saida_sul->out_val.write(1);
 		// cout << "SUL" << endl;
 	} else if (rede[local_y][local_x]->roteamento_local.portaDestino == LESTE)
 	{
+		
 		rede[local_y][local_x]->arbitro_leste.addSolicitacao(LESTE);
 		rede[local_y][local_x]->arbitro_leste.setPrioridade();
-		rede[local_y][local_x]->roteamento_leste.cordenada_destino.x =   pct->v[0].cordenadas_f.x;
-		rede[local_y][local_x]->roteamento_leste.cordenada_destino.y =   pct->v[0].cordenadas_f.y;	
-		rede[local_y][local_x]->buffer_leste->din =  pct->v[0];
+		rede[local_y][local_x]->roteamento_leste.cordenada_destino.x =   pct->flits.cordenadas_f.x;
+		rede[local_y][local_x]->roteamento_leste.cordenada_destino.y =   pct->flits.cordenadas_f.y;	
+		rede[local_y][local_x]->buffer_leste->din =  pct->flits;
 		rede[local_y][local_x]->buffer_leste->add();
 		rede[local_y][local_x]->cf_saida_leste->out_val.write(1);
 		// cout << "LESTE" << endl;
 	} else if (rede[local_y][local_x]->roteamento_local.portaDestino == OESTE)
 	{	
+		
 		rede[local_y][local_x]->arbitro_oeste.addSolicitacao(OESTE);
 		rede[local_y][local_x]->arbitro_oeste.setPrioridade();
-		rede[local_y][local_x]->roteamento_oeste.cordenada_destino.x =   pct->v[0].cordenadas_f.x;
-		rede[local_y][local_x]->roteamento_oeste.cordenada_destino.y =   pct->v[0].cordenadas_f.y;	
-		rede[local_y][local_x]->buffer_oeste->din =  pct->v[0];
+		rede[local_y][local_x]->roteamento_oeste.cordenada_destino.x =   pct->flits.cordenadas_f.x;
+		rede[local_y][local_x]->roteamento_oeste.cordenada_destino.y =   pct->flits.cordenadas_f.y;	
+		rede[local_y][local_x]->buffer_oeste->din =  pct->flits;
 		rede[local_y][local_x]->buffer_oeste->add();
 		rede[local_y][local_x]->cf_saida_oeste->out_val.write(1);
 		// cout << "OESTE" << endl;
 	} else {
-		printf("CHEGOUUUUU...\n");
-		rede[local_y][local_x]->buffer_local->din =	 pct->v[0];
+		cout << local_y <<  local_x << " "<<  x << y << endl;
+		printf("CHEGOU...\n");
+		rede[local_y][local_x]->buffer_local->din =	 pct->flits;
 		rede[local_y][local_x]->buffer_local->add();
 	} 
 }
