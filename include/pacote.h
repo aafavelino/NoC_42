@@ -24,13 +24,23 @@ public:
 //       xs: Y source; xd: Y dest
 //		 idleCycles: De quanto em quanto tempo é enviado 
 //       size: quantas vezes o pacote é reenviado pela rede.
+	
+	int last_flit;
+	int first_flit;
 	int xs, ys;
 	int xd, yd;
 	int qt_flits;
 	int idleCycles;
 	int size;
+	int contador_ciclos;
+	int contador_size;
+	std::queue<Flit> qtd_flits;
 	Flit flits;
 	Pacote(int xs, int ys, int xd, int yd, int qt_flits, int idleCycles, int size) {
+		this->last_flit = 0;
+		this->first_flit = 0;
+		this->contador_ciclos = 0;
+		this->contador_size = 0;
 		this->xs = xs;
 		this->ys = ys;
 		this->xd = xd;
@@ -40,6 +50,8 @@ public:
 		this->size = size;
 		flits.cordenadas_f.x = xd;
 		flits.cordenadas_f.y = yd;
+		for (int i = 0; i < qt_flits; ++i)
+			qtd_flits.push(flits);		
 	}
 };
 

@@ -34,7 +34,7 @@ SC_MODULE (REDE)
 	sc_signal<int> ground_connection_ack[100];
 
 	void comunicacao_externa();
-	void injeta_flits(int, int, int, int);
+	void injeta_flits(int, int, int, int, int, int, int);
 	void roteamentos_macros_externa(int,int,int);
 	void roteamentos_macros_interna(int,int,int);
 
@@ -79,32 +79,32 @@ SC_MODULE (REDE)
 			if (x == 0)
 			{	
 				
-					//printf("rede[ %d ][ %d ]->cf_norte->in_val(ground_connection_val[%d]\n",i,j,cont);
-					//printf("rede[ %d ][ %d ]->cf_norte->in_ack(ground_connection_val[%d]\n",i,j,cont);
+				//printf("rede[ %d ][ %d ]->cf_norte->in_val(ground_connection_val[%d]\n",i,j,cont);
+				//printf("rede[ %d ][ %d ]->cf_norte->in_ack(ground_connection_val[%d]\n",i,j,cont);
 				rede[x][y]->cf_norte->in_val(ground_connection_val[cont]);
 				rede[x][y]->cf_norte->in_ack(ground_connection_ack[cont]);
 				cont++;
 			}
 			if (y == 0)
 			{	
-					//printf("rede[ %d ][ %d ]->cf_oeste->in_val(ground_connection_val[%d]\n",i,j,cont);
-					//printf("rede[ %d ][ %d ]->cf_oeste->in_ack(ground_connection_val[%d]\n",i,j,cont);				
+				//printf("rede[ %d ][ %d ]->cf_oeste->in_val(ground_connection_val[%d]\n",i,j,cont);
+				//printf("rede[ %d ][ %d ]->cf_oeste->in_ack(ground_connection_val[%d]\n",i,j,cont);				
 				rede[x][y]->cf_oeste->in_val(ground_connection_val[cont]);
 				rede[x][y]->cf_oeste->in_ack(ground_connection_ack[cont]);
 				cont++;
 			}
 			if (x == ALTURA_REDE-1)
 			{	
-					//printf("rede[ %d ][ %d ]->cf_sul->in_val(ground_connection_val[ %d)\n",i,j,cont);					
-					//printf("rede[ %d ][ %d ]->cf_sul->in_ack(ground_connection_val[ %d)\n",i,j,cont);			
+				//printf("rede[ %d ][ %d ]->cf_sul->in_val(ground_connection_val[ %d)\n",i,j,cont);					
+				//printf("rede[ %d ][ %d ]->cf_sul->in_ack(ground_connection_val[ %d)\n",i,j,cont);			
 				rede[x][y]->cf_sul->in_val(ground_connection_val[cont]);
 				rede[x][y]->cf_sul->in_ack(ground_connection_ack[cont]);
 				cont++;
 			}
 			if (y == LARGURA_REDE-1)
 			{	
-					//printf("rede[ %d ][ %d ]->cf_leste->in_val(ground_connection_val[%d]\n",i,j,cont);
-					//printf("rede[ %d ][ %d ]->cf_leste->in_ack(ground_connection_val[%d]\n",i,j,cont);				
+				//printf("rede[ %d ][ %d ]->cf_leste->in_val(ground_connection_val[%d]\n",i,j,cont);
+				//printf("rede[ %d ][ %d ]->cf_leste->in_ack(ground_connection_val[%d]\n",i,j,cont);				
 				rede[x][y]->cf_leste->in_val(ground_connection_val[cont]);
 				rede[x][y]->cf_leste->in_ack(ground_connection_ack[cont]);
 				cont++;
@@ -113,7 +113,7 @@ SC_MODULE (REDE)
 		}
 	}
 
-		// Ligando sinais entre os roteadores	
+	// Ligando sinais entre os roteadores	
 	for (int x = 0; x < ALTURA_REDE; ++x)
 	{
 		for (int y = 0; y < LARGURA_REDE; ++y)
@@ -152,7 +152,7 @@ SC_MODULE (REDE)
 			ver_norte[x][y] = false;
 		}
 	}
-		//Setando as Cordenadas dos roteadores Ex.: roteador1 se encontra em rede[0][0]
+	//Setando as Cordenadas dos roteadores Ex.: roteador1 se encontra em rede[0][0]
 	for (int x = 0; x < ALTURA_REDE; ++x){
 		for (int y = 0; y < LARGURA_REDE; ++y) {	
 			rede[x][y]->roteamento_norte.cordenada.x = x;
