@@ -22,9 +22,10 @@ public:
 // 1) Mesh padrão:  xs ys xd yd #flits idleCycles size
 //       xs: X source; xd: X dest
 //       xs: Y source; xd: Y dest
+//		 #flits:  quantos flits tem para enviar 
 //		 idleCycles: De quanto em quanto tempo é enviado 
 //       size: quantas vezes o pacote é reenviado pela rede.
-	
+
 	int last_flit;
 	int first_flit;
 	int xs, ys;

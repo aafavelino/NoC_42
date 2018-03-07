@@ -8,18 +8,114 @@ int ciclos = 0;
 void REDE::comunicacao_externa() 
 {
 
+	// Colocar aqui a entrada e verificações de ciclos de injeção em cada porta 
+	// local 
+	// Colocar pacotes em  um vetor de pacotes e verificar um por umm
+
+
+
+
 	for (int y = 0; y < ALTURA_REDE; y++)
 	{
 		if (y==0)
 		{
-			cout << "ciclos: " << ciclos++ << endl;
 			ciclos++;
-			if (ciclos == 1000)
+			if (ciclos == 100)
 				sc_stop();
 		}
 
 		for (int x = 0; x < LARGURA_REDE; x++)
 		{   
+
+
+
+	if(rede[y][x]->buffer_local->size != 0) {
+		rede[y][x]->roteamento_local.cordenada_destino.x =   rede[y][x]->buffer_local->flits.front().cordenadas_f.x;
+		rede[y][x]->roteamento_local.cordenada_destino.y =   rede[y][x]->buffer_local->flits.front().cordenadas_f.y;
+		
+		//Roteando
+		
+		#ifdef NEGATIVE_FIRST
+		rede[y][x]->roteamento_local.rotear_negative_first();
+		#endif
+
+		#ifdef XY
+		rede[y][x]->roteamento_local.rotear_xy();
+		#endif	
+		
+		#ifdef NORTH_LAST
+		rede[y][x]->roteamento_local.rotear_north_last();
+		#endif
+
+		#ifdef WEST_FIRST	
+		rede[y][x]->roteamento_local.rotear_west_first();
+		#endif
+
+
+
+		if (rede[y][x]->roteamento_local.portaDestino == NORTE)
+		{
+			
+			rede[y][x]->arbitro_norte.addSolicitacao(NORTE);
+			rede[y][x]->arbitro_norte.setPrioridade();
+			rede[y][x]->roteamento_norte.cordenada_destino.x =   rede[y][x]->buffer_local->flits.front().cordenadas_f.x;
+			rede[y][x]->roteamento_norte.cordenada_destino.y =   rede[y][x]->buffer_local->flits.front().cordenadas_f.y;
+			rede[y][x]->buffer_norte->din =  rede[y][x]->buffer_local->flits.front();
+			rede[y][x]->buffer_local->remove();
+			rede[y][x]->buffer_norte->add();
+			rede[y][x]->cf_saida_norte->out_val.write(1);
+			// cout << "NORTE" << endl;
+		} else if (rede[y][x]->roteamento_local.portaDestino == SUL)
+		{
+			
+			rede[y][x]->arbitro_sul.addSolicitacao(SUL);
+			rede[y][x]->arbitro_sul.setPrioridade();
+			rede[y][x]->roteamento_sul.cordenada_destino.x =   rede[y][x]->buffer_local->flits.front().cordenadas_f.x;
+			rede[y][x]->roteamento_sul.cordenada_destino.y =   rede[y][x]->buffer_local->flits.front().cordenadas_f.y;
+			rede[y][x]->buffer_sul->din =  rede[y][x]->buffer_local->flits.front();
+			rede[y][x]->buffer_local->remove();
+			rede[y][x]->buffer_sul->add();
+			rede[y][x]->cf_saida_sul->out_val.write(1);
+			// cout << "SUL" << endl;
+		} else if (rede[y][x]->roteamento_local.portaDestino == LESTE)
+		{
+			
+			rede[y][x]->arbitro_leste.addSolicitacao(LESTE);
+			rede[y][x]->arbitro_leste.setPrioridade();
+			rede[y][x]->roteamento_leste.cordenada_destino.x =   rede[y][x]->buffer_local->flits.front().cordenadas_f.x;
+			rede[y][x]->roteamento_leste.cordenada_destino.y =   rede[y][x]->buffer_local->flits.front().cordenadas_f.y;
+			rede[y][x]->buffer_leste->din =  rede[y][x]->buffer_local->flits.front();
+			rede[y][x]->buffer_local->remove();
+			rede[y][x]->buffer_leste->add();
+			rede[y][x]->cf_saida_leste->out_val.write(1);
+			// cout << "LESTE" << endl;
+		} else if (rede[y][x]->roteamento_local.portaDestino == OESTE)
+		{	
+			
+			rede[y][x]->arbitro_oeste.addSolicitacao(OESTE);
+			rede[y][x]->arbitro_oeste.setPrioridade();
+			rede[y][x]->roteamento_oeste.cordenada_destino.x =   rede[y][x]->buffer_local->flits.front().cordenadas_f.x;
+			rede[y][x]->roteamento_oeste.cordenada_destino.y =   rede[y][x]->buffer_local->flits.front().cordenadas_f.y;
+			rede[y][x]->buffer_oeste->din =  rede[y][x]->buffer_local->flits.front();
+			rede[y][x]->buffer_local->remove();
+			rede[y][x]->buffer_oeste->add();
+			rede[y][x]->cf_saida_oeste->out_val.write(1);
+			// cout << "OESTE" << endl;
+		} else {
+			// cout << y <<  x << " "<<  x << y << endl;
+			// printf("CHEGOU...\n");
+			// rede[y][x]->buffer_local->din =	 rede[y][x]->buffer_local->flits.front();
+			// rede[y][x]->buffer_local->remove();
+			// rede[y][x]->buffer_local->add();
+
+			// Esse caso será somente para não haver contenção de pacote... Ex: Se tem um camarada que ainda precisa ser enviado. mas existe outro que está
+			// na frente e já está no seu destino final. Então esse camarada vai para o fim da fila e deixa o fluxo correr para a fila não ficar parada... 
+			// É como se o filho ficasse guardando o lugar da mãe na fila da riachuelo/c&a, a mãe continua comprando, chega a vez de passar no caixa e a mãe não 
+			// chega
+		}
+	}
+
+
 			// cout << rede[0][0]->buffer_leste->size << endl;
 			if (rede[y][x]->cf_leste->in_ack.read() == 1)
 			{
@@ -426,81 +522,6 @@ void REDE::injeta_flits(int local_y , int local_x, int x, int y, int qt_flits, i
 
 	Pacote *pct = new Pacote(local_y, local_x, x,y,qt_flits,idleCycles,size);
 
-	//Alocando o flit no buffer
 	rede[local_y][local_x]->buffer_local->din =  pct->flits;
-
-	//Setando as cordenadas do primeiro flit
-	rede[local_y][local_x]->roteamento_local.cordenada_destino.x =   pct->flits.cordenadas_f.x;
-	rede[local_y][local_x]->roteamento_local.cordenada_destino.y =   pct->flits.cordenadas_f.y;
-	
-	//Roteando
-	
-	#ifdef NEGATIVE_FIRST
-	rede[local_y][local_x]->roteamento_local.rotear_negative_first();
-	#endif
-
-	#ifdef XY
-	rede[local_y][local_x]->roteamento_local.rotear_xy();
-	#endif	
-	
-	#ifdef NORTH_LAST
-	rede[local_y][local_x]->roteamento_local.rotear_north_last();
-	#endif
-
-	#ifdef WEST_FIRST	
-	rede[local_y][local_x]->roteamento_local.rotear_west_first();
-	#endif
-
-
-
-	if (rede[local_y][local_x]->roteamento_local.portaDestino == NORTE)
-	{
-		
-		rede[local_y][local_x]->arbitro_norte.addSolicitacao(NORTE);
-		rede[local_y][local_x]->arbitro_norte.setPrioridade();
-		rede[local_y][local_x]->roteamento_norte.cordenada_destino.x =   pct->flits.cordenadas_f.x;
-		rede[local_y][local_x]->roteamento_norte.cordenada_destino.y =   pct->flits.cordenadas_f.y;	
-		rede[local_y][local_x]->buffer_norte->din =  pct->flits;
-		rede[local_y][local_x]->buffer_norte->add();
-		rede[local_y][local_x]->cf_saida_norte->out_val.write(1);
-		// cout << "NORTE" << endl;
-	} else if (rede[local_y][local_x]->roteamento_local.portaDestino == SUL)
-	{
-		
-		rede[local_y][local_x]->arbitro_sul.addSolicitacao(SUL);
-		rede[local_y][local_x]->arbitro_sul.setPrioridade();
-		rede[local_y][local_x]->roteamento_sul.cordenada_destino.x =   pct->flits.cordenadas_f.x;
-		rede[local_y][local_x]->roteamento_sul.cordenada_destino.y =   pct->flits.cordenadas_f.y;	
-		rede[local_y][local_x]->buffer_sul->din =  pct->flits;
-		rede[local_y][local_x]->buffer_sul->add();
-		rede[local_y][local_x]->cf_saida_sul->out_val.write(1);
-		// cout << "SUL" << endl;
-	} else if (rede[local_y][local_x]->roteamento_local.portaDestino == LESTE)
-	{
-		
-		rede[local_y][local_x]->arbitro_leste.addSolicitacao(LESTE);
-		rede[local_y][local_x]->arbitro_leste.setPrioridade();
-		rede[local_y][local_x]->roteamento_leste.cordenada_destino.x =   pct->flits.cordenadas_f.x;
-		rede[local_y][local_x]->roteamento_leste.cordenada_destino.y =   pct->flits.cordenadas_f.y;	
-		rede[local_y][local_x]->buffer_leste->din =  pct->flits;
-		rede[local_y][local_x]->buffer_leste->add();
-		rede[local_y][local_x]->cf_saida_leste->out_val.write(1);
-		// cout << "LESTE" << endl;
-	} else if (rede[local_y][local_x]->roteamento_local.portaDestino == OESTE)
-	{	
-		
-		rede[local_y][local_x]->arbitro_oeste.addSolicitacao(OESTE);
-		rede[local_y][local_x]->arbitro_oeste.setPrioridade();
-		rede[local_y][local_x]->roteamento_oeste.cordenada_destino.x =   pct->flits.cordenadas_f.x;
-		rede[local_y][local_x]->roteamento_oeste.cordenada_destino.y =   pct->flits.cordenadas_f.y;	
-		rede[local_y][local_x]->buffer_oeste->din =  pct->flits;
-		rede[local_y][local_x]->buffer_oeste->add();
-		rede[local_y][local_x]->cf_saida_oeste->out_val.write(1);
-		// cout << "OESTE" << endl;
-	} else {
-		cout << local_y <<  local_x << " "<<  x << y << endl;
-		printf("CHEGOU...\n");
-		rede[local_y][local_x]->buffer_local->din =	 pct->flits;
-		rede[local_y][local_x]->buffer_local->add();
-	} 
+	rede[local_y][local_x]->buffer_local->add();
 }

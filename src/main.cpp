@@ -34,9 +34,14 @@ int sc_main (int argc, char* argv[]) {
     // Fim da leitura do arquivo de tráfego
     fclose(traffic);
 
-  	// for (int i = 0; i < size_pct; ++i)
-  	// 	simulation->injeta_flits(padrao_tfg[i][0],padrao_tfg[i][1], padrao_tfg[i][2], padrao_tfg[i][3],  padrao_tfg[i][4],  padrao_tfg[i][5],  padrao_tfg[i][6]);
-  	
+  	for (int i = 0; i < size_pct; ++i)
+  		simulation->pacotes_tg.push_back(Pacote(padrao_tfg[i][0],padrao_tfg[i][1], padrao_tfg[i][2], padrao_tfg[i][3],  padrao_tfg[i][4],  padrao_tfg[i][5],  padrao_tfg[i][6]));
+
+  	// mudar isso aqui 
+	for (int i = 0; i < size_pct; ++i)
+  		simulation->injeta_flits(simulation->pacotes_tg[i].xs,simulation->pacotes_tg[i].ys,simulation->pacotes_tg[i].xd,simulation->pacotes_tg[i].yd,simulation->pacotes_tg[i].qt_flits, simulation->pacotes_tg[i].idleCycles, simulation->pacotes_tg[i].size);
+	
+
 	sc_start();	// Run the simulation till sc_stop is encountered
 
   	return 0;

@@ -8,6 +8,7 @@
 #include <systemc.h>
 #include <vector>
 #include "roteador.h"
+#include "pacote.h"
 #include <iostream>
 #include <fstream>
 #include "../constantes/constantes.h"
@@ -23,7 +24,9 @@ SC_MODULE (REDE)
 
 	// Clock
  	sc_in<bool> Clk;
-	
+
+ 	//Vector de pacotes recebidos pelo padrão de tráfego...
+	std::vector<Pacote> pacotes_tg;
 
 	// Criando uma Rede Altura x Largura
 	roteador *rede[ALTURA_REDE][LARGURA_REDE];
@@ -58,7 +61,7 @@ SC_MODULE (REDE)
 		"roteador_141", "roteador_142", "roteador_143", "roteador_144", "roteador_145", "roteador_146", "roteador_147", "roteador_148", "roteador_149", "roteador_150",
 		"roteador_151", "roteador_152", "roteador_153", "roteador_154", "roteador_155", "roteador_156", "roteador_157", "roteador_158", "roteador_159", "roteador_160",
 		"roteador_161", "roteador_162", "roteador_163", "roteador_164", "roteador_165", "roteador_166", "roteador_167", "roteador_168", "roteador_169", "roteador_170"
-	};
+		};
 	int rt_cont = 0;
 	for (int i = 0; i < ALTURA_REDE; ++i)
 	{
