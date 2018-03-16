@@ -12,7 +12,7 @@ using namespace std;
 
 int sc_main (int argc, char* argv[]) {
 
-	sc_clock clock("clock", 10, SC_NS, 1, 10, SC_NS);
+	sc_clock clock("clock", 1, SC_NS, 1, 1, SC_NS);
 	REDE *simulation = new REDE("rede");
 	simulation->Clk(clock);
 	int **padrao_tfg;
@@ -37,12 +37,15 @@ int sc_main (int argc, char* argv[]) {
   	for (int i = 0; i < size_pct; ++i)
   		simulation->pacotes_tg.push_back(Pacote(padrao_tfg[i][0],padrao_tfg[i][1], padrao_tfg[i][2], padrao_tfg[i][3],  padrao_tfg[i][4],  padrao_tfg[i][5],  padrao_tfg[i][6]));
 
-  	// mudar isso aqui 
-	for (int i = 0; i < size_pct; ++i)
-  		simulation->injeta_flits(simulation->pacotes_tg[i].xs,simulation->pacotes_tg[i].ys,simulation->pacotes_tg[i].xd,simulation->pacotes_tg[i].yd,simulation->pacotes_tg[i].qt_flits, simulation->pacotes_tg[i].idleCycles, simulation->pacotes_tg[i].size);
-	
-
+  	
+  	// cout << simulation->pacotes_tg[0].qtd_flits.size() << endl;
+  	// simulation->injetar();
+  	
 	sc_start();	// Run the simulation till sc_stop is encountered
+
+
+
+  cout << "sc_stop is encountered" << endl;
 
   	return 0;
 }
