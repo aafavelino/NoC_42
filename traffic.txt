@@ -1,0 +1,26 @@
+tg 10
+0 0 0 1 10 6 3
+0 0 0 2 10 6 1
+0 1 0 3 10 1 1
+0 0 0 4 10 6 1
+0 0 0 5 10 6 1
+0 0 0 6 10 6 10
+0 0 1 0 10 6 1
+0 0 1 1 10 6 1
+0 0 1 2 10 6 1
+0 0 1 3 10 6 1
+0 0 1 4 10 6 1
+0 0 1 5 10 6 1
+0 0 1 6 10 6 1
+
+
+
+
+
+— sintaxe:
+
+1) Mesh padrão:  xs ys xd yd #flits idleCycles size
+      xs: X source; xd: X dest
+      xs: Y source; xd: Y dest		 
+      idleCycles: De quanto em quanto tempo é enviado 
+      size: quantas vezes o pacote é reenviado pela rede.

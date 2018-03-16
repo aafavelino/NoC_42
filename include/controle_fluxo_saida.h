@@ -1,3 +1,7 @@
+//
+// Created by Adelino on 30/11/17.
+//
+
 #ifndef _CONTROLE_FLUXO_SAIDA_H_
 #define _CONTROLE_FLUXO_SAIDA_H_
 

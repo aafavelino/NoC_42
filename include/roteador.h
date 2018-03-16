@@ -1,3 +1,7 @@
+//
+// Created by Adelino on 30/11/17.
+//
+
 #ifndef _ROTEADOR_H_
 #define _ROTEADOR_H_
 
@@ -28,6 +32,8 @@ SC_MODULE (roteador)
 	sc_signal <int> ack_cf_sul_to_norte_wire; //Sai do sul e entra no norte
 	sc_signal <int> ack_cf_leste_to_oeste_wire; //Sai do leste e entra no oeste
 	sc_signal <int> ack_cf_oeste_to_leste_wire; //Sai do oeste e entra no leste
+
+	std::string name;
 
 	// Ver isso aqui DEPOISSSS
 	Flit in_data; //n+2 data + bop + eop
@@ -65,6 +71,14 @@ SC_MODULE (roteador)
 	Buffer *buffer_oeste;
 	Buffer *buffer_local;
 
+	Buffer *buffer_norte_saida;
+	Buffer *buffer_sul_saida;
+	Buffer *buffer_leste_saida;
+	Buffer *buffer_oeste_saida;
+	Buffer *buffer_local_entrada;
+
+
+
 	void entrada_controle_de_fluxo();
 	void entrada_buffer();
 	void confirmacao_buffer();
@@ -89,6 +103,12 @@ SC_MODULE (roteador)
 		buffer_oeste = new Buffer("Buffer_oeste");
 		buffer_local = new Buffer("Buffer_local");
 
+		buffer_norte_saida = new Buffer("Buffer_norte_saida");
+		buffer_sul_saida = new Buffer("Buffer_sul_saida");
+		buffer_leste_saida = new Buffer("Buffer_leste_saida");
+		buffer_oeste_saida = new Buffer("Buffer_oeste_saida");
+		buffer_local_entrada = new Buffer("buffer_local_entrada");
+
 		//Ligação dos controles de fluxo internos...
 		cf_saida_norte->out_val(val_cf_norte_to_sul_wire);
 		cf_saida_norte->out_ack(ack_cf_norte_to_sul_wire);
@@ -99,13 +119,19 @@ SC_MODULE (roteador)
 		cf_saida_oeste->out_val(val_cf_oeste_to_leste_wire);
 		cf_saida_oeste->out_ack(ack_cf_oeste_to_leste_wire);
 
+
+
+
+
+
 		SC_METHOD(entrada_controle_de_fluxo);
 		sensitive << cf_norte->in_val; 
 		sensitive << cf_sul->in_val;
 		sensitive << cf_leste->in_val; 
 		sensitive << cf_oeste->in_val; 
-	}
 
+
+	}
 	
 };
 #endif

@@ -1,0 +1,1752 @@
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+[0][2]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+CHEGOUUUUU oeste...
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+CHEGOUUUUU oeste...
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+CHEGOUUUUU oeste...
+[0][3]--OESTE
+CHEGOUUUUU oeste...
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][2]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][2]--OESTE
+[0][3]--OESTE
+CHEGOUUUUU oeste...
+[1][0]--NORTE
+CHEGOUUUUU norte...
+veio de: 6
+testetetet
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+CHEGOUUUUU oeste...
+[0][4]--OESTE
+CHEGOUUUUU oeste...
+[1][1]--NORTE
+CHEGOUUUUU norte...
+veio de: 7
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+[0][2]--OESTE
+[0][3]--OESTE
+CHEGOUUUUU oeste...
+[0][4]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+CHEGOUUUUU oeste...
+[0][5]--OESTE
+CHEGOUUUUU oeste...
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+CHEGOUUUUU oeste...
+[0][4]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+CHEGOUUUUU oeste...
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+CHEGOUUUUU oeste...
+end:2
+ULTIMO
+[0][5]--OESTE
+[1][0]--NORTE
+CHEGOUUUUU norte...
+veio de: 6
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+CHEGOUUUUU oeste...
+[0][3]--OESTE
+[1][2]--NORTE
+CHEGOUUUUU norte...
+veio de: 8
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+[1][1]--NORTE
+CHEGOUUUUU norte...
+veio de: 7
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+[0][2]--OESTE
+[1][3]--NORTE
+CHEGOUUUUU norte...
+veio de: 9
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+[0][4]--OESTE
+CHEGOUUUUU oeste...
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+[0][4]--OESTE
+[1][2]--NORTE
+CHEGOUUUUU norte...
+veio de: 8
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+CHEGOUUUUU oeste...
+[0][3]--OESTE
+[0][4]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+CHEGOUUUUU oeste...
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+[1][0]--NORTE
+CHEGOUUUUU norte...
+veio de: 6
+[1][3]--NORTE
+CHEGOUUUUU norte...
+veio de: 9
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][3]--OESTE
+[0][4]--OESTE
+CHEGOUUUUU oeste...
+[1][1]--NORTE
+CHEGOUUUUU norte...
+veio de: 7
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+[0][2]--OESTE
+[0][4]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][4]--OESTE
+[0][5]--OESTE
+CHEGOUUUUU oeste...
+[1][2]--NORTE
+CHEGOUUUUU norte...
+veio de: 8
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+CHEGOUUUUU oeste...
+[0][5]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+[1][0]--NORTE
+CHEGOUUUUU norte...
+veio de: 6
+[1][3]--NORTE
+CHEGOUUUUU norte...
+veio de: 9
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][3]--OESTE
+[0][4]--OESTE
+CHEGOUUUUU oeste...
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+[1][1]--NORTE
+CHEGOUUUUU norte...
+veio de: 7
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+[0][2]--OESTE
+[0][4]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+CHEGOUUUUU oeste...
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+CHEGOUUUUU oeste...
+[0][5]--OESTE
+[1][2]--NORTE
+CHEGOUUUUU norte...
+veio de: 8
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][2]--OESTE
+[0][3]--OESTE
+[1][3]--NORTE
+CHEGOUUUUU norte...
+veio de: 9
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][3]--OESTE
+[0][4]--OESTE
+CHEGOUUUUU oeste...
+[1][0]--NORTE
+CHEGOUUUUU norte...
+veio de: 6
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+[0][5]--OESTE
+CHEGOUUUUU oeste...
+[1][1]--NORTE
+CHEGOUUUUU norte...
+veio de: 7
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][5]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+[0][2]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+CHEGOUUUUU oeste...
+[1][2]--NORTE
+CHEGOUUUUU norte...
+veio de: 8
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+[1][0]--NORTE
+CHEGOUUUUU norte...
+veio de: 6
+[1][3]--NORTE
+CHEGOUUUUU norte...
+veio de: 9
+teste
+teste
+teste
+teste
+teste
+teste
+teste
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+testetetet
+testetetet
+testetetet
+testetetet
+testetetet
+testetetet
+testetetet
+[0][1]--OESTE
+[0][3]--OESTE
+[0][4]--OESTE
+CHEGOUUUUU oeste...
+[0][1]--OESTE
+[0][4]--OESTE
+[1][1]--NORTE
+CHEGOUUUUU norte...
+veio de: 7
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+[0][2]--OESTE
+[0][4]--OESTE
+[0][1]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+CHEGOUUUUU oeste...
+[0][1]--OESTE
+[0][2]--OESTE
+CHEGOUUUUU oeste...
+[0][5]--OESTE
+[1][2]--NORTE
+CHEGOUUUUU norte...
+veio de: 8
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+[0][2]--OESTE
+[0][3]--OESTE
+[1][3]--NORTE
+CHEGOUUUUU norte...
+veio de: 9
+[0][3]--OESTE
+[0][4]--OESTE
+CHEGOUUUUU oeste...
+[1][0]--NORTE
+CHEGOUUUUU norte...
+veio de: 6
+[0][1]--OESTE
+[0][4]--OESTE
+[0][1]--OESTE
+[0][4]--OESTE
+[0][5]--OESTE
+CHEGOUUUUU oeste...
+[1][1]--NORTE
+CHEGOUUUUU norte...
+veio de: 7
+[0][1]--OESTE
+[0][5]--OESTE
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+[0][2]--OESTE
+[0][1]--OESTE
+[0][2]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+[0][1]--OESTE
+[0][2]--OESTE
+CHEGOUUUUU oeste...
+[1][2]--NORTE
+CHEGOUUUUU norte...
+veio de: 8
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+[1][0]--NORTE
+CHEGOUUUUU norte...
+veio de: 6
+[1][3]--NORTE
+CHEGOUUUUU norte...
+veio de: 9
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+[0][1]--OESTE
+[0][3]--OESTE
+[0][4]--OESTE
+CHEGOUUUUU oeste...
+[0][1]--OESTE
+[0][4]--OESTE
+[1][1]--NORTE
+CHEGOUUUUU norte...
+veio de: 7
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+[0][2]--OESTE
+[0][4]--OESTE
+[0][1]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+CHEGOUUUUU oeste...
+[0][1]--OESTE
+[0][2]--OESTE
+CHEGOUUUUU oeste...
+[0][5]--OESTE
+[1][2]--NORTE
+CHEGOUUUUU norte...
+veio de: 8
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+[0][2]--OESTE
+[0][3]--OESTE
+[1][3]--NORTE
+CHEGOUUUUU norte...
+veio de: 9
+[0][3]--OESTE
+[0][4]--OESTE
+CHEGOUUUUU oeste...
+[1][0]--NORTE
+CHEGOUUUUU norte...
+veio de: 6
+[0][1]--OESTE
+[0][4]--OESTE
+[0][1]--OESTE
+[0][4]--OESTE
+[0][5]--OESTE
+CHEGOUUUUU oeste...
+[1][1]--NORTE
+CHEGOUUUUU norte...
+veio de: 7
+[0][1]--OESTE
+[0][5]--OESTE
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+[0][2]--OESTE
+[0][1]--OESTE
+[0][2]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+[0][1]--OESTE
+[0][2]--OESTE
+CHEGOUUUUU oeste...
+end:1
+ULTIMO
+[1][2]--NORTE
+CHEGOUUUUU norte...
+veio de: 8
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+[1][0]--NORTE
+CHEGOUUUUU norte...
+end: 6
+veio de: 6
+ULTIMO
+[1][3]--NORTE
+CHEGOUUUUU norte...
+veio de: 9
+[0][1]--OESTE
+[0][2]--OESTE
+[0][3]--OESTE
+[0][1]--OESTE
+[0][3]--OESTE
+[0][4]--OESTE
+CHEGOUUUUU oeste...
+end:3
+ULTIMO
+[0][1]--OESTE
+[0][4]--OESTE
+[1][1]--NORTE
+CHEGOUUUUU norte...
+end: 7
+veio de: 7
+ULTIMO
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+[0][2]--OESTE
+[0][4]--OESTE
+[0][1]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+CHEGOUUUUU oeste...
+end:4
+ULTIMO
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+[0][2]--OESTE
+[0][5]--OESTE
+[1][2]--NORTE
+CHEGOUUUUU norte...
+end: 8
+veio de: 8
+ULTIMO
+[0][1]--OESTE
+[0][3]--OESTE
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][2]--OESTE
+[1][3]--NORTE
+CHEGOUUUUU norte...
+end: 9
+veio de: 9
+ULTIMO
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+[0][2]--OESTE
+[0][4]--OESTE
+[0][1]--OESTE
+[0][3]--OESTE
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+[0][3]--OESTE
+[0][5]--OESTE
+[0][1]--OESTE
+[0][2]--OESTE
+[0][4]--OESTE
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+[0][2]--OESTE
+[0][4]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][3]--OESTE
+[0][5]--OESTE
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+[0][2]--OESTE
+[0][3]--OESTE
+[0][4]--OESTE
+[0][5]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][3]--OESTE
+[0][4]--OESTE
+[0][5]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+[0][4]--OESTE
+[0][5]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][2]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][3]--OESTE
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+[0][3]--OESTE
+[0][1]--OESTE
+[0][4]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+[0][5]--OESTE
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+testetetet
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+CHEGOUUUUU oeste...
+end:0
+ULTIMO
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+teste
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+teste
+teste
+[0][1]--OESTE
+[0][4]--OESTE
+teste
+teste
+[0][2]--OESTE
+[0][5]--OESTE
+teste
+testetetet
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][1]--OESTE
+[0][4]--OESTE
+[0][2]--OESTE
+[0][5]--OESTE
+[0][3]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+[0][4]--OESTE
+[0][5]--OESTE
+[0][6]--OESTE
+CHEGOUUUUU oeste...
+end:5
+ULTIMO
+
+Info: /OSCI/SystemC: Simulation stopped by user.
+sc_stop is encountered

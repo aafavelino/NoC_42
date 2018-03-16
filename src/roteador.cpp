@@ -1,3 +1,7 @@
+//
+// Created by Adelino on 30/11/17.
+//
+
 #include "roteador.h"
 
 void roteador::entrada_controle_de_fluxo()
@@ -133,6 +137,3 @@ void roteador::execute_retorno_controle_de_fluxo()
 		cf_oeste->wok = 0;
 	}
 } 
-
-
-

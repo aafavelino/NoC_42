@@ -1,3 +1,7 @@
+//
+// Created by Adelino on 30/11/17.
+//
+
 #ifndef _ROTEAMENTO_H_
 #define _ROTEAMENTO_H_ 
 
@@ -30,7 +34,6 @@ public:
 	void rotear_west_first();
 	void rotear_xy();
 	void rotear_north_last();
-	void rotear_odd_even();
 	void rotear_negative_first();
 	
 };

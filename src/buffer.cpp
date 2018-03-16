@@ -1,9 +1,15 @@
+//
+// Created by Adelino on 30/11/17.
+//
+
 #include "buffer.h"
 
 //Funcionando
 void Buffer::add() {
 	this->flits.push(din);
     size++;
+
+    // cout << "size no buffer "<< size << endl;
 }
 //Funcionando
 void Buffer::remove() {
@@ -19,6 +25,6 @@ void Buffer::remove() {
 int Buffer::isEmpty() {
     
 	// cout << "Buffer Size :" <<  ((this->size < 4) ? 1: 0 )<< "\n";
-	return (this->size < 10) ? 1: 0;
+	return (this->size < 100) ? 1: 0;
 }
 

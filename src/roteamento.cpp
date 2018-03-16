@@ -1,3 +1,7 @@
+//
+// Created by Adelino on 30/11/17.
+//
+
 #include "roteamento.h"
 
 void Roteamento::rotear_xy()
@@ -134,11 +138,6 @@ void Roteamento::rotear_negative_first()
 			portaDestino = LOCAL;
 		}
 	}
-
-}
-
-void Roteamento::rotear_odd_even()
-{
 
 }
 

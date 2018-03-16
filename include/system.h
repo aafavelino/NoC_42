@@ -1,9 +1,14 @@
+//
+// Created by Adelino on 30/11/17.
+//
+
 #ifndef _SYSTEM_H_
 #define _SYSTEM_H_ 
 
 #include <systemc.h>
 #include <vector>
 #include "roteador.h"
+#include "pacote.h"
 #include <iostream>
 #include <fstream>
 #include "../constantes/constantes.h"
@@ -12,25 +17,38 @@ using namespace std;
 
 SC_MODULE (REDE)
 {
-	bool ver_leste = false;
-	bool ver_oeste = false;
-	bool ver_sul = false;
-	bool ver_norte = false;
+	bool ver_leste[ALTURA_REDE][LARGURA_REDE];
+	bool ver_oeste[ALTURA_REDE][LARGURA_REDE];
+	bool ver_sul[ALTURA_REDE][LARGURA_REDE];
+	bool ver_norte[ALTURA_REDE][LARGURA_REDE];
+
+	// Clock
+ 	sc_in<bool> Clk;
+	unsigned long long int clock;	
+
+ 	//Vector de pacotes recebidos pelo padrão de tráfego...
+	std::vector<Pacote> pacotes_tg;
 
 	// Criando uma Rede Altura x Largura
 	roteador *rede[ALTURA_REDE][LARGURA_REDE];
 
+	bool finish; // verificar o fim do envio de pacotes
+	int cont_vetor;
 
 	//Aterramentos
 	sc_signal<int> ground_connection_val[100];
 	sc_signal<int> ground_connection_ack[100];
 
+
 	void comunicacao_externa();
-	void injeta_flits(int, int, int, int);
+	void injetar();
+	void roteamentos_macros_externa(int,int,int);
+	void roteamentos_macros_interna(int,int,int);
 
 	SC_CTOR(REDE) 
 	{ 
-		
+		finish = false;
+		cont_vetor = 0;
 		const char* roteadores_nomes[]={	"roteador_01" , "roteador_02" , "roteador_03" , "roteador_04" , "roteador_05" , "roteador_06" , "roteador_07" , "roteador_08" , "roteador_09" , "roteador_10" ,
 		"roteador_11" , "roteador_12" , "roteador_13" , "roteador_14" , "roteador_15" , "roteador_16" , "roteador_17" , "roteador_18" , "roteador_19" , "roteador_20" ,
 		"roteador_21" , "roteador_22" , "roteador_23" , "roteador_24" , "roteador_25" , "roteador_26" , "roteador_27" , "roteador_28" , "roteador_29" , "roteador_30" ,
@@ -48,14 +66,14 @@ SC_MODULE (REDE)
 		"roteador_141", "roteador_142", "roteador_143", "roteador_144", "roteador_145", "roteador_146", "roteador_147", "roteador_148", "roteador_149", "roteador_150",
 		"roteador_151", "roteador_152", "roteador_153", "roteador_154", "roteador_155", "roteador_156", "roteador_157", "roteador_158", "roteador_159", "roteador_160",
 		"roteador_161", "roteador_162", "roteador_163", "roteador_164", "roteador_165", "roteador_166", "roteador_167", "roteador_168", "roteador_169", "roteador_170"
-	};
+		};
 	int rt_cont = 0;
 	for (int i = 0; i < ALTURA_REDE; ++i)
 	{
 		for (int j = 0; j < LARGURA_REDE; ++j)
 		{
 			rede[i][j] = new roteador(roteadores_nomes[rt_cont]);
-
+			rede[i][j]->name = roteadores_nomes[rt_cont];
 			rt_cont++;
 		}
 	}
@@ -69,32 +87,32 @@ SC_MODULE (REDE)
 			if (x == 0)
 			{	
 				
-					//printf("rede[ %d ][ %d ]->cf_norte->in_val(ground_connection_val[%d]\n",i,j,cont);
-					//printf("rede[ %d ][ %d ]->cf_norte->in_ack(ground_connection_val[%d]\n",i,j,cont);
+				//printf("rede[ %d ][ %d ]->cf_norte->in_val(ground_connection_val[%d]\n",i,j,cont);
+				//printf("rede[ %d ][ %d ]->cf_norte->in_ack(ground_connection_val[%d]\n",i,j,cont);
 				rede[x][y]->cf_norte->in_val(ground_connection_val[cont]);
 				rede[x][y]->cf_norte->in_ack(ground_connection_ack[cont]);
 				cont++;
 			}
 			if (y == 0)
 			{	
-					//printf("rede[ %d ][ %d ]->cf_oeste->in_val(ground_connection_val[%d]\n",i,j,cont);
-					//printf("rede[ %d ][ %d ]->cf_oeste->in_ack(ground_connection_val[%d]\n",i,j,cont);				
+				//printf("rede[ %d ][ %d ]->cf_oeste->in_val(ground_connection_val[%d]\n",i,j,cont);
+				//printf("rede[ %d ][ %d ]->cf_oeste->in_ack(ground_connection_val[%d]\n",i,j,cont);				
 				rede[x][y]->cf_oeste->in_val(ground_connection_val[cont]);
 				rede[x][y]->cf_oeste->in_ack(ground_connection_ack[cont]);
 				cont++;
 			}
 			if (x == ALTURA_REDE-1)
 			{	
-					//printf("rede[ %d ][ %d ]->cf_sul->in_val(ground_connection_val[ %d)\n",i,j,cont);					
-					//printf("rede[ %d ][ %d ]->cf_sul->in_ack(ground_connection_val[ %d)\n",i,j,cont);			
+				//printf("rede[ %d ][ %d ]->cf_sul->in_val(ground_connection_val[ %d)\n",i,j,cont);					
+				//printf("rede[ %d ][ %d ]->cf_sul->in_ack(ground_connection_val[ %d)\n",i,j,cont);			
 				rede[x][y]->cf_sul->in_val(ground_connection_val[cont]);
 				rede[x][y]->cf_sul->in_ack(ground_connection_ack[cont]);
 				cont++;
 			}
 			if (y == LARGURA_REDE-1)
 			{	
-					//printf("rede[ %d ][ %d ]->cf_leste->in_val(ground_connection_val[%d]\n",i,j,cont);
-					//printf("rede[ %d ][ %d ]->cf_leste->in_ack(ground_connection_val[%d]\n",i,j,cont);				
+				//printf("rede[ %d ][ %d ]->cf_leste->in_val(ground_connection_val[%d]\n",i,j,cont);
+				//printf("rede[ %d ][ %d ]->cf_leste->in_ack(ground_connection_val[%d]\n",i,j,cont);				
 				rede[x][y]->cf_leste->in_val(ground_connection_val[cont]);
 				rede[x][y]->cf_leste->in_ack(ground_connection_ack[cont]);
 				cont++;
@@ -103,7 +121,7 @@ SC_MODULE (REDE)
 		}
 	}
 
-		// Ligando sinais entre os roteadores	
+	// Ligando sinais entre os roteadores	
 	for (int x = 0; x < ALTURA_REDE; ++x)
 	{
 		for (int y = 0; y < LARGURA_REDE; ++y)
@@ -134,7 +152,15 @@ SC_MODULE (REDE)
 		}
 	}
 
-		//Setando as Cordenadas dos roteadores Ex.: roteador1 se encontra em rede[0][0]
+	for (int x = 0; x < ALTURA_REDE; ++x){
+		for (int y = 0; y < LARGURA_REDE; ++y) {	
+			ver_leste[x][y] = false;
+			ver_oeste[x][y] = false;
+			ver_sul[x][y] = false;
+			ver_norte[x][y] = false;
+		}
+	}
+	//Setando as Cordenadas dos roteadores Ex.: roteador1 se encontra em rede[0][0]
 	for (int x = 0; x < ALTURA_REDE; ++x){
 		for (int y = 0; y < LARGURA_REDE; ++y) {	
 			rede[x][y]->roteamento_norte.cordenada.x = x;
@@ -151,6 +177,7 @@ SC_MODULE (REDE)
 	}
 
 	SC_METHOD(comunicacao_externa);
+	sensitive << Clk;
 	for (int x = 0; x < ALTURA_REDE; ++x){
 		for (int y = 0; y < LARGURA_REDE; ++y) {
 			sensitive << rede[x][y]->cf_saida_norte->out_ack;
