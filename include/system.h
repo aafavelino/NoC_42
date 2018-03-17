@@ -29,6 +29,8 @@ SC_MODULE (REDE)
  	//Vector de pacotes recebidos pelo padrão de tráfego...
 	std::vector<Pacote> pacotes_tg;
 
+	std::vector<vector<int> > latencias;
+
 	// Criando uma Rede Altura x Largura
 	roteador *rede[ALTURA_REDE][LARGURA_REDE];
 

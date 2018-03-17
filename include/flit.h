@@ -11,7 +11,7 @@ class Flit
 {
 public:
 	int payload;
-	
+	int ciclo;
 	int begin;
 	int end = -1;
 	int stop = false;

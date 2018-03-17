@@ -37,13 +37,21 @@ int sc_main (int argc, char* argv[]) {
   	for (int i = 0; i < size_pct; ++i)
   		simulation->pacotes_tg.push_back(Pacote(padrao_tfg[i][0],padrao_tfg[i][1], padrao_tfg[i][2], padrao_tfg[i][3],  padrao_tfg[i][4],  padrao_tfg[i][5],  padrao_tfg[i][6]));
 
-  	
-  	// cout << simulation->pacotes_tg[0].qtd_flits.size() << endl;
-  	// simulation->injetar();
+    simulation->latencias.resize(size_pct);
+
   	
 	sc_start();	// Run the simulation till sc_stop is encountered
 
+cout << "size_pct "<<size_pct << endl;
+for (int j = 0; j < size_pct; ++j)
+{
 
+  for (int i = 0; i < padrao_tfg[j][6]; ++i)
+  {
+    cout << "Latencia pos["<<j<<"][" << i << "]: " << simulation->latencias[j][i] << endl;
+  }
+    cout << endl;
+}
 
   cout << "sc_stop is encountered" << endl;
 
