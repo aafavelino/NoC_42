@@ -180,14 +180,14 @@ SC_MODULE (REDE)
 
 	SC_METHOD(comunicacao_externa);
 	sensitive << Clk;
-	for (int x = 0; x < ALTURA_REDE; ++x){
-		for (int y = 0; y < LARGURA_REDE; ++y) {
-			sensitive << rede[x][y]->cf_saida_norte->out_ack;
-			sensitive << rede[x][y]->cf_saida_sul->out_ack;
-			sensitive << rede[x][y]->cf_saida_leste->out_ack;
-			sensitive << rede[x][y]->cf_saida_oeste->out_ack;
-		}
-	}	
+	// for (int x = 0; x < ALTURA_REDE; ++x){
+	// 	for (int y = 0; y < LARGURA_REDE; ++y) {
+	// 		sensitive << rede[x][y]->cf_saida_norte->out_ack;
+	// 		sensitive << rede[x][y]->cf_saida_sul->out_ack;
+	// 		sensitive << rede[x][y]->cf_saida_leste->out_ack;
+	// 		sensitive << rede[x][y]->cf_saida_oeste->out_ack;
+	// 	}
+	// }	
 }
 };
 

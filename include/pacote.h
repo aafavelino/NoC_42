@@ -53,9 +53,8 @@ public:
 		this->idleCycles = idleCycles;
 		this->size = size;
 		flits.cordenadas_f.x = xd;
-		flits.cordenadas_f.y = yd;
-;		
-	}
+		flits.cordenadas_f.y = yd;		
+	};
 };
 
 #endif

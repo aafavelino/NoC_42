@@ -14,6 +14,8 @@ SC_MODULE (controle_fluxo)
 	sc_in <int> in_val; //Entrada pra ver se no buffer terá espaço 
 	sc_out<int> in_ack; //Retorno da solicitação se terá espaço
 	bool val = false;
+	bool ack = false;
+
 	
 
 	sc_int<4> wr; //Saída que vai para o buffer
