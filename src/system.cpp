@@ -1,4 +1,4 @@
-	//
+//
 // Created by Adelino on 30/11/17.
 //
 
@@ -143,6 +143,7 @@ void REDE::comunicacao_externa()
 					rede[y][x]->buffer_local_entrada->remove();
 					rede[y][x]->buffer_sul_saida->add();
 					rede[y+1][x]->cf_norte->val = true;
+					throughput[y][x]->saida_sul++;
 					rede[y][x]->cf_saida_sul->out_val.write(clock);
 					
 				}
@@ -152,15 +153,20 @@ void REDE::comunicacao_externa()
 					rede[y][x]->buffer_local_entrada->remove();
 					rede[y][x]->buffer_norte_saida->add();
 					rede[y-1][x]->cf_sul->val = true;
+					throughput[y][x]->saida_norte++;
 					rede[y][x]->cf_saida_norte->out_val.write(clock);
+				
 					
 				}  else if (rede[y][x]->roteamento_local.portaDestino == LESTE)
 				{
+					cout << "Teste" << endl;
 					rede[y][x]->buffer_leste_saida->din =  rede[y][x]->buffer_local_entrada->flits.front();
 					rede[y][x]->buffer_local_entrada->remove();
 					rede[y][x]->buffer_leste_saida->add();
 					rede[y][x+1]->cf_oeste->val = true;
+					throughput[y][x]->saida_leste++;
 					rede[y][x]->cf_saida_leste->out_val.write(clock);
+
 
 				} else if (rede[y][x]->roteamento_local.portaDestino == OESTE)
 				{	
@@ -168,6 +174,7 @@ void REDE::comunicacao_externa()
 					rede[y][x]->buffer_local_entrada->remove();
 					rede[y][x]->buffer_oeste_saida->add();
 					rede[y][x-1]->cf_leste->val = true;
+					throughput[y][x]->saida_oeste++;
 					rede[y][x]->cf_saida_oeste->out_val.write(clock);
 
 				}
@@ -268,7 +275,7 @@ void REDE::comunicacao_externa()
 				if (rede[y][x]->roteamento_sul.portaDestino == LOCAL)
 				{
 
-					printf("CHEGOUUUUU sul...\n");
+					// printf("CHEGOUUUUU sul...\n");
 
 					if (rede[y][x]->buffer_sul->flits.front().end != -1)
 					{
@@ -300,6 +307,7 @@ void REDE::comunicacao_externa()
 						rede[y][x]->buffer_norte_saida->add();
 						rede[y][x]->buffer_sul->remove();
 						rede[y][x]->arbitro_sul.remSolicitacao(SUL);
+						throughput[y][x]->saida_norte++;
 					}
 					if (rede[y][x]->roteamento_sul.portaDestino == LESTE  and rede[y][x]->arbitro_sul.checkPrioridade() == LESTE)
 					{
@@ -312,6 +320,7 @@ void REDE::comunicacao_externa()
 						rede[y][x]->buffer_leste_saida->add();
 						rede[y][x]->buffer_sul->remove();	
 						rede[y][x]->arbitro_sul.remSolicitacao(LESTE);
+						throughput[y][x]->saida_leste++;
 					}
 					if (rede[y][x]->roteamento_sul.portaDestino == OESTE  and rede[y][x]->arbitro_sul.checkPrioridade() == OESTE)
 					{
@@ -323,11 +332,12 @@ void REDE::comunicacao_externa()
 						rede[y][x]->buffer_oeste_saida->add();
 						rede[y][x]->buffer_sul->remove();
 						rede[y][x]->arbitro_sul.remSolicitacao(OESTE);
+						throughput[y][x]->saida_oeste++;
 					}
 					if (rede[y][x]->roteamento_sul.portaDestino == SUL)
 					{
 						rede[y+1][x]->cf_norte->val = true;
-
+						throughput[y][x]->saida_sul++;
 						rede[y][x]->cf_saida_sul->out_val.write(clock);
 					}
 				}
@@ -375,7 +385,7 @@ void REDE::comunicacao_externa()
 
 				if (rede[y][x]->roteamento_norte.portaDestino == LOCAL)
 				{
-					printf("CHEGOUUUUU norte...\n");
+					// printf("CHEGOUUUUU norte...\n");
 					
 					if (rede[y][x]->buffer_norte->flits.front().end != -1)
 					{
@@ -400,7 +410,7 @@ void REDE::comunicacao_externa()
 					if (rede[y][x]->roteamento_norte.portaDestino == NORTE)
 					{
 						rede[y-1][x]->cf_sul->val = true;
-
+						throughput[y][x]->saida_norte++;
 						rede[y][x]->cf_saida_norte->out_val.write(clock);
 					}
 					if (rede[y][x]->roteamento_norte.portaDestino == SUL and rede[y][x]->arbitro_norte.checkPrioridade() == SUL)
@@ -414,6 +424,7 @@ void REDE::comunicacao_externa()
 						rede[y][x]->buffer_sul_saida->add();
 						rede[y][x]->buffer_norte->remove();
 						rede[y][x]->arbitro_norte.remSolicitacao(SUL);
+						throughput[y][x]->saida_sul++;
 					}
 					if (rede[y][x]->roteamento_norte.portaDestino == LESTE and rede[y][x]->arbitro_norte.checkPrioridade() == LESTE)
 					{
@@ -426,6 +437,7 @@ void REDE::comunicacao_externa()
 						rede[y][x]->buffer_leste_saida->add();
 						rede[y][x]->buffer_norte->remove();	
 						rede[y][x]->arbitro_norte.remSolicitacao(LESTE);
+						throughput[y][x]->saida_leste++;
 					}
 					if (rede[y][x]->roteamento_norte.portaDestino == OESTE and rede[y][x]->arbitro_norte.checkPrioridade() == OESTE)
 					{
@@ -437,6 +449,7 @@ void REDE::comunicacao_externa()
 						rede[y][x]->buffer_oeste_saida->add();
 						rede[y][x]->buffer_norte->remove();
 						rede[y][x]->arbitro_norte.remSolicitacao(OESTE);
+						throughput[y][x]->saida_oeste++;
 					}
 				}
 
@@ -487,7 +500,7 @@ void REDE::comunicacao_externa()
 				if (rede[y][x]->roteamento_leste.portaDestino == LOCAL)
 				{
 					
-					printf("CHEGOUUUUU leste...\n");
+					// printf("CHEGOUUUUU leste...\n");
 					if (rede[y][x]->buffer_leste->flits.front().end != -1)
 					{
 						latencias[rede[y][x]->buffer_leste->flits.front().end].push_back(clock - rede[y][x]->buffer_leste->flits.front().ciclo);
@@ -508,7 +521,7 @@ void REDE::comunicacao_externa()
 					if (rede[y][x]->roteamento_leste.portaDestino == LESTE)
 					{
 						rede[y][x+1]->cf_oeste->val = true;
-
+						throughput[y][x]->saida_leste++;
 						rede[y][x]->cf_saida_leste->out_val.write(clock);
 					}
 					if (rede[y][x]->roteamento_leste.portaDestino == NORTE and rede[y][x]->arbitro_leste.checkPrioridade() == NORTE)
@@ -521,6 +534,7 @@ void REDE::comunicacao_externa()
 						rede[y][x]->buffer_norte_saida->add();
 						rede[y][x]->buffer_leste->remove();
 						rede[y][x]->arbitro_leste.remSolicitacao(NORTE);
+						throughput[y][x]->saida_norte++;
 					}
 					if (rede[y][x]->roteamento_leste.portaDestino == SUL and rede[y][x]->arbitro_leste.checkPrioridade() == SUL)
 					{
@@ -531,8 +545,9 @@ void REDE::comunicacao_externa()
 						rede[y][x]->buffer_sul_saida->add();
 						rede[y][x]->buffer_leste->remove();
 						rede[y][x]->arbitro_leste.remSolicitacao(SUL);
+						throughput[y][x]->saida_sul++;
 					}	
-					if (rede[y][x]->roteamento_leste.portaDestino == OESTE/* and rede[y][x]->arbitro_leste.checkPrioridade() == OESTE*/)
+					if (rede[y][x]->roteamento_leste.portaDestino == OESTE and rede[y][x]->arbitro_leste.checkPrioridade() == OESTE)
 					{
 
 						ver_leste[y][x] = false;
@@ -542,6 +557,7 @@ void REDE::comunicacao_externa()
 						rede[y][x]->buffer_oeste_saida->add();
 						rede[y][x]->buffer_leste->remove();
 						rede[y][x]->arbitro_leste.remSolicitacao(LESTE);
+						throughput[y][x]->saida_oeste++;
 					}
 
 				}
@@ -591,7 +607,7 @@ void REDE::comunicacao_externa()
 				if (rede[y][x]->roteamento_oeste.portaDestino == LOCAL)
 				{
 					
-					printf("CHEGOUUUUU oeste...\n");
+					// printf("CHEGOUUUUU oeste...\n");
 
 					if (rede[y][x]->buffer_oeste->flits.front().end != -1)
 					{
@@ -612,6 +628,7 @@ void REDE::comunicacao_externa()
 					if (rede[y][x]->roteamento_oeste.portaDestino == OESTE)
 					{
 						rede[y][x-1]->cf_leste->val = true;
+						throughput[y][x]->saida_oeste++;
 						rede[y][x]->cf_saida_oeste->out_val.write(clock);
 					}
 					if (rede[y][x]->roteamento_oeste.portaDestino == NORTE and rede[y][x]->arbitro_oeste.checkPrioridade() == NORTE)
@@ -623,8 +640,9 @@ void REDE::comunicacao_externa()
 						rede[y][x]->buffer_norte_saida->add();
 						rede[y][x]->buffer_oeste->remove();
 						rede[y][x]->arbitro_oeste.remSolicitacao(NORTE);
+						throughput[y][x]->saida_norte++;
 					}
-					if (rede[y][x]->roteamento_oeste.portaDestino == LESTE /*and rede[y][x]->arbitro_oeste.checkPrioridade() == LESTE*/)
+					if (rede[y][x]->roteamento_oeste.portaDestino == LESTE and rede[y][x]->arbitro_oeste.checkPrioridade() == LESTE)
 					{
 						
 						ver_oeste[y][x] = false;
@@ -634,6 +652,7 @@ void REDE::comunicacao_externa()
 						rede[y][x]->buffer_leste_saida->add();
 						rede[y][x]->buffer_oeste->remove();	
 						rede[y][x]->arbitro_oeste.remSolicitacao(LESTE);
+						throughput[y][x]->saida_leste++;
 					}
 					if (rede[y][x]->roteamento_oeste.portaDestino == SUL and rede[y][x]->arbitro_oeste.checkPrioridade() == SUL)
 					{
@@ -645,6 +664,7 @@ void REDE::comunicacao_externa()
 						rede[y][x]->buffer_sul_saida->add();
 						rede[y][x]->buffer_oeste->remove();
 						rede[y][x]->arbitro_oeste.remSolicitacao(SUL);
+						throughput[y][x]->saida_sul++;
 					}	
 
 				}

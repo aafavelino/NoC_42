@@ -6,6 +6,7 @@
 #include <systemc.h>
 #include <vector>
 #include "roteador.h"
+#include "../constantes/constantes.h"
 #include "system.h"
 
 using namespace std;
@@ -17,6 +18,12 @@ int sc_main (int argc, char* argv[]) {
 	simulation->Clk(clock);
 	int **padrao_tfg;
 	int size_pct = 0;
+
+  int aux_latencia;
+  std::vector<int> media_Latencias;
+  int latencia_media_simulacao=0;
+  int menor_latencia = 0;
+  int maior_latencia = 0;
 	// Leitura do Arquivo de tráfego
 	FILE *traffic;
 	traffic = fopen("traffic.txt","r");
@@ -42,18 +49,80 @@ int sc_main (int argc, char* argv[]) {
   	
 	sc_start();	// Run the simulation till sc_stop is encountered
 
-cout << "size_pct "<<size_pct << endl;
-for (int j = 0; j < size_pct; ++j)
-{
-
-  for (int i = 0; i < padrao_tfg[j][6]; ++i)
-  {
-    cout << "Latencia pos["<<j<<"][" << i << "]: " << simulation->latencias[j][i] << endl;
-  }
-    cout << endl;
-}
-
   cout << "sc_stop is encountered" << endl;
+
+  maior_latencia = simulation->latencias[0][0];
+  menor_latencia = simulation->latencias[0][0];
+
+  cout << "size_pct "<<size_pct << endl;
+  for (int j = 0; j < size_pct; ++j)
+  {
+    for (int i = 0; i < padrao_tfg[j][6]; ++i)
+    {
+      cout << "Latencia pos["<<j<<"][" << i << "]: " << simulation->latencias[j][i] << endl;
+      if (menor_latencia > simulation->latencias[j][i])
+      {
+        menor_latencia = simulation->latencias[j][i];
+      }
+      if (maior_latencia < simulation->latencias[j][i])
+      {
+        maior_latencia = simulation->latencias[j][i];
+      }      
+    }
+    cout << endl;
+  }
+
+
+  for (int j = 0; j < size_pct; ++j)
+  {
+    aux_latencia = 0;
+    for (int i = 0; i < padrao_tfg[j][6]; ++i)
+    {
+      aux_latencia += simulation->latencias[j][i];
+    }
+    media_Latencias.push_back(aux_latencia/padrao_tfg[j][6]);
+  }
+
+  for (int j = 0; j < size_pct; ++j)
+  {
+      cout << "Latencia média do pacote["<<j<<"]: " << media_Latencias[j] << endl;
+  }
+
+  for (int j = 0; j < size_pct; ++j)
+  {
+      latencia_media_simulacao += media_Latencias[j];
+  }
+
+
+  cout << "\n\nMenor Latência: "<< menor_latencia << endl;
+  cout << "Maior Latência: "<< maior_latencia << endl;
+  if (size_pct > 1)
+  {
+    cout << "Latência Média da simulação: "<< latencia_media_simulacao/(size_pct-1) << endl;
+    
+  } else {
+    cout << "Latência Média da simulação: "<< latencia_media_simulacao/(size_pct) << endl;
+  }
+
+  cout << endl <<"Vazões da simulação: " << endl; 
+
+
+  for (int i = 0; i < ALTURA_REDE; ++i)
+  {
+    for (int j = 0; j < LARGURA_REDE; ++j)
+    {
+      if ((i-1)>=0)
+        cout << "["<<i<<"]["<<j<<"]->["<<i-1<<"]["<<j<<"]: " <<((double)simulation->throughput[i][j]->saida_norte/(double)simulation->clock) <<endl;
+      if ((i+1)<ALTURA_REDE)
+        cout << "["<<i<<"]["<<j<<"]->["<<i+1<<"]["<<j<<"]: " <<((double)simulation->throughput[i][j]->saida_sul/(double)simulation->clock) <<endl;
+      if ((j+1) < LARGURA_REDE)
+        cout << "["<<i<<"]["<<j<<"]->["<<i<<"]["<<j+1<<"]: " <<((double)simulation->throughput[i][j]->saida_leste/(double)simulation->clock) <<endl;
+      if ((j-1)>=0) 
+        cout << "["<<i<<"]["<<j<<"]->["<<i<<"]["<<j-1<<"]: " <<((double)simulation->throughput[i][j]->saida_oeste/(double)simulation->clock) <<endl;
+        cout << endl;
+    }
+
+  }
 
   	return 0;
 }

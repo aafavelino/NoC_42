@@ -8,6 +8,7 @@
 #include <systemc.h>
 #include <vector>
 #include "roteador.h"
+#include "throughput.h"
 #include "pacote.h"
 #include <iostream>
 #include <fstream>
@@ -33,6 +34,7 @@ SC_MODULE (REDE)
 
 	// Criando uma Rede Altura x Largura
 	roteador *rede[ALTURA_REDE][LARGURA_REDE];
+	Throughput *throughput[ALTURA_REDE][LARGURA_REDE];
 
 	bool finish; // verificar o fim do envio de pacotes
 	int cont_vetor;
@@ -75,6 +77,7 @@ SC_MODULE (REDE)
 		for (int j = 0; j < LARGURA_REDE; ++j)
 		{
 			rede[i][j] = new roteador(roteadores_nomes[rt_cont]);
+			throughput[i][j] = new Throughput();
 			rede[i][j]->name = roteadores_nomes[rt_cont];
 			rt_cont++;
 		}
