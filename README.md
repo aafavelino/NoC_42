@@ -2,7 +2,7 @@
 
 ## Transaction-Level Modeling (TLM 2.0)
 
-Modelo TLM da rede SOCin
+Modelo TLM de uma NoC baseado na rede SOCin
 
 |    Memorização    |  Controle de fluxo |  Arbitragem  |
 |-------------------|--------------------|--------------|
