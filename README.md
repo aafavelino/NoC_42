@@ -1,8 +1,8 @@
-# SOCin (System-on-Chip Interconnection Network) 
+# Network on chip TLM 42  
 
 ## Transaction-Level Modeling (TLM 2.0)
 
-Modelo TLM de uma NoC baseado na rede SOCin
+O modelo Network on chip TLM 42 foi baseado na rede SOCin
 
 |    Memorização    |  Controle de fluxo |  Arbitragem  |
 |-------------------|--------------------|--------------|
