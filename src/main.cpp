@@ -8,6 +8,7 @@
 #include "roteador.h"
 #include "../constantes/constantes.h"
 #include "system.h"
+#include <math.h>
 
 using namespace std;
 
@@ -94,35 +95,52 @@ int sc_main (int argc, char* argv[]) {
   }
 
 
+
+  // cout << endl <<"Vazões da simulação: " << endl; 
+
+
+  // for (int i = 0; i < ALTURA_REDE; ++i)
+  // {
+  //   for (int j = 0; j < LARGURA_REDE; ++j)
+  //   {
+  //     if ((i-1)>=0)
+  //       cout << "["<<i<<"]["<<j<<"]->["<<i-1<<"]["<<j<<"]: " <<((double)simulation->throughput[i][j]->saida_norte/(double)simulation->clock) <<endl;
+  //     if ((i+1)<ALTURA_REDE)
+  //       cout << "["<<i<<"]["<<j<<"]->["<<i+1<<"]["<<j<<"]: " <<((double)simulation->throughput[i][j]->saida_sul/(double)simulation->clock) <<endl;
+  //     if ((j+1) < LARGURA_REDE)
+  //       cout << "["<<i<<"]["<<j<<"]->["<<i<<"]["<<j+1<<"]: " <<((double)simulation->throughput[i][j]->saida_leste/(double)simulation->clock) <<endl;
+  //     if ((j-1)>=0) 
+  //       cout << "["<<i<<"]["<<j<<"]->["<<i<<"]["<<j-1<<"]: " <<((double)simulation->throughput[i][j]->saida_oeste/(double)simulation->clock) <<endl;
+  //       cout << endl;
+  //   }
+
+  // }
+
   cout << "\n\nMenor Latência: "<< menor_latencia << endl;
   cout << "Maior Latência: "<< maior_latencia << endl;
   if (size_pct > 1)
   {
     cout << "Latência Média da simulação: "<< latencia_media_simulacao/(size_pct-1) << endl;
-    
   } else {
     cout << "Latência Média da simulação: "<< latencia_media_simulacao/(size_pct) << endl;
   }
+  cout << endl;
+  double variancia = 0.0;
 
-  cout << endl <<"Vazões da simulação: " << endl; 
-
-
-  for (int i = 0; i < ALTURA_REDE; ++i)
+  for (int j = 0; j < size_pct; ++j)
   {
-    for (int j = 0; j < LARGURA_REDE; ++j)
+    for (int k = 0; k < padrao_tfg[j][6]; ++k)
     {
-      if ((i-1)>=0)
-        cout << "["<<i<<"]["<<j<<"]->["<<i-1<<"]["<<j<<"]: " <<((double)simulation->throughput[i][j]->saida_norte/(double)simulation->clock) <<endl;
-      if ((i+1)<ALTURA_REDE)
-        cout << "["<<i<<"]["<<j<<"]->["<<i+1<<"]["<<j<<"]: " <<((double)simulation->throughput[i][j]->saida_sul/(double)simulation->clock) <<endl;
-      if ((j+1) < LARGURA_REDE)
-        cout << "["<<i<<"]["<<j<<"]->["<<i<<"]["<<j+1<<"]: " <<((double)simulation->throughput[i][j]->saida_leste/(double)simulation->clock) <<endl;
-      if ((j-1)>=0) 
-        cout << "["<<i<<"]["<<j<<"]->["<<i<<"]["<<j-1<<"]: " <<((double)simulation->throughput[i][j]->saida_oeste/(double)simulation->clock) <<endl;
-        cout << endl;
+      // cout << simulation->latencias[j][k]<<" "<<media_Latencias[j]<< endl;
+      variancia+= ((simulation->latencias[j][k]-media_Latencias[j])*(simulation->latencias[j][k]-media_Latencias[j]));
     }
-
+    cout <<"Variância do pacote["<<j<<"]: " <<(variancia / padrao_tfg[j][6])<<endl;
+    cout <<"Desvio padrão do pacote["<<j<<"]:" <<sqrt((variancia / padrao_tfg[j][6])) << endl<<endl;
+    variancia = 0.0;
   }
+
+
+
 
   	return 0;
 }

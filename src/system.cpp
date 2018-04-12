@@ -159,7 +159,6 @@ void REDE::comunicacao_externa()
 					
 				}  else if (rede[y][x]->roteamento_local.portaDestino == LESTE)
 				{
-					cout << "Teste" << endl;
 					rede[y][x]->buffer_leste_saida->din =  rede[y][x]->buffer_local_entrada->flits.front();
 					rede[y][x]->buffer_local_entrada->remove();
 					rede[y][x]->buffer_leste_saida->add();

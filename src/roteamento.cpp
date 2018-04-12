@@ -36,7 +36,7 @@ void Roteamento::rotear_west_first()
 	// Para validação se a porta vai para o oeste primeiro...
 	portaAnterior = portaDestino;
 
-	if ((cordenada_destino.y < cordenada.y) and (portaAnterior != NORTE) and (portaAnterior != SUL))
+	if (cordenada_destino.y < cordenada.y)
 	{
 		portaDestino = OESTE;
 		//printf("Porta no roteamento Oeste\n");
@@ -62,14 +62,6 @@ void Roteamento::rotear_north_last()
 {
 	portaAnterior = portaDestino;
 
-	if (portaAnterior == NORTE)
-	{
-		if (cordenada_destino.x < cordenada.x)
-		{
-			portaDestino = NORTE;
-			//printf("Porta no roteamento norte\n");
-		}
-	} else {	
 		if (cordenada_destino.y < cordenada.y)
 		{
 			portaDestino = OESTE;
@@ -90,7 +82,6 @@ void Roteamento::rotear_north_last()
 			//printf("local\n");
 			portaDestino = LOCAL;
 		}
-	}
 
 }
 

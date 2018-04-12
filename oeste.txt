@@ -1,0 +1,275 @@
+
+Info: /OSCI/SystemC: Simulation stopped by user.
+sc_stop is encountered
+size_pct 10
+Latencia pos[0][0]: 25
+Latencia pos[0][1]: 40
+Latencia pos[0][2]: 54
+Latencia pos[0][3]: 67
+Latencia pos[0][4]: 80
+Latencia pos[0][5]: 94
+Latencia pos[0][6]: 108
+Latencia pos[0][7]: 122
+Latencia pos[0][8]: 136
+Latencia pos[0][9]: 148
+Latencia pos[0][10]: 164
+Latencia pos[0][11]: 176
+Latencia pos[0][12]: 190
+Latencia pos[0][13]: 204
+Latencia pos[0][14]: 214
+Latencia pos[0][15]: 221
+Latencia pos[0][16]: 231
+Latencia pos[0][17]: 239
+Latencia pos[0][18]: 247
+Latencia pos[0][19]: 257
+Latencia pos[0][20]: 261
+Latencia pos[0][21]: 265
+Latencia pos[0][22]: 271
+Latencia pos[0][23]: 276
+Latencia pos[0][24]: 281
+Latencia pos[0][25]: 285
+Latencia pos[0][26]: 289
+Latencia pos[0][27]: 290
+Latencia pos[0][28]: 293
+Latencia pos[0][29]: 294
+Latencia pos[0][30]: 296
+Latencia pos[0][31]: 296
+Latencia pos[0][32]: 298
+Latencia pos[0][33]: 299
+Latencia pos[0][34]: 301
+Latencia pos[0][35]: 299
+Latencia pos[0][36]: 298
+Latencia pos[0][37]: 296
+Latencia pos[0][38]: 295
+Latencia pos[0][39]: 293
+Latencia pos[0][40]: 292
+Latencia pos[0][41]: 291
+Latencia pos[0][42]: 289
+Latencia pos[0][43]: 287
+Latencia pos[0][44]: 283
+Latencia pos[0][45]: 279
+Latencia pos[0][46]: 276
+Latencia pos[0][47]: 272
+Latencia pos[0][48]: 267
+Latencia pos[0][49]: 263
+
+Latencia pos[1][0]: 9
+Latencia pos[1][1]: 9
+Latencia pos[1][2]: 9
+Latencia pos[1][3]: 9
+Latencia pos[1][4]: 9
+Latencia pos[1][5]: 9
+Latencia pos[1][6]: 9
+Latencia pos[1][7]: 9
+Latencia pos[1][8]: 9
+Latencia pos[1][9]: 9
+Latencia pos[1][10]: 9
+Latencia pos[1][11]: 9
+Latencia pos[1][12]: 9
+Latencia pos[1][13]: 9
+Latencia pos[1][14]: 9
+Latencia pos[1][15]: 9
+Latencia pos[1][16]: 9
+Latencia pos[1][17]: 9
+Latencia pos[1][18]: 9
+Latencia pos[1][19]: 9
+Latencia pos[1][20]: 9
+Latencia pos[1][21]: 9
+Latencia pos[1][22]: 9
+Latencia pos[1][23]: 9
+Latencia pos[1][24]: 9
+Latencia pos[1][25]: 9
+Latencia pos[1][26]: 9
+Latencia pos[1][27]: 9
+Latencia pos[1][28]: 9
+Latencia pos[1][29]: 9
+Latencia pos[1][30]: 9
+Latencia pos[1][31]: 9
+Latencia pos[1][32]: 9
+Latencia pos[1][33]: 9
+Latencia pos[1][34]: 9
+Latencia pos[1][35]: 9
+Latencia pos[1][36]: 9
+Latencia pos[1][37]: 9
+Latencia pos[1][38]: 9
+Latencia pos[1][39]: 9
+Latencia pos[1][40]: 9
+Latencia pos[1][41]: 9
+Latencia pos[1][42]: 9
+Latencia pos[1][43]: 9
+Latencia pos[1][44]: 9
+Latencia pos[1][45]: 9
+Latencia pos[1][46]: 9
+Latencia pos[1][47]: 9
+Latencia pos[1][48]: 9
+Latencia pos[1][49]: 9
+
+Latencia pos[2][0]: 33
+Latencia pos[2][1]: 60
+Latencia pos[2][2]: 88
+Latencia pos[2][3]: 116
+Latencia pos[2][4]: 142
+Latencia pos[2][5]: 171
+Latencia pos[2][6]: 198
+
+Latencia pos[3][0]: 40
+Latencia pos[3][1]: 73
+Latencia pos[3][2]: 110
+Latencia pos[3][3]: 142
+Latencia pos[3][4]: 177
+Latencia pos[3][5]: 207
+Latencia pos[3][6]: 230
+Latencia pos[3][7]: 250
+
+Latencia pos[4][0]: 46
+Latencia pos[4][1]: 89
+Latencia pos[4][2]: 129
+Latencia pos[4][3]: 171
+Latencia pos[4][4]: 207
+Latencia pos[4][5]: 235
+Latencia pos[4][6]: 257
+Latencia pos[4][7]: 272
+Latencia pos[4][8]: 286
+
+Latencia pos[5][0]: 53
+Latencia pos[5][1]: 103
+Latencia pos[5][2]: 150
+Latencia pos[5][3]: 199
+Latencia pos[5][4]: 231
+Latencia pos[5][5]: 257
+Latencia pos[5][6]: 274
+Latencia pos[5][7]: 289
+Latencia pos[5][8]: 293
+Latencia pos[5][9]: 297
+
+Latencia pos[6][0]: 63
+Latencia pos[6][1]: 117
+Latencia pos[6][2]: 173
+Latencia pos[6][3]: 219
+Latencia pos[6][4]: 254
+Latencia pos[6][5]: 273
+Latencia pos[6][6]: 290
+Latencia pos[6][7]: 296
+Latencia pos[6][8]: 299
+Latencia pos[6][9]: 292
+Latencia pos[6][10]: 287
+
+Latencia pos[7][0]: 70
+Latencia pos[7][1]: 131
+Latencia pos[7][2]: 193
+Latencia pos[7][3]: 236
+Latencia pos[7][4]: 268
+Latencia pos[7][5]: 288
+Latencia pos[7][6]: 295
+Latencia pos[7][7]: 299
+Latencia pos[7][8]: 293
+Latencia pos[7][9]: 284
+Latencia pos[7][10]: 267
+Latencia pos[7][11]: 213
+
+Latencia pos[8][0]: 78
+Latencia pos[8][1]: 146
+Latencia pos[8][2]: 212
+Latencia pos[8][3]: 255
+Latencia pos[8][4]: 280
+Latencia pos[8][5]: 294
+Latencia pos[8][6]: 301
+Latencia pos[8][7]: 294
+Latencia pos[8][8]: 285
+Latencia pos[8][9]: 266
+Latencia pos[8][10]: 199
+Latencia pos[8][11]: 118
+Latencia pos[8][12]: 37
+
+Latencia pos[9][0]: 74
+Latencia pos[9][1]: 149
+Latencia pos[9][2]: 214
+Latencia pos[9][3]: 256
+Latencia pos[9][4]: 282
+Latencia pos[9][5]: 290
+Latencia pos[9][6]: 288
+Latencia pos[9][7]: 280
+Latencia pos[9][8]: 259
+Latencia pos[9][9]: 191
+Latencia pos[9][10]: 102
+Latencia pos[9][11]: 12
+Latencia pos[9][12]: 1
+Latencia pos[9][13]: 1
+Latencia pos[9][14]: 1
+Latencia pos[9][15]: 1
+Latencia pos[9][16]: 1
+Latencia pos[9][17]: 1
+Latencia pos[9][18]: 1
+Latencia pos[9][19]: 1
+Latencia pos[9][20]: 1
+Latencia pos[9][21]: 1
+Latencia pos[9][22]: 1
+Latencia pos[9][23]: 1
+Latencia pos[9][24]: 1
+Latencia pos[9][25]: 1
+Latencia pos[9][26]: 1
+Latencia pos[9][27]: 1
+Latencia pos[9][28]: 1
+Latencia pos[9][29]: 1
+Latencia pos[9][30]: 1
+Latencia pos[9][31]: 1
+Latencia pos[9][32]: 1
+Latencia pos[9][33]: 1
+Latencia pos[9][34]: 1
+Latencia pos[9][35]: 1
+Latencia pos[9][36]: 1
+Latencia pos[9][37]: 1
+Latencia pos[9][38]: 1
+Latencia pos[9][39]: 1
+Latencia pos[9][40]: 1
+Latencia pos[9][41]: 1
+Latencia pos[9][42]: 1
+Latencia pos[9][43]: 1
+Latencia pos[9][44]: 1
+
+Latencia média do pacote[0]: 231
+Latencia média do pacote[1]: 9
+Latencia média do pacote[2]: 115
+Latencia média do pacote[3]: 153
+Latencia média do pacote[4]: 188
+Latencia média do pacote[5]: 214
+Latencia média do pacote[6]: 233
+Latencia média do pacote[7]: 236
+Latencia média do pacote[8]: 212
+Latencia média do pacote[9]: 54
+
+
+Menor Latência: 1
+Maior Latência: 301
+Latência Média da simulação: 182
+
+Variância do pacote[0]: 6545.92
+Desvio padrão do pacote[0]:80.9069
+
+Variância do pacote[1]: 0
+Desvio padrão do pacote[1]:0
+
+Variância do pacote[2]: 3033.29
+Desvio padrão do pacote[2]:55.0753
+
+Variância do pacote[3]: 4996.12
+Desvio padrão do pacote[3]:70.6833
+
+Variância do pacote[4]: 6414
+Desvio padrão do pacote[4]:80.0875
+
+Variância do pacote[5]: 6705.6
+Desvio padrão do pacote[5]:81.8877
+
+Variância do pacote[6]: 6014.91
+Desvio padrão do pacote[6]:77.5558
+
+Variância do pacote[7]: 4887.58
+Desvio padrão do pacote[7]:69.9113
+
+Variância do pacote[8]: 7540.69
+Desvio padrão do pacote[8]:86.8372
+
+Variância do pacote[9]: 9931.11
+Desvio padrão do pacote[9]:99.655
+

@@ -6,6 +6,6 @@
 
 
 // Dimensões da Rede
-
-#define LARGURA_REDE 7
-#define ALTURA_REDE 7
+// Suporta até 17x17
+#define LARGURA_REDE 17
+#define ALTURA_REDE 17
