@@ -137,6 +137,14 @@ void REDE::comunicacao_externa()
 				#ifdef WEST_FIRST	
 				rede[y][x]->roteamento_local.rotear_west_first();
 				#endif
+
+				#ifdef ODD_EVEN	
+				(x%2==0)? rede[y][x]->roteamento_local.odd_even = 0: rede[y][x]->roteamento_local.odd_even = 1;
+				// cout << "ROT " << rede[y][x]->roteamento_local.odd_even << endl;
+				rede[y][x]->roteamento_local.portaAnterior = LOCAL;
+				rede[y][x]->roteamento_local.rotear_odd_even();
+				#endif
+
 				if (rede[y][x]->roteamento_local.portaDestino == SUL)
 				{
 					rede[y][x]->buffer_sul_saida->din =  rede[y][x]->buffer_local_entrada->flits.front();
@@ -253,6 +261,12 @@ void REDE::comunicacao_externa()
 				rede[y][x]->roteamento_sul.rotear_west_first();
 				#endif	
 
+				#ifdef ODD_EVEN	
+				(x%2==0)? rede[y][x]->roteamento_sul.odd_even = 0: rede[y][x]->roteamento_sul.odd_even = 1;
+				rede[y][x]->roteamento_sul.portaAnterior = SUL;
+				rede[y][x]->roteamento_sul.rotear_odd_even();
+				#endif	
+
 				if (rede[y][x]->roteamento_sul.portaDestino == LESTE)
 				{
 					rede[y][x]->arbitro_sul.addSolicitacao(LESTE);
@@ -362,6 +376,12 @@ void REDE::comunicacao_externa()
 
 				#ifdef WEST_FIRST	
 				rede[y][x]->roteamento_norte.rotear_west_first();
+				#endif	
+
+				#ifdef ODD_EVEN	
+				(x%2==0)? rede[y][x]->roteamento_norte.odd_even = 0: rede[y][x]->roteamento_norte.odd_even = 1;
+				rede[y][x]->roteamento_norte.portaAnterior = NORTE;
+				rede[y][x]->roteamento_norte.rotear_odd_even();
 				#endif	
 
 				if (rede[y][x]->roteamento_norte.portaDestino == LESTE)
@@ -477,6 +497,12 @@ void REDE::comunicacao_externa()
 				rede[y][x]->roteamento_leste.rotear_west_first();
 				#endif	
 
+				#ifdef ODD_EVEN	
+				(x%2==0)? rede[y][x]->roteamento_leste.odd_even = 0: rede[y][x]->roteamento_leste.odd_even = 1;
+				rede[y][x]->roteamento_leste.portaAnterior = LESTE;
+				rede[y][x]->roteamento_leste.rotear_odd_even();
+				#endif	
+
 
 				if (rede[y][x]->roteamento_leste.portaDestino == LESTE)
 				{
@@ -584,6 +610,12 @@ void REDE::comunicacao_externa()
 
 				#ifdef WEST_FIRST	
 				rede[y][x]->roteamento_oeste.rotear_west_first();
+				#endif	
+
+				#ifdef ODD_EVEN	
+				(x%2==0)? rede[y][x]->roteamento_oeste.odd_even = 0: rede[y][x]->roteamento_oeste.odd_even = 1;
+				rede[y][x]->roteamento_oeste.portaAnterior = OESTE;
+				rede[y][x]->roteamento_oeste.rotear_odd_even();
 				#endif	
 
 				if (rede[y][x]->roteamento_oeste.portaDestino == LESTE)

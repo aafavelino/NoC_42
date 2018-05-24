@@ -31,10 +31,13 @@ public:
 	int portaDestino = -1;
 	int portaAnterior = -1; 
 
+	int odd_even = -1;
+
 	void rotear_west_first();
 	void rotear_xy();
 	void rotear_north_last();
 	void rotear_negative_first();
+	void rotear_odd_even();
 	
 };
 #endif

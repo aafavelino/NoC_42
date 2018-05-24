@@ -56,11 +56,12 @@ int sc_main (int argc, char* argv[]) {
   menor_latencia = simulation->latencias[0][0];
 
   cout << "size_pct "<<size_pct << endl;
+  ofstream latencias_pc ("latencias.txt");
   for (int j = 0; j < size_pct; ++j)
   {
     for (int i = 0; i < padrao_tfg[j][6]; ++i)
     {
-      cout << "Latencia pos["<<j<<"][" << i << "]: " << simulation->latencias[j][i] << endl;
+      latencias_pc << "Latencia pos["<<j<<"][" << i << "]: " << simulation->latencias[j][i] << endl;
       if (menor_latencia > simulation->latencias[j][i])
       {
         menor_latencia = simulation->latencias[j][i];
@@ -70,7 +71,7 @@ int sc_main (int argc, char* argv[]) {
         maior_latencia = simulation->latencias[j][i];
       }      
     }
-    cout << endl;
+    latencias_pc << endl;
   }
 
 
@@ -86,7 +87,7 @@ int sc_main (int argc, char* argv[]) {
 
   for (int j = 0; j < size_pct; ++j)
   {
-      cout << "Latencia média do pacote["<<j<<"]: " << media_Latencias[j] << endl;
+      latencias_pc << "Latencia média do pacote["<<j<<"]: " << media_Latencias[j] << endl;
   }
 
   for (int j = 0; j < size_pct; ++j)
@@ -94,9 +95,9 @@ int sc_main (int argc, char* argv[]) {
       latencia_media_simulacao += media_Latencias[j];
   }
 
+  ofstream vazoes ("vazoes.txt");
 
-
-  // cout << endl <<"Vazões da simulação: " << endl; 
+  vazoes <<"Vazões da simulação: " << endl; 
 
 
   // for (int i = 0; i < ALTURA_REDE; ++i)
@@ -104,29 +105,29 @@ int sc_main (int argc, char* argv[]) {
   //   for (int j = 0; j < LARGURA_REDE; ++j)
   //   {
   //     if ((i-1)>=0)
-  //       cout << "["<<i<<"]["<<j<<"]->["<<i-1<<"]["<<j<<"]: " <<((double)simulation->throughput[i][j]->saida_norte/(double)simulation->clock) <<endl;
+  //       vazoes << "["<<i<<"]["<<j<<"]->["<<i-1<<"]["<<j<<"]: " <<((double)simulation->throughput[i][j]->saida_norte/(double)simulation->clock) <<endl;
   //     if ((i+1)<ALTURA_REDE)
-  //       cout << "["<<i<<"]["<<j<<"]->["<<i+1<<"]["<<j<<"]: " <<((double)simulation->throughput[i][j]->saida_sul/(double)simulation->clock) <<endl;
+  //       vazoes << "["<<i<<"]["<<j<<"]->["<<i+1<<"]["<<j<<"]: " <<((double)simulation->throughput[i][j]->saida_sul/(double)simulation->clock) <<endl;
   //     if ((j+1) < LARGURA_REDE)
-  //       cout << "["<<i<<"]["<<j<<"]->["<<i<<"]["<<j+1<<"]: " <<((double)simulation->throughput[i][j]->saida_leste/(double)simulation->clock) <<endl;
+  //       vazoes << "["<<i<<"]["<<j<<"]->["<<i<<"]["<<j+1<<"]: " <<((double)simulation->throughput[i][j]->saida_leste/(double)simulation->clock) <<endl;
   //     if ((j-1)>=0) 
-  //       cout << "["<<i<<"]["<<j<<"]->["<<i<<"]["<<j-1<<"]: " <<((double)simulation->throughput[i][j]->saida_oeste/(double)simulation->clock) <<endl;
-  //       cout << endl;
+  //       vazoes << "["<<i<<"]["<<j<<"]->["<<i<<"]["<<j-1<<"]: " <<((double)simulation->throughput[i][j]->saida_oeste/(double)simulation->clock) <<endl;
+  //       vazoes << endl;
   //   }
 
   // }
 
-  cout << "\n\nMenor Latência: "<< menor_latencia << endl;
-  cout << "Maior Latência: "<< maior_latencia << endl;
-  if (size_pct > 1)
-  {
-    cout << "Latência Média da simulação: "<< latencia_media_simulacao/(size_pct-1) << endl;
-  } else {
-    cout << "Latência Média da simulação: "<< latencia_media_simulacao/(size_pct) << endl;
-  }
+  latencias_pc << "\n\nMenor Latência: "<< menor_latencia << endl;
+  latencias_pc << "Maior Latência: "<< maior_latencia << endl;
+  // if (size_pct > 1)
+  // {
+  //   cout << "Latência Média da simulação: "<< latencia_media_simulacao/(size_pct-1) << endl;
+  // } else {
+  latencias_pc << "Latência Média da simulação: "<< latencia_media_simulacao/(size_pct) << endl;
+  // }
   cout << endl;
   double variancia = 0.0;
-
+  ofstream desvio ("desvio_padrao.txt");
   for (int j = 0; j < size_pct; ++j)
   {
     for (int k = 0; k < padrao_tfg[j][6]; ++k)
@@ -134,8 +135,8 @@ int sc_main (int argc, char* argv[]) {
       // cout << simulation->latencias[j][k]<<" "<<media_Latencias[j]<< endl;
       variancia+= ((simulation->latencias[j][k]-media_Latencias[j])*(simulation->latencias[j][k]-media_Latencias[j]));
     }
-    cout <<"Variância do pacote["<<j<<"]: " <<(variancia / padrao_tfg[j][6])<<endl;
-    cout <<"Desvio padrão do pacote["<<j<<"]:" <<sqrt((variancia / padrao_tfg[j][6])) << endl<<endl;
+    desvio <<"Variância do pacote["<<j<<"]: " <<(variancia / padrao_tfg[j][6])<<endl;
+    desvio <<"Desvio padrão do pacote["<<j<<"]:" <<sqrt((variancia / padrao_tfg[j][6])) << endl<<endl;
     variancia = 0.0;
   }
 

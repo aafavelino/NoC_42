@@ -18,6 +18,7 @@ public:
 	sc_uint<32> portaDestino;
 	int buffercircular[5];
 	int prioridade;
+	int rotatividade = 1;
 
 	Arbitro();
 	void addSolicitacao(int);

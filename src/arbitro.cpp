@@ -23,15 +23,42 @@ void Arbitro::remSolicitacao(int port)
 
 void Arbitro::setPrioridade()
 {
-
-	for (int i = 0; i < 5; ++i)
-	{
-		if (buffercircular[i] == 1)
+	#ifdef ESTATICA
+		for (int i = 0; i < 5; ++i)
 		{
-			prioridade = i;
-			return;
-		}
-	}
+			if (buffercircular[i] == 1)
+			{
+				prioridade = i;
+				return;
+			}
+		}				
+	#endif
+
+	#ifdef ROTATIVA
+		std::vector<int> prioridades;
+		for (int i = 0; i < 5; ++i)
+			if (buffercircular[i] == 1)
+				prioridades.push_back(i);
+		
+		prioridade = prioridades[prioridades.size()-1];
+
+		prioridades.pop_back();
+		return;
+	#endif
+
+	#ifdef RANDOMICA
+		std::vector<int> prioridades;
+		for (int i = 0; i < 5; ++i)
+			if (buffercircular[i] == 1)
+				prioridades.push_back(i);
+
+		std::function<int (int, int)> func = [](int i, int j) { return rand() % i + j; };
+		
+		prioridade = prioridades[func(prioridades.size(), 0)];
+		prioridades.erase (prioridades.begin(),prioridades.begin()+prioridades.size());
+		return;
+	#endif
+
 }
 
 int Arbitro::checkPrioridade()

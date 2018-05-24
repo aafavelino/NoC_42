@@ -1,0 +1,359 @@
+Latencia pos[0][0]: 110
+Latencia pos[0][1]: 185
+Latencia pos[0][2]: 217
+Latencia pos[0][3]: 228
+Latencia pos[0][4]: 238
+Latencia pos[0][5]: 253
+Latencia pos[0][6]: 238
+Latencia pos[0][7]: 203
+Latencia pos[0][8]: 141
+Latencia pos[0][9]: 72
+Latencia pos[0][10]: 1
+Latencia pos[0][11]: 1
+Latencia pos[0][12]: 1
+Latencia pos[0][13]: 1
+Latencia pos[0][14]: 1
+Latencia pos[0][15]: 1
+Latencia pos[0][16]: 1
+Latencia pos[0][17]: 1
+Latencia pos[0][18]: 1
+Latencia pos[0][19]: 1
+Latencia pos[0][20]: 1
+Latencia pos[0][21]: 1
+Latencia pos[0][22]: 1
+Latencia pos[0][23]: 1
+Latencia pos[0][24]: 1
+Latencia pos[0][25]: 1
+Latencia pos[0][26]: 1
+Latencia pos[0][27]: 1
+Latencia pos[0][28]: 1
+Latencia pos[0][29]: 1
+Latencia pos[0][30]: 1
+Latencia pos[0][31]: 1
+Latencia pos[0][32]: 1
+Latencia pos[0][33]: 1
+Latencia pos[0][34]: 1
+Latencia pos[0][35]: 1
+Latencia pos[0][36]: 1
+Latencia pos[0][37]: 1
+Latencia pos[0][38]: 1
+Latencia pos[0][39]: 1
+Latencia pos[0][40]: 1
+Latencia pos[0][41]: 1
+Latencia pos[0][42]: 1
+Latencia pos[0][43]: 1
+Latencia pos[0][44]: 1
+
+Latencia pos[1][0]: 39
+Latencia pos[1][1]: 64
+Latencia pos[1][2]: 89
+
+Latencia pos[2][0]: 1
+Latencia pos[2][1]: 1
+Latencia pos[2][2]: 1
+Latencia pos[2][3]: 1
+Latencia pos[2][4]: 1
+
+Latencia pos[3][0]: 55
+Latencia pos[3][1]: 95
+Latencia pos[3][2]: 124
+Latencia pos[3][3]: 153
+Latencia pos[3][4]: 181
+
+Latencia pos[4][0]: 67
+Latencia pos[4][1]: 108
+Latencia pos[4][2]: 149
+Latencia pos[4][3]: 180
+Latencia pos[4][4]: 205
+
+Latencia pos[5][0]: 78
+Latencia pos[5][1]: 125
+Latencia pos[5][2]: 167
+Latencia pos[5][3]: 200
+Latencia pos[5][4]: 219
+
+Latencia pos[6][0]: 88
+Latencia pos[6][1]: 140
+Latencia pos[6][2]: 187
+Latencia pos[6][3]: 217
+Latencia pos[6][4]: 228
+Latencia pos[6][5]: 232
+Latencia pos[6][6]: 241
+Latencia pos[6][7]: 248
+Latencia pos[6][8]: 252
+Latencia pos[6][9]: 257
+
+Latencia pos[7][0]: 97
+Latencia pos[7][1]: 153
+Latencia pos[7][2]: 203
+Latencia pos[7][3]: 224
+Latencia pos[7][4]: 233
+Latencia pos[7][5]: 240
+Latencia pos[7][6]: 248
+Latencia pos[7][7]: 258
+Latencia pos[7][8]: 255
+Latencia pos[7][9]: 235
+Latencia pos[7][10]: 208
+
+Latencia pos[8][0]: 106
+Latencia pos[8][1]: 170
+Latencia pos[8][2]: 215
+Latencia pos[8][3]: 229
+Latencia pos[8][4]: 239
+Latencia pos[8][5]: 247
+Latencia pos[8][6]: 255
+Latencia pos[8][7]: 256
+Latencia pos[8][8]: 235
+Latencia pos[8][9]: 201
+Latencia pos[8][10]: 148
+Latencia pos[8][11]: 93
+
+Latencia pos[9][0]: 112
+Latencia pos[9][1]: 183
+Latencia pos[9][2]: 226
+Latencia pos[9][3]: 232
+Latencia pos[9][4]: 243
+Latencia pos[9][5]: 254
+Latencia pos[9][6]: 260
+Latencia pos[9][7]: 237
+Latencia pos[9][8]: 201
+Latencia pos[9][9]: 144
+Latencia pos[9][10]: 80
+Latencia pos[9][11]: 9
+Latencia pos[9][12]: 9
+
+Latencia pos[10][0]: 118
+Latencia pos[10][1]: 196
+Latencia pos[10][2]: 222
+Latencia pos[10][3]: 234
+Latencia pos[10][4]: 246
+Latencia pos[10][5]: 251
+Latencia pos[10][6]: 219
+Latencia pos[10][7]: 162
+Latencia pos[10][8]: 88
+Latencia pos[10][9]: 3
+Latencia pos[10][10]: 2
+Latencia pos[10][11]: 2
+Latencia pos[10][12]: 2
+Latencia pos[10][13]: 2
+Latencia pos[10][14]: 2
+Latencia pos[10][15]: 2
+Latencia pos[10][16]: 2
+Latencia pos[10][17]: 2
+Latencia pos[10][18]: 2
+Latencia pos[10][19]: 2
+Latencia pos[10][20]: 3
+Latencia pos[10][21]: 2
+Latencia pos[10][22]: 2
+Latencia pos[10][23]: 2
+Latencia pos[10][24]: 2
+Latencia pos[10][25]: 2
+Latencia pos[10][26]: 2
+Latencia pos[10][27]: 2
+Latencia pos[10][28]: 2
+Latencia pos[10][29]: 2
+Latencia pos[10][30]: 2
+Latencia pos[10][31]: 3
+Latencia pos[10][32]: 2
+Latencia pos[10][33]: 2
+Latencia pos[10][34]: 2
+Latencia pos[10][35]: 2
+Latencia pos[10][36]: 2
+Latencia pos[10][37]: 2
+Latencia pos[10][38]: 2
+Latencia pos[10][39]: 2
+Latencia pos[10][40]: 2
+Latencia pos[10][41]: 2
+Latencia pos[10][42]: 2
+Latencia pos[10][43]: 2
+Latencia pos[10][44]: 2
+Latencia pos[10][45]: 2
+Latencia pos[10][46]: 2
+Latencia pos[10][47]: 2
+Latencia pos[10][48]: 2
+Latencia pos[10][49]: 2
+
+Latencia pos[11][0]: 125
+Latencia pos[11][1]: 205
+Latencia pos[11][2]: 226
+Latencia pos[11][3]: 240
+Latencia pos[11][4]: 252
+
+Latencia pos[12][0]: 133
+Latencia pos[12][1]: 212
+Latencia pos[12][2]: 231
+Latencia pos[12][3]: 246
+Latencia pos[12][4]: 256
+
+Latencia pos[13][0]: 141
+Latencia pos[13][1]: 215
+Latencia pos[13][2]: 236
+Latencia pos[13][3]: 250
+Latencia pos[13][4]: 247
+
+Latencia pos[14][0]: 150
+Latencia pos[14][1]: 222
+Latencia pos[14][2]: 239
+Latencia pos[14][3]: 255
+Latencia pos[14][4]: 239
+
+Latencia pos[15][0]: 155
+Latencia pos[15][1]: 225
+Latencia pos[15][2]: 241
+Latencia pos[15][3]: 257
+Latencia pos[15][4]: 223
+
+Latencia pos[16][0]: 164
+Latencia pos[16][1]: 229
+Latencia pos[16][2]: 247
+Latencia pos[16][3]: 257
+Latencia pos[16][4]: 206
+
+Latencia pos[17][0]: 172
+Latencia pos[17][1]: 233
+Latencia pos[17][2]: 250
+Latencia pos[17][3]: 252
+Latencia pos[17][4]: 179
+
+Latencia pos[18][0]: 8
+Latencia pos[18][1]: 8
+Latencia pos[18][2]: 9
+Latencia pos[18][3]: 8
+Latencia pos[18][4]: 8
+
+Latencia pos[19][0]: 8
+Latencia pos[19][1]: 8
+Latencia pos[19][2]: 8
+Latencia pos[19][3]: 8
+Latencia pos[19][4]: 8
+
+Latencia pos[20][0]: 8
+Latencia pos[20][1]: 8
+Latencia pos[20][2]: 8
+Latencia pos[20][3]: 8
+Latencia pos[20][4]: 8
+
+Latencia pos[21][0]: 8
+Latencia pos[21][1]: 8
+Latencia pos[21][2]: 8
+Latencia pos[21][3]: 9
+Latencia pos[21][4]: 8
+
+Latencia pos[22][0]: 8
+Latencia pos[22][1]: 8
+Latencia pos[22][2]: 8
+Latencia pos[22][3]: 8
+Latencia pos[22][4]: 8
+
+Latencia pos[23][0]: 2
+Latencia pos[23][1]: 1
+Latencia pos[23][2]: 1
+Latencia pos[23][3]: 1
+Latencia pos[23][4]: 2
+
+Latencia pos[24][0]: 6
+Latencia pos[24][1]: 6
+Latencia pos[24][2]: 6
+Latencia pos[24][3]: 6
+Latencia pos[24][4]: 6
+
+Latencia pos[25][0]: 2
+Latencia pos[25][1]: 1
+Latencia pos[25][2]: 3
+Latencia pos[25][3]: 1
+Latencia pos[25][4]: 1
+
+Latencia pos[26][0]: 3
+Latencia pos[26][1]: 3
+Latencia pos[26][2]: 2
+Latencia pos[26][3]: 3
+Latencia pos[26][4]: 2
+
+Latencia pos[27][0]: 4
+Latencia pos[27][1]: 4
+Latencia pos[27][2]: 8
+Latencia pos[27][3]: 3
+Latencia pos[27][4]: 3
+
+Latencia pos[28][0]: 8
+Latencia pos[28][1]: 7
+Latencia pos[28][2]: 8
+Latencia pos[28][3]: 8
+Latencia pos[28][4]: 7
+
+Latencia pos[29][0]: 6
+Latencia pos[29][1]: 7
+Latencia pos[29][2]: 7
+Latencia pos[29][3]: 6
+Latencia pos[29][4]: 6
+
+Latencia pos[30][0]: 6
+Latencia pos[30][1]: 5
+Latencia pos[30][2]: 7
+Latencia pos[30][3]: 6
+Latencia pos[30][4]: 5
+
+Latencia pos[31][0]: 5
+Latencia pos[31][1]: 4
+Latencia pos[31][2]: 5
+Latencia pos[31][3]: 4
+Latencia pos[31][4]: 4
+
+Latencia pos[32][0]: 3
+Latencia pos[32][1]: 3
+Latencia pos[32][2]: 4
+Latencia pos[32][3]: 3
+Latencia pos[32][4]: 3
+
+Latencia pos[33][0]: 3
+Latencia pos[33][1]: 2
+Latencia pos[33][2]: 3
+Latencia pos[33][3]: 2
+Latencia pos[33][4]: 2
+
+Latencia pos[34][0]: 4
+Latencia pos[34][1]: 3
+Latencia pos[34][2]: 4
+Latencia pos[34][3]: 3
+Latencia pos[34][4]: 3
+
+Latencia média do pacote[0]: 42
+Latencia média do pacote[1]: 64
+Latencia média do pacote[2]: 1
+Latencia média do pacote[3]: 121
+Latencia média do pacote[4]: 141
+Latencia média do pacote[5]: 157
+Latencia média do pacote[6]: 209
+Latencia média do pacote[7]: 214
+Latencia média do pacote[8]: 199
+Latencia média do pacote[9]: 168
+Latencia média do pacote[10]: 36
+Latencia média do pacote[11]: 209
+Latencia média do pacote[12]: 215
+Latencia média do pacote[13]: 217
+Latencia média do pacote[14]: 221
+Latencia média do pacote[15]: 220
+Latencia média do pacote[16]: 220
+Latencia média do pacote[17]: 217
+Latencia média do pacote[18]: 8
+Latencia média do pacote[19]: 8
+Latencia média do pacote[20]: 8
+Latencia média do pacote[21]: 8
+Latencia média do pacote[22]: 8
+Latencia média do pacote[23]: 1
+Latencia média do pacote[24]: 6
+Latencia média do pacote[25]: 1
+Latencia média do pacote[26]: 2
+Latencia média do pacote[27]: 4
+Latencia média do pacote[28]: 7
+Latencia média do pacote[29]: 6
+Latencia média do pacote[30]: 5
+Latencia média do pacote[31]: 4
+Latencia média do pacote[32]: 3
+Latencia média do pacote[33]: 2
+Latencia média do pacote[34]: 3
+
+
+Menor Latência: 1
+Maior Latência: 260
+Latência Média da simulação: 84
