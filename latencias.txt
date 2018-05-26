@@ -1,359 +1,2435 @@
-Latencia pos[0][0]: 110
-Latencia pos[0][1]: 185
-Latencia pos[0][2]: 217
-Latencia pos[0][3]: 228
-Latencia pos[0][4]: 238
-Latencia pos[0][5]: 253
-Latencia pos[0][6]: 238
-Latencia pos[0][7]: 203
-Latencia pos[0][8]: 141
-Latencia pos[0][9]: 72
-Latencia pos[0][10]: 1
-Latencia pos[0][11]: 1
-Latencia pos[0][12]: 1
-Latencia pos[0][13]: 1
-Latencia pos[0][14]: 1
-Latencia pos[0][15]: 1
-Latencia pos[0][16]: 1
-Latencia pos[0][17]: 1
-Latencia pos[0][18]: 1
-Latencia pos[0][19]: 1
-Latencia pos[0][20]: 1
-Latencia pos[0][21]: 1
-Latencia pos[0][22]: 1
-Latencia pos[0][23]: 1
-Latencia pos[0][24]: 1
-Latencia pos[0][25]: 1
-Latencia pos[0][26]: 1
-Latencia pos[0][27]: 1
-Latencia pos[0][28]: 1
-Latencia pos[0][29]: 1
-Latencia pos[0][30]: 1
-Latencia pos[0][31]: 1
-Latencia pos[0][32]: 1
-Latencia pos[0][33]: 1
-Latencia pos[0][34]: 1
-Latencia pos[0][35]: 1
-Latencia pos[0][36]: 1
-Latencia pos[0][37]: 1
-Latencia pos[0][38]: 1
-Latencia pos[0][39]: 1
-Latencia pos[0][40]: 1
-Latencia pos[0][41]: 1
-Latencia pos[0][42]: 1
-Latencia pos[0][43]: 1
-Latencia pos[0][44]: 1
+Latencia posição:[0]-> Pacote:[0]: 64
+Latencia posição:[0]-> Pacote:[1]: 112
+Latencia posição:[0]-> Pacote:[2]: 157
+Latencia posição:[0]-> Pacote:[3]: 202
 
-Latencia pos[1][0]: 39
-Latencia pos[1][1]: 64
-Latencia pos[1][2]: 89
+Latencia posição:[1]-> Pacote:[0]: 9
+Latencia posição:[1]-> Pacote:[1]: 9
+Latencia posição:[1]-> Pacote:[2]: 9
+Latencia posição:[1]-> Pacote:[3]: 9
 
-Latencia pos[2][0]: 1
-Latencia pos[2][1]: 1
-Latencia pos[2][2]: 1
-Latencia pos[2][3]: 1
-Latencia pos[2][4]: 1
+Latencia posição:[2]-> Pacote:[0]: 13
+Latencia posição:[2]-> Pacote:[1]: 21
+Latencia posição:[2]-> Pacote:[2]: 25
+Latencia posição:[2]-> Pacote:[3]: 31
 
-Latencia pos[3][0]: 55
-Latencia pos[3][1]: 95
-Latencia pos[3][2]: 124
-Latencia pos[3][3]: 153
-Latencia pos[3][4]: 181
+Latencia posição:[3]-> Pacote:[0]: 12
+Latencia posição:[3]-> Pacote:[1]: 15
+Latencia posição:[3]-> Pacote:[2]: 18
+Latencia posição:[3]-> Pacote:[3]: 21
 
-Latencia pos[4][0]: 67
-Latencia pos[4][1]: 108
-Latencia pos[4][2]: 149
-Latencia pos[4][3]: 180
-Latencia pos[4][4]: 205
+Latencia posição:[4]-> Pacote:[0]: 14
+Latencia posição:[4]-> Pacote:[1]: 24
 
-Latencia pos[5][0]: 78
-Latencia pos[5][1]: 125
-Latencia pos[5][2]: 167
-Latencia pos[5][3]: 200
-Latencia pos[5][4]: 219
+Latencia posição:[5]-> Pacote:[0]: 13
+Latencia posição:[5]-> Pacote:[1]: 15
 
-Latencia pos[6][0]: 88
-Latencia pos[6][1]: 140
-Latencia pos[6][2]: 187
-Latencia pos[6][3]: 217
-Latencia pos[6][4]: 228
-Latencia pos[6][5]: 232
-Latencia pos[6][6]: 241
-Latencia pos[6][7]: 248
-Latencia pos[6][8]: 252
-Latencia pos[6][9]: 257
+Latencia posição:[6]-> Pacote:[0]: 7
+Latencia posição:[6]-> Pacote:[1]: 10
 
-Latencia pos[7][0]: 97
-Latencia pos[7][1]: 153
-Latencia pos[7][2]: 203
-Latencia pos[7][3]: 224
-Latencia pos[7][4]: 233
-Latencia pos[7][5]: 240
-Latencia pos[7][6]: 248
-Latencia pos[7][7]: 258
-Latencia pos[7][8]: 255
-Latencia pos[7][9]: 235
-Latencia pos[7][10]: 208
+Latencia posição:[7]-> Pacote:[0]: 13
+Latencia posição:[7]-> Pacote:[1]: 19
 
-Latencia pos[8][0]: 106
-Latencia pos[8][1]: 170
-Latencia pos[8][2]: 215
-Latencia pos[8][3]: 229
-Latencia pos[8][4]: 239
-Latencia pos[8][5]: 247
-Latencia pos[8][6]: 255
-Latencia pos[8][7]: 256
-Latencia pos[8][8]: 235
-Latencia pos[8][9]: 201
-Latencia pos[8][10]: 148
-Latencia pos[8][11]: 93
+Latencia posição:[8]-> Pacote:[0]: 3
+Latencia posição:[8]-> Pacote:[1]: 7
 
-Latencia pos[9][0]: 112
-Latencia pos[9][1]: 183
-Latencia pos[9][2]: 226
-Latencia pos[9][3]: 232
-Latencia pos[9][4]: 243
-Latencia pos[9][5]: 254
-Latencia pos[9][6]: 260
-Latencia pos[9][7]: 237
-Latencia pos[9][8]: 201
-Latencia pos[9][9]: 144
-Latencia pos[9][10]: 80
-Latencia pos[9][11]: 9
-Latencia pos[9][12]: 9
+Latencia posição:[9]-> Pacote:[0]: 5
+Latencia posição:[9]-> Pacote:[1]: 7
 
-Latencia pos[10][0]: 118
-Latencia pos[10][1]: 196
-Latencia pos[10][2]: 222
-Latencia pos[10][3]: 234
-Latencia pos[10][4]: 246
-Latencia pos[10][5]: 251
-Latencia pos[10][6]: 219
-Latencia pos[10][7]: 162
-Latencia pos[10][8]: 88
-Latencia pos[10][9]: 3
-Latencia pos[10][10]: 2
-Latencia pos[10][11]: 2
-Latencia pos[10][12]: 2
-Latencia pos[10][13]: 2
-Latencia pos[10][14]: 2
-Latencia pos[10][15]: 2
-Latencia pos[10][16]: 2
-Latencia pos[10][17]: 2
-Latencia pos[10][18]: 2
-Latencia pos[10][19]: 2
-Latencia pos[10][20]: 3
-Latencia pos[10][21]: 2
-Latencia pos[10][22]: 2
-Latencia pos[10][23]: 2
-Latencia pos[10][24]: 2
-Latencia pos[10][25]: 2
-Latencia pos[10][26]: 2
-Latencia pos[10][27]: 2
-Latencia pos[10][28]: 2
-Latencia pos[10][29]: 2
-Latencia pos[10][30]: 2
-Latencia pos[10][31]: 3
-Latencia pos[10][32]: 2
-Latencia pos[10][33]: 2
-Latencia pos[10][34]: 2
-Latencia pos[10][35]: 2
-Latencia pos[10][36]: 2
-Latencia pos[10][37]: 2
-Latencia pos[10][38]: 2
-Latencia pos[10][39]: 2
-Latencia pos[10][40]: 2
-Latencia pos[10][41]: 2
-Latencia pos[10][42]: 2
-Latencia pos[10][43]: 2
-Latencia pos[10][44]: 2
-Latencia pos[10][45]: 2
-Latencia pos[10][46]: 2
-Latencia pos[10][47]: 2
-Latencia pos[10][48]: 2
-Latencia pos[10][49]: 2
+Latencia posição:[10]-> Pacote:[0]: 8
+Latencia posição:[10]-> Pacote:[1]: 11
 
-Latencia pos[11][0]: 125
-Latencia pos[11][1]: 205
-Latencia pos[11][2]: 226
-Latencia pos[11][3]: 240
-Latencia pos[11][4]: 252
+Latencia posição:[11]-> Pacote:[0]: 7
+Latencia posição:[11]-> Pacote:[1]: 11
 
-Latencia pos[12][0]: 133
-Latencia pos[12][1]: 212
-Latencia pos[12][2]: 231
-Latencia pos[12][3]: 246
-Latencia pos[12][4]: 256
+Latencia posição:[12]-> Pacote:[0]: 10
+Latencia posição:[12]-> Pacote:[1]: 14
 
-Latencia pos[13][0]: 141
-Latencia pos[13][1]: 215
-Latencia pos[13][2]: 236
-Latencia pos[13][3]: 250
-Latencia pos[13][4]: 247
+Latencia posição:[13]-> Pacote:[0]: 9
+Latencia posição:[13]-> Pacote:[1]: 18
 
-Latencia pos[14][0]: 150
-Latencia pos[14][1]: 222
-Latencia pos[14][2]: 239
-Latencia pos[14][3]: 255
-Latencia pos[14][4]: 239
+Latencia posição:[14]-> Pacote:[0]: 3
+Latencia posição:[14]-> Pacote:[1]: 7
 
-Latencia pos[15][0]: 155
-Latencia pos[15][1]: 225
-Latencia pos[15][2]: 241
-Latencia pos[15][3]: 257
-Latencia pos[15][4]: 223
+Latencia posição:[15]-> Pacote:[0]: 3
+Latencia posição:[15]-> Pacote:[1]: 6
 
-Latencia pos[16][0]: 164
-Latencia pos[16][1]: 229
-Latencia pos[16][2]: 247
-Latencia pos[16][3]: 257
-Latencia pos[16][4]: 206
+Latencia posição:[16]-> Pacote:[0]: 9
+Latencia posição:[16]-> Pacote:[1]: 13
 
-Latencia pos[17][0]: 172
-Latencia pos[17][1]: 233
-Latencia pos[17][2]: 250
-Latencia pos[17][3]: 252
-Latencia pos[17][4]: 179
+Latencia posição:[17]-> Pacote:[0]: 12
+Latencia posição:[17]-> Pacote:[1]: 30
 
-Latencia pos[18][0]: 8
-Latencia pos[18][1]: 8
-Latencia pos[18][2]: 9
-Latencia pos[18][3]: 8
-Latencia pos[18][4]: 8
+Latencia posição:[18]-> Pacote:[0]: 13
+Latencia posição:[18]-> Pacote:[1]: 12
 
-Latencia pos[19][0]: 8
-Latencia pos[19][1]: 8
-Latencia pos[19][2]: 8
-Latencia pos[19][3]: 8
-Latencia pos[19][4]: 8
+Latencia posição:[19]-> Pacote:[0]: 1
+Latencia posição:[19]-> Pacote:[1]: 1
 
-Latencia pos[20][0]: 8
-Latencia pos[20][1]: 8
-Latencia pos[20][2]: 8
-Latencia pos[20][3]: 8
-Latencia pos[20][4]: 8
+Latencia posição:[20]-> Pacote:[0]: 3
+Latencia posição:[20]-> Pacote:[1]: 3
 
-Latencia pos[21][0]: 8
-Latencia pos[21][1]: 8
-Latencia pos[21][2]: 8
-Latencia pos[21][3]: 9
-Latencia pos[21][4]: 8
+Latencia posição:[21]-> Pacote:[0]: 3
+Latencia posição:[21]-> Pacote:[1]: 3
 
-Latencia pos[22][0]: 8
-Latencia pos[22][1]: 8
-Latencia pos[22][2]: 8
-Latencia pos[22][3]: 8
-Latencia pos[22][4]: 8
+Latencia posição:[22]-> Pacote:[0]: 4
+Latencia posição:[22]-> Pacote:[1]: 4
 
-Latencia pos[23][0]: 2
-Latencia pos[23][1]: 1
-Latencia pos[23][2]: 1
-Latencia pos[23][3]: 1
-Latencia pos[23][4]: 2
+Latencia posição:[23]-> Pacote:[0]: 6
+Latencia posição:[23]-> Pacote:[1]: 6
 
-Latencia pos[24][0]: 6
-Latencia pos[24][1]: 6
-Latencia pos[24][2]: 6
-Latencia pos[24][3]: 6
-Latencia pos[24][4]: 6
+Latencia posição:[24]-> Pacote:[0]: 7
+Latencia posição:[24]-> Pacote:[1]: 7
 
-Latencia pos[25][0]: 2
-Latencia pos[25][1]: 1
-Latencia pos[25][2]: 3
-Latencia pos[25][3]: 1
-Latencia pos[25][4]: 1
+Latencia posição:[25]-> Pacote:[0]: 7
+Latencia posição:[25]-> Pacote:[1]: 7
 
-Latencia pos[26][0]: 3
-Latencia pos[26][1]: 3
-Latencia pos[26][2]: 2
-Latencia pos[26][3]: 3
-Latencia pos[26][4]: 2
+Latencia posição:[26]-> Pacote:[0]: 9
+Latencia posição:[26]-> Pacote:[1]: 9
 
-Latencia pos[27][0]: 4
-Latencia pos[27][1]: 4
-Latencia pos[27][2]: 8
-Latencia pos[27][3]: 3
-Latencia pos[27][4]: 3
+Latencia posição:[27]-> Pacote:[0]: 1
+Latencia posição:[27]-> Pacote:[1]: 1
 
-Latencia pos[28][0]: 8
-Latencia pos[28][1]: 7
-Latencia pos[28][2]: 8
-Latencia pos[28][3]: 8
-Latencia pos[28][4]: 7
+Latencia posição:[28]-> Pacote:[0]: 2
+Latencia posição:[28]-> Pacote:[1]: 2
 
-Latencia pos[29][0]: 6
-Latencia pos[29][1]: 7
-Latencia pos[29][2]: 7
-Latencia pos[29][3]: 6
-Latencia pos[29][4]: 6
+Latencia posição:[29]-> Pacote:[0]: 4
+Latencia posição:[29]-> Pacote:[1]: 4
 
-Latencia pos[30][0]: 6
-Latencia pos[30][1]: 5
-Latencia pos[30][2]: 7
-Latencia pos[30][3]: 6
-Latencia pos[30][4]: 5
+Latencia posição:[30]-> Pacote:[0]: 4
+Latencia posição:[30]-> Pacote:[1]: 4
 
-Latencia pos[31][0]: 5
-Latencia pos[31][1]: 4
-Latencia pos[31][2]: 5
-Latencia pos[31][3]: 4
-Latencia pos[31][4]: 4
+Latencia posição:[31]-> Pacote:[0]: 5
+Latencia posição:[31]-> Pacote:[1]: 5
 
-Latencia pos[32][0]: 3
-Latencia pos[32][1]: 3
-Latencia pos[32][2]: 4
-Latencia pos[32][3]: 3
-Latencia pos[32][4]: 3
+Latencia posição:[32]-> Pacote:[0]: 9
+Latencia posição:[32]-> Pacote:[1]: 9
 
-Latencia pos[33][0]: 3
-Latencia pos[33][1]: 2
-Latencia pos[33][2]: 3
-Latencia pos[33][3]: 2
-Latencia pos[33][4]: 2
+Latencia posição:[33]-> Pacote:[0]: 8
+Latencia posição:[33]-> Pacote:[1]: 8
 
-Latencia pos[34][0]: 4
-Latencia pos[34][1]: 3
-Latencia pos[34][2]: 4
-Latencia pos[34][3]: 3
-Latencia pos[34][4]: 3
+Latencia posição:[34]-> Pacote:[0]: 8
+Latencia posição:[34]-> Pacote:[1]: 8
 
-Latencia média do pacote[0]: 42
-Latencia média do pacote[1]: 64
-Latencia média do pacote[2]: 1
-Latencia média do pacote[3]: 121
-Latencia média do pacote[4]: 141
-Latencia média do pacote[5]: 157
-Latencia média do pacote[6]: 209
-Latencia média do pacote[7]: 214
-Latencia média do pacote[8]: 199
-Latencia média do pacote[9]: 168
-Latencia média do pacote[10]: 36
-Latencia média do pacote[11]: 209
-Latencia média do pacote[12]: 215
-Latencia média do pacote[13]: 217
-Latencia média do pacote[14]: 221
-Latencia média do pacote[15]: 220
-Latencia média do pacote[16]: 220
-Latencia média do pacote[17]: 217
-Latencia média do pacote[18]: 8
-Latencia média do pacote[19]: 8
-Latencia média do pacote[20]: 8
-Latencia média do pacote[21]: 8
-Latencia média do pacote[22]: 8
-Latencia média do pacote[23]: 1
-Latencia média do pacote[24]: 6
-Latencia média do pacote[25]: 1
-Latencia média do pacote[26]: 2
-Latencia média do pacote[27]: 4
-Latencia média do pacote[28]: 7
-Latencia média do pacote[29]: 6
-Latencia média do pacote[30]: 5
-Latencia média do pacote[31]: 4
-Latencia média do pacote[32]: 3
-Latencia média do pacote[33]: 2
-Latencia média do pacote[34]: 3
+Latencia posição:[35]-> Pacote:[0]: 1
+Latencia posição:[35]-> Pacote:[1]: 1
+
+Latencia posição:[36]-> Pacote:[0]: 2
+Latencia posição:[36]-> Pacote:[1]: 2
+
+Latencia posição:[37]-> Pacote:[0]: 4
+Latencia posição:[37]-> Pacote:[1]: 4
+
+Latencia posição:[38]-> Pacote:[0]: 4
+Latencia posição:[38]-> Pacote:[1]: 4
+
+Latencia posição:[39]-> Pacote:[0]: 6
+Latencia posição:[39]-> Pacote:[1]: 6
+
+Latencia posição:[40]-> Pacote:[0]: 6
+Latencia posição:[40]-> Pacote:[1]: 6
+
+Latencia posição:[41]-> Pacote:[0]: 7
+Latencia posição:[41]-> Pacote:[1]: 7
+
+Latencia posição:[42]-> Pacote:[0]: 9
+Latencia posição:[42]-> Pacote:[1]: 9
+
+Latencia posição:[43]-> Pacote:[0]: 2
+Latencia posição:[43]-> Pacote:[1]: 4
+
+Latencia posição:[44]-> Pacote:[0]: 2
+Latencia posição:[44]-> Pacote:[1]: 2
+
+Latencia posição:[45]-> Pacote:[0]: 3
+Latencia posição:[45]-> Pacote:[1]: 3
+
+Latencia posição:[46]-> Pacote:[0]: 4
+Latencia posição:[46]-> Pacote:[1]: 4
+
+Latencia posição:[47]-> Pacote:[0]: 5
+Latencia posição:[47]-> Pacote:[1]: 5
+
+Latencia posição:[48]-> Pacote:[0]: 8
+Latencia posição:[48]-> Pacote:[1]: 8
+
+Latencia posição:[49]-> Pacote:[0]: 7
+Latencia posição:[49]-> Pacote:[1]: 7
+
+Latencia posição:[50]-> Pacote:[0]: 8
+Latencia posição:[50]-> Pacote:[1]: 8
+
+Latencia posição:[51]-> Pacote:[0]: 4
+Latencia posição:[51]-> Pacote:[1]: 6
+
+Latencia posição:[52]-> Pacote:[0]: 2
+Latencia posição:[52]-> Pacote:[1]: 2
+
+Latencia posição:[53]-> Pacote:[0]: 3
+Latencia posição:[53]-> Pacote:[1]: 3
+
+Latencia posição:[54]-> Pacote:[0]: 5
+Latencia posição:[54]-> Pacote:[1]: 5
+
+Latencia posição:[55]-> Pacote:[0]: 5
+Latencia posição:[55]-> Pacote:[1]: 5
+
+Latencia posição:[56]-> Pacote:[0]: 10
+Latencia posição:[56]-> Pacote:[1]: 10
+
+Latencia posição:[57]-> Pacote:[0]: 7
+Latencia posição:[57]-> Pacote:[1]: 7
+
+Latencia posição:[58]-> Pacote:[0]: 8
+Latencia posição:[58]-> Pacote:[1]: 8
+
+Latencia posição:[59]-> Pacote:[0]: 1527
+Latencia posição:[59]-> Pacote:[1]: 3
+
+Latencia posição:[60]-> Pacote:[0]: 1527
+Latencia posição:[60]-> Pacote:[1]: 2
+
+Latencia posição:[61]-> Pacote:[0]: 1529
+Latencia posição:[61]-> Pacote:[1]: 4
+
+Latencia posição:[62]-> Pacote:[0]: 1529
+Latencia posição:[62]-> Pacote:[1]: 4
+
+Latencia posição:[63]-> Pacote:[0]: 1530
+Latencia posição:[63]-> Pacote:[1]: 5
+
+Latencia posição:[64]-> Pacote:[0]: 1532
+Latencia posição:[64]-> Pacote:[1]: 7
+
+Latencia posição:[65]-> Pacote:[0]: 1532
+Latencia posição:[65]-> Pacote:[1]: 7
+
+Latencia posição:[66]-> Pacote:[0]: 1534
+Latencia posição:[66]-> Pacote:[1]: 9
+
+Latencia posição:[67]-> Pacote:[0]: 3
+Latencia posição:[67]-> Pacote:[1]: 5
+
+Latencia posição:[68]-> Pacote:[0]: 3
+Latencia posição:[68]-> Pacote:[1]: 3
+
+Latencia posição:[69]-> Pacote:[0]: 3
+Latencia posição:[69]-> Pacote:[1]: 3
+
+Latencia posição:[70]-> Pacote:[0]: 5
+Latencia posição:[70]-> Pacote:[1]: 5
+
+Latencia posição:[71]-> Pacote:[0]: 5
+Latencia posição:[71]-> Pacote:[1]: 5
+
+Latencia posição:[72]-> Pacote:[0]: 6
+Latencia posição:[72]-> Pacote:[1]: 6
+
+Latencia posição:[73]-> Pacote:[0]: 7
+Latencia posição:[73]-> Pacote:[1]: 7
+
+Latencia posição:[74]-> Pacote:[0]: 9
+Latencia posição:[74]-> Pacote:[1]: 8
+
+Latencia posição:[75]-> Pacote:[0]: 5
+Latencia posição:[75]-> Pacote:[1]: 7
+
+Latencia posição:[76]-> Pacote:[0]: 2
+Latencia posição:[76]-> Pacote:[1]: 2
+
+Latencia posição:[77]-> Pacote:[0]: 4
+Latencia posição:[77]-> Pacote:[1]: 4
+
+Latencia posição:[78]-> Pacote:[0]: 6
+Latencia posição:[78]-> Pacote:[1]: 6
+
+Latencia posição:[79]-> Pacote:[0]: 5
+Latencia posição:[79]-> Pacote:[1]: 5
+
+Latencia posição:[80]-> Pacote:[0]: 6
+Latencia posição:[80]-> Pacote:[1]: 6
+
+Latencia posição:[81]-> Pacote:[0]: 8
+Latencia posição:[81]-> Pacote:[1]: 8
+
+Latencia posição:[82]-> Pacote:[0]: 8
+Latencia posição:[82]-> Pacote:[1]: 8
+
+Latencia posição:[83]-> Pacote:[0]: 473
+Latencia posição:[83]-> Pacote:[1]: 669
+Latencia posição:[83]-> Pacote:[2]: 847
+Latencia posição:[83]-> Pacote:[3]: 1005
+
+Latencia posição:[84]-> Pacote:[0]: 620
+Latencia posição:[84]-> Pacote:[1]: 933
+Latencia posição:[84]-> Pacote:[2]: 1233
+
+Latencia posição:[85]-> Pacote:[0]: 85
+Latencia posição:[85]-> Pacote:[1]: 150
+Latencia posição:[85]-> Pacote:[2]: 207
+Latencia posição:[85]-> Pacote:[3]: 259
+Latencia posição:[85]-> Pacote:[4]: 312
+Latencia posição:[85]-> Pacote:[5]: 361
+Latencia posição:[85]-> Pacote:[6]: 415
+Latencia posição:[85]-> Pacote:[7]: 463
+Latencia posição:[85]-> Pacote:[8]: 486
+Latencia posição:[85]-> Pacote:[9]: 508
+Latencia posição:[85]-> Pacote:[10]: 533
+Latencia posição:[85]-> Pacote:[11]: 558
+
+Latencia posição:[86]-> Pacote:[0]: 62
+Latencia posição:[86]-> Pacote:[1]: 63
+Latencia posição:[86]-> Pacote:[2]: 74
+Latencia posição:[86]-> Pacote:[3]: 89
+Latencia posição:[86]-> Pacote:[4]: 100
+Latencia posição:[86]-> Pacote:[5]: 114
+Latencia posição:[86]-> Pacote:[6]: 115
+Latencia posição:[86]-> Pacote:[7]: 137
+Latencia posição:[86]-> Pacote:[8]: 148
+Latencia posição:[86]-> Pacote:[9]: 157
+Latencia posição:[86]-> Pacote:[10]: 163
+Latencia posição:[86]-> Pacote:[11]: 172
+
+Latencia posição:[87]-> Pacote:[0]: 2
+Latencia posição:[87]-> Pacote:[1]: 2
+Latencia posição:[87]-> Pacote:[2]: 2
+Latencia posição:[87]-> Pacote:[3]: 2
+Latencia posição:[87]-> Pacote:[4]: 2
+Latencia posição:[87]-> Pacote:[5]: 2
+Latencia posição:[87]-> Pacote:[6]: 2
+Latencia posição:[87]-> Pacote:[7]: 2
+Latencia posição:[87]-> Pacote:[8]: 2
+Latencia posição:[87]-> Pacote:[9]: 2
+Latencia posição:[87]-> Pacote:[10]: 2
+Latencia posição:[87]-> Pacote:[11]: 2
+
+Latencia posição:[88]-> Pacote:[0]: 6
+Latencia posição:[88]-> Pacote:[1]: 6
+Latencia posição:[88]-> Pacote:[2]: 6
+Latencia posição:[88]-> Pacote:[3]: 6
+Latencia posição:[88]-> Pacote:[4]: 6
+Latencia posição:[88]-> Pacote:[5]: 6
+Latencia posição:[88]-> Pacote:[6]: 6
+Latencia posição:[88]-> Pacote:[7]: 6
+Latencia posição:[88]-> Pacote:[8]: 6
+Latencia posição:[88]-> Pacote:[9]: 6
+Latencia posição:[88]-> Pacote:[10]: 6
+Latencia posição:[88]-> Pacote:[11]: 6
+
+Latencia posição:[89]-> Pacote:[0]: 5
+Latencia posição:[89]-> Pacote:[1]: 8
+Latencia posição:[89]-> Pacote:[2]: 11
+Latencia posição:[89]-> Pacote:[3]: 14
+Latencia posição:[89]-> Pacote:[4]: 16
+Latencia posição:[89]-> Pacote:[5]: 19
+Latencia posição:[89]-> Pacote:[6]: 22
+Latencia posição:[89]-> Pacote:[7]: 25
+Latencia posição:[89]-> Pacote:[8]: 28
+Latencia posição:[89]-> Pacote:[9]: 31
+Latencia posição:[89]-> Pacote:[10]: 33
+Latencia posição:[89]-> Pacote:[11]: 36
+Latencia posição:[89]-> Pacote:[12]: 39
+Latencia posição:[89]-> Pacote:[13]: 42
+Latencia posição:[89]-> Pacote:[14]: 45
+Latencia posição:[89]-> Pacote:[15]: 48
+Latencia posição:[89]-> Pacote:[16]: 50
+Latencia posição:[89]-> Pacote:[17]: 53
+Latencia posição:[89]-> Pacote:[18]: 56
+Latencia posição:[89]-> Pacote:[19]: 59
+
+Latencia posição:[90]-> Pacote:[0]: 8
+Latencia posição:[90]-> Pacote:[1]: 8
+Latencia posição:[90]-> Pacote:[2]: 8
+Latencia posição:[90]-> Pacote:[3]: 8
+Latencia posição:[90]-> Pacote:[4]: 6
+Latencia posição:[90]-> Pacote:[5]: 6
+Latencia posição:[90]-> Pacote:[6]: 6
+Latencia posição:[90]-> Pacote:[7]: 6
+Latencia posição:[90]-> Pacote:[8]: 6
+Latencia posição:[90]-> Pacote:[9]: 6
+Latencia posição:[90]-> Pacote:[10]: 6
+Latencia posição:[90]-> Pacote:[11]: 6
+Latencia posição:[90]-> Pacote:[12]: 6
+Latencia posição:[90]-> Pacote:[13]: 6
+Latencia posição:[90]-> Pacote:[14]: 6
+Latencia posição:[90]-> Pacote:[15]: 6
+Latencia posição:[90]-> Pacote:[16]: 6
+Latencia posição:[90]-> Pacote:[17]: 6
+Latencia posição:[90]-> Pacote:[18]: 6
+Latencia posição:[90]-> Pacote:[19]: 6
+Latencia posição:[90]-> Pacote:[20]: 6
+Latencia posição:[90]-> Pacote:[21]: 6
+Latencia posição:[90]-> Pacote:[22]: 6
+Latencia posição:[90]-> Pacote:[23]: 6
+Latencia posição:[90]-> Pacote:[24]: 6
+Latencia posição:[90]-> Pacote:[25]: 6
+Latencia posição:[90]-> Pacote:[26]: 6
+Latencia posição:[90]-> Pacote:[27]: 6
+Latencia posição:[90]-> Pacote:[28]: 6
+Latencia posição:[90]-> Pacote:[29]: 6
+Latencia posição:[90]-> Pacote:[30]: 6
+Latencia posição:[90]-> Pacote:[31]: 6
+Latencia posição:[90]-> Pacote:[32]: 6
+Latencia posição:[90]-> Pacote:[33]: 6
+Latencia posição:[90]-> Pacote:[34]: 6
+Latencia posição:[90]-> Pacote:[35]: 7
+Latencia posição:[90]-> Pacote:[36]: 6
+Latencia posição:[90]-> Pacote:[37]: 6
+Latencia posição:[90]-> Pacote:[38]: 6
+Latencia posição:[90]-> Pacote:[39]: 6
+Latencia posição:[90]-> Pacote:[40]: 6
+Latencia posição:[90]-> Pacote:[41]: 6
+Latencia posição:[90]-> Pacote:[42]: 6
+Latencia posição:[90]-> Pacote:[43]: 6
+Latencia posição:[90]-> Pacote:[44]: 6
+Latencia posição:[90]-> Pacote:[45]: 6
+Latencia posição:[90]-> Pacote:[46]: 6
+Latencia posição:[90]-> Pacote:[47]: 6
+Latencia posição:[90]-> Pacote:[48]: 6
+Latencia posição:[90]-> Pacote:[49]: 6
+Latencia posição:[90]-> Pacote:[50]: 6
+Latencia posição:[90]-> Pacote:[51]: 6
+Latencia posição:[90]-> Pacote:[52]: 6
+Latencia posição:[90]-> Pacote:[53]: 6
+Latencia posição:[90]-> Pacote:[54]: 6
+Latencia posição:[90]-> Pacote:[55]: 6
+Latencia posição:[90]-> Pacote:[56]: 6
+Latencia posição:[90]-> Pacote:[57]: 6
+Latencia posição:[90]-> Pacote:[58]: 6
+Latencia posição:[90]-> Pacote:[59]: 6
+Latencia posição:[90]-> Pacote:[60]: 6
+Latencia posição:[90]-> Pacote:[61]: 6
+Latencia posição:[90]-> Pacote:[62]: 6
+Latencia posição:[90]-> Pacote:[63]: 6
+Latencia posição:[90]-> Pacote:[64]: 6
+Latencia posição:[90]-> Pacote:[65]: 6
+Latencia posição:[90]-> Pacote:[66]: 6
+Latencia posição:[90]-> Pacote:[67]: 6
+Latencia posição:[90]-> Pacote:[68]: 6
+Latencia posição:[90]-> Pacote:[69]: 6
+Latencia posição:[90]-> Pacote:[70]: 6
+Latencia posição:[90]-> Pacote:[71]: 6
+Latencia posição:[90]-> Pacote:[72]: 6
+Latencia posição:[90]-> Pacote:[73]: 6
+Latencia posição:[90]-> Pacote:[74]: 6
+Latencia posição:[90]-> Pacote:[75]: 6
+Latencia posição:[90]-> Pacote:[76]: 6
+Latencia posição:[90]-> Pacote:[77]: 6
+Latencia posição:[90]-> Pacote:[78]: 6
+Latencia posição:[90]-> Pacote:[79]: 6
+Latencia posição:[90]-> Pacote:[80]: 6
+Latencia posição:[90]-> Pacote:[81]: 6
+Latencia posição:[90]-> Pacote:[82]: 6
+Latencia posição:[90]-> Pacote:[83]: 6
+Latencia posição:[90]-> Pacote:[84]: 6
+Latencia posição:[90]-> Pacote:[85]: 6
+Latencia posição:[90]-> Pacote:[86]: 6
+Latencia posição:[90]-> Pacote:[87]: 6
+Latencia posição:[90]-> Pacote:[88]: 6
+Latencia posição:[90]-> Pacote:[89]: 6
+Latencia posição:[90]-> Pacote:[90]: 6
+Latencia posição:[90]-> Pacote:[91]: 6
+Latencia posição:[90]-> Pacote:[92]: 6
+Latencia posição:[90]-> Pacote:[93]: 6
+Latencia posição:[90]-> Pacote:[94]: 6
+Latencia posição:[90]-> Pacote:[95]: 6
+Latencia posição:[90]-> Pacote:[96]: 6
+Latencia posição:[90]-> Pacote:[97]: 6
+Latencia posição:[90]-> Pacote:[98]: 6
+Latencia posição:[90]-> Pacote:[99]: 6
+Latencia posição:[90]-> Pacote:[100]: 6
+Latencia posição:[90]-> Pacote:[101]: 6
+Latencia posição:[90]-> Pacote:[102]: 6
+Latencia posição:[90]-> Pacote:[103]: 6
+Latencia posição:[90]-> Pacote:[104]: 6
+Latencia posição:[90]-> Pacote:[105]: 6
+Latencia posição:[90]-> Pacote:[106]: 6
+Latencia posição:[90]-> Pacote:[107]: 6
+Latencia posição:[90]-> Pacote:[108]: 6
+Latencia posição:[90]-> Pacote:[109]: 6
+Latencia posição:[90]-> Pacote:[110]: 6
+Latencia posição:[90]-> Pacote:[111]: 6
+Latencia posição:[90]-> Pacote:[112]: 6
+Latencia posição:[90]-> Pacote:[113]: 6
+Latencia posição:[90]-> Pacote:[114]: 6
+Latencia posição:[90]-> Pacote:[115]: 6
+Latencia posição:[90]-> Pacote:[116]: 6
+Latencia posição:[90]-> Pacote:[117]: 6
+Latencia posição:[90]-> Pacote:[118]: 6
+Latencia posição:[90]-> Pacote:[119]: 6
+Latencia posição:[90]-> Pacote:[120]: 6
+Latencia posição:[90]-> Pacote:[121]: 6
+Latencia posição:[90]-> Pacote:[122]: 6
+Latencia posição:[90]-> Pacote:[123]: 6
+Latencia posição:[90]-> Pacote:[124]: 6
+Latencia posição:[90]-> Pacote:[125]: 6
+Latencia posição:[90]-> Pacote:[126]: 6
+Latencia posição:[90]-> Pacote:[127]: 6
+Latencia posição:[90]-> Pacote:[128]: 6
+Latencia posição:[90]-> Pacote:[129]: 6
+Latencia posição:[90]-> Pacote:[130]: 6
+Latencia posição:[90]-> Pacote:[131]: 6
+Latencia posição:[90]-> Pacote:[132]: 6
+Latencia posição:[90]-> Pacote:[133]: 6
+Latencia posição:[90]-> Pacote:[134]: 6
+Latencia posição:[90]-> Pacote:[135]: 6
+Latencia posição:[90]-> Pacote:[136]: 6
+Latencia posição:[90]-> Pacote:[137]: 6
+Latencia posição:[90]-> Pacote:[138]: 6
+Latencia posição:[90]-> Pacote:[139]: 6
+Latencia posição:[90]-> Pacote:[140]: 6
+Latencia posição:[90]-> Pacote:[141]: 6
+Latencia posição:[90]-> Pacote:[142]: 6
+Latencia posição:[90]-> Pacote:[143]: 6
+Latencia posição:[90]-> Pacote:[144]: 6
+Latencia posição:[90]-> Pacote:[145]: 6
+Latencia posição:[90]-> Pacote:[146]: 6
+Latencia posição:[90]-> Pacote:[147]: 6
+Latencia posição:[90]-> Pacote:[148]: 6
+Latencia posição:[90]-> Pacote:[149]: 6
+Latencia posição:[90]-> Pacote:[150]: 6
+Latencia posição:[90]-> Pacote:[151]: 6
+Latencia posição:[90]-> Pacote:[152]: 6
+Latencia posição:[90]-> Pacote:[153]: 6
+Latencia posição:[90]-> Pacote:[154]: 6
+Latencia posição:[90]-> Pacote:[155]: 6
+Latencia posição:[90]-> Pacote:[156]: 6
+Latencia posição:[90]-> Pacote:[157]: 6
+Latencia posição:[90]-> Pacote:[158]: 6
+Latencia posição:[90]-> Pacote:[159]: 6
+Latencia posição:[90]-> Pacote:[160]: 6
+Latencia posição:[90]-> Pacote:[161]: 6
+Latencia posição:[90]-> Pacote:[162]: 6
+Latencia posição:[90]-> Pacote:[163]: 6
+Latencia posição:[90]-> Pacote:[164]: 6
+Latencia posição:[90]-> Pacote:[165]: 6
+Latencia posição:[90]-> Pacote:[166]: 6
+Latencia posição:[90]-> Pacote:[167]: 6
+Latencia posição:[90]-> Pacote:[168]: 6
+Latencia posição:[90]-> Pacote:[169]: 6
+Latencia posição:[90]-> Pacote:[170]: 6
+Latencia posição:[90]-> Pacote:[171]: 6
+Latencia posição:[90]-> Pacote:[172]: 6
+Latencia posição:[90]-> Pacote:[173]: 6
+Latencia posição:[90]-> Pacote:[174]: 6
+Latencia posição:[90]-> Pacote:[175]: 6
+Latencia posição:[90]-> Pacote:[176]: 6
+Latencia posição:[90]-> Pacote:[177]: 6
+Latencia posição:[90]-> Pacote:[178]: 6
+Latencia posição:[90]-> Pacote:[179]: 6
+Latencia posição:[90]-> Pacote:[180]: 6
+Latencia posição:[90]-> Pacote:[181]: 6
+Latencia posição:[90]-> Pacote:[182]: 6
+Latencia posição:[90]-> Pacote:[183]: 6
+Latencia posição:[90]-> Pacote:[184]: 6
+Latencia posição:[90]-> Pacote:[185]: 6
+Latencia posição:[90]-> Pacote:[186]: 6
+Latencia posição:[90]-> Pacote:[187]: 6
+Latencia posição:[90]-> Pacote:[188]: 6
+Latencia posição:[90]-> Pacote:[189]: 6
+Latencia posição:[90]-> Pacote:[190]: 6
+Latencia posição:[90]-> Pacote:[191]: 6
+Latencia posição:[90]-> Pacote:[192]: 6
+Latencia posição:[90]-> Pacote:[193]: 6
+Latencia posição:[90]-> Pacote:[194]: 6
+Latencia posição:[90]-> Pacote:[195]: 6
+Latencia posição:[90]-> Pacote:[196]: 6
+Latencia posição:[90]-> Pacote:[197]: 6
+Latencia posição:[90]-> Pacote:[198]: 6
+Latencia posição:[90]-> Pacote:[199]: 6
+
+Latencia posição:[91]-> Pacote:[0]: 1
+Latencia posição:[91]-> Pacote:[1]: 1
+Latencia posição:[91]-> Pacote:[2]: 1
+Latencia posição:[91]-> Pacote:[3]: 1
+Latencia posição:[91]-> Pacote:[4]: 1
+Latencia posição:[91]-> Pacote:[5]: 1
+Latencia posição:[91]-> Pacote:[6]: 1
+Latencia posição:[91]-> Pacote:[7]: 1
+Latencia posição:[91]-> Pacote:[8]: 1
+Latencia posição:[91]-> Pacote:[9]: 1
+Latencia posição:[91]-> Pacote:[10]: 1
+Latencia posição:[91]-> Pacote:[11]: 1
+Latencia posição:[91]-> Pacote:[12]: 1
+Latencia posição:[91]-> Pacote:[13]: 1
+Latencia posição:[91]-> Pacote:[14]: 1
+Latencia posição:[91]-> Pacote:[15]: 1
+Latencia posição:[91]-> Pacote:[16]: 1
+Latencia posição:[91]-> Pacote:[17]: 1
+Latencia posição:[91]-> Pacote:[18]: 1
+Latencia posição:[91]-> Pacote:[19]: 1
+
+Latencia posição:[92]-> Pacote:[0]: 15
+Latencia posição:[92]-> Pacote:[1]: 23
+Latencia posição:[92]-> Pacote:[2]: 26
+Latencia posição:[92]-> Pacote:[3]: 33
+Latencia posição:[92]-> Pacote:[4]: 36
+Latencia posição:[92]-> Pacote:[5]: 39
+Latencia posição:[92]-> Pacote:[6]: 42
+Latencia posição:[92]-> Pacote:[7]: 46
+Latencia posição:[92]-> Pacote:[8]: 49
+Latencia posição:[92]-> Pacote:[9]: 54
+Latencia posição:[92]-> Pacote:[10]: 58
+Latencia posição:[92]-> Pacote:[11]: 62
+Latencia posição:[92]-> Pacote:[12]: 67
+Latencia posição:[92]-> Pacote:[13]: 72
+Latencia posição:[92]-> Pacote:[14]: 77
+Latencia posição:[92]-> Pacote:[15]: 82
+Latencia posição:[92]-> Pacote:[16]: 86
+Latencia posição:[92]-> Pacote:[17]: 90
+Latencia posição:[92]-> Pacote:[18]: 95
+Latencia posição:[92]-> Pacote:[19]: 98
+Latencia posição:[92]-> Pacote:[20]: 104
+Latencia posição:[92]-> Pacote:[21]: 108
+Latencia posição:[92]-> Pacote:[22]: 113
+Latencia posição:[92]-> Pacote:[23]: 117
+Latencia posição:[92]-> Pacote:[24]: 121
+Latencia posição:[92]-> Pacote:[25]: 126
+Latencia posição:[92]-> Pacote:[26]: 130
+Latencia posição:[92]-> Pacote:[27]: 135
+Latencia posição:[92]-> Pacote:[28]: 139
+Latencia posição:[92]-> Pacote:[29]: 144
+Latencia posição:[92]-> Pacote:[30]: 148
+Latencia posição:[92]-> Pacote:[31]: 153
+Latencia posição:[92]-> Pacote:[32]: 158
+Latencia posição:[92]-> Pacote:[33]: 162
+Latencia posição:[92]-> Pacote:[34]: 165
+Latencia posição:[92]-> Pacote:[35]: 175
+Latencia posição:[92]-> Pacote:[36]: 177
+Latencia posição:[92]-> Pacote:[37]: 180
+Latencia posição:[92]-> Pacote:[38]: 184
+Latencia posição:[92]-> Pacote:[39]: 189
+
+Latencia posição:[93]-> Pacote:[0]: 68
+Latencia posição:[93]-> Pacote:[1]: 116
+Latencia posição:[93]-> Pacote:[2]: 161
+Latencia posição:[93]-> Pacote:[3]: 207
+Latencia posição:[93]-> Pacote:[4]: 245
+Latencia posição:[93]-> Pacote:[5]: 284
+Latencia posição:[93]-> Pacote:[6]: 319
+Latencia posição:[93]-> Pacote:[7]: 361
+Latencia posição:[93]-> Pacote:[8]: 399
+Latencia posição:[93]-> Pacote:[9]: 439
+Latencia posição:[93]-> Pacote:[10]: 465
+Latencia posição:[93]-> Pacote:[11]: 485
+Latencia posição:[93]-> Pacote:[12]: 502
+Latencia posição:[93]-> Pacote:[13]: 521
+Latencia posição:[93]-> Pacote:[14]: 537
+Latencia posição:[93]-> Pacote:[15]: 557
+Latencia posição:[93]-> Pacote:[16]: 568
+Latencia posição:[93]-> Pacote:[17]: 582
+Latencia posição:[93]-> Pacote:[18]: 597
+Latencia posição:[93]-> Pacote:[19]: 614
+Latencia posição:[93]-> Pacote:[20]: 628
+Latencia posição:[93]-> Pacote:[21]: 641
+Latencia posição:[93]-> Pacote:[22]: 657
+Latencia posição:[93]-> Pacote:[23]: 672
+Latencia posição:[93]-> Pacote:[24]: 687
+Latencia posição:[93]-> Pacote:[25]: 701
+Latencia posição:[93]-> Pacote:[26]: 713
+Latencia posição:[93]-> Pacote:[27]: 730
+Latencia posição:[93]-> Pacote:[28]: 743
+Latencia posição:[93]-> Pacote:[29]: 760
+Latencia posição:[93]-> Pacote:[30]: 773
+Latencia posição:[93]-> Pacote:[31]: 788
+Latencia posição:[93]-> Pacote:[32]: 801
+Latencia posição:[93]-> Pacote:[33]: 818
+Latencia posição:[93]-> Pacote:[34]: 831
+Latencia posição:[93]-> Pacote:[35]: 849
+Latencia posição:[93]-> Pacote:[36]: 861
+Latencia posição:[93]-> Pacote:[37]: 874
+Latencia posição:[93]-> Pacote:[38]: 889
+Latencia posição:[93]-> Pacote:[39]: 904
+
+Latencia posição:[94]-> Pacote:[0]: 13
+Latencia posição:[94]-> Pacote:[1]: 16
+Latencia posição:[94]-> Pacote:[2]: 19
+Latencia posição:[94]-> Pacote:[3]: 22
+Latencia posição:[94]-> Pacote:[4]: 22
+Latencia posição:[94]-> Pacote:[5]: 22
+Latencia posição:[94]-> Pacote:[6]: 22
+Latencia posição:[94]-> Pacote:[7]: 22
+Latencia posição:[94]-> Pacote:[8]: 20
+Latencia posição:[94]-> Pacote:[9]: 17
+Latencia posição:[94]-> Pacote:[10]: 14
+Latencia posição:[94]-> Pacote:[11]: 11
+Latencia posição:[94]-> Pacote:[12]: 8
+Latencia posição:[94]-> Pacote:[13]: 5
+Latencia posição:[94]-> Pacote:[14]: 2
+Latencia posição:[94]-> Pacote:[15]: 1
+Latencia posição:[94]-> Pacote:[16]: 1
+Latencia posição:[94]-> Pacote:[17]: 1
+Latencia posição:[94]-> Pacote:[18]: 1
+Latencia posição:[94]-> Pacote:[19]: 1
+Latencia posição:[94]-> Pacote:[20]: 1
+Latencia posição:[94]-> Pacote:[21]: 1
+Latencia posição:[94]-> Pacote:[22]: 1
+Latencia posição:[94]-> Pacote:[23]: 1
+Latencia posição:[94]-> Pacote:[24]: 1
+Latencia posição:[94]-> Pacote:[25]: 1
+Latencia posição:[94]-> Pacote:[26]: 1
+Latencia posição:[94]-> Pacote:[27]: 1
+Latencia posição:[94]-> Pacote:[28]: 1
+Latencia posição:[94]-> Pacote:[29]: 1
+Latencia posição:[94]-> Pacote:[30]: 1
+Latencia posição:[94]-> Pacote:[31]: 1
+Latencia posição:[94]-> Pacote:[32]: 1
+Latencia posição:[94]-> Pacote:[33]: 1
+Latencia posição:[94]-> Pacote:[34]: 1
+Latencia posição:[94]-> Pacote:[35]: 8
+Latencia posição:[94]-> Pacote:[36]: 5
+Latencia posição:[94]-> Pacote:[37]: 2
+Latencia posição:[94]-> Pacote:[38]: 1
+Latencia posição:[94]-> Pacote:[39]: 1
+
+Latencia posição:[95]-> Pacote:[0]: 5
+Latencia posição:[95]-> Pacote:[1]: 5
+Latencia posição:[95]-> Pacote:[2]: 5
+Latencia posição:[95]-> Pacote:[3]: 5
+Latencia posição:[95]-> Pacote:[4]: 5
+Latencia posição:[95]-> Pacote:[5]: 5
+Latencia posição:[95]-> Pacote:[6]: 5
+Latencia posição:[95]-> Pacote:[7]: 5
+Latencia posição:[95]-> Pacote:[8]: 5
+Latencia posição:[95]-> Pacote:[9]: 5
+Latencia posição:[95]-> Pacote:[10]: 5
+Latencia posição:[95]-> Pacote:[11]: 5
+Latencia posição:[95]-> Pacote:[12]: 5
+Latencia posição:[95]-> Pacote:[13]: 5
+Latencia posição:[95]-> Pacote:[14]: 5
+Latencia posição:[95]-> Pacote:[15]: 5
+Latencia posição:[95]-> Pacote:[16]: 5
+Latencia posição:[95]-> Pacote:[17]: 5
+Latencia posição:[95]-> Pacote:[18]: 5
+Latencia posição:[95]-> Pacote:[19]: 5
+Latencia posição:[95]-> Pacote:[20]: 5
+Latencia posição:[95]-> Pacote:[21]: 5
+Latencia posição:[95]-> Pacote:[22]: 5
+Latencia posição:[95]-> Pacote:[23]: 5
+Latencia posição:[95]-> Pacote:[24]: 5
+Latencia posição:[95]-> Pacote:[25]: 5
+Latencia posição:[95]-> Pacote:[26]: 5
+Latencia posição:[95]-> Pacote:[27]: 5
+Latencia posição:[95]-> Pacote:[28]: 5
+Latencia posição:[95]-> Pacote:[29]: 5
+Latencia posição:[95]-> Pacote:[30]: 5
+Latencia posição:[95]-> Pacote:[31]: 5
+Latencia posição:[95]-> Pacote:[32]: 5
+Latencia posição:[95]-> Pacote:[33]: 5
+Latencia posição:[95]-> Pacote:[34]: 5
+Latencia posição:[95]-> Pacote:[35]: 5
+Latencia posição:[95]-> Pacote:[36]: 5
+Latencia posição:[95]-> Pacote:[37]: 5
+Latencia posição:[95]-> Pacote:[38]: 5
+Latencia posição:[95]-> Pacote:[39]: 5
+Latencia posição:[95]-> Pacote:[40]: 5
+Latencia posição:[95]-> Pacote:[41]: 5
+Latencia posição:[95]-> Pacote:[42]: 5
+Latencia posição:[95]-> Pacote:[43]: 5
+Latencia posição:[95]-> Pacote:[44]: 5
+Latencia posição:[95]-> Pacote:[45]: 5
+Latencia posição:[95]-> Pacote:[46]: 5
+Latencia posição:[95]-> Pacote:[47]: 5
+Latencia posição:[95]-> Pacote:[48]: 5
+Latencia posição:[95]-> Pacote:[49]: 5
+Latencia posição:[95]-> Pacote:[50]: 5
+Latencia posição:[95]-> Pacote:[51]: 5
+Latencia posição:[95]-> Pacote:[52]: 5
+Latencia posição:[95]-> Pacote:[53]: 5
+Latencia posição:[95]-> Pacote:[54]: 5
+Latencia posição:[95]-> Pacote:[55]: 5
+Latencia posição:[95]-> Pacote:[56]: 5
+Latencia posição:[95]-> Pacote:[57]: 5
+Latencia posição:[95]-> Pacote:[58]: 5
+Latencia posição:[95]-> Pacote:[59]: 5
+Latencia posição:[95]-> Pacote:[60]: 5
+Latencia posição:[95]-> Pacote:[61]: 5
+Latencia posição:[95]-> Pacote:[62]: 5
+Latencia posição:[95]-> Pacote:[63]: 5
+Latencia posição:[95]-> Pacote:[64]: 5
+Latencia posição:[95]-> Pacote:[65]: 5
+Latencia posição:[95]-> Pacote:[66]: 5
+Latencia posição:[95]-> Pacote:[67]: 5
+Latencia posição:[95]-> Pacote:[68]: 5
+Latencia posição:[95]-> Pacote:[69]: 5
+Latencia posição:[95]-> Pacote:[70]: 5
+Latencia posição:[95]-> Pacote:[71]: 5
+Latencia posição:[95]-> Pacote:[72]: 5
+Latencia posição:[95]-> Pacote:[73]: 5
+Latencia posição:[95]-> Pacote:[74]: 5
+Latencia posição:[95]-> Pacote:[75]: 5
+Latencia posição:[95]-> Pacote:[76]: 5
+Latencia posição:[95]-> Pacote:[77]: 5
+Latencia posição:[95]-> Pacote:[78]: 5
+Latencia posição:[95]-> Pacote:[79]: 5
+
+Latencia posição:[96]-> Pacote:[0]: 10
+Latencia posição:[96]-> Pacote:[1]: 5
+Latencia posição:[96]-> Pacote:[2]: 5
+Latencia posição:[96]-> Pacote:[3]: 5
+Latencia posição:[96]-> Pacote:[4]: 5
+Latencia posição:[96]-> Pacote:[5]: 5
+Latencia posição:[96]-> Pacote:[6]: 5
+Latencia posição:[96]-> Pacote:[7]: 5
+Latencia posição:[96]-> Pacote:[8]: 5
+Latencia posição:[96]-> Pacote:[9]: 5
+Latencia posição:[96]-> Pacote:[10]: 5
+Latencia posição:[96]-> Pacote:[11]: 5
+Latencia posição:[96]-> Pacote:[12]: 5
+Latencia posição:[96]-> Pacote:[13]: 5
+Latencia posição:[96]-> Pacote:[14]: 5
+Latencia posição:[96]-> Pacote:[15]: 5
+Latencia posição:[96]-> Pacote:[16]: 5
+Latencia posição:[96]-> Pacote:[17]: 5
+Latencia posição:[96]-> Pacote:[18]: 5
+Latencia posição:[96]-> Pacote:[19]: 5
+Latencia posição:[96]-> Pacote:[20]: 5
+Latencia posição:[96]-> Pacote:[21]: 5
+Latencia posição:[96]-> Pacote:[22]: 5
+Latencia posição:[96]-> Pacote:[23]: 5
+Latencia posição:[96]-> Pacote:[24]: 5
+Latencia posição:[96]-> Pacote:[25]: 5
+Latencia posição:[96]-> Pacote:[26]: 5
+Latencia posição:[96]-> Pacote:[27]: 5
+Latencia posição:[96]-> Pacote:[28]: 5
+Latencia posição:[96]-> Pacote:[29]: 5
+Latencia posição:[96]-> Pacote:[30]: 5
+Latencia posição:[96]-> Pacote:[31]: 5
+Latencia posição:[96]-> Pacote:[32]: 5
+Latencia posição:[96]-> Pacote:[33]: 5
+Latencia posição:[96]-> Pacote:[34]: 5
+Latencia posição:[96]-> Pacote:[35]: 11
+Latencia posição:[96]-> Pacote:[36]: 5
+Latencia posição:[96]-> Pacote:[37]: 5
+Latencia posição:[96]-> Pacote:[38]: 5
+Latencia posição:[96]-> Pacote:[39]: 5
+Latencia posição:[96]-> Pacote:[40]: 5
+Latencia posição:[96]-> Pacote:[41]: 5
+Latencia posição:[96]-> Pacote:[42]: 5
+Latencia posição:[96]-> Pacote:[43]: 5
+Latencia posição:[96]-> Pacote:[44]: 5
+Latencia posição:[96]-> Pacote:[45]: 5
+Latencia posição:[96]-> Pacote:[46]: 5
+Latencia posição:[96]-> Pacote:[47]: 5
+Latencia posição:[96]-> Pacote:[48]: 5
+Latencia posição:[96]-> Pacote:[49]: 5
+Latencia posição:[96]-> Pacote:[50]: 5
+Latencia posição:[96]-> Pacote:[51]: 5
+Latencia posição:[96]-> Pacote:[52]: 5
+Latencia posição:[96]-> Pacote:[53]: 5
+Latencia posição:[96]-> Pacote:[54]: 5
+Latencia posição:[96]-> Pacote:[55]: 5
+Latencia posição:[96]-> Pacote:[56]: 5
+Latencia posição:[96]-> Pacote:[57]: 5
+Latencia posição:[96]-> Pacote:[58]: 5
+Latencia posição:[96]-> Pacote:[59]: 5
+Latencia posição:[96]-> Pacote:[60]: 5
+Latencia posição:[96]-> Pacote:[61]: 5
+Latencia posição:[96]-> Pacote:[62]: 5
+Latencia posição:[96]-> Pacote:[63]: 5
+Latencia posição:[96]-> Pacote:[64]: 5
+Latencia posição:[96]-> Pacote:[65]: 5
+Latencia posição:[96]-> Pacote:[66]: 5
+Latencia posição:[96]-> Pacote:[67]: 5
+Latencia posição:[96]-> Pacote:[68]: 5
+Latencia posição:[96]-> Pacote:[69]: 5
+Latencia posição:[96]-> Pacote:[70]: 5
+Latencia posição:[96]-> Pacote:[71]: 8
+Latencia posição:[96]-> Pacote:[72]: 5
+Latencia posição:[96]-> Pacote:[73]: 5
+Latencia posição:[96]-> Pacote:[74]: 5
+Latencia posição:[96]-> Pacote:[75]: 5
+Latencia posição:[96]-> Pacote:[76]: 5
+Latencia posição:[96]-> Pacote:[77]: 5
+Latencia posição:[96]-> Pacote:[78]: 5
+Latencia posição:[96]-> Pacote:[79]: 5
+
+Latencia posição:[97]-> Pacote:[0]: 72
+Latencia posição:[97]-> Pacote:[1]: 120
+Latencia posição:[97]-> Pacote:[2]: 164
+Latencia posição:[97]-> Pacote:[3]: 210
+Latencia posição:[97]-> Pacote:[4]: 249
+Latencia posição:[97]-> Pacote:[5]: 288
+Latencia posição:[97]-> Pacote:[6]: 323
+Latencia posição:[97]-> Pacote:[7]: 365
+Latencia posição:[97]-> Pacote:[8]: 403
+Latencia posição:[97]-> Pacote:[9]: 442
+Latencia posição:[97]-> Pacote:[10]: 468
+Latencia posição:[97]-> Pacote:[11]: 488
+Latencia posição:[97]-> Pacote:[12]: 505
+Latencia posição:[97]-> Pacote:[13]: 524
+Latencia posição:[97]-> Pacote:[14]: 540
+Latencia posição:[97]-> Pacote:[15]: 560
+Latencia posição:[97]-> Pacote:[16]: 571
+Latencia posição:[97]-> Pacote:[17]: 585
+Latencia posição:[97]-> Pacote:[18]: 600
+Latencia posição:[97]-> Pacote:[19]: 617
+Latencia posição:[97]-> Pacote:[20]: 631
+Latencia posição:[97]-> Pacote:[21]: 644
+Latencia posição:[97]-> Pacote:[22]: 660
+Latencia posição:[97]-> Pacote:[23]: 675
+Latencia posição:[97]-> Pacote:[24]: 690
+Latencia posição:[97]-> Pacote:[25]: 704
+Latencia posição:[97]-> Pacote:[26]: 716
+Latencia posição:[97]-> Pacote:[27]: 733
+Latencia posição:[97]-> Pacote:[28]: 746
+Latencia posição:[97]-> Pacote:[29]: 763
+Latencia posição:[97]-> Pacote:[30]: 776
+Latencia posição:[97]-> Pacote:[31]: 791
+Latencia posição:[97]-> Pacote:[32]: 804
+Latencia posição:[97]-> Pacote:[33]: 821
+Latencia posição:[97]-> Pacote:[34]: 834
+Latencia posição:[97]-> Pacote:[35]: 852
+Latencia posição:[97]-> Pacote:[36]: 864
+Latencia posição:[97]-> Pacote:[37]: 877
+Latencia posição:[97]-> Pacote:[38]: 892
+Latencia posição:[97]-> Pacote:[39]: 907
+Latencia posição:[97]-> Pacote:[40]: 918
+Latencia posição:[97]-> Pacote:[41]: 925
+Latencia posição:[97]-> Pacote:[42]: 933
+Latencia posição:[97]-> Pacote:[43]: 951
+Latencia posição:[97]-> Pacote:[44]: 965
+Latencia posição:[97]-> Pacote:[45]: 979
+Latencia posição:[97]-> Pacote:[46]: 990
+Latencia posição:[97]-> Pacote:[47]: 1005
+Latencia posição:[97]-> Pacote:[48]: 1019
+Latencia posição:[97]-> Pacote:[49]: 1032
+Latencia posição:[97]-> Pacote:[50]: 1045
+Latencia posição:[97]-> Pacote:[51]: 1061
+Latencia posição:[97]-> Pacote:[52]: 1072
+Latencia posição:[97]-> Pacote:[53]: 1088
+Latencia posição:[97]-> Pacote:[54]: 1098
+Latencia posição:[97]-> Pacote:[55]: 1116
+Latencia posição:[97]-> Pacote:[56]: 1124
+Latencia posição:[97]-> Pacote:[57]: 1139
+Latencia posição:[97]-> Pacote:[58]: 1151
+Latencia posição:[97]-> Pacote:[59]: 1166
+Latencia posição:[97]-> Pacote:[60]: 1180
+Latencia posição:[97]-> Pacote:[61]: 1192
+Latencia posição:[97]-> Pacote:[62]: 1207
+Latencia posição:[97]-> Pacote:[63]: 1220
+Latencia posição:[97]-> Pacote:[64]: 1234
+Latencia posição:[97]-> Pacote:[65]: 1247
+Latencia posição:[97]-> Pacote:[66]: 1256
+Latencia posição:[97]-> Pacote:[67]: 1272
+Latencia posição:[97]-> Pacote:[68]: 1286
+Latencia posição:[97]-> Pacote:[69]: 1298
+Latencia posição:[97]-> Pacote:[70]: 1309
+Latencia posição:[97]-> Pacote:[71]: 1331
+Latencia posição:[97]-> Pacote:[72]: 1344
+Latencia posição:[97]-> Pacote:[73]: 1357
+Latencia posição:[97]-> Pacote:[74]: 1368
+Latencia posição:[97]-> Pacote:[75]: 1385
+Latencia posição:[97]-> Pacote:[76]: 1396
+Latencia posição:[97]-> Pacote:[77]: 1407
+Latencia posição:[97]-> Pacote:[78]: 1420
+Latencia posição:[97]-> Pacote:[79]: 1432
+
+Latencia posição:[98]-> Pacote:[0]: 22
+Latencia posição:[98]-> Pacote:[1]: 22
+Latencia posição:[98]-> Pacote:[2]: 25
+Latencia posição:[98]-> Pacote:[3]: 28
+Latencia posição:[98]-> Pacote:[4]: 28
+Latencia posição:[98]-> Pacote:[5]: 28
+Latencia posição:[98]-> Pacote:[6]: 28
+Latencia posição:[98]-> Pacote:[7]: 28
+
+Latencia posição:[99]-> Pacote:[0]: 13
+Latencia posição:[99]-> Pacote:[1]: 10
+Latencia posição:[99]-> Pacote:[2]: 7
+Latencia posição:[99]-> Pacote:[3]: 6
+Latencia posição:[99]-> Pacote:[4]: 6
+Latencia posição:[99]-> Pacote:[5]: 6
+Latencia posição:[99]-> Pacote:[6]: 6
+Latencia posição:[99]-> Pacote:[7]: 6
+
+Latencia posição:[100]-> Pacote:[0]: 6
+Latencia posição:[100]-> Pacote:[1]: 6
+Latencia posição:[100]-> Pacote:[2]: 7
+Latencia posição:[100]-> Pacote:[3]: 6
+Latencia posição:[100]-> Pacote:[4]: 6
+Latencia posição:[100]-> Pacote:[5]: 6
+Latencia posição:[100]-> Pacote:[6]: 6
+Latencia posição:[100]-> Pacote:[7]: 6
+
+Latencia posição:[101]-> Pacote:[0]: 14
+Latencia posição:[101]-> Pacote:[1]: 10
+Latencia posição:[101]-> Pacote:[2]: 6
+Latencia posição:[101]-> Pacote:[3]: 6
+Latencia posição:[101]-> Pacote:[4]: 6
+Latencia posição:[101]-> Pacote:[5]: 6
+Latencia posição:[101]-> Pacote:[6]: 6
+Latencia posição:[101]-> Pacote:[7]: 6
+
+Latencia posição:[102]-> Pacote:[0]: 14
+Latencia posição:[102]-> Pacote:[1]: 13
+Latencia posição:[102]-> Pacote:[2]: 10
+Latencia posição:[102]-> Pacote:[3]: 7
+Latencia posição:[102]-> Pacote:[4]: 6
+Latencia posição:[102]-> Pacote:[5]: 6
+Latencia posição:[102]-> Pacote:[6]: 6
+Latencia posição:[102]-> Pacote:[7]: 6
+
+Latencia posição:[103]-> Pacote:[0]: 75
+Latencia posição:[103]-> Pacote:[1]: 121
+Latencia posição:[103]-> Pacote:[2]: 166
+Latencia posição:[103]-> Pacote:[3]: 212
+Latencia posição:[103]-> Pacote:[4]: 251
+Latencia posição:[103]-> Pacote:[5]: 290
+Latencia posição:[103]-> Pacote:[6]: 325
+Latencia posição:[103]-> Pacote:[7]: 366
+Latencia posição:[103]-> Pacote:[8]: 405
+Latencia posição:[103]-> Pacote:[9]: 444
+Latencia posição:[103]-> Pacote:[10]: 469
+Latencia posição:[103]-> Pacote:[11]: 489
+Latencia posição:[103]-> Pacote:[12]: 506
+Latencia posição:[103]-> Pacote:[13]: 525
+Latencia posição:[103]-> Pacote:[14]: 541
+Latencia posição:[103]-> Pacote:[15]: 561
+Latencia posição:[103]-> Pacote:[16]: 572
+Latencia posição:[103]-> Pacote:[17]: 586
+Latencia posição:[103]-> Pacote:[18]: 601
+Latencia posição:[103]-> Pacote:[19]: 618
+Latencia posição:[103]-> Pacote:[20]: 632
+Latencia posição:[103]-> Pacote:[21]: 645
+Latencia posição:[103]-> Pacote:[22]: 661
+Latencia posição:[103]-> Pacote:[23]: 676
+Latencia posição:[103]-> Pacote:[24]: 691
+Latencia posição:[103]-> Pacote:[25]: 705
+Latencia posição:[103]-> Pacote:[26]: 717
+Latencia posição:[103]-> Pacote:[27]: 734
+Latencia posição:[103]-> Pacote:[28]: 747
+Latencia posição:[103]-> Pacote:[29]: 764
+Latencia posição:[103]-> Pacote:[30]: 777
+Latencia posição:[103]-> Pacote:[31]: 792
+Latencia posição:[103]-> Pacote:[32]: 805
+Latencia posição:[103]-> Pacote:[33]: 822
+Latencia posição:[103]-> Pacote:[34]: 835
+Latencia posição:[103]-> Pacote:[35]: 853
+Latencia posição:[103]-> Pacote:[36]: 865
+Latencia posição:[103]-> Pacote:[37]: 878
+Latencia posição:[103]-> Pacote:[38]: 893
+Latencia posição:[103]-> Pacote:[39]: 908
+Latencia posição:[103]-> Pacote:[40]: 919
+Latencia posição:[103]-> Pacote:[41]: 926
+Latencia posição:[103]-> Pacote:[42]: 934
+Latencia posição:[103]-> Pacote:[43]: 952
+Latencia posição:[103]-> Pacote:[44]: 966
+Latencia posição:[103]-> Pacote:[45]: 980
+Latencia posição:[103]-> Pacote:[46]: 991
+Latencia posição:[103]-> Pacote:[47]: 1006
+Latencia posição:[103]-> Pacote:[48]: 1020
+Latencia posição:[103]-> Pacote:[49]: 1033
+Latencia posição:[103]-> Pacote:[50]: 1046
+Latencia posição:[103]-> Pacote:[51]: 1062
+Latencia posição:[103]-> Pacote:[52]: 1073
+Latencia posição:[103]-> Pacote:[53]: 1089
+Latencia posição:[103]-> Pacote:[54]: 1099
+Latencia posição:[103]-> Pacote:[55]: 1117
+Latencia posição:[103]-> Pacote:[56]: 1125
+Latencia posição:[103]-> Pacote:[57]: 1140
+Latencia posição:[103]-> Pacote:[58]: 1152
+Latencia posição:[103]-> Pacote:[59]: 1167
+Latencia posição:[103]-> Pacote:[60]: 1181
+Latencia posição:[103]-> Pacote:[61]: 1193
+Latencia posição:[103]-> Pacote:[62]: 1208
+Latencia posição:[103]-> Pacote:[63]: 1221
+Latencia posição:[103]-> Pacote:[64]: 1235
+Latencia posição:[103]-> Pacote:[65]: 1248
+Latencia posição:[103]-> Pacote:[66]: 1257
+Latencia posição:[103]-> Pacote:[67]: 1273
+Latencia posição:[103]-> Pacote:[68]: 1287
+Latencia posição:[103]-> Pacote:[69]: 1299
+Latencia posição:[103]-> Pacote:[70]: 1310
+Latencia posição:[103]-> Pacote:[71]: 1332
+Latencia posição:[103]-> Pacote:[72]: 1345
+Latencia posição:[103]-> Pacote:[73]: 1358
+Latencia posição:[103]-> Pacote:[74]: 1369
+Latencia posição:[103]-> Pacote:[75]: 1386
+Latencia posição:[103]-> Pacote:[76]: 1397
+Latencia posição:[103]-> Pacote:[77]: 1408
+Latencia posição:[103]-> Pacote:[78]: 1421
+Latencia posição:[103]-> Pacote:[79]: 1433
+
+Latencia posição:[104]-> Pacote:[0]: 22
+Latencia posição:[104]-> Pacote:[1]: 32
+Latencia posição:[104]-> Pacote:[2]: 38
+Latencia posição:[104]-> Pacote:[3]: 47
+Latencia posição:[104]-> Pacote:[4]: 58
+Latencia posição:[104]-> Pacote:[5]: 69
+Latencia posição:[104]-> Pacote:[6]: 74
+Latencia posição:[104]-> Pacote:[7]: 85
+Latencia posição:[104]-> Pacote:[8]: 96
+Latencia posição:[104]-> Pacote:[9]: 107
+Latencia posição:[104]-> Pacote:[10]: 116
+Latencia posição:[104]-> Pacote:[11]: 123
+Latencia posição:[104]-> Pacote:[12]: 132
+Latencia posição:[104]-> Pacote:[13]: 138
+Latencia posição:[104]-> Pacote:[14]: 142
+Latencia posição:[104]-> Pacote:[15]: 145
+Latencia posição:[104]-> Pacote:[16]: 149
+Latencia posição:[104]-> Pacote:[17]: 152
+Latencia posição:[104]-> Pacote:[18]: 153
+Latencia posição:[104]-> Pacote:[19]: 152
+Latencia posição:[104]-> Pacote:[20]: 151
+Latencia posição:[104]-> Pacote:[21]: 149
+Latencia posição:[104]-> Pacote:[22]: 145
+Latencia posição:[104]-> Pacote:[23]: 142
+Latencia posição:[104]-> Pacote:[24]: 140
+Latencia posição:[104]-> Pacote:[25]: 136
+Latencia posição:[104]-> Pacote:[26]: 131
+Latencia posição:[104]-> Pacote:[27]: 130
+Latencia posição:[104]-> Pacote:[28]: 127
+Latencia posição:[104]-> Pacote:[29]: 124
+Latencia posição:[104]-> Pacote:[30]: 120
+Latencia posição:[104]-> Pacote:[31]: 117
+Latencia posição:[104]-> Pacote:[32]: 114
+Latencia posição:[104]-> Pacote:[33]: 112
+Latencia posição:[104]-> Pacote:[34]: 108
+Latencia posição:[104]-> Pacote:[35]: 105
+Latencia posição:[104]-> Pacote:[36]: 101
+Latencia posição:[104]-> Pacote:[37]: 99
+Latencia posição:[104]-> Pacote:[38]: 96
+Latencia posição:[104]-> Pacote:[39]: 92
+Latencia posição:[104]-> Pacote:[40]: 90
+Latencia posição:[104]-> Pacote:[41]: 87
+Latencia posição:[104]-> Pacote:[42]: 83
+Latencia posição:[104]-> Pacote:[43]: 81
+Latencia posição:[104]-> Pacote:[44]: 78
+Latencia posição:[104]-> Pacote:[45]: 74
+Latencia posição:[104]-> Pacote:[46]: 71
+Latencia posição:[104]-> Pacote:[47]: 68
+Latencia posição:[104]-> Pacote:[48]: 65
+Latencia posição:[104]-> Pacote:[49]: 62
+Latencia posição:[104]-> Pacote:[50]: 58
+Latencia posição:[104]-> Pacote:[51]: 57
+Latencia posição:[104]-> Pacote:[52]: 52
+Latencia posição:[104]-> Pacote:[53]: 49
+Latencia posição:[104]-> Pacote:[54]: 47
+Latencia posição:[104]-> Pacote:[55]: 43
+Latencia posição:[104]-> Pacote:[56]: 41
+Latencia posição:[104]-> Pacote:[57]: 37
+Latencia posição:[104]-> Pacote:[58]: 33
+Latencia posição:[104]-> Pacote:[59]: 31
+Latencia posição:[104]-> Pacote:[60]: 28
+Latencia posição:[104]-> Pacote:[61]: 26
+Latencia posição:[104]-> Pacote:[62]: 22
+Latencia posição:[104]-> Pacote:[63]: 19
+Latencia posição:[104]-> Pacote:[64]: 17
+Latencia posição:[104]-> Pacote:[65]: 13
+Latencia posição:[104]-> Pacote:[66]: 9
+Latencia posição:[104]-> Pacote:[67]: 8
+Latencia posição:[104]-> Pacote:[68]: 7
+Latencia posição:[104]-> Pacote:[69]: 7
+Latencia posição:[104]-> Pacote:[70]: 7
+Latencia posição:[104]-> Pacote:[71]: 8
+Latencia posição:[104]-> Pacote:[72]: 8
+Latencia posição:[104]-> Pacote:[73]: 8
+Latencia posição:[104]-> Pacote:[74]: 7
+Latencia posição:[104]-> Pacote:[75]: 8
+Latencia posição:[104]-> Pacote:[76]: 7
+Latencia posição:[104]-> Pacote:[77]: 7
+Latencia posição:[104]-> Pacote:[78]: 8
+Latencia posição:[104]-> Pacote:[79]: 8
+
+Latencia posição:[105]-> Pacote:[0]: 14
+Latencia posição:[105]-> Pacote:[1]: 11
+Latencia posição:[105]-> Pacote:[2]: 8
+Latencia posição:[105]-> Pacote:[3]: 7
+Latencia posição:[105]-> Pacote:[4]: 7
+Latencia posição:[105]-> Pacote:[5]: 7
+Latencia posição:[105]-> Pacote:[6]: 7
+Latencia posição:[105]-> Pacote:[7]: 7
+Latencia posição:[105]-> Pacote:[8]: 6
+Latencia posição:[105]-> Pacote:[9]: 6
+Latencia posição:[105]-> Pacote:[10]: 6
+Latencia posição:[105]-> Pacote:[11]: 6
+Latencia posição:[105]-> Pacote:[12]: 6
+Latencia posição:[105]-> Pacote:[13]: 6
+Latencia posição:[105]-> Pacote:[14]: 6
+Latencia posição:[105]-> Pacote:[15]: 6
+Latencia posição:[105]-> Pacote:[16]: 6
+Latencia posição:[105]-> Pacote:[17]: 6
+Latencia posição:[105]-> Pacote:[18]: 6
+Latencia posição:[105]-> Pacote:[19]: 6
+Latencia posição:[105]-> Pacote:[20]: 6
+Latencia posição:[105]-> Pacote:[21]: 6
+Latencia posição:[105]-> Pacote:[22]: 6
+Latencia posição:[105]-> Pacote:[23]: 6
+Latencia posição:[105]-> Pacote:[24]: 6
+Latencia posição:[105]-> Pacote:[25]: 6
+Latencia posição:[105]-> Pacote:[26]: 6
+Latencia posição:[105]-> Pacote:[27]: 6
+Latencia posição:[105]-> Pacote:[28]: 6
+Latencia posição:[105]-> Pacote:[29]: 6
+Latencia posição:[105]-> Pacote:[30]: 6
+Latencia posição:[105]-> Pacote:[31]: 6
+Latencia posição:[105]-> Pacote:[32]: 6
+Latencia posição:[105]-> Pacote:[33]: 6
+Latencia posição:[105]-> Pacote:[34]: 6
+Latencia posição:[105]-> Pacote:[35]: 12
+Latencia posição:[105]-> Pacote:[36]: 6
+Latencia posição:[105]-> Pacote:[37]: 6
+Latencia posição:[105]-> Pacote:[38]: 6
+Latencia posição:[105]-> Pacote:[39]: 6
+Latencia posição:[105]-> Pacote:[40]: 6
+Latencia posição:[105]-> Pacote:[41]: 6
+Latencia posição:[105]-> Pacote:[42]: 6
+Latencia posição:[105]-> Pacote:[43]: 6
+Latencia posição:[105]-> Pacote:[44]: 6
+Latencia posição:[105]-> Pacote:[45]: 6
+Latencia posição:[105]-> Pacote:[46]: 6
+Latencia posição:[105]-> Pacote:[47]: 6
+Latencia posição:[105]-> Pacote:[48]: 6
+Latencia posição:[105]-> Pacote:[49]: 6
+Latencia posição:[105]-> Pacote:[50]: 6
+Latencia posição:[105]-> Pacote:[51]: 6
+Latencia posição:[105]-> Pacote:[52]: 6
+Latencia posição:[105]-> Pacote:[53]: 6
+Latencia posição:[105]-> Pacote:[54]: 6
+Latencia posição:[105]-> Pacote:[55]: 6
+Latencia posição:[105]-> Pacote:[56]: 6
+Latencia posição:[105]-> Pacote:[57]: 6
+Latencia posição:[105]-> Pacote:[58]: 6
+Latencia posição:[105]-> Pacote:[59]: 6
+Latencia posição:[105]-> Pacote:[60]: 6
+Latencia posição:[105]-> Pacote:[61]: 6
+Latencia posição:[105]-> Pacote:[62]: 6
+Latencia posição:[105]-> Pacote:[63]: 6
+Latencia posição:[105]-> Pacote:[64]: 6
+Latencia posição:[105]-> Pacote:[65]: 6
+Latencia posição:[105]-> Pacote:[66]: 6
+Latencia posição:[105]-> Pacote:[67]: 6
+Latencia posição:[105]-> Pacote:[68]: 6
+Latencia posição:[105]-> Pacote:[69]: 6
+Latencia posição:[105]-> Pacote:[70]: 6
+Latencia posição:[105]-> Pacote:[71]: 9
+Latencia posição:[105]-> Pacote:[72]: 6
+Latencia posição:[105]-> Pacote:[73]: 6
+Latencia posição:[105]-> Pacote:[74]: 6
+Latencia posição:[105]-> Pacote:[75]: 6
+Latencia posição:[105]-> Pacote:[76]: 6
+Latencia posição:[105]-> Pacote:[77]: 6
+Latencia posição:[105]-> Pacote:[78]: 6
+Latencia posição:[105]-> Pacote:[79]: 6
+
+Latencia posição:[106]-> Pacote:[0]: 74
+Latencia posição:[106]-> Pacote:[1]: 121
+Latencia posição:[106]-> Pacote:[2]: 166
+Latencia posição:[106]-> Pacote:[3]: 212
+Latencia posição:[106]-> Pacote:[4]: 250
+Latencia posição:[106]-> Pacote:[5]: 289
+Latencia posição:[106]-> Pacote:[6]: 324
+Latencia posição:[106]-> Pacote:[7]: 366
+Latencia posição:[106]-> Pacote:[8]: 404
+Latencia posição:[106]-> Pacote:[9]: 444
+Latencia posição:[106]-> Pacote:[10]: 468
+Latencia posição:[106]-> Pacote:[11]: 488
+Latencia posição:[106]-> Pacote:[12]: 505
+Latencia posição:[106]-> Pacote:[13]: 524
+Latencia posição:[106]-> Pacote:[14]: 540
+Latencia posição:[106]-> Pacote:[15]: 560
+Latencia posição:[106]-> Pacote:[16]: 571
+Latencia posição:[106]-> Pacote:[17]: 585
+Latencia posição:[106]-> Pacote:[18]: 600
+Latencia posição:[106]-> Pacote:[19]: 617
+Latencia posição:[106]-> Pacote:[20]: 631
+Latencia posição:[106]-> Pacote:[21]: 644
+Latencia posição:[106]-> Pacote:[22]: 660
+Latencia posição:[106]-> Pacote:[23]: 675
+Latencia posição:[106]-> Pacote:[24]: 690
+Latencia posição:[106]-> Pacote:[25]: 704
+Latencia posição:[106]-> Pacote:[26]: 716
+Latencia posição:[106]-> Pacote:[27]: 733
+Latencia posição:[106]-> Pacote:[28]: 746
+Latencia posição:[106]-> Pacote:[29]: 763
+Latencia posição:[106]-> Pacote:[30]: 776
+Latencia posição:[106]-> Pacote:[31]: 791
+Latencia posição:[106]-> Pacote:[32]: 804
+Latencia posição:[106]-> Pacote:[33]: 821
+Latencia posição:[106]-> Pacote:[34]: 834
+Latencia posição:[106]-> Pacote:[35]: 852
+Latencia posição:[106]-> Pacote:[36]: 864
+Latencia posição:[106]-> Pacote:[37]: 877
+Latencia posição:[106]-> Pacote:[38]: 892
+Latencia posição:[106]-> Pacote:[39]: 907
+
+Latencia posição:[107]-> Pacote:[0]: 10
+Latencia posição:[107]-> Pacote:[1]: 10
+Latencia posição:[107]-> Pacote:[2]: 10
+Latencia posição:[107]-> Pacote:[3]: 10
+Latencia posição:[107]-> Pacote:[4]: 7
+Latencia posição:[107]-> Pacote:[5]: 7
+Latencia posição:[107]-> Pacote:[6]: 7
+Latencia posição:[107]-> Pacote:[7]: 7
+Latencia posição:[107]-> Pacote:[8]: 7
+Latencia posição:[107]-> Pacote:[9]: 7
+Latencia posição:[107]-> Pacote:[10]: 7
+Latencia posição:[107]-> Pacote:[11]: 7
+Latencia posição:[107]-> Pacote:[12]: 7
+Latencia posição:[107]-> Pacote:[13]: 7
+Latencia posição:[107]-> Pacote:[14]: 7
+Latencia posição:[107]-> Pacote:[15]: 7
+Latencia posição:[107]-> Pacote:[16]: 7
+Latencia posição:[107]-> Pacote:[17]: 7
+Latencia posição:[107]-> Pacote:[18]: 7
+Latencia posição:[107]-> Pacote:[19]: 7
+Latencia posição:[107]-> Pacote:[20]: 7
+Latencia posição:[107]-> Pacote:[21]: 7
+Latencia posição:[107]-> Pacote:[22]: 7
+Latencia posição:[107]-> Pacote:[23]: 7
+Latencia posição:[107]-> Pacote:[24]: 7
+Latencia posição:[107]-> Pacote:[25]: 7
+Latencia posição:[107]-> Pacote:[26]: 7
+Latencia posição:[107]-> Pacote:[27]: 7
+Latencia posição:[107]-> Pacote:[28]: 7
+Latencia posição:[107]-> Pacote:[29]: 7
+Latencia posição:[107]-> Pacote:[30]: 7
+Latencia posição:[107]-> Pacote:[31]: 7
+Latencia posição:[107]-> Pacote:[32]: 7
+Latencia posição:[107]-> Pacote:[33]: 7
+Latencia posição:[107]-> Pacote:[34]: 7
+Latencia posição:[107]-> Pacote:[35]: 8
+Latencia posição:[107]-> Pacote:[36]: 7
+Latencia posição:[107]-> Pacote:[37]: 7
+Latencia posição:[107]-> Pacote:[38]: 7
+Latencia posição:[107]-> Pacote:[39]: 7
+
+Latencia posição:[108]-> Pacote:[0]: 17
+Latencia posição:[108]-> Pacote:[1]: 25
+Latencia posição:[108]-> Pacote:[2]: 27
+Latencia posição:[108]-> Pacote:[3]: 35
+Latencia posição:[108]-> Pacote:[4]: 38
+Latencia posição:[108]-> Pacote:[5]: 41
+Latencia posição:[108]-> Pacote:[6]: 44
+Latencia posição:[108]-> Pacote:[7]: 48
+Latencia posição:[108]-> Pacote:[8]: 51
+Latencia posição:[108]-> Pacote:[9]: 55
+Latencia posição:[108]-> Pacote:[10]: 60
+Latencia posição:[108]-> Pacote:[11]: 64
+Latencia posição:[108]-> Pacote:[12]: 69
+Latencia posição:[108]-> Pacote:[13]: 74
+Latencia posição:[108]-> Pacote:[14]: 79
+Latencia posição:[108]-> Pacote:[15]: 84
+Latencia posição:[108]-> Pacote:[16]: 88
+Latencia posição:[108]-> Pacote:[17]: 92
+Latencia posição:[108]-> Pacote:[18]: 96
+Latencia posição:[108]-> Pacote:[19]: 100
+Latencia posição:[108]-> Pacote:[20]: 106
+Latencia posição:[108]-> Pacote:[21]: 110
+Latencia posição:[108]-> Pacote:[22]: 115
+Latencia posição:[108]-> Pacote:[23]: 119
+Latencia posição:[108]-> Pacote:[24]: 123
+Latencia posição:[108]-> Pacote:[25]: 127
+Latencia posição:[108]-> Pacote:[26]: 132
+Latencia posição:[108]-> Pacote:[27]: 137
+Latencia posição:[108]-> Pacote:[28]: 141
+Latencia posição:[108]-> Pacote:[29]: 145
+Latencia posição:[108]-> Pacote:[30]: 150
+Latencia posição:[108]-> Pacote:[31]: 155
+Latencia posição:[108]-> Pacote:[32]: 160
+Latencia posição:[108]-> Pacote:[33]: 164
+Latencia posição:[108]-> Pacote:[34]: 167
+Latencia posição:[108]-> Pacote:[35]: 176
+Latencia posição:[108]-> Pacote:[36]: 179
+Latencia posição:[108]-> Pacote:[37]: 182
+Latencia posição:[108]-> Pacote:[38]: 185
+Latencia posição:[108]-> Pacote:[39]: 191
+
+Latencia posição:[109]-> Pacote:[0]: 15
+Latencia posição:[109]-> Pacote:[1]: 18
+Latencia posição:[109]-> Pacote:[2]: 21
+Latencia posição:[109]-> Pacote:[3]: 24
+Latencia posição:[109]-> Pacote:[4]: 24
+Latencia posição:[109]-> Pacote:[5]: 24
+Latencia posição:[109]-> Pacote:[6]: 24
+Latencia posição:[109]-> Pacote:[7]: 24
+Latencia posição:[109]-> Pacote:[8]: 21
+Latencia posição:[109]-> Pacote:[9]: 18
+Latencia posição:[109]-> Pacote:[10]: 15
+Latencia posição:[109]-> Pacote:[11]: 12
+Latencia posição:[109]-> Pacote:[12]: 9
+Latencia posição:[109]-> Pacote:[13]: 6
+Latencia posição:[109]-> Pacote:[14]: 3
+Latencia posição:[109]-> Pacote:[15]: 2
+Latencia posição:[109]-> Pacote:[16]: 2
+Latencia posição:[109]-> Pacote:[17]: 2
+Latencia posição:[109]-> Pacote:[18]: 2
+Latencia posição:[109]-> Pacote:[19]: 2
+Latencia posição:[109]-> Pacote:[20]: 2
+Latencia posição:[109]-> Pacote:[21]: 2
+Latencia posição:[109]-> Pacote:[22]: 2
+Latencia posição:[109]-> Pacote:[23]: 2
+Latencia posição:[109]-> Pacote:[24]: 2
+Latencia posição:[109]-> Pacote:[25]: 2
+Latencia posição:[109]-> Pacote:[26]: 2
+Latencia posição:[109]-> Pacote:[27]: 2
+Latencia posição:[109]-> Pacote:[28]: 2
+Latencia posição:[109]-> Pacote:[29]: 2
+Latencia posição:[109]-> Pacote:[30]: 2
+Latencia posição:[109]-> Pacote:[31]: 2
+Latencia posição:[109]-> Pacote:[32]: 2
+Latencia posição:[109]-> Pacote:[33]: 2
+Latencia posição:[109]-> Pacote:[34]: 2
+Latencia posição:[109]-> Pacote:[35]: 9
+Latencia posição:[109]-> Pacote:[36]: 6
+Latencia posição:[109]-> Pacote:[37]: 3
+Latencia posição:[109]-> Pacote:[38]: 2
+Latencia posição:[109]-> Pacote:[39]: 2
+
+Latencia posição:[110]-> Pacote:[0]: 25
+Latencia posição:[110]-> Pacote:[1]: 34
+Latencia posição:[110]-> Pacote:[2]: 39
+Latencia posição:[110]-> Pacote:[3]: 50
+Latencia posição:[110]-> Pacote:[4]: 61
+Latencia posição:[110]-> Pacote:[5]: 72
+Latencia posição:[110]-> Pacote:[6]: 77
+Latencia posição:[110]-> Pacote:[7]: 88
+Latencia posição:[110]-> Pacote:[8]: 99
+Latencia posição:[110]-> Pacote:[9]: 110
+Latencia posição:[110]-> Pacote:[10]: 117
+Latencia posição:[110]-> Pacote:[11]: 125
+Latencia posição:[110]-> Pacote:[12]: 134
+Latencia posição:[110]-> Pacote:[13]: 140
+Latencia posição:[110]-> Pacote:[14]: 144
+Latencia posição:[110]-> Pacote:[15]: 147
+Latencia posição:[110]-> Pacote:[16]: 151
+Latencia posição:[110]-> Pacote:[17]: 154
+Latencia posição:[110]-> Pacote:[18]: 155
+Latencia posição:[110]-> Pacote:[19]: 154
+
+Latencia posição:[111]-> Pacote:[0]: 3
+Latencia posição:[111]-> Pacote:[1]: 2
+Latencia posição:[111]-> Pacote:[2]: 2
+Latencia posição:[111]-> Pacote:[3]: 2
+Latencia posição:[111]-> Pacote:[4]: 2
+Latencia posição:[111]-> Pacote:[5]: 2
+Latencia posição:[111]-> Pacote:[6]: 4
+Latencia posição:[111]-> Pacote:[7]: 2
+Latencia posição:[111]-> Pacote:[8]: 2
+Latencia posição:[111]-> Pacote:[9]: 2
+Latencia posição:[111]-> Pacote:[10]: 2
+Latencia posição:[111]-> Pacote:[11]: 2
+Latencia posição:[111]-> Pacote:[12]: 2
+Latencia posição:[111]-> Pacote:[13]: 2
+Latencia posição:[111]-> Pacote:[14]: 2
+Latencia posição:[111]-> Pacote:[15]: 2
+Latencia posição:[111]-> Pacote:[16]: 3
+Latencia posição:[111]-> Pacote:[17]: 2
+Latencia posição:[111]-> Pacote:[18]: 2
+Latencia posição:[111]-> Pacote:[19]: 2
+
+Latencia posição:[112]-> Pacote:[0]: 290
+Latencia posição:[112]-> Pacote:[1]: 548
+Latencia posição:[112]-> Pacote:[2]: 801
+Latencia posição:[112]-> Pacote:[3]: 1002
+Latencia posição:[112]-> Pacote:[4]: 1161
+Latencia posição:[112]-> Pacote:[5]: 1336
+Latencia posição:[112]-> Pacote:[6]: 1454
+Latencia posição:[112]-> Pacote:[7]: 1512
+Latencia posição:[112]-> Pacote:[8]: 1552
+Latencia posição:[112]-> Pacote:[9]: 1567
+Latencia posição:[112]-> Pacote:[10]: 1578
+Latencia posição:[112]-> Pacote:[11]: 1602
+Latencia posição:[112]-> Pacote:[12]: 1614
+Latencia posição:[112]-> Pacote:[13]: 1627
+Latencia posição:[112]-> Pacote:[14]: 1649
+Latencia posição:[112]-> Pacote:[15]: 1661
+Latencia posição:[112]-> Pacote:[16]: 1672
+Latencia posição:[112]-> Pacote:[17]: 1697
+Latencia posição:[112]-> Pacote:[18]: 1687
+Latencia posição:[112]-> Pacote:[19]: 1673
+Latencia posição:[112]-> Pacote:[20]: 1667
+Latencia posição:[112]-> Pacote:[21]: 1653
+Latencia posição:[112]-> Pacote:[22]: 1633
+Latencia posição:[112]-> Pacote:[23]: 1607
+Latencia posição:[112]-> Pacote:[24]: 1569
+Latencia posição:[112]-> Pacote:[25]: 1533
+Latencia posição:[112]-> Pacote:[26]: 1504
+Latencia posição:[112]-> Pacote:[27]: 1456
+Latencia posição:[112]-> Pacote:[28]: 1400
+Latencia posição:[112]-> Pacote:[29]: 1354
+Latencia posição:[112]-> Pacote:[30]: 1299
+Latencia posição:[112]-> Pacote:[31]: 1252
+Latencia posição:[112]-> Pacote:[32]: 1199
+Latencia posição:[112]-> Pacote:[33]: 1143
+Latencia posição:[112]-> Pacote:[34]: 1095
+Latencia posição:[112]-> Pacote:[35]: 1042
+Latencia posição:[112]-> Pacote:[36]: 986
+Latencia posição:[112]-> Pacote:[37]: 941
+Latencia posição:[112]-> Pacote:[38]: 885
+Latencia posição:[112]-> Pacote:[39]: 830
+
+Latencia posição:[113]-> Pacote:[0]: 625
+Latencia posição:[113]-> Pacote:[1]: 934
+Latencia posição:[113]-> Pacote:[2]: 1234
+Latencia posição:[113]-> Pacote:[3]: 1472
+Latencia posição:[113]-> Pacote:[4]: 1560
+Latencia posição:[113]-> Pacote:[5]: 1585
+Latencia posição:[113]-> Pacote:[6]: 1616
+Latencia posição:[113]-> Pacote:[7]: 1640
+Latencia posição:[113]-> Pacote:[8]: 1672
+Latencia posição:[113]-> Pacote:[9]: 1703
+Latencia posição:[113]-> Pacote:[10]: 1683
+Latencia posição:[113]-> Pacote:[11]: 1664
+Latencia posição:[113]-> Pacote:[12]: 1629
+Latencia posição:[113]-> Pacote:[13]: 1563
+Latencia posição:[113]-> Pacote:[14]: 1505
+Latencia posição:[113]-> Pacote:[15]: 1408
+Latencia posição:[113]-> Pacote:[16]: 1317
+Latencia posição:[113]-> Pacote:[17]: 1225
+Latencia posição:[113]-> Pacote:[18]: 1124
+Latencia posição:[113]-> Pacote:[19]: 1034
+Latencia posição:[113]-> Pacote:[20]: 943
+Latencia posição:[113]-> Pacote:[21]: 841
+Latencia posição:[113]-> Pacote:[22]: 735
+Latencia posição:[113]-> Pacote:[23]: 616
+Latencia posição:[113]-> Pacote:[24]: 506
+Latencia posição:[113]-> Pacote:[25]: 396
+Latencia posição:[113]-> Pacote:[26]: 279
+Latencia posição:[113]-> Pacote:[27]: 168
+Latencia posição:[113]-> Pacote:[28]: 59
+Latencia posição:[113]-> Pacote:[29]: 9
+
+Latencia posição:[114]-> Pacote:[0]: 1
+Latencia posição:[114]-> Pacote:[1]: 1
+Latencia posição:[114]-> Pacote:[2]: 1
+Latencia posição:[114]-> Pacote:[3]: 1
+Latencia posição:[114]-> Pacote:[4]: 1
+Latencia posição:[114]-> Pacote:[5]: 1
+Latencia posição:[114]-> Pacote:[6]: 1
+Latencia posição:[114]-> Pacote:[7]: 1
+Latencia posição:[114]-> Pacote:[8]: 1
+Latencia posição:[114]-> Pacote:[9]: 1
+Latencia posição:[114]-> Pacote:[10]: 1
+Latencia posição:[114]-> Pacote:[11]: 1
+Latencia posição:[114]-> Pacote:[12]: 1
+Latencia posição:[114]-> Pacote:[13]: 1
+Latencia posição:[114]-> Pacote:[14]: 1
+Latencia posição:[114]-> Pacote:[15]: 1
+Latencia posição:[114]-> Pacote:[16]: 1
+Latencia posição:[114]-> Pacote:[17]: 1
+Latencia posição:[114]-> Pacote:[18]: 1
+Latencia posição:[114]-> Pacote:[19]: 1
+Latencia posição:[114]-> Pacote:[20]: 1
+Latencia posição:[114]-> Pacote:[21]: 1
+Latencia posição:[114]-> Pacote:[22]: 1
+Latencia posição:[114]-> Pacote:[23]: 1
+Latencia posição:[114]-> Pacote:[24]: 1
+Latencia posição:[114]-> Pacote:[25]: 1
+Latencia posição:[114]-> Pacote:[26]: 1
+Latencia posição:[114]-> Pacote:[27]: 1
+Latencia posição:[114]-> Pacote:[28]: 1
+Latencia posição:[114]-> Pacote:[29]: 1
+Latencia posição:[114]-> Pacote:[30]: 1
+Latencia posição:[114]-> Pacote:[31]: 1
+Latencia posição:[114]-> Pacote:[32]: 1
+Latencia posição:[114]-> Pacote:[33]: 1
+Latencia posição:[114]-> Pacote:[34]: 1
+Latencia posição:[114]-> Pacote:[35]: 1
+Latencia posição:[114]-> Pacote:[36]: 1
+Latencia posição:[114]-> Pacote:[37]: 1
+Latencia posição:[114]-> Pacote:[38]: 1
+Latencia posição:[114]-> Pacote:[39]: 1
+Latencia posição:[114]-> Pacote:[40]: 1
+Latencia posição:[114]-> Pacote:[41]: 1
+Latencia posição:[114]-> Pacote:[42]: 1
+Latencia posição:[114]-> Pacote:[43]: 1
+Latencia posição:[114]-> Pacote:[44]: 1
+Latencia posição:[114]-> Pacote:[45]: 1
+Latencia posição:[114]-> Pacote:[46]: 1
+Latencia posição:[114]-> Pacote:[47]: 1
+Latencia posição:[114]-> Pacote:[48]: 1
+Latencia posição:[114]-> Pacote:[49]: 1
+
+Latencia posição:[115]-> Pacote:[0]: 222
+Latencia posição:[115]-> Pacote:[1]: 392
+Latencia posição:[115]-> Pacote:[2]: 505
+Latencia posição:[115]-> Pacote:[3]: 582
+Latencia posição:[115]-> Pacote:[4]: 644
+Latencia posição:[115]-> Pacote:[5]: 709
+Latencia posição:[115]-> Pacote:[6]: 776
+Latencia posição:[115]-> Pacote:[7]: 840
+Latencia posição:[115]-> Pacote:[8]: 903
+Latencia posição:[115]-> Pacote:[9]: 952
+Latencia posição:[115]-> Pacote:[10]: 1016
+Latencia posição:[115]-> Pacote:[11]: 1072
+Latencia posição:[115]-> Pacote:[12]: 1133
+Latencia posição:[115]-> Pacote:[13]: 1192
+Latencia posição:[115]-> Pacote:[14]: 1253
+Latencia posição:[115]-> Pacote:[15]: 1308
+Latencia posição:[115]-> Pacote:[16]: 1375
+Latencia posição:[115]-> Pacote:[17]: 1429
+Latencia posição:[115]-> Pacote:[18]: 1453
+Latencia posição:[115]-> Pacote:[19]: 1480
+Latencia posição:[115]-> Pacote:[20]: 1500
+Latencia posição:[115]-> Pacote:[21]: 1517
+Latencia posição:[115]-> Pacote:[22]: 1533
+Latencia posição:[115]-> Pacote:[23]: 1541
+Latencia posição:[115]-> Pacote:[24]: 1558
+Latencia posição:[115]-> Pacote:[25]: 1563
+Latencia posição:[115]-> Pacote:[26]: 1567
+Latencia posição:[115]-> Pacote:[27]: 1571
+Latencia posição:[115]-> Pacote:[28]: 1578
+Latencia posição:[115]-> Pacote:[29]: 1581
+Latencia posição:[115]-> Pacote:[30]: 1587
+Latencia posição:[115]-> Pacote:[31]: 1601
+Latencia posição:[115]-> Pacote:[32]: 1604
+Latencia posição:[115]-> Pacote:[33]: 1608
+Latencia posição:[115]-> Pacote:[34]: 1614
+Latencia posição:[115]-> Pacote:[35]: 1618
+Latencia posição:[115]-> Pacote:[36]: 1623
+Latencia posição:[115]-> Pacote:[37]: 1628
+Latencia posição:[115]-> Pacote:[38]: 1633
+Latencia posição:[115]-> Pacote:[39]: 1644
+Latencia posição:[115]-> Pacote:[40]: 1650
+Latencia posição:[115]-> Pacote:[41]: 1654
+Latencia posição:[115]-> Pacote:[42]: 1659
+Latencia posição:[115]-> Pacote:[43]: 1665
+Latencia posição:[115]-> Pacote:[44]: 1670
+Latencia posição:[115]-> Pacote:[45]: 1673
+Latencia posição:[115]-> Pacote:[46]: 1679
+Latencia posição:[115]-> Pacote:[47]: 1691
+Latencia posição:[115]-> Pacote:[48]: 1695
+Latencia posição:[115]-> Pacote:[49]: 1701
+
+Latencia posição:[116]-> Pacote:[0]: 265
+Latencia posição:[116]-> Pacote:[1]: 464
+Latencia posição:[116]-> Pacote:[2]: 566
+Latencia posição:[116]-> Pacote:[3]: 645
+Latencia posição:[116]-> Pacote:[4]: 725
+Latencia posição:[116]-> Pacote:[5]: 806
+Latencia posição:[116]-> Pacote:[6]: 891
+Latencia posição:[116]-> Pacote:[7]: 949
+Latencia posição:[116]-> Pacote:[8]: 1031
+Latencia posição:[116]-> Pacote:[9]: 1104
+Latencia posição:[116]-> Pacote:[10]: 1178
+Latencia posição:[116]-> Pacote:[11]: 1252
+Latencia posição:[116]-> Pacote:[12]: 1331
+Latencia posição:[116]-> Pacote:[13]: 1401
+Latencia posição:[116]-> Pacote:[14]: 1451
+Latencia posição:[116]-> Pacote:[15]: 1480
+Latencia posição:[116]-> Pacote:[16]: 1504
+Latencia posição:[116]-> Pacote:[17]: 1526
+Latencia posição:[116]-> Pacote:[18]: 1540
+Latencia posição:[116]-> Pacote:[19]: 1559
+Latencia posição:[116]-> Pacote:[20]: 1567
+Latencia posição:[116]-> Pacote:[21]: 1571
+Latencia posição:[116]-> Pacote:[22]: 1578
+Latencia posição:[116]-> Pacote:[23]: 1582
+Latencia posição:[116]-> Pacote:[24]: 1588
+Latencia posição:[116]-> Pacote:[25]: 1601
+Latencia posição:[116]-> Pacote:[26]: 1611
+Latencia posição:[116]-> Pacote:[27]: 1614
+Latencia posição:[116]-> Pacote:[28]: 1622
+Latencia posição:[116]-> Pacote:[29]: 1625
+Latencia posição:[116]-> Pacote:[30]: 1632
+Latencia posição:[116]-> Pacote:[31]: 1645
+Latencia posição:[116]-> Pacote:[32]: 1653
+Latencia posição:[116]-> Pacote:[33]: 1658
+Latencia posição:[116]-> Pacote:[34]: 1665
+Latencia posição:[116]-> Pacote:[35]: 1671
+Latencia posição:[116]-> Pacote:[36]: 1677
+Latencia posição:[116]-> Pacote:[37]: 1681
+Latencia posição:[116]-> Pacote:[38]: 1696
+Latencia posição:[116]-> Pacote:[39]: 1701
+Latencia posição:[116]-> Pacote:[40]: 1696
+Latencia posição:[116]-> Pacote:[41]: 1689
+Latencia posição:[116]-> Pacote:[42]: 1683
+Latencia posição:[116]-> Pacote:[43]: 1675
+Latencia posição:[116]-> Pacote:[44]: 1679
+Latencia posição:[116]-> Pacote:[45]: 1670
+Latencia posição:[116]-> Pacote:[46]: 1665
+Latencia posição:[116]-> Pacote:[47]: 1658
+Latencia posição:[116]-> Pacote:[48]: 1651
+Latencia posição:[116]-> Pacote:[49]: 1643
+
+Latencia posição:[117]-> Pacote:[0]: 300
+Latencia posição:[117]-> Pacote:[1]: 507
+Latencia posição:[117]-> Pacote:[2]: 612
+Latencia posição:[117]-> Pacote:[3]: 710
+Latencia posição:[117]-> Pacote:[4]: 806
+Latencia posição:[117]-> Pacote:[5]: 905
+Latencia posição:[117]-> Pacote:[6]: 981
+Latencia posição:[117]-> Pacote:[7]: 1073
+Latencia posição:[117]-> Pacote:[8]: 1164
+Latencia posição:[117]-> Pacote:[9]: 1251
+Latencia posição:[117]-> Pacote:[10]: 1345
+Latencia posição:[117]-> Pacote:[11]: 1427
+Latencia posição:[117]-> Pacote:[12]: 1467
+Latencia posição:[117]-> Pacote:[13]: 1501
+Latencia posição:[117]-> Pacote:[14]: 1527
+Latencia posição:[117]-> Pacote:[15]: 1543
+Latencia posição:[117]-> Pacote:[16]: 1562
+Latencia posição:[117]-> Pacote:[17]: 1569
+Latencia posição:[117]-> Pacote:[18]: 1576
+Latencia posição:[117]-> Pacote:[19]: 1583
+Latencia posição:[117]-> Pacote:[20]: 1591
+Latencia posição:[117]-> Pacote:[21]: 1606
+Latencia posição:[117]-> Pacote:[22]: 1612
+Latencia posição:[117]-> Pacote:[23]: 1620
+Latencia posição:[117]-> Pacote:[24]: 1626
+Latencia posição:[117]-> Pacote:[25]: 1634
+Latencia posição:[117]-> Pacote:[26]: 1649
+Latencia posição:[117]-> Pacote:[27]: 1656
+Latencia posição:[117]-> Pacote:[28]: 1663
+Latencia posição:[117]-> Pacote:[29]: 1671
+Latencia posição:[117]-> Pacote:[30]: 1677
+Latencia posição:[117]-> Pacote:[31]: 1693
+Latencia posição:[117]-> Pacote:[32]: 1699
+Latencia posição:[117]-> Pacote:[33]: 1698
+Latencia posição:[117]-> Pacote:[34]: 1690
+Latencia posição:[117]-> Pacote:[35]: 1682
+Latencia posição:[117]-> Pacote:[36]: 1675
+Latencia posição:[117]-> Pacote:[37]: 1674
+Latencia posição:[117]-> Pacote:[38]: 1666
+Latencia posição:[117]-> Pacote:[39]: 1658
+Latencia posição:[117]-> Pacote:[40]: 1651
+Latencia posição:[117]-> Pacote:[41]: 1640
+Latencia posição:[117]-> Pacote:[42]: 1627
+Latencia posição:[117]-> Pacote:[43]: 1608
+Latencia posição:[117]-> Pacote:[44]: 1588
+Latencia posição:[117]-> Pacote:[45]: 1568
+Latencia posição:[117]-> Pacote:[46]: 1547
+Latencia posição:[117]-> Pacote:[47]: 1537
+Latencia posição:[117]-> Pacote:[48]: 1516
+Latencia posição:[117]-> Pacote:[49]: 1497
+
+Latencia posição:[118]-> Pacote:[0]: 343
+Latencia posição:[118]-> Pacote:[1]: 544
+Latencia posição:[118]-> Pacote:[2]: 659
+Latencia posição:[118]-> Pacote:[3]: 775
+Latencia posição:[118]-> Pacote:[4]: 888
+Latencia posição:[118]-> Pacote:[5]: 980
+Latencia posição:[118]-> Pacote:[6]: 1090
+Latencia posição:[118]-> Pacote:[7]: 1193
+Latencia posição:[118]-> Pacote:[8]: 1291
+Latencia posição:[118]-> Pacote:[9]: 1403
+
+Latencia posição:[119]-> Pacote:[0]: 385
+Latencia posição:[119]-> Pacote:[1]: 577
+Latencia posição:[119]-> Pacote:[2]: 709
+Latencia posição:[119]-> Pacote:[3]: 840
+Latencia posição:[119]-> Pacote:[4]: 951
+Latencia posição:[119]-> Pacote:[5]: 1073
+Latencia posição:[119]-> Pacote:[6]: 1193
+Latencia posição:[119]-> Pacote:[7]: 1310
+Latencia posição:[119]-> Pacote:[8]: 1428
+Latencia posição:[119]-> Pacote:[9]: 1481
+
+Latencia posição:[120]-> Pacote:[0]: 426
+Latencia posição:[120]-> Pacote:[1]: 612
+Latencia posição:[120]-> Pacote:[2]: 759
+Latencia posição:[120]-> Pacote:[3]: 903
+Latencia posição:[120]-> Pacote:[4]: 1031
+Latencia posição:[120]-> Pacote:[5]: 1162
+Latencia posição:[120]-> Pacote:[6]: 1294
+Latencia posição:[120]-> Pacote:[7]: 1428
+Latencia posição:[120]-> Pacote:[8]: 1490
+Latencia posição:[120]-> Pacote:[9]: 1530
+
+Latencia posição:[121]-> Pacote:[0]: 467
+Latencia posição:[121]-> Pacote:[1]: 643
+Latencia posição:[121]-> Pacote:[2]: 804
+Latencia posição:[121]-> Pacote:[3]: 949
+Latencia posição:[121]-> Pacote:[4]: 1101
+Latencia posição:[121]-> Pacote:[5]: 1250
+Latencia posição:[121]-> Pacote:[6]: 1403
+Latencia posição:[121]-> Pacote:[7]: 1481
+Latencia posição:[121]-> Pacote:[8]: 1530
+Latencia posição:[121]-> Pacote:[9]: 1564
+
+Latencia posição:[122]-> Pacote:[0]: 315
+Latencia posição:[122]-> Pacote:[1]: 595
+Latencia posição:[122]-> Pacote:[2]: 871
+Latencia posição:[122]-> Pacote:[3]: 1063
+Latencia posição:[122]-> Pacote:[4]: 1241
+Latencia posição:[122]-> Pacote:[5]: 1420
+Latencia posição:[122]-> Pacote:[6]: 1496
+Latencia posição:[122]-> Pacote:[7]: 1540
+Latencia posição:[122]-> Pacote:[8]: 1568
+Latencia posição:[122]-> Pacote:[9]: 1582
+Latencia posição:[122]-> Pacote:[10]: 1603
+Latencia posição:[122]-> Pacote:[11]: 1617
+Latencia posição:[122]-> Pacote:[12]: 1632
+Latencia posição:[122]-> Pacote:[13]: 1655
+Latencia posição:[122]-> Pacote:[14]: 1668
+Latencia posição:[122]-> Pacote:[15]: 1683
+Latencia posição:[122]-> Pacote:[16]: 1696
+Latencia posição:[122]-> Pacote:[17]: 1682
+Latencia posição:[122]-> Pacote:[18]: 1673
+Latencia posição:[122]-> Pacote:[19]: 1658
+Latencia posição:[122]-> Pacote:[20]: 1641
+Latencia posição:[122]-> Pacote:[21]: 1608
+Latencia posição:[122]-> Pacote:[22]: 1568
+Latencia posição:[122]-> Pacote:[23]: 1528
+Latencia posição:[122]-> Pacote:[24]: 1496
+Latencia posição:[122]-> Pacote:[25]: 1438
+Latencia posição:[122]-> Pacote:[26]: 1386
+Latencia posição:[122]-> Pacote:[27]: 1327
+Latencia posição:[122]-> Pacote:[28]: 1266
+Latencia posição:[122]-> Pacote:[29]: 1217
+Latencia posição:[122]-> Pacote:[30]: 1155
+Latencia posição:[122]-> Pacote:[31]: 1104
+Latencia posição:[122]-> Pacote:[32]: 1042
+Latencia posição:[122]-> Pacote:[33]: 983
+Latencia posição:[122]-> Pacote:[34]: 935
+Latencia posição:[122]-> Pacote:[35]: 872
+Latencia posição:[122]-> Pacote:[36]: 809
+Latencia posição:[122]-> Pacote:[37]: 746
+Latencia posição:[122]-> Pacote:[38]: 676
+Latencia posição:[122]-> Pacote:[39]: 613
+Latencia posição:[122]-> Pacote:[40]: 544
+Latencia posição:[122]-> Pacote:[41]: 472
+Latencia posição:[122]-> Pacote:[42]: 408
+Latencia posição:[122]-> Pacote:[43]: 339
+Latencia posição:[122]-> Pacote:[44]: 267
+Latencia posição:[122]-> Pacote:[45]: 205
+Latencia posição:[122]-> Pacote:[46]: 136
+Latencia posição:[122]-> Pacote:[47]: 72
+Latencia posição:[122]-> Pacote:[48]: 2
+Latencia posição:[122]-> Pacote:[49]: 2
+
+Latencia posição:[123]-> Pacote:[0]: 338
+Latencia posição:[123]-> Pacote:[1]: 636
+Latencia posição:[123]-> Pacote:[2]: 921
+Latencia posição:[123]-> Pacote:[3]: 1122
+Latencia posição:[123]-> Pacote:[4]: 1311
+Latencia posição:[123]-> Pacote:[5]: 1461
+Latencia posição:[123]-> Pacote:[6]: 1527
+Latencia posição:[123]-> Pacote:[7]: 1563
+Latencia posição:[123]-> Pacote:[8]: 1578
+Latencia posição:[123]-> Pacote:[9]: 1601
+Latencia posição:[123]-> Pacote:[10]: 1617
+Latencia posição:[123]-> Pacote:[11]: 1631
+Latencia posição:[123]-> Pacote:[12]: 1654
+Latencia posição:[123]-> Pacote:[13]: 1671
+Latencia posição:[123]-> Pacote:[14]: 1695
+Latencia posição:[123]-> Pacote:[15]: 1692
+Latencia posição:[123]-> Pacote:[16]: 1675
+Latencia posição:[123]-> Pacote:[17]: 1666
+Latencia posição:[123]-> Pacote:[18]: 1648
+Latencia posição:[123]-> Pacote:[19]: 1622
+Latencia posição:[123]-> Pacote:[20]: 1579
+Latencia posição:[123]-> Pacote:[21]: 1535
+Latencia posição:[123]-> Pacote:[22]: 1503
+Latencia posição:[123]-> Pacote:[23]: 1439
+Latencia posição:[123]-> Pacote:[24]: 1382
+Latencia posição:[123]-> Pacote:[25]: 1318
+Latencia posição:[123]-> Pacote:[26]: 1252
+Latencia posição:[123]-> Pacote:[27]: 1196
+Latencia posição:[123]-> Pacote:[28]: 1131
+Latencia posição:[123]-> Pacote:[29]: 1074
+Latencia posição:[123]-> Pacote:[30]: 1009
+Latencia posição:[123]-> Pacote:[31]: 954
+Latencia posição:[123]-> Pacote:[32]: 888
+Latencia posição:[123]-> Pacote:[33]: 822
+Latencia posição:[123]-> Pacote:[34]: 754
+Latencia posição:[123]-> Pacote:[35]: 677
+Latencia posição:[123]-> Pacote:[36]: 607
+Latencia posição:[123]-> Pacote:[37]: 532
+Latencia posição:[123]-> Pacote:[38]: 456
+Latencia posição:[123]-> Pacote:[39]: 387
+Latencia posição:[123]-> Pacote:[40]: 310
+Latencia posição:[123]-> Pacote:[41]: 242
+Latencia posição:[123]-> Pacote:[42]: 164
+Latencia posição:[123]-> Pacote:[43]: 88
+Latencia posição:[123]-> Pacote:[44]: 19
+Latencia posição:[123]-> Pacote:[45]: 3
+Latencia posição:[123]-> Pacote:[46]: 3
+Latencia posição:[123]-> Pacote:[47]: 3
+Latencia posição:[123]-> Pacote:[48]: 3
+Latencia posição:[123]-> Pacote:[49]: 3
+
+Latencia posição:[124]-> Pacote:[0]: 364
+Latencia posição:[124]-> Pacote:[1]: 680
+Latencia posição:[124]-> Pacote:[2]: 970
+Latencia posição:[124]-> Pacote:[3]: 1183
+Latencia posição:[124]-> Pacote:[4]: 1391
+Latencia posição:[124]-> Pacote:[5]: 1496
+Latencia posição:[124]-> Pacote:[6]: 1554
+Latencia posição:[124]-> Pacote:[7]: 1574
+Latencia posição:[124]-> Pacote:[8]: 1589
+Latencia posição:[124]-> Pacote:[9]: 1615
+Latencia posição:[124]-> Pacote:[10]: 1631
+Latencia posição:[124]-> Pacote:[11]: 1656
+Latencia posição:[124]-> Pacote:[12]: 1672
+Latencia posição:[124]-> Pacote:[13]: 1696
+Latencia posição:[124]-> Pacote:[14]: 1691
+Latencia posição:[124]-> Pacote:[15]: 1674
+Latencia posição:[124]-> Pacote:[16]: 1663
+Latencia posição:[124]-> Pacote:[17]: 1641
+Latencia posição:[124]-> Pacote:[18]: 1604
+Latencia posição:[124]-> Pacote:[19]: 1558
+Latencia posição:[124]-> Pacote:[20]: 1519
+Latencia posição:[124]-> Pacote:[21]: 1460
+Latencia posição:[124]-> Pacote:[22]: 1399
+Latencia posição:[124]-> Pacote:[23]: 1330
+Latencia posição:[124]-> Pacote:[24]: 1259
+Latencia posição:[124]-> Pacote:[25]: 1197
+Latencia posição:[124]-> Pacote:[26]: 1128
+Latencia posição:[124]-> Pacote:[27]: 1067
+Latencia posição:[124]-> Pacote:[28]: 996
+Latencia posição:[124]-> Pacote:[29]: 938
+Latencia posição:[124]-> Pacote:[30]: 865
+Latencia posição:[124]-> Pacote:[31]: 797
+Latencia posição:[124]-> Pacote:[32]: 714
+Latencia posição:[124]-> Pacote:[33]: 632
+Latencia posição:[124]-> Pacote:[34]: 560
+Latencia posição:[124]-> Pacote:[35]: 475
+Latencia posição:[124]-> Pacote:[36]: 400
+Latencia posição:[124]-> Pacote:[37]: 318
+Latencia posição:[124]-> Pacote:[38]: 243
+Latencia posição:[124]-> Pacote:[39]: 163
+Latencia posição:[124]-> Pacote:[40]: 78
+Latencia posição:[124]-> Pacote:[41]: 4
+Latencia posição:[124]-> Pacote:[42]: 5
+Latencia posição:[124]-> Pacote:[43]: 4
+Latencia posição:[124]-> Pacote:[44]: 4
+Latencia posição:[124]-> Pacote:[45]: 4
+Latencia posição:[124]-> Pacote:[46]: 4
+Latencia posição:[124]-> Pacote:[47]: 4
+Latencia posição:[124]-> Pacote:[48]: 4
+Latencia posição:[124]-> Pacote:[49]: 4
+
+Latencia posição:[125]-> Pacote:[0]: 388
+Latencia posição:[125]-> Pacote:[1]: 723
+Latencia posição:[125]-> Pacote:[2]: 1018
+Latencia posição:[125]-> Pacote:[3]: 1241
+Latencia posição:[125]-> Pacote:[4]: 1443
+Latencia posição:[125]-> Pacote:[5]: 1526
+Latencia posição:[125]-> Pacote:[6]: 1565
+Latencia posição:[125]-> Pacote:[7]: 1584
+Latencia posição:[125]-> Pacote:[8]: 1609
+Latencia posição:[125]-> Pacote:[9]: 1628
+Latencia posição:[125]-> Pacote:[10]: 1652
+Latencia posição:[125]-> Pacote:[11]: 1671
+Latencia posição:[125]-> Pacote:[12]: 1695
+Latencia posição:[125]-> Pacote:[13]: 1692
+Latencia posição:[125]-> Pacote:[14]: 1680
+Latencia posição:[125]-> Pacote:[15]: 1661
+Latencia posição:[125]-> Pacote:[16]: 1634
+Latencia posição:[125]-> Pacote:[17]: 1591
+Latencia posição:[125]-> Pacote:[18]: 1542
+Latencia posição:[125]-> Pacote:[19]: 1500
+Latencia posição:[125]-> Pacote:[20]: 1427
+Latencia posição:[125]-> Pacote:[21]: 1360
+Latencia posição:[125]-> Pacote:[22]: 1286
+Latencia posição:[125]-> Pacote:[23]: 1221
+Latencia posição:[125]-> Pacote:[24]: 1144
+Latencia posição:[125]-> Pacote:[25]: 1077
+Latencia posição:[125]-> Pacote:[26]: 1003
+Latencia posição:[125]-> Pacote:[27]: 938
+Latencia posição:[125]-> Pacote:[28]: 861
+Latencia posição:[125]-> Pacote:[29]: 787
+Latencia posição:[125]-> Pacote:[30]: 698
+Latencia posição:[125]-> Pacote:[31]: 618
+Latencia posição:[125]-> Pacote:[32]: 530
+Latencia posição:[125]-> Pacote:[33]: 441
+Latencia posição:[125]-> Pacote:[34]: 360
+Latencia posição:[125]-> Pacote:[35]: 272
+Latencia posição:[125]-> Pacote:[36]: 191
+Latencia posição:[125]-> Pacote:[37]: 104
+Latencia posição:[125]-> Pacote:[38]: 22
+Latencia posição:[125]-> Pacote:[39]: 5
+Latencia posição:[125]-> Pacote:[40]: 5
+Latencia posição:[125]-> Pacote:[41]: 5
+Latencia posição:[125]-> Pacote:[42]: 6
+Latencia posição:[125]-> Pacote:[43]: 5
+Latencia posição:[125]-> Pacote:[44]: 5
+Latencia posição:[125]-> Pacote:[45]: 5
+Latencia posição:[125]-> Pacote:[46]: 5
+Latencia posição:[125]-> Pacote:[47]: 5
+Latencia posição:[125]-> Pacote:[48]: 5
+Latencia posição:[125]-> Pacote:[49]: 5
+
+Latencia posição:[126]-> Pacote:[0]: 414
+Latencia posição:[126]-> Pacote:[1]: 767
+Latencia posição:[126]-> Pacote:[2]: 1061
+Latencia posição:[126]-> Pacote:[3]: 1301
+Latencia posição:[126]-> Pacote:[4]: 1479
+Latencia posição:[126]-> Pacote:[5]: 1542
+Latencia posição:[126]-> Pacote:[6]: 1575
+Latencia posição:[126]-> Pacote:[7]: 1594
+Latencia posição:[126]-> Pacote:[8]: 1620
+Latencia posição:[126]-> Pacote:[9]: 1641
+Latencia posição:[126]-> Pacote:[10]: 1667
+Latencia posição:[126]-> Pacote:[11]: 1686
+Latencia posição:[126]-> Pacote:[12]: 1696
+Latencia posição:[126]-> Pacote:[13]: 1675
+Latencia posição:[126]-> Pacote:[14]: 1661
+Latencia posição:[126]-> Pacote:[15]: 1632
+Latencia posição:[126]-> Pacote:[16]: 1587
+Latencia posição:[126]-> Pacote:[17]: 1533
+Latencia posição:[126]-> Pacote:[18]: 1484
+Latencia posição:[126]-> Pacote:[19]: 1404
+Latencia posição:[126]-> Pacote:[20]: 1332
+Latencia posição:[126]-> Pacote:[21]: 1253
+Latencia posição:[126]-> Pacote:[22]: 1181
+Latencia posição:[126]-> Pacote:[23]: 1101
+Latencia posição:[126]-> Pacote:[24]: 1030
+Latencia posição:[126]-> Pacote:[25]: 950
+Latencia posição:[126]-> Pacote:[26]: 878
+Latencia posição:[126]-> Pacote:[27]: 792
+Latencia posição:[126]-> Pacote:[28]: 706
+Latencia posição:[126]-> Pacote:[29]: 611
+Latencia posição:[126]-> Pacote:[30]: 526
+Latencia posição:[126]-> Pacote:[31]: 439
+Latencia posição:[126]-> Pacote:[32]: 344
+Latencia posição:[126]-> Pacote:[33]: 259
+Latencia posição:[126]-> Pacote:[34]: 165
+Latencia posição:[126]-> Pacote:[35]: 77
+Latencia posição:[126]-> Pacote:[36]: 7
+Latencia posição:[126]-> Pacote:[37]: 12
+Latencia posição:[126]-> Pacote:[38]: 6
+Latencia posição:[126]-> Pacote:[39]: 7
+Latencia posição:[126]-> Pacote:[40]: 6
+Latencia posição:[126]-> Pacote:[41]: 6
+Latencia posição:[126]-> Pacote:[42]: 6
+Latencia posição:[126]-> Pacote:[43]: 6
+Latencia posição:[126]-> Pacote:[44]: 6
+Latencia posição:[126]-> Pacote:[45]: 6
+Latencia posição:[126]-> Pacote:[46]: 6
+Latencia posição:[126]-> Pacote:[47]: 6
+Latencia posição:[126]-> Pacote:[48]: 6
+Latencia posição:[126]-> Pacote:[49]: 6
+
+Latencia posição:[127]-> Pacote:[0]: 431
+Latencia posição:[127]-> Pacote:[1]: 817
+Latencia posição:[127]-> Pacote:[2]: 1103
+Latencia posição:[127]-> Pacote:[3]: 1361
+Latencia posição:[127]-> Pacote:[4]: 1503
+
+Latencia posição:[128]-> Pacote:[0]: 455
+Latencia posição:[128]-> Pacote:[1]: 866
+Latencia posição:[128]-> Pacote:[2]: 1151
+Latencia posição:[128]-> Pacote:[3]: 1418
+Latencia posição:[128]-> Pacote:[4]: 1528
+
+Latencia posição:[129]-> Pacote:[0]: 476
+Latencia posição:[129]-> Pacote:[1]: 907
+Latencia posição:[129]-> Pacote:[2]: 1191
+Latencia posição:[129]-> Pacote:[3]: 1454
+Latencia posição:[129]-> Pacote:[4]: 1543
+
+Latencia posição:[130]-> Pacote:[0]: 153
+Latencia posição:[130]-> Pacote:[1]: 85
+Latencia posição:[130]-> Pacote:[2]: 18
+Latencia posição:[130]-> Pacote:[3]: 8
+Latencia posição:[130]-> Pacote:[4]: 8
+
+Latencia posição:[131]-> Pacote:[0]: 151
+Latencia posição:[131]-> Pacote:[1]: 79
+Latencia posição:[131]-> Pacote:[2]: 9
+Latencia posição:[131]-> Pacote:[3]: 8
+Latencia posição:[131]-> Pacote:[4]: 8
+
+Latencia posição:[132]-> Pacote:[0]: 148
+Latencia posição:[132]-> Pacote:[1]: 72
+Latencia posição:[132]-> Pacote:[2]: 8
+Latencia posição:[132]-> Pacote:[3]: 8
+Latencia posição:[132]-> Pacote:[4]: 8
+
+Latencia posição:[133]-> Pacote:[0]: 144
+Latencia posição:[133]-> Pacote:[1]: 65
+Latencia posição:[133]-> Pacote:[2]: 8
+Latencia posição:[133]-> Pacote:[3]: 9
+Latencia posição:[133]-> Pacote:[4]: 8
+
+Latencia posição:[134]-> Pacote:[0]: 141
+Latencia posição:[134]-> Pacote:[1]: 59
+Latencia posição:[134]-> Pacote:[2]: 8
+Latencia posição:[134]-> Pacote:[3]: 8
+Latencia posição:[134]-> Pacote:[4]: 8
+
+Latencia posição:[135]-> Pacote:[0]: 2
+Latencia posição:[135]-> Pacote:[1]: 1
+Latencia posição:[135]-> Pacote:[2]: 1
+Latencia posição:[135]-> Pacote:[3]: 1
+Latencia posição:[135]-> Pacote:[4]: 2
+
+Latencia posição:[136]-> Pacote:[0]: 6
+Latencia posição:[136]-> Pacote:[1]: 6
+Latencia posição:[136]-> Pacote:[2]: 6
+Latencia posição:[136]-> Pacote:[3]: 6
+Latencia posição:[136]-> Pacote:[4]: 6
+
+Latencia posição:[137]-> Pacote:[0]: 2
+Latencia posição:[137]-> Pacote:[1]: 1
+Latencia posição:[137]-> Pacote:[2]: 3
+Latencia posição:[137]-> Pacote:[3]: 1
+Latencia posição:[137]-> Pacote:[4]: 1
+
+Latencia posição:[138]-> Pacote:[0]: 3
+Latencia posição:[138]-> Pacote:[1]: 3
+Latencia posição:[138]-> Pacote:[2]: 2
+Latencia posição:[138]-> Pacote:[3]: 3
+Latencia posição:[138]-> Pacote:[4]: 2
+
+Latencia posição:[139]-> Pacote:[0]: 4
+Latencia posição:[139]-> Pacote:[1]: 4
+Latencia posição:[139]-> Pacote:[2]: 8
+Latencia posição:[139]-> Pacote:[3]: 3
+Latencia posição:[139]-> Pacote:[4]: 3
+
+Latencia posição:[140]-> Pacote:[0]: 122
+Latencia posição:[140]-> Pacote:[1]: 19
+Latencia posição:[140]-> Pacote:[2]: 8
+Latencia posição:[140]-> Pacote:[3]: 8
+Latencia posição:[140]-> Pacote:[4]: 7
+
+Latencia posição:[141]-> Pacote:[0]: 118
+Latencia posição:[141]-> Pacote:[1]: 12
+Latencia posição:[141]-> Pacote:[2]: 7
+Latencia posição:[141]-> Pacote:[3]: 6
+Latencia posição:[141]-> Pacote:[4]: 6
+
+Latencia posição:[142]-> Pacote:[0]: 115
+Latencia posição:[142]-> Pacote:[1]: 5
+Latencia posição:[142]-> Pacote:[2]: 8
+Latencia posição:[142]-> Pacote:[3]: 6
+Latencia posição:[142]-> Pacote:[4]: 5
+
+Latencia posição:[143]-> Pacote:[0]: 60
+Latencia posição:[143]-> Pacote:[1]: 4
+Latencia posição:[143]-> Pacote:[2]: 5
+Latencia posição:[143]-> Pacote:[3]: 4
+Latencia posição:[143]-> Pacote:[4]: 4
+
+Latencia posição:[144]-> Pacote:[0]: 3
+Latencia posição:[144]-> Pacote:[1]: 3
+Latencia posição:[144]-> Pacote:[2]: 4
+Latencia posição:[144]-> Pacote:[3]: 3
+Latencia posição:[144]-> Pacote:[4]: 3
+
+Latencia posição:[145]-> Pacote:[0]: 3
+Latencia posição:[145]-> Pacote:[1]: 2
+Latencia posição:[145]-> Pacote:[2]: 3
+Latencia posição:[145]-> Pacote:[3]: 2
+Latencia posição:[145]-> Pacote:[4]: 2
+
+Latencia posição:[146]-> Pacote:[0]: 4
+Latencia posição:[146]-> Pacote:[1]: 3
+Latencia posição:[146]-> Pacote:[2]: 4
+Latencia posição:[146]-> Pacote:[3]: 3
+Latencia posição:[146]-> Pacote:[4]: 3
+
+Latencia posição:[147]-> Pacote:[0]: 4
+Latencia posição:[147]-> Pacote:[1]: 7
+Latencia posição:[147]-> Pacote:[2]: 5
+Latencia posição:[147]-> Pacote:[3]: 4
+Latencia posição:[147]-> Pacote:[4]: 4
+
+Latencia posição:[148]-> Pacote:[0]: 9
+Latencia posição:[148]-> Pacote:[1]: 11
+
+Latencia posição:[149]-> Pacote:[0]: 15
+Latencia posição:[149]-> Pacote:[1]: 21
+
+Latencia posição:[150]-> Pacote:[0]: 5
+Latencia posição:[150]-> Pacote:[1]: 9
+
+Latencia posição:[151]-> Pacote:[0]: 7
+Latencia posição:[151]-> Pacote:[1]: 9
+
+Latencia posição:[152]-> Pacote:[0]: 10
+Latencia posição:[152]-> Pacote:[1]: 13
+
+Latencia posição:[153]-> Pacote:[0]: 10
+Latencia posição:[153]-> Pacote:[1]: 13
+
+Latencia posição:[154]-> Pacote:[0]: 12
+Latencia posição:[154]-> Pacote:[1]: 15
+
+Latencia posição:[155]-> Pacote:[0]: 12
+Latencia posição:[155]-> Pacote:[1]: 19
+Latencia posição:[155]-> Pacote:[2]: 18
+Latencia posição:[155]-> Pacote:[3]: 15
+Latencia posição:[155]-> Pacote:[4]: 13
+Latencia posição:[155]-> Pacote:[5]: 11
+Latencia posição:[155]-> Pacote:[6]: 9
+Latencia posição:[155]-> Pacote:[7]: 7
+Latencia posição:[155]-> Pacote:[8]: 5
+Latencia posição:[155]-> Pacote:[9]: 5
+Latencia posição:[155]-> Pacote:[10]: 5
+Latencia posição:[155]-> Pacote:[11]: 5
+Latencia posição:[155]-> Pacote:[12]: 5
+Latencia posição:[155]-> Pacote:[13]: 5
+Latencia posição:[155]-> Pacote:[14]: 5
+Latencia posição:[155]-> Pacote:[15]: 5
+Latencia posição:[155]-> Pacote:[16]: 5
+Latencia posição:[155]-> Pacote:[17]: 5
+Latencia posição:[155]-> Pacote:[18]: 5
+Latencia posição:[155]-> Pacote:[19]: 5
+
+Latencia posição:[156]-> Pacote:[0]: 5
+Latencia posição:[156]-> Pacote:[1]: 7
+Latencia posição:[156]-> Pacote:[2]: 9
+Latencia posição:[156]-> Pacote:[3]: 9
+Latencia posição:[156]-> Pacote:[4]: 10
+Latencia posição:[156]-> Pacote:[5]: 10
+Latencia posição:[156]-> Pacote:[6]: 9
+Latencia posição:[156]-> Pacote:[7]: 8
+Latencia posição:[156]-> Pacote:[8]: 7
+Latencia posição:[156]-> Pacote:[9]: 6
+Latencia posição:[156]-> Pacote:[10]: 5
+Latencia posição:[156]-> Pacote:[11]: 4
+Latencia posição:[156]-> Pacote:[12]: 3
+Latencia posição:[156]-> Pacote:[13]: 3
+Latencia posição:[156]-> Pacote:[14]: 3
+Latencia posição:[156]-> Pacote:[15]: 3
+Latencia posição:[156]-> Pacote:[16]: 3
+Latencia posição:[156]-> Pacote:[17]: 3
+Latencia posição:[156]-> Pacote:[18]: 3
+Latencia posição:[156]-> Pacote:[19]: 32706
+
+Latencia posição:[157]-> Pacote:[0]: 5
+Latencia posição:[157]-> Pacote:[1]: 8
+Latencia posição:[157]-> Pacote:[2]: 6
+Latencia posição:[157]-> Pacote:[3]: 3
+Latencia posição:[157]-> Pacote:[4]: 3
+Latencia posição:[157]-> Pacote:[5]: 3
+Latencia posição:[157]-> Pacote:[6]: 3
+Latencia posição:[157]-> Pacote:[7]: 3
+Latencia posição:[157]-> Pacote:[8]: 3
+Latencia posição:[157]-> Pacote:[9]: 3
+Latencia posição:[157]-> Pacote:[10]: 3
+Latencia posição:[157]-> Pacote:[11]: 3
+Latencia posição:[157]-> Pacote:[12]: 3
+Latencia posição:[157]-> Pacote:[13]: 3
+Latencia posição:[157]-> Pacote:[14]: 3
+Latencia posição:[157]-> Pacote:[15]: 3
+Latencia posição:[157]-> Pacote:[16]: 3
+Latencia posição:[157]-> Pacote:[17]: 3
+Latencia posição:[157]-> Pacote:[18]: 3
+Latencia posição:[157]-> Pacote:[19]: 3
+
+Latencia posição:[158]-> Pacote:[0]: 11
+Latencia posição:[158]-> Pacote:[1]: 15
+Latencia posição:[158]-> Pacote:[2]: 16
+Latencia posição:[158]-> Pacote:[3]: 17
+Latencia posição:[158]-> Pacote:[4]: 15
+Latencia posição:[158]-> Pacote:[5]: 13
+Latencia posição:[158]-> Pacote:[6]: 11
+Latencia posição:[158]-> Pacote:[7]: 9
+Latencia posição:[158]-> Pacote:[8]: 7
+Latencia posição:[158]-> Pacote:[9]: 7
+Latencia posição:[158]-> Pacote:[10]: 7
+Latencia posição:[158]-> Pacote:[11]: 7
+Latencia posição:[158]-> Pacote:[12]: 7
+Latencia posição:[158]-> Pacote:[13]: 7
+Latencia posição:[158]-> Pacote:[14]: 7
+Latencia posição:[158]-> Pacote:[15]: 7
+Latencia posição:[158]-> Pacote:[16]: 7
+Latencia posição:[158]-> Pacote:[17]: 7
+Latencia posição:[158]-> Pacote:[18]: 7
+Latencia posição:[158]-> Pacote:[19]: 7
+
+Latencia posição:[159]-> Pacote:[0]: 17
+Latencia posição:[159]-> Pacote:[1]: 33
+Latencia posição:[159]-> Pacote:[2]: 36
+Latencia posição:[159]-> Pacote:[3]: 42
+Latencia posição:[159]-> Pacote:[4]: 54
+Latencia posição:[159]-> Pacote:[5]: 65
+Latencia posição:[159]-> Pacote:[6]: 68
+Latencia posição:[159]-> Pacote:[7]: 78
+Latencia posição:[159]-> Pacote:[8]: 83
+Latencia posição:[159]-> Pacote:[9]: 95
+Latencia posição:[159]-> Pacote:[10]: 102
+Latencia posição:[159]-> Pacote:[11]: 108
+Latencia posição:[159]-> Pacote:[12]: 119
+Latencia posição:[159]-> Pacote:[13]: 128
+Latencia posição:[159]-> Pacote:[14]: 137
+Latencia posição:[159]-> Pacote:[15]: 142
+Latencia posição:[159]-> Pacote:[16]: 147
+Latencia posição:[159]-> Pacote:[17]: 154
+Latencia posição:[159]-> Pacote:[18]: 159
+Latencia posição:[159]-> Pacote:[19]: 163
+
+Latencia posição:[160]-> Pacote:[0]: 14
+Latencia posição:[160]-> Pacote:[1]: 13
+Latencia posição:[160]-> Pacote:[2]: 10
+Latencia posição:[160]-> Pacote:[3]: 7
+Latencia posição:[160]-> Pacote:[4]: 4
+Latencia posição:[160]-> Pacote:[5]: 4
+Latencia posição:[160]-> Pacote:[6]: 4
+Latencia posição:[160]-> Pacote:[7]: 4
+Latencia posição:[160]-> Pacote:[8]: 4
+Latencia posição:[160]-> Pacote:[9]: 4
+Latencia posição:[160]-> Pacote:[10]: 4
+Latencia posição:[160]-> Pacote:[11]: 4
+Latencia posição:[160]-> Pacote:[12]: 4
+Latencia posição:[160]-> Pacote:[13]: 4
+Latencia posição:[160]-> Pacote:[14]: 4
+Latencia posição:[160]-> Pacote:[15]: 4
+Latencia posição:[160]-> Pacote:[16]: 4
+Latencia posição:[160]-> Pacote:[17]: 4
+Latencia posição:[160]-> Pacote:[18]: 4
+Latencia posição:[160]-> Pacote:[19]: 4
+
+Latencia média do pacote[0]: 133
+Latencia média do pacote[1]: 9
+Latencia média do pacote[2]: 22
+Latencia média do pacote[3]: 16
+Latencia média do pacote[4]: 19
+Latencia média do pacote[5]: 14
+Latencia média do pacote[6]: 8
+Latencia média do pacote[7]: 16
+Latencia média do pacote[8]: 5
+Latencia média do pacote[9]: 6
+Latencia média do pacote[10]: 9
+Latencia média do pacote[11]: 9
+Latencia média do pacote[12]: 12
+Latencia média do pacote[13]: 13
+Latencia média do pacote[14]: 5
+Latencia média do pacote[15]: 4
+Latencia média do pacote[16]: 11
+Latencia média do pacote[17]: 21
+Latencia média do pacote[18]: 12
+Latencia média do pacote[19]: 1
+Latencia média do pacote[20]: 3
+Latencia média do pacote[21]: 3
+Latencia média do pacote[22]: 4
+Latencia média do pacote[23]: 6
+Latencia média do pacote[24]: 7
+Latencia média do pacote[25]: 7
+Latencia média do pacote[26]: 9
+Latencia média do pacote[27]: 1
+Latencia média do pacote[28]: 2
+Latencia média do pacote[29]: 4
+Latencia média do pacote[30]: 4
+Latencia média do pacote[31]: 5
+Latencia média do pacote[32]: 9
+Latencia média do pacote[33]: 8
+Latencia média do pacote[34]: 8
+Latencia média do pacote[35]: 1
+Latencia média do pacote[36]: 2
+Latencia média do pacote[37]: 4
+Latencia média do pacote[38]: 4
+Latencia média do pacote[39]: 6
+Latencia média do pacote[40]: 6
+Latencia média do pacote[41]: 7
+Latencia média do pacote[42]: 9
+Latencia média do pacote[43]: 3
+Latencia média do pacote[44]: 2
+Latencia média do pacote[45]: 3
+Latencia média do pacote[46]: 4
+Latencia média do pacote[47]: 5
+Latencia média do pacote[48]: 8
+Latencia média do pacote[49]: 7
+Latencia média do pacote[50]: 8
+Latencia média do pacote[51]: 5
+Latencia média do pacote[52]: 2
+Latencia média do pacote[53]: 3
+Latencia média do pacote[54]: 5
+Latencia média do pacote[55]: 5
+Latencia média do pacote[56]: 10
+Latencia média do pacote[57]: 7
+Latencia média do pacote[58]: 8
+Latencia média do pacote[59]: 765
+Latencia média do pacote[60]: 764
+Latencia média do pacote[61]: 766
+Latencia média do pacote[62]: 766
+Latencia média do pacote[63]: 767
+Latencia média do pacote[64]: 769
+Latencia média do pacote[65]: 769
+Latencia média do pacote[66]: 771
+Latencia média do pacote[67]: 4
+Latencia média do pacote[68]: 3
+Latencia média do pacote[69]: 3
+Latencia média do pacote[70]: 5
+Latencia média do pacote[71]: 5
+Latencia média do pacote[72]: 6
+Latencia média do pacote[73]: 7
+Latencia média do pacote[74]: 8
+Latencia média do pacote[75]: 6
+Latencia média do pacote[76]: 2
+Latencia média do pacote[77]: 4
+Latencia média do pacote[78]: 6
+Latencia média do pacote[79]: 5
+Latencia média do pacote[80]: 6
+Latencia média do pacote[81]: 8
+Latencia média do pacote[82]: 8
+Latencia média do pacote[83]: 748
+Latencia média do pacote[84]: 928
+Latencia média do pacote[85]: 361
+Latencia média do pacote[86]: 116
+Latencia média do pacote[87]: 2
+Latencia média do pacote[88]: 6
+Latencia média do pacote[89]: 32
+Latencia média do pacote[90]: 6
+Latencia média do pacote[91]: 1
+Latencia média do pacote[92]: 101
+Latencia média do pacote[93]: 583
+Latencia média do pacote[94]: 6
+Latencia média do pacote[95]: 5
+Latencia média do pacote[96]: 5
+Latencia média do pacote[97]: 879
+Latencia média do pacote[98]: 26
+Latencia média do pacote[99]: 7
+Latencia média do pacote[100]: 6
+Latencia média do pacote[101]: 7
+Latencia média do pacote[102]: 8
+Latencia média do pacote[103]: 881
+Latencia média do pacote[104]: 73
+Latencia média do pacote[105]: 6
+Latencia média do pacote[106]: 587
+Latencia média do pacote[107]: 7
+Latencia média do pacote[108]: 103
+Latencia média do pacote[109]: 8
+Latencia média do pacote[110]: 103
+Latencia média do pacote[111]: 2
+Latencia média do pacote[112]: 1343
+Latencia média do pacote[113]: 1091
+Latencia média do pacote[114]: 1
+Latencia média do pacote[115]: 1352
+Latencia média do pacote[116]: 1420
+Latencia média do pacote[117]: 1446
+Latencia média do pacote[118]: 916
+Latencia média do pacote[119]: 994
+Latencia média do pacote[120]: 1063
+Latencia média do pacote[121]: 1119
+Latencia média do pacote[122]: 1082
+Latencia média do pacote[123]: 999
+Latencia média do pacote[124]: 929
+Latencia média do pacote[125]: 868
+Latencia média do pacote[126]: 815
+Latencia média do pacote[127]: 1043
+Latencia média do pacote[128]: 1083
+Latencia média do pacote[129]: 1114
+Latencia média do pacote[130]: 54
+Latencia média do pacote[131]: 51
+Latencia média do pacote[132]: 48
+Latencia média do pacote[133]: 46
+Latencia média do pacote[134]: 44
+Latencia média do pacote[135]: 1
+Latencia média do pacote[136]: 6
+Latencia média do pacote[137]: 1
+Latencia média do pacote[138]: 2
+Latencia média do pacote[139]: 4
+Latencia média do pacote[140]: 32
+Latencia média do pacote[141]: 29
+Latencia média do pacote[142]: 27
+Latencia média do pacote[143]: 15
+Latencia média do pacote[144]: 3
+Latencia média do pacote[145]: 2
+Latencia média do pacote[146]: 3
+Latencia média do pacote[147]: 4
+Latencia média do pacote[148]: 10
+Latencia média do pacote[149]: 18
+Latencia média do pacote[150]: 7
+Latencia média do pacote[151]: 8
+Latencia média do pacote[152]: 11
+Latencia média do pacote[153]: 11
+Latencia média do pacote[154]: 13
+Latencia média do pacote[155]: 8
+Latencia média do pacote[156]: 1640
+Latencia média do pacote[157]: 3
+Latencia média do pacote[158]: 9
+Latencia média do pacote[159]: 96
+Latencia média do pacote[160]: 5
 
 
 Menor Latência: 1
-Maior Latência: 260
-Latência Média da simulação: 84
+Maior Latência: 32706
+Latência Média da simulação: 206

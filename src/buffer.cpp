@@ -5,24 +5,23 @@
 #include "buffer.h"
 
 //Funcionando
-void Buffer::add() {
-	this->flits.push(din);
-    size++;
+void Buffer::add(int x) {
+	buffer_virtual[x].push(din);
+    size[0]++;
 
-    // cout << "size no buffer "<< size << endl;
 }
 //Funcionando
-void Buffer::remove() {
-	flits.pop();
-	if (size > 0)
+void Buffer::remove(int x) {
+	buffer_virtual[x].pop();
+	if (size[0] > 0)
 	{
-		size--;
+		size[0]--;
 	}   
 }
 
 //Se estiver Vazio retorna 1, senão retorna 0
-int Buffer::isEmpty() {
+int Buffer::isEmpty(int x) {
 	// cout << "Buffer Size :" <<  ((this->size < 1) ? 1: 0 )<< "\n";
-	return (this->size < 10) ? 1: 0;
+	return (this->size[0] < TAMANHO_BUFFER) ? 1: 0;
 }
 

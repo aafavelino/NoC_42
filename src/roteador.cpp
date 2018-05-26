@@ -6,7 +6,7 @@
 
 void roteador::entrada_controle_de_fluxo()
 {
-	if (/*cf_norte->in_val.read() == 1 or */cf_norte->val == true)
+	if (cf_norte->val == true)
 	{
 		// printf("Leitura do in_val pelo norte\n");
 		cf_norte->val = false;
@@ -16,7 +16,7 @@ void roteador::entrada_controle_de_fluxo()
 		cf_norte->wok = buffer_norte->wok;
 		execute_retorno_controle_de_fluxo();
 	}
-	if (/*cf_sul->in_val.read() == 1 or */cf_sul->val == true)
+	if (cf_sul->val == true)
 	{
 		// printf("Leitura do in_val pelo sul\n");
 		cf_sul->val = false;
@@ -26,7 +26,7 @@ void roteador::entrada_controle_de_fluxo()
 		cf_sul->wok = buffer_sul->wok;
 		execute_retorno_controle_de_fluxo();
 	}
-	if (/*cf_leste->in_val.read() == 1 or */cf_leste->val == true)
+	if (cf_leste->val == true)
 	{
 		// printf("Leitura do in_val pelo leste\n");
 		cf_leste->val = false;
@@ -36,7 +36,7 @@ void roteador::entrada_controle_de_fluxo()
 		cf_leste->wok = buffer_leste->wok;
 		execute_retorno_controle_de_fluxo();
 	}
-	if (/*cf_oeste->in_val.read() == 1 or */cf_oeste->val == true)
+	if (cf_oeste->val == true)
 	{
 		// printf("Leitura do in_val pelo oeste\n");
 		cf_oeste->val = false;
@@ -72,7 +72,7 @@ void roteador::confirmacao_buffer()
 	if (buffer_norte->wr == 1)
 	{
 		// Se tiver espaço no buffer retorna 1 para a variável wok do buffer para o controle de fluxo 
-		buffer_norte->wok = buffer_norte->isEmpty();
+		buffer_norte->wok = buffer_norte->isEmpty(canal_vt);
 		if (buffer_norte->wok == 1){
 			cf_norte->wr = 0;
 			buffer_norte->wr = 0;
@@ -82,7 +82,7 @@ void roteador::confirmacao_buffer()
 	if (buffer_sul->wr == 1)
 	{
 		// Se tiver espaço no buffer retorna 1 para a variável wok do buffer para o controle de fluxo 
-		buffer_sul->wok = buffer_sul->isEmpty();
+		buffer_sul->wok = buffer_sul->isEmpty(canal_vt);
 		if (buffer_sul->wok == 1){
 			cf_sul->wr = 0;
 			buffer_sul->wr = 0;
@@ -92,7 +92,7 @@ void roteador::confirmacao_buffer()
 	if (buffer_leste->wr == 1)
 	{
 		// Se tiver espaço no buffer retorna 1 para a variável wok do buffer para o controle de fluxo 
-		buffer_leste->wok = buffer_leste->isEmpty();
+		buffer_leste->wok = buffer_leste->isEmpty(canal_vt);
 		if (buffer_leste->wok == 1){
 			cf_leste->wr = 0;
 			buffer_leste->wr = 0;
@@ -102,7 +102,7 @@ void roteador::confirmacao_buffer()
 	if (buffer_oeste->wr == 1)
 	{
 		// Se tiver espaço no buffer retorna 1 para a variável wok do buffer para o controle de fluxo 
-		buffer_oeste->wok = buffer_oeste->isEmpty();
+		buffer_oeste->wok = buffer_oeste->isEmpty(canal_vt);
 		if (buffer_oeste->wok == 1){
 			cf_oeste->wr = 0;
 			buffer_oeste->wr = 0;

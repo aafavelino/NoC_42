@@ -25,7 +25,7 @@ void REDE::comunicacao_externa()
 					pacotes_tg[i].flits.ciclo = clock;
 					pacotes_tg[i].flits.begin = i;
 					rede[pacotes_tg[i].xs][pacotes_tg[i].ys]->buffer_local_entrada->din = pacotes_tg[i].flits;
-					rede[pacotes_tg[i].xs][pacotes_tg[i].ys]->buffer_local_entrada->add();
+					rede[pacotes_tg[i].xs][pacotes_tg[i].ys]->buffer_local_entrada->add(0);
 					pacotes_tg[i].contador_flits++;
 					pacotes_tg[i].first_flit = clock;
 					pacotes_tg[i].contador_size++;
@@ -70,7 +70,7 @@ void REDE::comunicacao_externa()
 
 					pacotes_tg[i].flits.ciclo = clock;
 					rede[pacotes_tg[i].xs][pacotes_tg[i].ys]->buffer_local_entrada->din = pacotes_tg[i].flits;
-					rede[pacotes_tg[i].xs][pacotes_tg[i].ys]->buffer_local_entrada->add();
+					rede[pacotes_tg[i].xs][pacotes_tg[i].ys]->buffer_local_entrada->add(0);
 					pacotes_tg[i].contador_ciclos = 0;
 				}
 				
@@ -115,10 +115,10 @@ void REDE::comunicacao_externa()
 		for (int x = 0; x < LARGURA_REDE; x++)
 		{   
 
-			if(rede[y][x]->buffer_local_entrada->size > 0) {
+			if(rede[y][x]->buffer_local_entrada->size[0] > 0) {
 
-				rede[y][x]->roteamento_local.cordenada_destino.x =  rede[y][x]->buffer_local_entrada->flits.front().cordenadas_f.x;
-				rede[y][x]->roteamento_local.cordenada_destino.y =  rede[y][x]->buffer_local_entrada->flits.front().cordenadas_f.y;
+				rede[y][x]->roteamento_local.cordenada_destino.x =  rede[y][x]->buffer_local_entrada->buffer_virtual[0].front().cordenadas_f.x;
+				rede[y][x]->roteamento_local.cordenada_destino.y =  rede[y][x]->buffer_local_entrada->buffer_virtual[0].front().cordenadas_f.y;
 
 				//Roteando
 
@@ -147,40 +147,45 @@ void REDE::comunicacao_externa()
 
 				if (rede[y][x]->roteamento_local.portaDestino == SUL)
 				{
-					rede[y][x]->buffer_sul_saida->din =  rede[y][x]->buffer_local_entrada->flits.front();
-					rede[y][x]->buffer_local_entrada->remove();
-					rede[y][x]->buffer_sul_saida->add();
+					rede[y][x]->buffer_sul_saida->din =  rede[y][x]->buffer_local_entrada->buffer_virtual[0].front();
+					rede[y][x]->buffer_local_entrada->remove(0);
+					rede[y][x]->buffer_sul_saida->add(0);
 					rede[y+1][x]->cf_norte->val = true;
+					rede[y+1][x]->canal_vt = 0;
 					throughput[y][x]->saida_sul++;
 					rede[y][x]->cf_saida_sul->out_val.write(clock);
+
 					
 				}
 				else if (rede[y][x]->roteamento_local.portaDestino == NORTE)
 				{
-					rede[y][x]->buffer_norte_saida->din =  rede[y][x]->buffer_local_entrada->flits.front();
-					rede[y][x]->buffer_local_entrada->remove();
-					rede[y][x]->buffer_norte_saida->add();
+					rede[y][x]->buffer_norte_saida->din =  rede[y][x]->buffer_local_entrada->buffer_virtual[0].front();
+					rede[y][x]->buffer_local_entrada->remove(0);
+					rede[y][x]->buffer_norte_saida->add(0);
 					rede[y-1][x]->cf_sul->val = true;
+					rede[y-1][x]->canal_vt = 0;
 					throughput[y][x]->saida_norte++;
 					rede[y][x]->cf_saida_norte->out_val.write(clock);
 				
 					
 				}  else if (rede[y][x]->roteamento_local.portaDestino == LESTE)
 				{
-					rede[y][x]->buffer_leste_saida->din =  rede[y][x]->buffer_local_entrada->flits.front();
-					rede[y][x]->buffer_local_entrada->remove();
-					rede[y][x]->buffer_leste_saida->add();
+					rede[y][x]->buffer_leste_saida->din =  rede[y][x]->buffer_local_entrada->buffer_virtual[0].front();
+					rede[y][x]->buffer_local_entrada->remove(0);
+					rede[y][x]->buffer_leste_saida->add(0);
 					rede[y][x+1]->cf_oeste->val = true;
+					rede[y][x+1]->canal_vt = 0;
 					throughput[y][x]->saida_leste++;
 					rede[y][x]->cf_saida_leste->out_val.write(clock);
 
 
 				} else if (rede[y][x]->roteamento_local.portaDestino == OESTE)
 				{	
-					rede[y][x]->buffer_oeste_saida->din =  rede[y][x]->buffer_local_entrada->flits.front();
-					rede[y][x]->buffer_local_entrada->remove();
-					rede[y][x]->buffer_oeste_saida->add();
+					rede[y][x]->buffer_oeste_saida->din =  rede[y][x]->buffer_local_entrada->buffer_virtual[0].front();
+					rede[y][x]->buffer_local_entrada->remove(0);
+					rede[y][x]->buffer_oeste_saida->add(0);
 					rede[y][x-1]->cf_leste->val = true;
+					rede[y][x-1]->canal_vt = 0;
 					throughput[y][x]->saida_oeste++;
 					rede[y][x]->cf_saida_oeste->out_val.write(clock);
 
@@ -194,10 +199,10 @@ void REDE::comunicacao_externa()
 			{
 
 				// printf("[%d][%d]--LESTE\n",y,x);
-				rede[y][x]->buffer_leste->din = rede[y][x+1]->buffer_oeste_saida->flits.front(); 
-				rede[y][x]->buffer_leste->add();
-				rede[y][x+1]->buffer_oeste_saida->remove();
-				if (rede[y][x+1]->buffer_oeste_saida->size == 0)
+				rede[y][x]->buffer_leste->din = rede[y][x+1]->buffer_oeste_saida->buffer_virtual[0].front(); 
+				rede[y][x]->buffer_leste->add(0);
+				rede[y][x+1]->buffer_oeste_saida->remove(0);
+				if (rede[y][x+1]->buffer_oeste_saida->size[0] == 0)
 					rede[y][x]->cf_leste->ack = false;
 				ver_leste[y][x] = true;
 			}
@@ -205,10 +210,10 @@ void REDE::comunicacao_externa()
 			if (rede[y][x]->cf_oeste->ack == true)
 			{
 				// printf("[%d][%d]--OESTE\n",y,x);
-				rede[y][x]->buffer_oeste->din = rede[y][x-1]->buffer_leste_saida->flits.front();			 
-				rede[y][x]->buffer_oeste->add();
-				rede[y][x-1]->buffer_leste_saida->remove();
-				if (rede[y][x-1]->buffer_leste_saida->size == 0)
+				rede[y][x]->buffer_oeste->din = rede[y][x-1]->buffer_leste_saida->buffer_virtual[0].front();			 
+				rede[y][x]->buffer_oeste->add(0);
+				rede[y][x-1]->buffer_leste_saida->remove(0);
+				if (rede[y][x-1]->buffer_leste_saida->size[0] == 0)
 					rede[y][x]->cf_oeste->ack = false;
 				ver_oeste[y][x] = true;
 			}			
@@ -216,10 +221,10 @@ void REDE::comunicacao_externa()
 			if (rede[y][x]->cf_norte->ack == true)
 			{			
 				// printf("[%d][%d]--NORTE\n",y,x);
-				rede[y][x]->buffer_norte->din = rede[y-1][x]->buffer_sul_saida->flits.front();
-				rede[y][x]->buffer_norte->add();
-				rede[y-1][x]->buffer_sul_saida->remove();
-				if (rede[y-1][x]->buffer_sul_saida->size ==0)
+				rede[y][x]->buffer_norte->din = rede[y-1][x]->buffer_sul_saida->buffer_virtual[0].front();
+				rede[y][x]->buffer_norte->add(0);
+				rede[y-1][x]->buffer_sul_saida->remove(0);
+				if (rede[y-1][x]->buffer_sul_saida->size[0] ==0)
 					rede[y][x]->cf_norte->ack = false;
 				ver_norte[y][x] = true;
 			}	
@@ -227,10 +232,10 @@ void REDE::comunicacao_externa()
 			if (rede[y][x]->cf_sul->ack == true) 
 			{
 				// printf("[%d][%d]--SUL\n",y,x);
-				rede[y][x]->buffer_sul->din = rede[y+1][x]->buffer_norte_saida->flits.front();
-				rede[y][x]->buffer_sul->add();
-				rede[y+1][x]->buffer_norte_saida->remove();
-				if (rede[y+1][x]->buffer_norte_saida->size == 0)
+				rede[y][x]->buffer_sul->din = rede[y+1][x]->buffer_norte_saida->buffer_virtual[0].front();
+				rede[y][x]->buffer_sul->add(0);
+				rede[y+1][x]->buffer_norte_saida->remove(0);
+				if (rede[y+1][x]->buffer_norte_saida->size[0] == 0)
 					rede[y][x]->cf_sul->ack = false;
 				ver_sul[y][x] = true;
 			}
@@ -242,8 +247,8 @@ void REDE::comunicacao_externa()
 
 			if (ver_sul[y][x])
 			{
-				rede[y][x]->roteamento_sul.cordenada_destino.x = rede[y][x]->buffer_sul->flits.front().cordenadas_f.x;
-				rede[y][x]->roteamento_sul.cordenada_destino.y = rede[y][x]->buffer_sul->flits.front().cordenadas_f.y;								
+				rede[y][x]->roteamento_sul.cordenada_destino.x = rede[y][x]->buffer_sul->buffer_virtual[0].front().cordenadas_f.x;
+				rede[y][x]->roteamento_sul.cordenada_destino.y = rede[y][x]->buffer_sul->buffer_virtual[0].front().cordenadas_f.y;								
 				
 				#ifdef NEGATIVE_FIRST
 				rede[y][x]->roteamento_sul.rotear_negative_first();
@@ -290,20 +295,20 @@ void REDE::comunicacao_externa()
 
 					// printf("CHEGOUUUUU sul...\n");
 
-					if (rede[y][x]->buffer_sul->flits.front().end != -1)
+					if (rede[y][x]->buffer_sul->buffer_virtual[0].front().end != -1)
 					{
-						latencias[rede[y][x]->buffer_sul->flits.front().end].push_back(clock - rede[y][x]->buffer_sul->flits.front().ciclo);
+						latencias[rede[y][x]->buffer_sul->buffer_virtual[0].front().end].push_back(clock - rede[y][x]->buffer_sul->buffer_virtual[0].front().ciclo);
 					}
-					if (rede[y][x]->buffer_sul->flits.front().stop)
+					if (rede[y][x]->buffer_sul->buffer_virtual[0].front().stop)
 					{
-						pacotes_tg[rede[y][x]->buffer_sul->flits.front().begin].stop = true;
+						pacotes_tg[rede[y][x]->buffer_sul->buffer_virtual[0].front().begin].stop = true;
 					}
 
-					rede[y][x]->buffer_local->din = rede[y][x]->buffer_sul->flits.front();
-					rede[y][x]->buffer_sul->remove();
-					rede[y][x]->buffer_local->add();
+					rede[y][x]->buffer_local->din = rede[y][x]->buffer_sul->buffer_virtual[0].front();
+					rede[y][x]->buffer_sul->remove(0);
+					rede[y][x]->buffer_local->add(0);
 
-					if (rede[y][x]->buffer_sul->size == 0)
+					if (rede[y][x]->buffer_sul->size[0] == 0)
 					{
 						ver_sul[y][x] = false;
 					}
@@ -314,11 +319,11 @@ void REDE::comunicacao_externa()
 					{
 						ver_sul[y][x] = false;
 						rede[y-1][x]->cf_sul->val = true;
-
+						rede[y-1][x]->canal_vt = 0;
 						rede[y][x]->cf_saida_norte->out_val.write(clock);
-						rede[y][x]->buffer_norte_saida->din = rede[y][x]->buffer_sul->flits.front();
-						rede[y][x]->buffer_norte_saida->add();
-						rede[y][x]->buffer_sul->remove();
+						rede[y][x]->buffer_norte_saida->din = rede[y][x]->buffer_sul->buffer_virtual[0].front();
+						rede[y][x]->buffer_norte_saida->add(0);
+						rede[y][x]->buffer_sul->remove(0);
 						rede[y][x]->arbitro_sul.remSolicitacao(SUL);
 						throughput[y][x]->saida_norte++;
 					}
@@ -327,11 +332,11 @@ void REDE::comunicacao_externa()
 						
 						ver_sul[y][x] = false;
 						rede[y][x+1]->cf_oeste->val = true;
-
+						rede[y][x+1]->canal_vt = 0;
 						rede[y][x]->cf_saida_leste->out_val.write(clock);			
-						rede[y][x]->buffer_leste_saida->din = rede[y][x]->buffer_sul->flits.front();
-						rede[y][x]->buffer_leste_saida->add();
-						rede[y][x]->buffer_sul->remove();	
+						rede[y][x]->buffer_leste_saida->din = rede[y][x]->buffer_sul->buffer_virtual[0].front();
+						rede[y][x]->buffer_leste_saida->add(0);
+						rede[y][x]->buffer_sul->remove(0);	
 						rede[y][x]->arbitro_sul.remSolicitacao(LESTE);
 						throughput[y][x]->saida_leste++;
 					}
@@ -339,17 +344,19 @@ void REDE::comunicacao_externa()
 					{
 						
 						ver_sul[y][x] = false;
-						rede[y][x-1]->cf_leste->val = true;                                                                                                                                                                                                                                                                                
+						rede[y][x-1]->cf_leste->val = true;  
+						rede[y][x-1]->canal_vt = 0;                                                                                                                                                                                                                                                                              
 						rede[y][x]->cf_saida_oeste->out_val.write(clock);
-						rede[y][x]->buffer_oeste_saida->din = rede[y][x]->buffer_sul->flits.front();
-						rede[y][x]->buffer_oeste_saida->add();
-						rede[y][x]->buffer_sul->remove();
+						rede[y][x]->buffer_oeste_saida->din = rede[y][x]->buffer_sul->buffer_virtual[0].front();
+						rede[y][x]->buffer_oeste_saida->add(0);
+						rede[y][x]->buffer_sul->remove(0);
 						rede[y][x]->arbitro_sul.remSolicitacao(OESTE);
 						throughput[y][x]->saida_oeste++;
 					}
 					if (rede[y][x]->roteamento_sul.portaDestino == SUL)
 					{
 						rede[y+1][x]->cf_norte->val = true;
+						rede[y+1][x]->canal_vt = 0;
 						throughput[y][x]->saida_sul++;
 						rede[y][x]->cf_saida_sul->out_val.write(clock);
 					}
@@ -359,8 +366,8 @@ void REDE::comunicacao_externa()
 
 			if (ver_norte[y][x])
 			{
-				rede[y][x]->roteamento_norte.cordenada_destino.x = rede[y][x]->buffer_norte->flits.front().cordenadas_f.x;
-				rede[y][x]->roteamento_norte.cordenada_destino.y = rede[y][x]->buffer_norte->flits.front().cordenadas_f.y;								
+				rede[y][x]->roteamento_norte.cordenada_destino.x = rede[y][x]->buffer_norte->buffer_virtual[0].front().cordenadas_f.x;
+				rede[y][x]->roteamento_norte.cordenada_destino.y = rede[y][x]->buffer_norte->buffer_virtual[0].front().cordenadas_f.y;								
 				
 				#ifdef NEGATIVE_FIRST
 				rede[y][x]->roteamento_norte.rotear_negative_first();
@@ -406,21 +413,21 @@ void REDE::comunicacao_externa()
 				{
 					// printf("CHEGOUUUUU norte...\n");
 					
-					if (rede[y][x]->buffer_norte->flits.front().end != -1)
+					if (rede[y][x]->buffer_norte->buffer_virtual[0].front().end != -1)
 					{
-						latencias[rede[y][x]->buffer_norte->flits.front().end].push_back(clock - rede[y][x]->buffer_norte->flits.front().ciclo);
+						latencias[rede[y][x]->buffer_norte->buffer_virtual[0].front().end].push_back(clock - rede[y][x]->buffer_norte->buffer_virtual[0].front().ciclo);
 					}
 
-					if (rede[y][x]->buffer_norte->flits.front().stop)
+					if (rede[y][x]->buffer_norte->buffer_virtual[0].front().stop)
 					{
-						pacotes_tg[rede[y][x]->buffer_norte->flits.front().begin].stop = true;
+						pacotes_tg[rede[y][x]->buffer_norte->buffer_virtual[0].front().begin].stop = true;
 					}
 
 
-					rede[y][x]->buffer_local->din = rede[y][x]->buffer_norte->flits.front();
-					rede[y][x]->buffer_norte->remove();
-					rede[y][x]->buffer_local->add();	
-					if (rede[y][x]->buffer_norte->size == 0)
+					rede[y][x]->buffer_local->din = rede[y][x]->buffer_norte->buffer_virtual[0].front();
+					rede[y][x]->buffer_norte->remove(0);
+					rede[y][x]->buffer_local->add(0);	
+					if (rede[y][x]->buffer_norte->size[0] == 0)
 					{
 						ver_norte[y][x] = false;
 						
@@ -429,6 +436,7 @@ void REDE::comunicacao_externa()
 					if (rede[y][x]->roteamento_norte.portaDestino == NORTE)
 					{
 						rede[y-1][x]->cf_sul->val = true;
+						rede[y-1][x]->canal_vt = 0;
 						throughput[y][x]->saida_norte++;
 						rede[y][x]->cf_saida_norte->out_val.write(clock);
 					}
@@ -437,11 +445,11 @@ void REDE::comunicacao_externa()
 						
 						ver_norte[y][x] = false;
 						rede[y+1][x]->cf_norte->val = true;
-
+						rede[y+1][x]->canal_vt = 0;
 						rede[y][x]->cf_saida_sul->out_val.write(clock);
-						rede[y][x]->buffer_sul_saida->din = rede[y][x]->buffer_norte->flits.front();
-						rede[y][x]->buffer_sul_saida->add();
-						rede[y][x]->buffer_norte->remove();
+						rede[y][x]->buffer_sul_saida->din = rede[y][x]->buffer_norte->buffer_virtual[0].front();
+						rede[y][x]->buffer_sul_saida->add(0);
+						rede[y][x]->buffer_norte->remove(0);
 						rede[y][x]->arbitro_norte.remSolicitacao(SUL);
 						throughput[y][x]->saida_sul++;
 					}
@@ -450,11 +458,11 @@ void REDE::comunicacao_externa()
 						
 						ver_norte[y][x] = false;
 						rede[y][x+1]->cf_oeste->val = true;
-
+						rede[y][x+1]->canal_vt = 0;
 						rede[y][x]->cf_saida_leste->out_val.write(clock);			
-						rede[y][x]->buffer_leste_saida->din = rede[y][x]->buffer_norte->flits.front();
-						rede[y][x]->buffer_leste_saida->add();
-						rede[y][x]->buffer_norte->remove();	
+						rede[y][x]->buffer_leste_saida->din = rede[y][x]->buffer_norte->buffer_virtual[0].front();
+						rede[y][x]->buffer_leste_saida->add(0);
+						rede[y][x]->buffer_norte->remove(0);	
 						rede[y][x]->arbitro_norte.remSolicitacao(LESTE);
 						throughput[y][x]->saida_leste++;
 					}
@@ -463,10 +471,11 @@ void REDE::comunicacao_externa()
 						
 						ver_norte[y][x] = false;
 						rede[y][x-1]->cf_leste->val = true;
+						rede[y][x-1]->canal_vt = 0;
 						rede[y][x]->cf_saida_oeste->out_val.write(clock);
-						rede[y][x]->buffer_oeste_saida->din = rede[y][x]->buffer_norte->flits.front();
-						rede[y][x]->buffer_oeste_saida->add();
-						rede[y][x]->buffer_norte->remove();
+						rede[y][x]->buffer_oeste_saida->din = rede[y][x]->buffer_norte->buffer_virtual[0].front();
+						rede[y][x]->buffer_oeste_saida->add(0);
+						rede[y][x]->buffer_norte->remove(0);
 						rede[y][x]->arbitro_norte.remSolicitacao(OESTE);
 						throughput[y][x]->saida_oeste++;
 					}
@@ -477,8 +486,8 @@ void REDE::comunicacao_externa()
 			if (ver_leste[y][x])
 			{
 
-				rede[y][x]->roteamento_leste.cordenada_destino.x = rede[y][x]->buffer_leste->flits.front().cordenadas_f.x;
-				rede[y][x]->roteamento_leste.cordenada_destino.y = rede[y][x]->buffer_leste->flits.front().cordenadas_f.y;	
+				rede[y][x]->roteamento_leste.cordenada_destino.x = rede[y][x]->buffer_leste->buffer_virtual[0].front().cordenadas_f.x;
+				rede[y][x]->roteamento_leste.cordenada_destino.y = rede[y][x]->buffer_leste->buffer_virtual[0].front().cordenadas_f.y;	
 
 
 				#ifdef NEGATIVE_FIRST
@@ -526,19 +535,19 @@ void REDE::comunicacao_externa()
 				{
 					
 					// printf("CHEGOUUUUU leste...\n");
-					if (rede[y][x]->buffer_leste->flits.front().end != -1)
+					if (rede[y][x]->buffer_leste->buffer_virtual[0].front().end != -1)
 					{
-						latencias[rede[y][x]->buffer_leste->flits.front().end].push_back(clock - rede[y][x]->buffer_leste->flits.front().ciclo);
+						latencias[rede[y][x]->buffer_leste->buffer_virtual[0].front().end].push_back(clock - rede[y][x]->buffer_leste->buffer_virtual[0].front().ciclo);
 					}
-					if (rede[y][x]->buffer_leste->flits.front().stop)
+					if (rede[y][x]->buffer_leste->buffer_virtual[0].front().stop)
 					{
-						pacotes_tg[rede[y][x]->buffer_leste->flits.front().begin].stop = true;
+						pacotes_tg[rede[y][x]->buffer_leste->buffer_virtual[0].front().begin].stop = true;
 					}
 
-					rede[y][x]->buffer_local->din = rede[y][x]->buffer_leste->flits.front();
-					rede[y][x]->buffer_leste->remove();
-					rede[y][x]->buffer_local->add();	
-					if (rede[y][x]->buffer_leste->size == 0)
+					rede[y][x]->buffer_local->din = rede[y][x]->buffer_leste->buffer_virtual[0].front();
+					rede[y][x]->buffer_leste->remove(0);
+					rede[y][x]->buffer_local->add(0);	
+					if (rede[y][x]->buffer_leste->size[0] == 0)
 					{
 						ver_leste[y][x] = false;
 					}									
@@ -546,6 +555,7 @@ void REDE::comunicacao_externa()
 					if (rede[y][x]->roteamento_leste.portaDestino == LESTE)
 					{
 						rede[y][x+1]->cf_oeste->val = true;
+						rede[y][x+1]->canal_vt = 0;
 						throughput[y][x]->saida_leste++;
 						rede[y][x]->cf_saida_leste->out_val.write(clock);
 					}
@@ -554,10 +564,11 @@ void REDE::comunicacao_externa()
 
 						ver_leste[y][x] = false;
 						rede[y-1][x]->cf_sul->val = true;
+						rede[y-1][x]->canal_vt = 0;
 						rede[y][x]->cf_saida_norte->out_val.write(clock);
-						rede[y][x]->buffer_norte_saida->din = rede[y][x]->buffer_leste->flits.front();
-						rede[y][x]->buffer_norte_saida->add();
-						rede[y][x]->buffer_leste->remove();
+						rede[y][x]->buffer_norte_saida->din = rede[y][x]->buffer_leste->buffer_virtual[0].front();
+						rede[y][x]->buffer_norte_saida->add(0);
+						rede[y][x]->buffer_leste->remove(0);
 						rede[y][x]->arbitro_leste.remSolicitacao(NORTE);
 						throughput[y][x]->saida_norte++;
 					}
@@ -565,10 +576,11 @@ void REDE::comunicacao_externa()
 					{
 						ver_leste[y][x] = false;
 						rede[y+1][x]->cf_norte->val = true;
+						rede[y+1][x]->canal_vt = 0;
 						rede[y][x]->cf_saida_sul->out_val.write(clock);
-						rede[y][x]->buffer_sul_saida->din = rede[y][x]->buffer_leste->flits.front();
-						rede[y][x]->buffer_sul_saida->add();
-						rede[y][x]->buffer_leste->remove();
+						rede[y][x]->buffer_sul_saida->din = rede[y][x]->buffer_leste->buffer_virtual[0].front();
+						rede[y][x]->buffer_sul_saida->add(0);
+						rede[y][x]->buffer_leste->remove(0);
 						rede[y][x]->arbitro_leste.remSolicitacao(SUL);
 						throughput[y][x]->saida_sul++;
 					}	
@@ -577,10 +589,11 @@ void REDE::comunicacao_externa()
 
 						ver_leste[y][x] = false;
 						rede[y][x-1]->cf_leste->val = true;
+						rede[y][x-1]->canal_vt = 0;
 						rede[y][x]->cf_saida_oeste->out_val.write(clock);
-						rede[y][x]->buffer_oeste_saida->din = rede[y][x]->buffer_leste->flits.front();
-						rede[y][x]->buffer_oeste_saida->add();
-						rede[y][x]->buffer_leste->remove();
+						rede[y][x]->buffer_oeste_saida->din = rede[y][x]->buffer_leste->buffer_virtual[0].front();
+						rede[y][x]->buffer_oeste_saida->add(0);
+						rede[y][x]->buffer_leste->remove(0);
 						rede[y][x]->arbitro_leste.remSolicitacao(LESTE);
 						throughput[y][x]->saida_oeste++;
 					}
@@ -593,8 +606,8 @@ void REDE::comunicacao_externa()
 
 			if (ver_oeste[y][x])
 			{
-				rede[y][x]->roteamento_oeste.cordenada_destino.x = rede[y][x]->buffer_oeste->flits.front().cordenadas_f.x;
-				rede[y][x]->roteamento_oeste.cordenada_destino.y = rede[y][x]->buffer_oeste->flits.front().cordenadas_f.y;				
+				rede[y][x]->roteamento_oeste.cordenada_destino.x = rede[y][x]->buffer_oeste->buffer_virtual[0].front().cordenadas_f.x;
+				rede[y][x]->roteamento_oeste.cordenada_destino.y = rede[y][x]->buffer_oeste->buffer_virtual[0].front().cordenadas_f.y;				
 
 				#ifdef NEGATIVE_FIRST
 				rede[y][x]->roteamento_oeste.rotear_negative_first();
@@ -640,18 +653,18 @@ void REDE::comunicacao_externa()
 					
 					// printf("CHEGOUUUUU oeste...\n");
 
-					if (rede[y][x]->buffer_oeste->flits.front().end != -1)
+					if (rede[y][x]->buffer_oeste->buffer_virtual[0].front().end != -1)
 					{
-						latencias[rede[y][x]->buffer_oeste->flits.front().end].push_back(clock - rede[y][x]->buffer_oeste->flits.front().ciclo);	
+						latencias[rede[y][x]->buffer_oeste->buffer_virtual[0].front().end].push_back(clock - rede[y][x]->buffer_oeste->buffer_virtual[0].front().ciclo);	
 					}		
-					if (rede[y][x]->buffer_oeste->flits.front().stop)
+					if (rede[y][x]->buffer_oeste->buffer_virtual[0].front().stop)
 					{
-						pacotes_tg[rede[y][x]->buffer_oeste->flits.front().begin].stop = true;
+						pacotes_tg[rede[y][x]->buffer_oeste->buffer_virtual[0].front().begin].stop = true;
 					}			
-					rede[y][x]->buffer_local->din = rede[y][x]->buffer_oeste->flits.front();
-					rede[y][x]->buffer_oeste->remove();
-					rede[y][x]->buffer_local->add();	
-					if (rede[y][x]->buffer_oeste->size == 0)
+					rede[y][x]->buffer_local->din = rede[y][x]->buffer_oeste->buffer_virtual[0].front();
+					rede[y][x]->buffer_oeste->remove(0);
+					rede[y][x]->buffer_local->add(0);	
+					if (rede[y][x]->buffer_oeste->size[0] == 0)
 					{
 						ver_oeste[y][x] = false;
 					}									
@@ -659,6 +672,7 @@ void REDE::comunicacao_externa()
 					if (rede[y][x]->roteamento_oeste.portaDestino == OESTE)
 					{
 						rede[y][x-1]->cf_leste->val = true;
+						rede[y][x-1]->canal_vt = 0;
 						throughput[y][x]->saida_oeste++;
 						rede[y][x]->cf_saida_oeste->out_val.write(clock);
 					}
@@ -666,10 +680,11 @@ void REDE::comunicacao_externa()
 					{
 						ver_oeste[y][x] = false;
 						rede[y-1][x]->cf_sul->val = true;
+						rede[y-1][x]->canal_vt = 0;
 						rede[y][x]->cf_saida_norte->out_val.write(clock);
-						rede[y][x]->buffer_norte_saida->din = rede[y][x]->buffer_oeste->flits.front();
-						rede[y][x]->buffer_norte_saida->add();
-						rede[y][x]->buffer_oeste->remove();
+						rede[y][x]->buffer_norte_saida->din = rede[y][x]->buffer_oeste->buffer_virtual[0].front();
+						rede[y][x]->buffer_norte_saida->add(0);
+						rede[y][x]->buffer_oeste->remove(0);
 						rede[y][x]->arbitro_oeste.remSolicitacao(NORTE);
 						throughput[y][x]->saida_norte++;
 					}
@@ -678,10 +693,11 @@ void REDE::comunicacao_externa()
 						
 						ver_oeste[y][x] = false;
 						rede[y][x+1]->cf_oeste->val = true;
+						rede[y][x+1]->canal_vt = 0;
 						rede[y][x]->cf_saida_leste->out_val.write(clock);			
-						rede[y][x]->buffer_leste_saida->din = rede[y][x]->buffer_oeste->flits.front();
-						rede[y][x]->buffer_leste_saida->add();
-						rede[y][x]->buffer_oeste->remove();	
+						rede[y][x]->buffer_leste_saida->din = rede[y][x]->buffer_oeste->buffer_virtual[0].front();
+						rede[y][x]->buffer_leste_saida->add(0);
+						rede[y][x]->buffer_oeste->remove(0);	
 						rede[y][x]->arbitro_oeste.remSolicitacao(LESTE);
 						throughput[y][x]->saida_leste++;
 					}
@@ -690,10 +706,11 @@ void REDE::comunicacao_externa()
 						
 						ver_oeste[y][x] = false;
 						rede[y+1][x]->cf_norte->val = true;
+						rede[y+1][x]->canal_vt = 0;
 						rede[y][x]->cf_saida_sul->out_val.write(clock);
-						rede[y][x]->buffer_sul_saida->din = rede[y][x]->buffer_oeste->flits.front();
-						rede[y][x]->buffer_sul_saida->add();
-						rede[y][x]->buffer_oeste->remove();
+						rede[y][x]->buffer_sul_saida->din = rede[y][x]->buffer_oeste->buffer_virtual[0].front();
+						rede[y][x]->buffer_sul_saida->add(0);
+						rede[y][x]->buffer_oeste->remove(0);
 						rede[y][x]->arbitro_oeste.remSolicitacao(SUL);
 						throughput[y][x]->saida_sul++;
 					}	

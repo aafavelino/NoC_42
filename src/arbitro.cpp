@@ -37,9 +37,11 @@ void Arbitro::setPrioridade()
 	#ifdef ROTATIVA
 		std::vector<int> prioridades;
 		for (int i = 0; i < 5; ++i)
-			if (buffercircular[i] == 1)
+			if (buffercircular[i] == 1){
 				prioridades.push_back(i);
-		
+				buffercircular[i] = 0;
+			}
+		// cout << "prioridades " <<prioridades.size()-1 << "   " << prioridades[prioridades.size()-2] << endl;
 		prioridade = prioridades[prioridades.size()-1];
 
 		prioridades.pop_back();
@@ -49,8 +51,10 @@ void Arbitro::setPrioridade()
 	#ifdef RANDOMICA
 		std::vector<int> prioridades;
 		for (int i = 0; i < 5; ++i)
-			if (buffercircular[i] == 1)
+			if (buffercircular[i] == 1){
 				prioridades.push_back(i);
+				buffercircular[i] = 0;
+			}
 
 		std::function<int (int, int)> func = [](int i, int j) { return rand() % i + j; };
 		

@@ -1,59 +1,59 @@
-Variância do pacote[0]: 6824.53
-Desvio padrão do pacote[0]:82.6107
+Variância do pacote[0]: 2634.75
+Desvio padrão do pacote[0]:51.3298
 
-Variância do pacote[1]: 416.667
-Desvio padrão do pacote[1]:20.4124
+Variância do pacote[1]: 0
+Desvio padrão do pacote[1]:0
 
-Variância do pacote[2]: 0
-Desvio padrão do pacote[2]:0
+Variância do pacote[2]: 43
+Desvio padrão do pacote[2]:6.55744
 
-Variância do pacote[3]: 1933
-Desvio padrão do pacote[3]:43.9659
+Variância do pacote[3]: 11.5
+Desvio padrão do pacote[3]:3.39116
 
-Variância do pacote[4]: 2449.2
-Desvio padrão do pacote[4]:49.4894
+Variância do pacote[4]: 25
+Desvio padrão do pacote[4]:5
 
-Variância do pacote[5]: 2611.6
-Desvio padrão do pacote[5]:51.1038
+Variância do pacote[5]: 1
+Desvio padrão do pacote[5]:1
 
-Variância do pacote[6]: 2753.8
-Desvio padrão do pacote[6]:52.4767
+Variância do pacote[6]: 2.5
+Desvio padrão do pacote[6]:1.58114
 
-Variância do pacote[7]: 2174.36
-Desvio padrão do pacote[7]:46.6301
+Variância do pacote[7]: 9
+Desvio padrão do pacote[7]:3
 
-Variância do pacote[8]: 3006
-Desvio padrão do pacote[8]:54.827
+Variância do pacote[8]: 4
+Desvio padrão do pacote[8]:2
 
-Variância do pacote[9]: 7464.46
-Desvio padrão do pacote[9]:86.3971
+Variância do pacote[9]: 1
+Desvio padrão do pacote[9]:1
 
-Variância do pacote[10]: 5914.26
-Desvio padrão do pacote[10]:76.9042
+Variância do pacote[10]: 2.5
+Desvio padrão do pacote[10]:1.58114
 
-Variância do pacote[11]: 2034.2
-Desvio padrão do pacote[11]:45.1021
+Variância do pacote[11]: 4
+Desvio padrão do pacote[11]:2
 
-Variância do pacote[12]: 1926.2
-Desvio padrão do pacote[12]:43.8885
+Variância do pacote[12]: 4
+Desvio padrão do pacote[12]:2
 
-Variância do pacote[13]: 1626
-Desvio padrão do pacote[13]:40.3237
+Variância do pacote[13]: 20.5
+Desvio padrão do pacote[13]:4.52769
 
-Variância do pacote[14]: 1369.2
-Desvio padrão do pacote[14]:37.0027
+Variância do pacote[14]: 4
+Desvio padrão do pacote[14]:2
 
-Variância do pacote[15]: 1213.8
-Desvio padrão do pacote[15]:34.8396
+Variância do pacote[15]: 2.5
+Desvio padrão do pacote[15]:1.58114
 
-Variância do pacote[16]: 1102.2
-Desvio padrão do pacote[16]:33.1994
+Variância do pacote[16]: 4
+Desvio padrão do pacote[16]:2
 
-Variância do pacote[17]: 1207.8
-Desvio padrão do pacote[17]:34.7534
+Variância do pacote[17]: 81
+Desvio padrão do pacote[17]:9
 
-Variância do pacote[18]: 0.2
-Desvio padrão do pacote[18]:0.447214
+Variância do pacote[18]: 0.5
+Desvio padrão do pacote[18]:0.707107
 
 Variância do pacote[19]: 0
 Desvio padrão do pacote[19]:0
@@ -61,45 +61,423 @@ Desvio padrão do pacote[19]:0
 Variância do pacote[20]: 0
 Desvio padrão do pacote[20]:0
 
-Variância do pacote[21]: 0.2
-Desvio padrão do pacote[21]:0.447214
+Variância do pacote[21]: 0
+Desvio padrão do pacote[21]:0
 
 Variância do pacote[22]: 0
 Desvio padrão do pacote[22]:0
 
-Variância do pacote[23]: 0.4
-Desvio padrão do pacote[23]:0.632456
+Variância do pacote[23]: 0
+Desvio padrão do pacote[23]:0
 
 Variância do pacote[24]: 0
 Desvio padrão do pacote[24]:0
 
-Variância do pacote[25]: 1
-Desvio padrão do pacote[25]:1
+Variância do pacote[25]: 0
+Desvio padrão do pacote[25]:0
 
-Variância do pacote[26]: 0.6
-Desvio padrão do pacote[26]:0.774597
+Variância do pacote[26]: 0
+Desvio padrão do pacote[26]:0
 
-Variância do pacote[27]: 3.6
-Desvio padrão do pacote[27]:1.89737
+Variância do pacote[27]: 0
+Desvio padrão do pacote[27]:0
 
-Variância do pacote[28]: 0.6
-Desvio padrão do pacote[28]:0.774597
+Variância do pacote[28]: 0
+Desvio padrão do pacote[28]:0
 
-Variância do pacote[29]: 0.4
-Desvio padrão do pacote[29]:0.632456
+Variância do pacote[29]: 0
+Desvio padrão do pacote[29]:0
 
-Variância do pacote[30]: 1.2
-Desvio padrão do pacote[30]:1.09545
+Variância do pacote[30]: 0
+Desvio padrão do pacote[30]:0
 
-Variância do pacote[31]: 0.4
-Desvio padrão do pacote[31]:0.632456
+Variância do pacote[31]: 0
+Desvio padrão do pacote[31]:0
 
-Variância do pacote[32]: 0.2
-Desvio padrão do pacote[32]:0.447214
+Variância do pacote[32]: 0
+Desvio padrão do pacote[32]:0
 
-Variância do pacote[33]: 0.4
-Desvio padrão do pacote[33]:0.632456
+Variância do pacote[33]: 0
+Desvio padrão do pacote[33]:0
 
-Variância do pacote[34]: 0.4
-Desvio padrão do pacote[34]:0.632456
+Variância do pacote[34]: 0
+Desvio padrão do pacote[34]:0
+
+Variância do pacote[35]: 0
+Desvio padrão do pacote[35]:0
+
+Variância do pacote[36]: 0
+Desvio padrão do pacote[36]:0
+
+Variância do pacote[37]: 0
+Desvio padrão do pacote[37]:0
+
+Variância do pacote[38]: 0
+Desvio padrão do pacote[38]:0
+
+Variância do pacote[39]: 0
+Desvio padrão do pacote[39]:0
+
+Variância do pacote[40]: 0
+Desvio padrão do pacote[40]:0
+
+Variância do pacote[41]: 0
+Desvio padrão do pacote[41]:0
+
+Variância do pacote[42]: 0
+Desvio padrão do pacote[42]:0
+
+Variância do pacote[43]: 1
+Desvio padrão do pacote[43]:1
+
+Variância do pacote[44]: 0
+Desvio padrão do pacote[44]:0
+
+Variância do pacote[45]: 0
+Desvio padrão do pacote[45]:0
+
+Variância do pacote[46]: 0
+Desvio padrão do pacote[46]:0
+
+Variância do pacote[47]: 0
+Desvio padrão do pacote[47]:0
+
+Variância do pacote[48]: 0
+Desvio padrão do pacote[48]:0
+
+Variância do pacote[49]: 0
+Desvio padrão do pacote[49]:0
+
+Variância do pacote[50]: 0
+Desvio padrão do pacote[50]:0
+
+Variância do pacote[51]: 1
+Desvio padrão do pacote[51]:1
+
+Variância do pacote[52]: 0
+Desvio padrão do pacote[52]:0
+
+Variância do pacote[53]: 0
+Desvio padrão do pacote[53]:0
+
+Variância do pacote[54]: 0
+Desvio padrão do pacote[54]:0
+
+Variância do pacote[55]: 0
+Desvio padrão do pacote[55]:0
+
+Variância do pacote[56]: 0
+Desvio padrão do pacote[56]:0
+
+Variância do pacote[57]: 0
+Desvio padrão do pacote[57]:0
+
+Variância do pacote[58]: 0
+Desvio padrão do pacote[58]:0
+
+Variância do pacote[59]: 580644
+Desvio padrão do pacote[59]:762
+
+Variância do pacote[60]: 581406
+Desvio padrão do pacote[60]:762.5
+
+Variância do pacote[61]: 581406
+Desvio padrão do pacote[61]:762.5
+
+Variância do pacote[62]: 581406
+Desvio padrão do pacote[62]:762.5
+
+Variância do pacote[63]: 581406
+Desvio padrão do pacote[63]:762.5
+
+Variância do pacote[64]: 581406
+Desvio padrão do pacote[64]:762.5
+
+Variância do pacote[65]: 581406
+Desvio padrão do pacote[65]:762.5
+
+Variância do pacote[66]: 581406
+Desvio padrão do pacote[66]:762.5
+
+Variância do pacote[67]: 1
+Desvio padrão do pacote[67]:1
+
+Variância do pacote[68]: 0
+Desvio padrão do pacote[68]:0
+
+Variância do pacote[69]: 0
+Desvio padrão do pacote[69]:0
+
+Variância do pacote[70]: 0
+Desvio padrão do pacote[70]:0
+
+Variância do pacote[71]: 0
+Desvio padrão do pacote[71]:0
+
+Variância do pacote[72]: 0
+Desvio padrão do pacote[72]:0
+
+Variância do pacote[73]: 0
+Desvio padrão do pacote[73]:0
+
+Variância do pacote[74]: 0.5
+Desvio padrão do pacote[74]:0.707107
+
+Variância do pacote[75]: 1
+Desvio padrão do pacote[75]:1
+
+Variância do pacote[76]: 0
+Desvio padrão do pacote[76]:0
+
+Variância do pacote[77]: 0
+Desvio padrão do pacote[77]:0
+
+Variância do pacote[78]: 0
+Desvio padrão do pacote[78]:0
+
+Variância do pacote[79]: 0
+Desvio padrão do pacote[79]:0
+
+Variância do pacote[80]: 0
+Desvio padrão do pacote[80]:0
+
+Variância do pacote[81]: 0
+Desvio padrão do pacote[81]:0
+
+Variância do pacote[82]: 0
+Desvio padrão do pacote[82]:0
+
+Variância do pacote[83]: 39429
+Desvio padrão do pacote[83]:198.567
+
+Variância do pacote[84]: 62638
+Desvio padrão do pacote[84]:250.276
+
+Variância do pacote[85]: 23013.8
+Desvio padrão do pacote[85]:151.703
+
+Variância do pacote[86]: 1414.17
+Desvio padrão do pacote[86]:37.6054
+
+Variância do pacote[87]: 0
+Desvio padrão do pacote[87]:0
+
+Variância do pacote[88]: 0
+Desvio padrão do pacote[88]:0
+
+Variância do pacote[89]: 266.1
+Desvio padrão do pacote[89]:16.3126
+
+Variância do pacote[90]: 0.085
+Desvio padrão do pacote[90]:0.291548
+
+Variância do pacote[91]: 0
+Desvio padrão do pacote[91]:0
+
+Variância do pacote[92]: 2619.75
+Desvio padrão do pacote[92]:51.1835
+
+Variância do pacote[93]: 50721
+Desvio padrão do pacote[93]:225.213
+
+Variância do pacote[94]: 64.9
+Desvio padrão do pacote[94]:8.05605
+
+Variância do pacote[95]: 0
+Desvio padrão do pacote[95]:0
+
+Variância do pacote[96]: 0.875
+Desvio padrão do pacote[96]:0.935414
+
+Variância do pacote[97]: 123171
+Desvio padrão do pacote[97]:350.957
+
+Variância do pacote[98]: 6.625
+Desvio padrão do pacote[98]:2.57391
+
+Variância do pacote[99]: 6.25
+Desvio padrão do pacote[99]:2.5
+
+Variância do pacote[100]: 0.125
+Desvio padrão do pacote[100]:0.353553
+
+Variância do pacote[101]: 8
+Desvio padrão do pacote[101]:2.82843
+
+Variância do pacote[102]: 10.25
+Desvio padrão do pacote[102]:3.20156
+
+Variância do pacote[103]: 123028
+Desvio padrão do pacote[103]:350.753
+
+Variância do pacote[104]: 2439.9
+Desvio padrão do pacote[104]:49.3953
+
+Variância do pacote[105]: 1.7875
+Desvio padrão do pacote[105]:1.33697
+
+Variância do pacote[106]: 50371.8
+Desvio padrão do pacote[106]:224.437
+
+Variância do pacote[107]: 0.925
+Desvio padrão do pacote[107]:0.961769
+
+Variância do pacote[108]: 2615.07
+Desvio padrão do pacote[108]:51.1378
+
+Variância do pacote[109]: 69.6
+Desvio padrão do pacote[109]:8.34266
+
+Variância do pacote[110]: 1913.9
+Desvio padrão do pacote[110]:43.7481
+
+Variância do pacote[111]: 0.3
+Desvio padrão do pacote[111]:0.547723
+
+Variância do pacote[112]: 117997
+Desvio padrão do pacote[112]:343.508
+
+Variância do pacote[113]: 290195
+Desvio padrão do pacote[113]:538.698
+
+Variância do pacote[114]: 0
+Desvio padrão do pacote[114]:0
+
+Variância do pacote[115]: 156563
+Desvio padrão do pacote[115]:395.68
+
+Variância do pacote[116]: 138138
+Desvio padrão do pacote[116]:371.669
+
+Variância do pacote[117]: 116231
+Desvio padrão do pacote[117]:340.926
+
+Variância do pacote[118]: 104232
+Desvio padrão do pacote[118]:322.85
+
+Variância do pacote[119]: 122278
+Desvio padrão do pacote[119]:349.683
+
+Variância do pacote[120]: 132502
+Desvio padrão do pacote[120]:364.008
+
+Variância do pacote[121]: 137594
+Desvio padrão do pacote[121]:370.936
+
+Variância do pacote[122]: 294389
+Desvio padrão do pacote[122]:542.577
+
+Variância do pacote[123]: 354494
+Desvio padrão do pacote[123]:595.394
+
+Variância do pacote[124]: 395539
+Desvio padrão do pacote[124]:628.919
+
+Variância do pacote[125]: 422575
+Desvio padrão do pacote[125]:650.057
+
+Variância do pacote[126]: 438073
+Desvio padrão do pacote[126]:661.871
+
+Variância do pacote[127]: 148389
+Desvio padrão do pacote[127]:385.213
+
+Variância do pacote[128]: 151269
+Desvio padrão do pacote[128]:388.934
+
+Variância do pacote[129]: 151093
+Desvio padrão do pacote[129]:388.706
+
+Variância do pacote[130]: 3258
+Desvio padrão do pacote[130]:57.0789
+
+Variância do pacote[131]: 3249.2
+Desvio padrão do pacote[131]:57.0018
+
+Variância do pacote[132]: 3075.2
+Desvio padrão do pacote[132]:55.4545
+
+Variância do pacote[133]: 2844.4
+Desvio padrão do pacote[133]:53.3329
+
+Variância do pacote[134]: 2704.4
+Desvio padrão do pacote[134]:52.0038
+
+Variância do pacote[135]: 0.4
+Desvio padrão do pacote[135]:0.632456
+
+Variância do pacote[136]: 0
+Desvio padrão do pacote[136]:0
+
+Variância do pacote[137]: 1
+Desvio padrão do pacote[137]:1
+
+Variância do pacote[138]: 0.6
+Desvio padrão do pacote[138]:0.774597
+
+Variância do pacote[139]: 3.6
+Desvio padrão do pacote[139]:1.89737
+
+Variância do pacote[140]: 2009.2
+Desvio padrão do pacote[140]:44.8241
+
+Variância do pacote[141]: 1950.4
+Desvio padrão do pacote[141]:44.1633
+
+Variância do pacote[142]: 1902.8
+Desvio padrão do pacote[142]:43.6211
+
+Variância do pacote[143]: 497.6
+Desvio padrão do pacote[143]:22.3069
+
+Variância do pacote[144]: 0.2
+Desvio padrão do pacote[144]:0.447214
+
+Variância do pacote[145]: 0.4
+Desvio padrão do pacote[145]:0.632456
+
+Variância do pacote[146]: 0.4
+Desvio padrão do pacote[146]:0.632456
+
+Variância do pacote[147]: 2
+Desvio padrão do pacote[147]:1.41421
+
+Variância do pacote[148]: 1
+Desvio padrão do pacote[148]:1
+
+Variância do pacote[149]: 9
+Desvio padrão do pacote[149]:3
+
+Variância do pacote[150]: 4
+Desvio padrão do pacote[150]:2
+
+Variância do pacote[151]: 1
+Desvio padrão do pacote[151]:1
+
+Variância do pacote[152]: 2.5
+Desvio padrão do pacote[152]:1.58114
+
+Variância do pacote[153]: 2.5
+Desvio padrão do pacote[153]:1.58114
+
+Variância do pacote[154]: 2.5
+Desvio padrão do pacote[154]:1.58114
+
+Variância do pacote[155]: 21.5
+Desvio padrão do pacote[155]:4.63681
+
+Variância do pacote[156]: 5.07919e+07
+Desvio padrão do pacote[156]:7126.85
+
+Variância do pacote[157]: 1.9
+Desvio padrão do pacote[157]:1.3784
+
+Variância do pacote[158]: 12.85
+Desvio padrão do pacote[158]:3.58469
+
+Variância do pacote[159]: 2034.1
+Desvio padrão do pacote[159]:45.101
+
+Variância do pacote[160]: 9.5
+Desvio padrão do pacote[160]:3.08221
 

@@ -8,6 +8,7 @@
 #include "roteador.h"
 #include "../constantes/constantes.h"
 #include "system.h"
+
 #include <math.h>
 
 using namespace std;
@@ -50,18 +51,18 @@ int sc_main (int argc, char* argv[]) {
   	
 	sc_start();	// Run the simulation till sc_stop is encountered
 
-  cout << "sc_stop is encountered" << endl;
+  // cout << "sc_stop is encountered" << endl;
 
   maior_latencia = simulation->latencias[0][0];
   menor_latencia = simulation->latencias[0][0];
 
-  cout << "size_pct "<<size_pct << endl;
+  // cout << "size_pct "<<size_pct << endl;
   ofstream latencias_pc ("latencias.txt");
   for (int j = 0; j < size_pct; ++j)
   {
     for (int i = 0; i < padrao_tfg[j][6]; ++i)
     {
-      latencias_pc << "Latencia pos["<<j<<"][" << i << "]: " << simulation->latencias[j][i] << endl;
+      latencias_pc << "Latencia posição:["<<j<<"]-> Pacote:[" << i << "]: " << simulation->latencias[j][i] << endl;
       if (menor_latencia > simulation->latencias[j][i])
       {
         menor_latencia = simulation->latencias[j][i];
@@ -100,22 +101,22 @@ int sc_main (int argc, char* argv[]) {
   vazoes <<"Vazões da simulação: " << endl; 
 
 
-  // for (int i = 0; i < ALTURA_REDE; ++i)
-  // {
-  //   for (int j = 0; j < LARGURA_REDE; ++j)
-  //   {
-  //     if ((i-1)>=0)
-  //       vazoes << "["<<i<<"]["<<j<<"]->["<<i-1<<"]["<<j<<"]: " <<((double)simulation->throughput[i][j]->saida_norte/(double)simulation->clock) <<endl;
-  //     if ((i+1)<ALTURA_REDE)
-  //       vazoes << "["<<i<<"]["<<j<<"]->["<<i+1<<"]["<<j<<"]: " <<((double)simulation->throughput[i][j]->saida_sul/(double)simulation->clock) <<endl;
-  //     if ((j+1) < LARGURA_REDE)
-  //       vazoes << "["<<i<<"]["<<j<<"]->["<<i<<"]["<<j+1<<"]: " <<((double)simulation->throughput[i][j]->saida_leste/(double)simulation->clock) <<endl;
-  //     if ((j-1)>=0) 
-  //       vazoes << "["<<i<<"]["<<j<<"]->["<<i<<"]["<<j-1<<"]: " <<((double)simulation->throughput[i][j]->saida_oeste/(double)simulation->clock) <<endl;
-  //       vazoes << endl;
-  //   }
+  for (int i = 0; i < ALTURA_REDE; ++i)
+  {
+    for (int j = 0; j < LARGURA_REDE; ++j)
+    {
+      if ((i-1)>=0)
+        vazoes << "["<<i<<"]["<<j<<"]->["<<i-1<<"]["<<j<<"]: " <<((double)simulation->throughput[i][j]->saida_norte/(double)simulation->clock) <<endl;
+      if ((i+1)<ALTURA_REDE)
+        vazoes << "["<<i<<"]["<<j<<"]->["<<i+1<<"]["<<j<<"]: " <<((double)simulation->throughput[i][j]->saida_sul/(double)simulation->clock) <<endl;
+      if ((j+1) < LARGURA_REDE)
+        vazoes << "["<<i<<"]["<<j<<"]->["<<i<<"]["<<j+1<<"]: " <<((double)simulation->throughput[i][j]->saida_leste/(double)simulation->clock) <<endl;
+      if ((j-1)>=0) 
+        vazoes << "["<<i<<"]["<<j<<"]->["<<i<<"]["<<j-1<<"]: " <<((double)simulation->throughput[i][j]->saida_oeste/(double)simulation->clock) <<endl;
+        vazoes << endl;
+    }
 
-  // }
+  }
 
   latencias_pc << "\n\nMenor Latência: "<< menor_latencia << endl;
   latencias_pc << "Maior Latência: "<< maior_latencia << endl;
@@ -139,6 +140,7 @@ int sc_main (int argc, char* argv[]) {
     desvio <<"Desvio padrão do pacote["<<j<<"]:" <<sqrt((variancia / padrao_tfg[j][6])) << endl<<endl;
     variancia = 0.0;
   }
+
 
 
 

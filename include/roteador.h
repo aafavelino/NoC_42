@@ -35,6 +35,8 @@ SC_MODULE (roteador)
 
 	std::string name;
 
+	int canal_vt;
+
 	// Ver isso aqui DEPOISSSS
 	Flit in_data; //n+2 data + bop + eop
 	Flit out_data; // Saída do roteamento n+2
