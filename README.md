@@ -1,5 +1,7 @@
 # Network on chip 42  
 
+## EM FASE DE TESTES!!!!
+
 ## Transaction-Level Modeling (TLM 2.0)
 
 O modelo Network on chip 42 foi baseado na rede SOCin em uma descrição TLM.
