@@ -6,9 +6,21 @@
 
 O modelo Network on chip 42 foi baseado na rede SOCin em uma descrição TLM.
 
-|    Memorização    |  Controle de fluxo |  Arbitragem  |
-|-------------------|--------------------|--------------|
-|		FIFO		|	   Handshake	 |  Round-robin	|
+|    Memorização    |  Controle de fluxo |  Arbitragens | Roteamentos   |
+|-------------------|--------------------|--------------|---------------|
+|		FIFO		|	   Handshake	 |  Round-robin	| Negative first|
+|		     		|	    			 |  Rotativa	|		XY	    |
+|		     		|	    			 |  Estática 	|	North Last  |
+|		     		|	    			 |  Randômica	|	West First  |
+|		     		|	    			 |         		|	Odd Even    |
+
+
+
+NEGATIVE_FIRST
+XY
+NORTH_LAST
+WEST_FIRST
+ODD_EVEN
 
 ### Projeto de Pesquisa em Redes em chip
 
