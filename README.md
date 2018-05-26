@@ -14,13 +14,7 @@ O modelo Network on chip 42 foi baseado na rede SOCin em uma descrição TLM.
 |		     		|	    			 |  Randômica	|	West First  |
 |		     		|	    			 |         		|	Odd Even    |
 
-
-
-NEGATIVE_FIRST
-XY
-NORTH_LAST
-WEST_FIRST
-ODD_EVEN
+A NoC foi limitada em um tamanho 17x17, mas pode ser aumentada facilmente.
 
 ### Projeto de Pesquisa em Redes em chip
 
