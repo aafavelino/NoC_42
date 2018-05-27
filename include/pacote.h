@@ -12,19 +12,19 @@ class Pacote
 {
 public:
 
-// 0 0 2 0 23 1 1
+// 0 0 2 0 23 1 1 0
 // end
 
 
 // — sintaxes:
 
 
-// 1) Mesh padrão:  xs ys xd yd #flits idleCycles size
+// Mesh padrão:  xs ys xd yd #flits idleCycles size prioridade_pct
 //       xs: X source; xd: X dest
-//       xs: Y source; xd: Y dest
-//		 #flits:  quantos flits tem para enviar 
-//		 idleCycles: De quanto em quanto tempo é enviado 
+//       xs: Y source; xd: Y dest             
+//       idleCycles: De quanto em quanto tempo é enviado 
 //       size: quantas vezes o pacote é reenviado pela rede.
+//       prioridade_pct: prioridade do pacote com canais virtuais, se não tiver canais a prioridade é 0...
 
 	int last_flit; // pegar o ciclo que o último flit é enviado
 	int first_flit; // pegar o ciclo que o primeiro flit é enviado
@@ -36,9 +36,10 @@ public:
 	int contador_ciclos; //ok
 	int contador_size; // falta implementar
 	int contador_flits; //ok - falta coisas 
+	int prioridade;
 	bool stop;
 	Flit flits;
-	Pacote(int xs, int ys, int xd, int yd, int qt_flits, int idleCycles, int size) {
+	Pacote(int xs, int ys, int xd, int yd, int qt_flits, int idleCycles, int size, int prioridade) {
 		this->stop = false;
 		this->last_flit = 0;
 		this->first_flit = 0;
@@ -52,6 +53,7 @@ public:
 		this->qt_flits = qt_flits;
 		this->idleCycles = idleCycles;
 		this->size = size;
+		this->prioridade = prioridade;
 		flits.cordenadas_f.x = xd;
 		flits.cordenadas_f.y = yd;		
 	};

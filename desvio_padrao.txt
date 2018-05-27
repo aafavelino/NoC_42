@@ -4,11 +4,11 @@ Desvio padrão do pacote[0]:0
 Variância do pacote[1]: 0
 Desvio padrão do pacote[1]:0
 
-Variância do pacote[2]: 0
-Desvio padrão do pacote[2]:0
+Variância do pacote[2]: 134.25
+Desvio padrão do pacote[2]:11.5866
 
-Variância do pacote[3]: 0
-Desvio padrão do pacote[3]:0
+Variância do pacote[3]: 107.5
+Desvio padrão do pacote[3]:10.3682
 
 Variância do pacote[4]: 0
 Desvio padrão do pacote[4]:0
@@ -19,8 +19,8 @@ Desvio padrão do pacote[5]:0
 Variância do pacote[6]: 0
 Desvio padrão do pacote[6]:0
 
-Variância do pacote[7]: 0
-Desvio padrão do pacote[7]:0
+Variância do pacote[7]: 0.025
+Desvio padrão do pacote[7]:0.158114
 
 Variância do pacote[8]: 0
 Desvio padrão do pacote[8]:0
@@ -28,29 +28,29 @@ Desvio padrão do pacote[8]:0
 Variância do pacote[9]: 0
 Desvio padrão do pacote[9]:0
 
-Variância do pacote[10]: 0.5
-Desvio padrão do pacote[10]:0.707107
+Variância do pacote[10]: 201.1
+Desvio padrão do pacote[10]:14.181
 
 Variância do pacote[11]: 0
 Desvio padrão do pacote[11]:0
 
-Variância do pacote[12]: 0.5
-Desvio padrão do pacote[12]:0.707107
+Variância do pacote[12]: 0
+Desvio padrão do pacote[12]:0
 
-Variância do pacote[13]: 0.5
-Desvio padrão do pacote[13]:0.707107
+Variância do pacote[13]: 0
+Desvio padrão do pacote[13]:0
 
-Variância do pacote[14]: 0
-Desvio padrão do pacote[14]:0
+Variância do pacote[14]: 170.075
+Desvio padrão do pacote[14]:13.0413
 
 Variância do pacote[15]: 0
 Desvio padrão do pacote[15]:0
 
-Variância do pacote[16]: 0.5
-Desvio padrão do pacote[16]:0.707107
+Variância do pacote[16]: 0
+Desvio padrão do pacote[16]:0
 
-Variância do pacote[17]: 0
-Desvio padrão do pacote[17]:0
+Variância do pacote[17]: 0.125
+Desvio padrão do pacote[17]:0.353553
 
 Variância do pacote[18]: 0
 Desvio padrão do pacote[18]:0

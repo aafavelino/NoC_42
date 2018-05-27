@@ -22,7 +22,7 @@ A NoC foi limitada em um tamanho 17x17, mas pode ser aumentada facilmente.
 |-------------------------------|-----------------------------------|
 |  GitHub                       |  github.com/aafavelino            |
 |  Email               			|  aafavelino@icloud.com            |
-|  Email acadêmico 				|  adelino18fernandes@gmail.com     |
+|  Email acadêmico 				|  aafavelino@lcc.ufrn.br           |
 |  Telefone						|  (84) 98634-8534					|
 
 

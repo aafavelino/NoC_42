@@ -36,15 +36,15 @@ int sc_main (int argc, char* argv[]) {
 	padrao_tfg = (int**)malloc(size_pct * sizeof(int*));
 
   	for (int i = 0; i < size_pct; i++) 
-       padrao_tfg[i] = (int*) malloc(7 * sizeof(int));
+       padrao_tfg[i] = (int*) malloc(8 * sizeof(int));
 
     for (int i = 0; i < size_pct; ++i)
-    	fscanf(traffic,"%i %i %i %i %i %i %i", &padrao_tfg[i][0], &padrao_tfg[i][1], &padrao_tfg[i][2], &padrao_tfg[i][3], &padrao_tfg[i][4], &padrao_tfg[i][5], &padrao_tfg[i][6]);
+    	fscanf(traffic,"%i %i %i %i %i %i %i %i", &padrao_tfg[i][0], &padrao_tfg[i][1], &padrao_tfg[i][2], &padrao_tfg[i][3], &padrao_tfg[i][4], &padrao_tfg[i][5], &padrao_tfg[i][6], &padrao_tfg[i][7]);
     // Fim da leitura do arquivo de tráfego
     fclose(traffic);
 
   	for (int i = 0; i < size_pct; ++i)
-  		simulation->pacotes_tg.push_back(Pacote(padrao_tfg[i][0],padrao_tfg[i][1], padrao_tfg[i][2], padrao_tfg[i][3],  padrao_tfg[i][4],  padrao_tfg[i][5],  padrao_tfg[i][6]));
+  		simulation->pacotes_tg.push_back(Pacote(padrao_tfg[i][0],padrao_tfg[i][1], padrao_tfg[i][2], padrao_tfg[i][3],  padrao_tfg[i][4],  padrao_tfg[i][5],  padrao_tfg[i][6], padrao_tfg[i][7]));
 
     simulation->latencias.resize(size_pct);
 
