@@ -1,730 +1,197 @@
-Latencia posição:[0]-> Pacote:[0]: 12
-Latencia posição:[0]-> Pacote:[1]: 12
-Latencia posição:[0]-> Pacote:[2]: 12
-Latencia posição:[0]-> Pacote:[3]: 12
+Latencia posição:[0]-> Pacote:[0]: 1
 
-Latencia posição:[1]-> Pacote:[0]: 11
-Latencia posição:[1]-> Pacote:[1]: 11
-Latencia posição:[1]-> Pacote:[2]: 11
+Latencia posição:[1]-> Pacote:[0]: 3
 
-Latencia posição:[2]-> Pacote:[0]: 16
-Latencia posição:[2]-> Pacote:[1]: 20
-Latencia posição:[2]-> Pacote:[2]: 24
-Latencia posição:[2]-> Pacote:[3]: 28
-Latencia posição:[2]-> Pacote:[4]: 32
-Latencia posição:[2]-> Pacote:[5]: 36
-Latencia posição:[2]-> Pacote:[6]: 40
-Latencia posição:[2]-> Pacote:[7]: 44
-Latencia posição:[2]-> Pacote:[8]: 48
-Latencia posição:[2]-> Pacote:[9]: 49
-Latencia posição:[2]-> Pacote:[10]: 49
-Latencia posição:[2]-> Pacote:[11]: 49
+Latencia posição:[2]-> Pacote:[0]: 3
 
-Latencia posição:[3]-> Pacote:[0]: 14
-Latencia posição:[3]-> Pacote:[1]: 17
-Latencia posição:[3]-> Pacote:[2]: 20
-Latencia posição:[3]-> Pacote:[3]: 23
-Latencia posição:[3]-> Pacote:[4]: 26
-Latencia posição:[3]-> Pacote:[5]: 29
-Latencia posição:[3]-> Pacote:[6]: 32
-Latencia posição:[3]-> Pacote:[7]: 35
-Latencia posição:[3]-> Pacote:[8]: 38
-Latencia posição:[3]-> Pacote:[9]: 41
-Latencia posição:[3]-> Pacote:[10]: 44
-Latencia posição:[3]-> Pacote:[11]: 47
+Latencia posição:[3]-> Pacote:[0]: 5
 
-Latencia posição:[4]-> Pacote:[0]: 6
-Latencia posição:[4]-> Pacote:[1]: 6
-Latencia posição:[4]-> Pacote:[2]: 6
-Latencia posição:[4]-> Pacote:[3]: 6
-Latencia posição:[4]-> Pacote:[4]: 6
-Latencia posição:[4]-> Pacote:[5]: 6
-Latencia posição:[4]-> Pacote:[6]: 6
-Latencia posição:[4]-> Pacote:[7]: 6
-Latencia posição:[4]-> Pacote:[8]: 6
-Latencia posição:[4]-> Pacote:[9]: 6
-Latencia posição:[4]-> Pacote:[10]: 6
-Latencia posição:[4]-> Pacote:[11]: 6
+Latencia posição:[4]-> Pacote:[0]: 7
 
-Latencia posição:[5]-> Pacote:[0]: 6
-Latencia posição:[5]-> Pacote:[1]: 6
-Latencia posição:[5]-> Pacote:[2]: 6
-Latencia posição:[5]-> Pacote:[3]: 6
-Latencia posição:[5]-> Pacote:[4]: 6
-Latencia posição:[5]-> Pacote:[5]: 6
-Latencia posição:[5]-> Pacote:[6]: 6
-Latencia posição:[5]-> Pacote:[7]: 6
-Latencia posição:[5]-> Pacote:[8]: 6
-Latencia posição:[5]-> Pacote:[9]: 6
-Latencia posição:[5]-> Pacote:[10]: 6
-Latencia posição:[5]-> Pacote:[11]: 6
+Latencia posição:[5]-> Pacote:[0]: 7
 
-Latencia posição:[6]-> Pacote:[0]: 5
-Latencia posição:[6]-> Pacote:[1]: 5
-Latencia posição:[6]-> Pacote:[2]: 5
-Latencia posição:[6]-> Pacote:[3]: 5
-Latencia posição:[6]-> Pacote:[4]: 5
-Latencia posição:[6]-> Pacote:[5]: 5
-Latencia posição:[6]-> Pacote:[6]: 5
-Latencia posição:[6]-> Pacote:[7]: 5
-Latencia posição:[6]-> Pacote:[8]: 5
-Latencia posição:[6]-> Pacote:[9]: 5
-Latencia posição:[6]-> Pacote:[10]: 5
-Latencia posição:[6]-> Pacote:[11]: 5
-Latencia posição:[6]-> Pacote:[12]: 5
-Latencia posição:[6]-> Pacote:[13]: 5
-Latencia posição:[6]-> Pacote:[14]: 5
-Latencia posição:[6]-> Pacote:[15]: 5
-Latencia posição:[6]-> Pacote:[16]: 5
-Latencia posição:[6]-> Pacote:[17]: 5
-Latencia posição:[6]-> Pacote:[18]: 5
-Latencia posição:[6]-> Pacote:[19]: 5
+Latencia posição:[6]-> Pacote:[0]: 11
 
-Latencia posição:[7]-> Pacote:[0]: 8
-Latencia posição:[7]-> Pacote:[1]: 9
-Latencia posição:[7]-> Pacote:[2]: 8
-Latencia posição:[7]-> Pacote:[3]: 8
-Latencia posição:[7]-> Pacote:[4]: 8
-Latencia posição:[7]-> Pacote:[5]: 8
-Latencia posição:[7]-> Pacote:[6]: 8
-Latencia posição:[7]-> Pacote:[7]: 8
-Latencia posição:[7]-> Pacote:[8]: 8
-Latencia posição:[7]-> Pacote:[9]: 8
-Latencia posição:[7]-> Pacote:[10]: 8
-Latencia posição:[7]-> Pacote:[11]: 8
-Latencia posição:[7]-> Pacote:[12]: 9
-Latencia posição:[7]-> Pacote:[13]: 8
-Latencia posição:[7]-> Pacote:[14]: 8
-Latencia posição:[7]-> Pacote:[15]: 8
-Latencia posição:[7]-> Pacote:[16]: 8
-Latencia posição:[7]-> Pacote:[17]: 8
-Latencia posição:[7]-> Pacote:[18]: 8
-Latencia posição:[7]-> Pacote:[19]: 8
-Latencia posição:[7]-> Pacote:[20]: 8
-Latencia posição:[7]-> Pacote:[21]: 8
-Latencia posição:[7]-> Pacote:[22]: 8
-Latencia posição:[7]-> Pacote:[23]: 9
-Latencia posição:[7]-> Pacote:[24]: 8
-Latencia posição:[7]-> Pacote:[25]: 8
-Latencia posição:[7]-> Pacote:[26]: 8
-Latencia posição:[7]-> Pacote:[27]: 8
-Latencia posição:[7]-> Pacote:[28]: 8
-Latencia posição:[7]-> Pacote:[29]: 8
-Latencia posição:[7]-> Pacote:[30]: 8
-Latencia posição:[7]-> Pacote:[31]: 8
-Latencia posição:[7]-> Pacote:[32]: 8
-Latencia posição:[7]-> Pacote:[33]: 8
-Latencia posição:[7]-> Pacote:[34]: 9
-Latencia posição:[7]-> Pacote:[35]: 8
-Latencia posição:[7]-> Pacote:[36]: 8
-Latencia posição:[7]-> Pacote:[37]: 8
-Latencia posição:[7]-> Pacote:[38]: 8
-Latencia posição:[7]-> Pacote:[39]: 8
-Latencia posição:[7]-> Pacote:[40]: 8
-Latencia posição:[7]-> Pacote:[41]: 8
-Latencia posição:[7]-> Pacote:[42]: 8
-Latencia posição:[7]-> Pacote:[43]: 8
-Latencia posição:[7]-> Pacote:[44]: 8
-Latencia posição:[7]-> Pacote:[45]: 9
-Latencia posição:[7]-> Pacote:[46]: 8
-Latencia posição:[7]-> Pacote:[47]: 8
-Latencia posição:[7]-> Pacote:[48]: 8
-Latencia posição:[7]-> Pacote:[49]: 8
-Latencia posição:[7]-> Pacote:[50]: 8
-Latencia posição:[7]-> Pacote:[51]: 8
-Latencia posição:[7]-> Pacote:[52]: 8
-Latencia posição:[7]-> Pacote:[53]: 8
-Latencia posição:[7]-> Pacote:[54]: 8
-Latencia posição:[7]-> Pacote:[55]: 8
-Latencia posição:[7]-> Pacote:[56]: 8
-Latencia posição:[7]-> Pacote:[57]: 8
-Latencia posição:[7]-> Pacote:[58]: 8
-Latencia posição:[7]-> Pacote:[59]: 8
-Latencia posição:[7]-> Pacote:[60]: 8
-Latencia posição:[7]-> Pacote:[61]: 8
-Latencia posição:[7]-> Pacote:[62]: 8
-Latencia posição:[7]-> Pacote:[63]: 8
-Latencia posição:[7]-> Pacote:[64]: 8
-Latencia posição:[7]-> Pacote:[65]: 8
-Latencia posição:[7]-> Pacote:[66]: 8
-Latencia posição:[7]-> Pacote:[67]: 8
-Latencia posição:[7]-> Pacote:[68]: 8
-Latencia posição:[7]-> Pacote:[69]: 8
-Latencia posição:[7]-> Pacote:[70]: 8
-Latencia posição:[7]-> Pacote:[71]: 8
-Latencia posição:[7]-> Pacote:[72]: 8
-Latencia posição:[7]-> Pacote:[73]: 8
-Latencia posição:[7]-> Pacote:[74]: 8
-Latencia posição:[7]-> Pacote:[75]: 8
-Latencia posição:[7]-> Pacote:[76]: 8
-Latencia posição:[7]-> Pacote:[77]: 8
-Latencia posição:[7]-> Pacote:[78]: 8
-Latencia posição:[7]-> Pacote:[79]: 8
-Latencia posição:[7]-> Pacote:[80]: 8
-Latencia posição:[7]-> Pacote:[81]: 8
-Latencia posição:[7]-> Pacote:[82]: 8
-Latencia posição:[7]-> Pacote:[83]: 8
-Latencia posição:[7]-> Pacote:[84]: 8
-Latencia posição:[7]-> Pacote:[85]: 8
-Latencia posição:[7]-> Pacote:[86]: 8
-Latencia posição:[7]-> Pacote:[87]: 8
-Latencia posição:[7]-> Pacote:[88]: 8
-Latencia posição:[7]-> Pacote:[89]: 8
-Latencia posição:[7]-> Pacote:[90]: 8
-Latencia posição:[7]-> Pacote:[91]: 8
-Latencia posição:[7]-> Pacote:[92]: 8
-Latencia posição:[7]-> Pacote:[93]: 8
-Latencia posição:[7]-> Pacote:[94]: 8
-Latencia posição:[7]-> Pacote:[95]: 8
-Latencia posição:[7]-> Pacote:[96]: 8
-Latencia posição:[7]-> Pacote:[97]: 8
-Latencia posição:[7]-> Pacote:[98]: 8
-Latencia posição:[7]-> Pacote:[99]: 8
-Latencia posição:[7]-> Pacote:[100]: 8
-Latencia posição:[7]-> Pacote:[101]: 8
-Latencia posição:[7]-> Pacote:[102]: 8
-Latencia posição:[7]-> Pacote:[103]: 8
-Latencia posição:[7]-> Pacote:[104]: 8
-Latencia posição:[7]-> Pacote:[105]: 8
-Latencia posição:[7]-> Pacote:[106]: 8
-Latencia posição:[7]-> Pacote:[107]: 8
-Latencia posição:[7]-> Pacote:[108]: 8
-Latencia posição:[7]-> Pacote:[109]: 8
-Latencia posição:[7]-> Pacote:[110]: 8
-Latencia posição:[7]-> Pacote:[111]: 8
-Latencia posição:[7]-> Pacote:[112]: 8
-Latencia posição:[7]-> Pacote:[113]: 8
-Latencia posição:[7]-> Pacote:[114]: 8
-Latencia posição:[7]-> Pacote:[115]: 8
-Latencia posição:[7]-> Pacote:[116]: 8
-Latencia posição:[7]-> Pacote:[117]: 8
-Latencia posição:[7]-> Pacote:[118]: 8
-Latencia posição:[7]-> Pacote:[119]: 8
-Latencia posição:[7]-> Pacote:[120]: 8
-Latencia posição:[7]-> Pacote:[121]: 8
-Latencia posição:[7]-> Pacote:[122]: 8
-Latencia posição:[7]-> Pacote:[123]: 8
-Latencia posição:[7]-> Pacote:[124]: 8
-Latencia posição:[7]-> Pacote:[125]: 8
-Latencia posição:[7]-> Pacote:[126]: 8
-Latencia posição:[7]-> Pacote:[127]: 8
-Latencia posição:[7]-> Pacote:[128]: 8
-Latencia posição:[7]-> Pacote:[129]: 8
-Latencia posição:[7]-> Pacote:[130]: 8
-Latencia posição:[7]-> Pacote:[131]: 8
-Latencia posição:[7]-> Pacote:[132]: 8
-Latencia posição:[7]-> Pacote:[133]: 8
-Latencia posição:[7]-> Pacote:[134]: 8
-Latencia posição:[7]-> Pacote:[135]: 8
-Latencia posição:[7]-> Pacote:[136]: 8
-Latencia posição:[7]-> Pacote:[137]: 8
-Latencia posição:[7]-> Pacote:[138]: 8
-Latencia posição:[7]-> Pacote:[139]: 8
-Latencia posição:[7]-> Pacote:[140]: 8
-Latencia posição:[7]-> Pacote:[141]: 8
-Latencia posição:[7]-> Pacote:[142]: 8
-Latencia posição:[7]-> Pacote:[143]: 8
-Latencia posição:[7]-> Pacote:[144]: 8
-Latencia posição:[7]-> Pacote:[145]: 8
-Latencia posição:[7]-> Pacote:[146]: 8
-Latencia posição:[7]-> Pacote:[147]: 8
-Latencia posição:[7]-> Pacote:[148]: 8
-Latencia posição:[7]-> Pacote:[149]: 8
-Latencia posição:[7]-> Pacote:[150]: 8
-Latencia posição:[7]-> Pacote:[151]: 8
-Latencia posição:[7]-> Pacote:[152]: 8
-Latencia posição:[7]-> Pacote:[153]: 8
-Latencia posição:[7]-> Pacote:[154]: 8
-Latencia posição:[7]-> Pacote:[155]: 8
-Latencia posição:[7]-> Pacote:[156]: 8
-Latencia posição:[7]-> Pacote:[157]: 8
-Latencia posição:[7]-> Pacote:[158]: 8
-Latencia posição:[7]-> Pacote:[159]: 8
-Latencia posição:[7]-> Pacote:[160]: 8
-Latencia posição:[7]-> Pacote:[161]: 8
-Latencia posição:[7]-> Pacote:[162]: 8
-Latencia posição:[7]-> Pacote:[163]: 8
-Latencia posição:[7]-> Pacote:[164]: 8
-Latencia posição:[7]-> Pacote:[165]: 8
-Latencia posição:[7]-> Pacote:[166]: 8
-Latencia posição:[7]-> Pacote:[167]: 8
-Latencia posição:[7]-> Pacote:[168]: 8
-Latencia posição:[7]-> Pacote:[169]: 8
-Latencia posição:[7]-> Pacote:[170]: 8
-Latencia posição:[7]-> Pacote:[171]: 8
-Latencia posição:[7]-> Pacote:[172]: 8
-Latencia posição:[7]-> Pacote:[173]: 8
-Latencia posição:[7]-> Pacote:[174]: 8
-Latencia posição:[7]-> Pacote:[175]: 8
-Latencia posição:[7]-> Pacote:[176]: 8
-Latencia posição:[7]-> Pacote:[177]: 8
-Latencia posição:[7]-> Pacote:[178]: 8
-Latencia posição:[7]-> Pacote:[179]: 8
-Latencia posição:[7]-> Pacote:[180]: 8
-Latencia posição:[7]-> Pacote:[181]: 8
-Latencia posição:[7]-> Pacote:[182]: 8
-Latencia posição:[7]-> Pacote:[183]: 8
-Latencia posição:[7]-> Pacote:[184]: 8
-Latencia posição:[7]-> Pacote:[185]: 8
-Latencia posição:[7]-> Pacote:[186]: 8
-Latencia posição:[7]-> Pacote:[187]: 8
-Latencia posição:[7]-> Pacote:[188]: 8
-Latencia posição:[7]-> Pacote:[189]: 8
-Latencia posição:[7]-> Pacote:[190]: 8
-Latencia posição:[7]-> Pacote:[191]: 8
-Latencia posição:[7]-> Pacote:[192]: 8
-Latencia posição:[7]-> Pacote:[193]: 8
-Latencia posição:[7]-> Pacote:[194]: 8
-Latencia posição:[7]-> Pacote:[195]: 8
-Latencia posição:[7]-> Pacote:[196]: 8
-Latencia posição:[7]-> Pacote:[197]: 8
-Latencia posição:[7]-> Pacote:[198]: 8
-Latencia posição:[7]-> Pacote:[199]: 8
+Latencia posição:[7]-> Pacote:[0]: 12
 
 Latencia posição:[8]-> Pacote:[0]: 1
-Latencia posição:[8]-> Pacote:[1]: 1
-Latencia posição:[8]-> Pacote:[2]: 1
-Latencia posição:[8]-> Pacote:[3]: 1
-Latencia posição:[8]-> Pacote:[4]: 1
-Latencia posição:[8]-> Pacote:[5]: 1
-Latencia posição:[8]-> Pacote:[6]: 1
-Latencia posição:[8]-> Pacote:[7]: 1
-Latencia posição:[8]-> Pacote:[8]: 1
-Latencia posição:[8]-> Pacote:[9]: 1
-Latencia posição:[8]-> Pacote:[10]: 1
-Latencia posição:[8]-> Pacote:[11]: 1
-Latencia posição:[8]-> Pacote:[12]: 1
-Latencia posição:[8]-> Pacote:[13]: 1
-Latencia posição:[8]-> Pacote:[14]: 1
-Latencia posição:[8]-> Pacote:[15]: 1
-Latencia posição:[8]-> Pacote:[16]: 1
-Latencia posição:[8]-> Pacote:[17]: 1
-Latencia posição:[8]-> Pacote:[18]: 1
-Latencia posição:[8]-> Pacote:[19]: 1
 
-Latencia posição:[9]-> Pacote:[0]: 1
-Latencia posição:[9]-> Pacote:[1]: 1
-Latencia posição:[9]-> Pacote:[2]: 1
-Latencia posição:[9]-> Pacote:[3]: 1
-Latencia posição:[9]-> Pacote:[4]: 1
-Latencia posição:[9]-> Pacote:[5]: 1
-Latencia posição:[9]-> Pacote:[6]: 1
-Latencia posição:[9]-> Pacote:[7]: 1
-Latencia posição:[9]-> Pacote:[8]: 1
-Latencia posição:[9]-> Pacote:[9]: 1
-Latencia posição:[9]-> Pacote:[10]: 1
-Latencia posição:[9]-> Pacote:[11]: 1
-Latencia posição:[9]-> Pacote:[12]: 1
-Latencia posição:[9]-> Pacote:[13]: 1
-Latencia posição:[9]-> Pacote:[14]: 1
-Latencia posição:[9]-> Pacote:[15]: 1
-Latencia posição:[9]-> Pacote:[16]: 1
-Latencia posição:[9]-> Pacote:[17]: 1
-Latencia posição:[9]-> Pacote:[18]: 1
-Latencia posição:[9]-> Pacote:[19]: 1
-Latencia posição:[9]-> Pacote:[20]: 1
-Latencia posição:[9]-> Pacote:[21]: 1
-Latencia posição:[9]-> Pacote:[22]: 1
-Latencia posição:[9]-> Pacote:[23]: 1
-Latencia posição:[9]-> Pacote:[24]: 1
-Latencia posição:[9]-> Pacote:[25]: 1
-Latencia posição:[9]-> Pacote:[26]: 1
-Latencia posição:[9]-> Pacote:[27]: 1
-Latencia posição:[9]-> Pacote:[28]: 1
-Latencia posição:[9]-> Pacote:[29]: 1
-Latencia posição:[9]-> Pacote:[30]: 1
-Latencia posição:[9]-> Pacote:[31]: 1
-Latencia posição:[9]-> Pacote:[32]: 1
-Latencia posição:[9]-> Pacote:[33]: 1
-Latencia posição:[9]-> Pacote:[34]: 1
-Latencia posição:[9]-> Pacote:[35]: 1
-Latencia posição:[9]-> Pacote:[36]: 1
-Latencia posição:[9]-> Pacote:[37]: 1
-Latencia posição:[9]-> Pacote:[38]: 1
-Latencia posição:[9]-> Pacote:[39]: 1
+Latencia posição:[9]-> Pacote:[0]: 2
 
-Latencia posição:[10]-> Pacote:[0]: 14
-Latencia posição:[10]-> Pacote:[1]: 17
-Latencia posição:[10]-> Pacote:[2]: 20
-Latencia posição:[10]-> Pacote:[3]: 23
-Latencia posição:[10]-> Pacote:[4]: 26
-Latencia posição:[10]-> Pacote:[5]: 29
-Latencia posição:[10]-> Pacote:[6]: 32
-Latencia posição:[10]-> Pacote:[7]: 35
-Latencia posição:[10]-> Pacote:[8]: 38
-Latencia posição:[10]-> Pacote:[9]: 41
-Latencia posição:[10]-> Pacote:[10]: 44
-Latencia posição:[10]-> Pacote:[11]: 47
-Latencia posição:[10]-> Pacote:[12]: 47
-Latencia posição:[10]-> Pacote:[13]: 47
-Latencia posição:[10]-> Pacote:[14]: 47
-Latencia posição:[10]-> Pacote:[15]: 47
-Latencia posição:[10]-> Pacote:[16]: 44
-Latencia posição:[10]-> Pacote:[17]: 41
-Latencia posição:[10]-> Pacote:[18]: 38
-Latencia posição:[10]-> Pacote:[19]: 35
-Latencia posição:[10]-> Pacote:[20]: 32
-Latencia posição:[10]-> Pacote:[21]: 29
-Latencia posição:[10]-> Pacote:[22]: 26
-Latencia posição:[10]-> Pacote:[23]: 23
-Latencia posição:[10]-> Pacote:[24]: 20
-Latencia posição:[10]-> Pacote:[25]: 17
-Latencia posição:[10]-> Pacote:[26]: 14
-Latencia posição:[10]-> Pacote:[27]: 11
-Latencia posição:[10]-> Pacote:[28]: 9
-Latencia posição:[10]-> Pacote:[29]: 9
-Latencia posição:[10]-> Pacote:[30]: 9
-Latencia posição:[10]-> Pacote:[31]: 9
-Latencia posição:[10]-> Pacote:[32]: 9
-Latencia posição:[10]-> Pacote:[33]: 9
-Latencia posição:[10]-> Pacote:[34]: 9
-Latencia posição:[10]-> Pacote:[35]: 9
-Latencia posição:[10]-> Pacote:[36]: 9
-Latencia posição:[10]-> Pacote:[37]: 9
-Latencia posição:[10]-> Pacote:[38]: 9
-Latencia posição:[10]-> Pacote:[39]: 9
+Latencia posição:[10]-> Pacote:[0]: 4
 
-Latencia posição:[11]-> Pacote:[0]: 1
-Latencia posição:[11]-> Pacote:[1]: 1
-Latencia posição:[11]-> Pacote:[2]: 1
-Latencia posição:[11]-> Pacote:[3]: 1
-Latencia posição:[11]-> Pacote:[4]: 1
-Latencia posição:[11]-> Pacote:[5]: 1
-Latencia posição:[11]-> Pacote:[6]: 1
-Latencia posição:[11]-> Pacote:[7]: 1
-Latencia posição:[11]-> Pacote:[8]: 1
-Latencia posição:[11]-> Pacote:[9]: 1
-Latencia posição:[11]-> Pacote:[10]: 1
-Latencia posição:[11]-> Pacote:[11]: 1
-Latencia posição:[11]-> Pacote:[12]: 1
-Latencia posição:[11]-> Pacote:[13]: 1
-Latencia posição:[11]-> Pacote:[14]: 1
-Latencia posição:[11]-> Pacote:[15]: 1
-Latencia posição:[11]-> Pacote:[16]: 1
-Latencia posição:[11]-> Pacote:[17]: 1
-Latencia posição:[11]-> Pacote:[18]: 1
-Latencia posição:[11]-> Pacote:[19]: 1
-Latencia posição:[11]-> Pacote:[20]: 1
-Latencia posição:[11]-> Pacote:[21]: 1
-Latencia posição:[11]-> Pacote:[22]: 1
-Latencia posição:[11]-> Pacote:[23]: 1
-Latencia posição:[11]-> Pacote:[24]: 1
-Latencia posição:[11]-> Pacote:[25]: 1
-Latencia posição:[11]-> Pacote:[26]: 1
-Latencia posição:[11]-> Pacote:[27]: 1
-Latencia posição:[11]-> Pacote:[28]: 1
-Latencia posição:[11]-> Pacote:[29]: 1
-Latencia posição:[11]-> Pacote:[30]: 1
-Latencia posição:[11]-> Pacote:[31]: 1
-Latencia posição:[11]-> Pacote:[32]: 1
-Latencia posição:[11]-> Pacote:[33]: 1
-Latencia posição:[11]-> Pacote:[34]: 1
-Latencia posição:[11]-> Pacote:[35]: 1
-Latencia posição:[11]-> Pacote:[36]: 1
-Latencia posição:[11]-> Pacote:[37]: 1
-Latencia posição:[11]-> Pacote:[38]: 1
-Latencia posição:[11]-> Pacote:[39]: 1
+Latencia posição:[11]-> Pacote:[0]: 4
 
-Latencia posição:[12]-> Pacote:[0]: 5
-Latencia posição:[12]-> Pacote:[1]: 5
-Latencia posição:[12]-> Pacote:[2]: 5
-Latencia posição:[12]-> Pacote:[3]: 5
-Latencia posição:[12]-> Pacote:[4]: 5
-Latencia posição:[12]-> Pacote:[5]: 5
-Latencia posição:[12]-> Pacote:[6]: 5
-Latencia posição:[12]-> Pacote:[7]: 5
-Latencia posição:[12]-> Pacote:[8]: 5
-Latencia posição:[12]-> Pacote:[9]: 5
-Latencia posição:[12]-> Pacote:[10]: 5
-Latencia posição:[12]-> Pacote:[11]: 5
-Latencia posição:[12]-> Pacote:[12]: 5
-Latencia posição:[12]-> Pacote:[13]: 5
-Latencia posição:[12]-> Pacote:[14]: 5
-Latencia posição:[12]-> Pacote:[15]: 5
-Latencia posição:[12]-> Pacote:[16]: 5
-Latencia posição:[12]-> Pacote:[17]: 5
-Latencia posição:[12]-> Pacote:[18]: 5
-Latencia posição:[12]-> Pacote:[19]: 5
-Latencia posição:[12]-> Pacote:[20]: 5
-Latencia posição:[12]-> Pacote:[21]: 5
-Latencia posição:[12]-> Pacote:[22]: 5
-Latencia posição:[12]-> Pacote:[23]: 5
-Latencia posição:[12]-> Pacote:[24]: 5
-Latencia posição:[12]-> Pacote:[25]: 5
-Latencia posição:[12]-> Pacote:[26]: 5
-Latencia posição:[12]-> Pacote:[27]: 5
-Latencia posição:[12]-> Pacote:[28]: 5
-Latencia posição:[12]-> Pacote:[29]: 5
-Latencia posição:[12]-> Pacote:[30]: 5
-Latencia posição:[12]-> Pacote:[31]: 5
-Latencia posição:[12]-> Pacote:[32]: 5
-Latencia posição:[12]-> Pacote:[33]: 5
-Latencia posição:[12]-> Pacote:[34]: 5
-Latencia posição:[12]-> Pacote:[35]: 5
-Latencia posição:[12]-> Pacote:[36]: 5
-Latencia posição:[12]-> Pacote:[37]: 5
-Latencia posição:[12]-> Pacote:[38]: 5
-Latencia posição:[12]-> Pacote:[39]: 5
-Latencia posição:[12]-> Pacote:[40]: 5
-Latencia posição:[12]-> Pacote:[41]: 5
-Latencia posição:[12]-> Pacote:[42]: 5
-Latencia posição:[12]-> Pacote:[43]: 5
-Latencia posição:[12]-> Pacote:[44]: 5
-Latencia posição:[12]-> Pacote:[45]: 5
-Latencia posição:[12]-> Pacote:[46]: 5
-Latencia posição:[12]-> Pacote:[47]: 5
-Latencia posição:[12]-> Pacote:[48]: 5
-Latencia posição:[12]-> Pacote:[49]: 5
-Latencia posição:[12]-> Pacote:[50]: 5
-Latencia posição:[12]-> Pacote:[51]: 5
-Latencia posição:[12]-> Pacote:[52]: 5
-Latencia posição:[12]-> Pacote:[53]: 5
-Latencia posição:[12]-> Pacote:[54]: 5
-Latencia posição:[12]-> Pacote:[55]: 5
-Latencia posição:[12]-> Pacote:[56]: 5
-Latencia posição:[12]-> Pacote:[57]: 5
-Latencia posição:[12]-> Pacote:[58]: 5
-Latencia posição:[12]-> Pacote:[59]: 5
-Latencia posição:[12]-> Pacote:[60]: 5
-Latencia posição:[12]-> Pacote:[61]: 5
-Latencia posição:[12]-> Pacote:[62]: 5
-Latencia posição:[12]-> Pacote:[63]: 5
-Latencia posição:[12]-> Pacote:[64]: 5
-Latencia posição:[12]-> Pacote:[65]: 5
-Latencia posição:[12]-> Pacote:[66]: 5
-Latencia posição:[12]-> Pacote:[67]: 5
-Latencia posição:[12]-> Pacote:[68]: 5
-Latencia posição:[12]-> Pacote:[69]: 5
-Latencia posição:[12]-> Pacote:[70]: 5
-Latencia posição:[12]-> Pacote:[71]: 5
-Latencia posição:[12]-> Pacote:[72]: 5
-Latencia posição:[12]-> Pacote:[73]: 5
-Latencia posição:[12]-> Pacote:[74]: 5
-Latencia posição:[12]-> Pacote:[75]: 5
-Latencia posição:[12]-> Pacote:[76]: 5
-Latencia posição:[12]-> Pacote:[77]: 5
-Latencia posição:[12]-> Pacote:[78]: 5
-Latencia posição:[12]-> Pacote:[79]: 5
+Latencia posição:[12]-> Pacote:[0]: 6
 
-Latencia posição:[13]-> Pacote:[0]: 5
-Latencia posição:[13]-> Pacote:[1]: 5
-Latencia posição:[13]-> Pacote:[2]: 5
-Latencia posição:[13]-> Pacote:[3]: 5
-Latencia posição:[13]-> Pacote:[4]: 5
-Latencia posição:[13]-> Pacote:[5]: 5
-Latencia posição:[13]-> Pacote:[6]: 5
-Latencia posição:[13]-> Pacote:[7]: 5
-Latencia posição:[13]-> Pacote:[8]: 5
-Latencia posição:[13]-> Pacote:[9]: 5
-Latencia posição:[13]-> Pacote:[10]: 5
-Latencia posição:[13]-> Pacote:[11]: 5
-Latencia posição:[13]-> Pacote:[12]: 5
-Latencia posição:[13]-> Pacote:[13]: 5
-Latencia posição:[13]-> Pacote:[14]: 5
-Latencia posição:[13]-> Pacote:[15]: 5
-Latencia posição:[13]-> Pacote:[16]: 5
-Latencia posição:[13]-> Pacote:[17]: 5
-Latencia posição:[13]-> Pacote:[18]: 5
-Latencia posição:[13]-> Pacote:[19]: 5
-Latencia posição:[13]-> Pacote:[20]: 5
-Latencia posição:[13]-> Pacote:[21]: 5
-Latencia posição:[13]-> Pacote:[22]: 5
-Latencia posição:[13]-> Pacote:[23]: 5
-Latencia posição:[13]-> Pacote:[24]: 5
-Latencia posição:[13]-> Pacote:[25]: 5
-Latencia posição:[13]-> Pacote:[26]: 5
-Latencia posição:[13]-> Pacote:[27]: 5
-Latencia posição:[13]-> Pacote:[28]: 5
-Latencia posição:[13]-> Pacote:[29]: 5
-Latencia posição:[13]-> Pacote:[30]: 5
-Latencia posição:[13]-> Pacote:[31]: 5
-Latencia posição:[13]-> Pacote:[32]: 5
-Latencia posição:[13]-> Pacote:[33]: 5
-Latencia posição:[13]-> Pacote:[34]: 5
-Latencia posição:[13]-> Pacote:[35]: 5
-Latencia posição:[13]-> Pacote:[36]: 5
-Latencia posição:[13]-> Pacote:[37]: 5
-Latencia posição:[13]-> Pacote:[38]: 5
-Latencia posição:[13]-> Pacote:[39]: 5
-Latencia posição:[13]-> Pacote:[40]: 5
-Latencia posição:[13]-> Pacote:[41]: 5
-Latencia posição:[13]-> Pacote:[42]: 5
-Latencia posição:[13]-> Pacote:[43]: 5
-Latencia posição:[13]-> Pacote:[44]: 5
-Latencia posição:[13]-> Pacote:[45]: 5
-Latencia posição:[13]-> Pacote:[46]: 5
-Latencia posição:[13]-> Pacote:[47]: 5
-Latencia posição:[13]-> Pacote:[48]: 5
-Latencia posição:[13]-> Pacote:[49]: 5
-Latencia posição:[13]-> Pacote:[50]: 5
-Latencia posição:[13]-> Pacote:[51]: 5
-Latencia posição:[13]-> Pacote:[52]: 5
-Latencia posição:[13]-> Pacote:[53]: 5
-Latencia posição:[13]-> Pacote:[54]: 5
-Latencia posição:[13]-> Pacote:[55]: 5
-Latencia posição:[13]-> Pacote:[56]: 5
-Latencia posição:[13]-> Pacote:[57]: 5
-Latencia posição:[13]-> Pacote:[58]: 5
-Latencia posição:[13]-> Pacote:[59]: 5
-Latencia posição:[13]-> Pacote:[60]: 5
-Latencia posição:[13]-> Pacote:[61]: 5
-Latencia posição:[13]-> Pacote:[62]: 5
-Latencia posição:[13]-> Pacote:[63]: 5
-Latencia posição:[13]-> Pacote:[64]: 5
-Latencia posição:[13]-> Pacote:[65]: 5
-Latencia posição:[13]-> Pacote:[66]: 5
-Latencia posição:[13]-> Pacote:[67]: 5
-Latencia posição:[13]-> Pacote:[68]: 5
-Latencia posição:[13]-> Pacote:[69]: 5
-Latencia posição:[13]-> Pacote:[70]: 5
-Latencia posição:[13]-> Pacote:[71]: 5
-Latencia posição:[13]-> Pacote:[72]: 5
-Latencia posição:[13]-> Pacote:[73]: 5
-Latencia posição:[13]-> Pacote:[74]: 5
-Latencia posição:[13]-> Pacote:[75]: 5
-Latencia posição:[13]-> Pacote:[76]: 5
-Latencia posição:[13]-> Pacote:[77]: 5
-Latencia posição:[13]-> Pacote:[78]: 5
-Latencia posição:[13]-> Pacote:[79]: 5
+Latencia posição:[13]-> Pacote:[0]: 9
 
-Latencia posição:[14]-> Pacote:[0]: 12
-Latencia posição:[14]-> Pacote:[1]: 15
-Latencia posição:[14]-> Pacote:[2]: 19
-Latencia posição:[14]-> Pacote:[3]: 21
-Latencia posição:[14]-> Pacote:[4]: 24
-Latencia posição:[14]-> Pacote:[5]: 27
-Latencia posição:[14]-> Pacote:[6]: 30
-Latencia posição:[14]-> Pacote:[7]: 34
-Latencia posição:[14]-> Pacote:[8]: 36
-Latencia posição:[14]-> Pacote:[9]: 39
-Latencia posição:[14]-> Pacote:[10]: 42
-Latencia posição:[14]-> Pacote:[11]: 45
-Latencia posição:[14]-> Pacote:[12]: 45
-Latencia posição:[14]-> Pacote:[13]: 45
-Latencia posição:[14]-> Pacote:[14]: 45
-Latencia posição:[14]-> Pacote:[15]: 45
-Latencia posição:[14]-> Pacote:[16]: 43
-Latencia posição:[14]-> Pacote:[17]: 39
-Latencia posição:[14]-> Pacote:[18]: 36
-Latencia posição:[14]-> Pacote:[19]: 33
-Latencia posição:[14]-> Pacote:[20]: 30
-Latencia posição:[14]-> Pacote:[21]: 28
-Latencia posição:[14]-> Pacote:[22]: 24
-Latencia posição:[14]-> Pacote:[23]: 21
-Latencia posição:[14]-> Pacote:[24]: 18
-Latencia posição:[14]-> Pacote:[25]: 15
-Latencia posição:[14]-> Pacote:[26]: 13
-Latencia posição:[14]-> Pacote:[27]: 9
-Latencia posição:[14]-> Pacote:[28]: 8
-Latencia posição:[14]-> Pacote:[29]: 8
-Latencia posição:[14]-> Pacote:[30]: 8
-Latencia posição:[14]-> Pacote:[31]: 8
-Latencia posição:[14]-> Pacote:[32]: 9
-Latencia posição:[14]-> Pacote:[33]: 8
-Latencia posição:[14]-> Pacote:[34]: 8
-Latencia posição:[14]-> Pacote:[35]: 8
-Latencia posição:[14]-> Pacote:[36]: 8
-Latencia posição:[14]-> Pacote:[37]: 8
-Latencia posição:[14]-> Pacote:[38]: 8
-Latencia posição:[14]-> Pacote:[39]: 7
-Latencia posição:[14]-> Pacote:[40]: 7
-Latencia posição:[14]-> Pacote:[41]: 6
-Latencia posição:[14]-> Pacote:[42]: 6
-Latencia posição:[14]-> Pacote:[43]: 6
-Latencia posição:[14]-> Pacote:[44]: 6
-Latencia posição:[14]-> Pacote:[45]: 6
-Latencia posição:[14]-> Pacote:[46]: 6
-Latencia posição:[14]-> Pacote:[47]: 6
-Latencia posição:[14]-> Pacote:[48]: 6
-Latencia posição:[14]-> Pacote:[49]: 6
-Latencia posição:[14]-> Pacote:[50]: 7
-Latencia posição:[14]-> Pacote:[51]: 6
-Latencia posição:[14]-> Pacote:[52]: 6
-Latencia posição:[14]-> Pacote:[53]: 6
-Latencia posição:[14]-> Pacote:[54]: 6
-Latencia posição:[14]-> Pacote:[55]: 6
-Latencia posição:[14]-> Pacote:[56]: 6
-Latencia posição:[14]-> Pacote:[57]: 6
-Latencia posição:[14]-> Pacote:[58]: 6
-Latencia posição:[14]-> Pacote:[59]: 6
-Latencia posição:[14]-> Pacote:[60]: 7
-Latencia posição:[14]-> Pacote:[61]: 6
-Latencia posição:[14]-> Pacote:[62]: 6
-Latencia posição:[14]-> Pacote:[63]: 6
-Latencia posição:[14]-> Pacote:[64]: 6
-Latencia posição:[14]-> Pacote:[65]: 6
-Latencia posição:[14]-> Pacote:[66]: 6
-Latencia posição:[14]-> Pacote:[67]: 6
-Latencia posição:[14]-> Pacote:[68]: 6
-Latencia posição:[14]-> Pacote:[69]: 6
-Latencia posição:[14]-> Pacote:[70]: 6
-Latencia posição:[14]-> Pacote:[71]: 6
-Latencia posição:[14]-> Pacote:[72]: 6
-Latencia posição:[14]-> Pacote:[73]: 6
-Latencia posição:[14]-> Pacote:[74]: 6
-Latencia posição:[14]-> Pacote:[75]: 6
-Latencia posição:[14]-> Pacote:[76]: 6
-Latencia posição:[14]-> Pacote:[77]: 6
-Latencia posição:[14]-> Pacote:[78]: 6
-Latencia posição:[14]-> Pacote:[79]: 6
+Latencia posição:[14]-> Pacote:[0]: 8
 
-Latencia posição:[15]-> Pacote:[0]: 7
-Latencia posição:[15]-> Pacote:[1]: 7
-Latencia posição:[15]-> Pacote:[2]: 7
-Latencia posição:[15]-> Pacote:[3]: 7
-Latencia posição:[15]-> Pacote:[4]: 7
-Latencia posição:[15]-> Pacote:[5]: 7
-Latencia posição:[15]-> Pacote:[6]: 7
-Latencia posição:[15]-> Pacote:[7]: 7
+Latencia posição:[15]-> Pacote:[0]: 10
 
-Latencia posição:[16]-> Pacote:[0]: 6
-Latencia posição:[16]-> Pacote:[1]: 6
-Latencia posição:[16]-> Pacote:[2]: 6
-Latencia posição:[16]-> Pacote:[3]: 6
-Latencia posição:[16]-> Pacote:[4]: 6
-Latencia posição:[16]-> Pacote:[5]: 6
-Latencia posição:[16]-> Pacote:[6]: 6
-Latencia posição:[16]-> Pacote:[7]: 6
+Latencia posição:[16]-> Pacote:[0]: 1
 
-Latencia posição:[17]-> Pacote:[0]: 6
-Latencia posição:[17]-> Pacote:[1]: 6
-Latencia posição:[17]-> Pacote:[2]: 7
-Latencia posição:[17]-> Pacote:[3]: 6
-Latencia posição:[17]-> Pacote:[4]: 6
-Latencia posição:[17]-> Pacote:[5]: 6
-Latencia posição:[17]-> Pacote:[6]: 6
-Latencia posição:[17]-> Pacote:[7]: 6
+Latencia posição:[17]-> Pacote:[0]: 5
 
-Latencia posição:[18]-> Pacote:[0]: 6
-Latencia posição:[18]-> Pacote:[1]: 6
-Latencia posição:[18]-> Pacote:[2]: 6
-Latencia posição:[18]-> Pacote:[3]: 6
-Latencia posição:[18]-> Pacote:[4]: 6
-Latencia posição:[18]-> Pacote:[5]: 6
-Latencia posição:[18]-> Pacote:[6]: 6
-Latencia posição:[18]-> Pacote:[7]: 6
+Latencia posição:[18]-> Pacote:[0]: 7
 
-Latencia média do pacote[0]: 12
-Latencia média do pacote[1]: 11
-Latencia média do pacote[2]: 36
-Latencia média do pacote[3]: 30
-Latencia média do pacote[4]: 6
-Latencia média do pacote[5]: 6
-Latencia média do pacote[6]: 5
-Latencia média do pacote[7]: 8
+Latencia posição:[19]-> Pacote:[0]: 4
+
+Latencia posição:[20]-> Pacote:[0]: 6
+
+Latencia posição:[21]-> Pacote:[0]: 6
+
+Latencia posição:[22]-> Pacote:[0]: 10
+
+Latencia posição:[23]-> Pacote:[0]: 11
+
+Latencia posição:[24]-> Pacote:[0]: 3
+
+Latencia posição:[25]-> Pacote:[0]: 2
+
+Latencia posição:[26]-> Pacote:[0]: 5
+
+Latencia posição:[27]-> Pacote:[0]: 4
+
+Latencia posição:[28]-> Pacote:[0]: 5
+
+Latencia posição:[29]-> Pacote:[0]: 8
+
+Latencia posição:[30]-> Pacote:[0]: 7
+
+Latencia posição:[31]-> Pacote:[0]: 9
+
+Latencia posição:[32]-> Pacote:[0]: 5
+
+Latencia posição:[33]-> Pacote:[0]: 4
+
+Latencia posição:[34]-> Pacote:[0]: 3
+
+Latencia posição:[35]-> Pacote:[0]: 5
+
+Latencia posição:[36]-> Pacote:[0]: 5
+
+Latencia posição:[37]-> Pacote:[0]: 10
+
+Latencia posição:[38]-> Pacote:[0]: 9
+
+Latencia posição:[39]-> Pacote:[0]: 8
+
+Latencia posição:[40]-> Pacote:[0]: 2
+
+Latencia posição:[41]-> Pacote:[0]: 7
+
+Latencia posição:[42]-> Pacote:[0]: 8
+
+Latencia posição:[43]-> Pacote:[0]: 4
+
+Latencia posição:[44]-> Pacote:[0]: 7
+
+Latencia posição:[45]-> Pacote:[0]: 8
+
+Latencia posição:[46]-> Pacote:[0]: 7
+
+Latencia posição:[47]-> Pacote:[0]: 9
+
+Latencia posição:[48]-> Pacote:[0]: 4
+
+Latencia posição:[49]-> Pacote:[0]: 3
+
+Latencia posição:[50]-> Pacote:[0]: 6
+
+Latencia posição:[51]-> Pacote:[0]: 5
+
+Latencia posição:[52]-> Pacote:[0]: 5
+
+Latencia posição:[53]-> Pacote:[0]: 7
+
+Latencia posição:[54]-> Pacote:[0]: 7
+
+Latencia posição:[55]-> Pacote:[0]: 8
+
+Latencia posição:[56]-> Pacote:[0]: 6
+
+Latencia posição:[57]-> Pacote:[0]: 6
+
+Latencia posição:[58]-> Pacote:[0]: 4
+
+Latencia posição:[59]-> Pacote:[0]: 6
+
+Latencia posição:[60]-> Pacote:[0]: 6
+
+Latencia posição:[61]-> Pacote:[0]: 6
+
+Latencia posição:[62]-> Pacote:[0]: 8
+
+Latencia posição:[63]-> Pacote:[0]: 8
+
+Latencia média do pacote[0]: 1
+Latencia média do pacote[1]: 3
+Latencia média do pacote[2]: 3
+Latencia média do pacote[3]: 5
+Latencia média do pacote[4]: 7
+Latencia média do pacote[5]: 7
+Latencia média do pacote[6]: 11
+Latencia média do pacote[7]: 12
 Latencia média do pacote[8]: 1
-Latencia média do pacote[9]: 1
-Latencia média do pacote[10]: 24
-Latencia média do pacote[11]: 1
-Latencia média do pacote[12]: 5
-Latencia média do pacote[13]: 5
-Latencia média do pacote[14]: 14
-Latencia média do pacote[15]: 7
-Latencia média do pacote[16]: 6
-Latencia média do pacote[17]: 6
-Latencia média do pacote[18]: 6
+Latencia média do pacote[9]: 2
+Latencia média do pacote[10]: 4
+Latencia média do pacote[11]: 4
+Latencia média do pacote[12]: 6
+Latencia média do pacote[13]: 9
+Latencia média do pacote[14]: 8
+Latencia média do pacote[15]: 10
+Latencia média do pacote[16]: 1
+Latencia média do pacote[17]: 5
+Latencia média do pacote[18]: 7
+Latencia média do pacote[19]: 4
+Latencia média do pacote[20]: 6
+Latencia média do pacote[21]: 6
+Latencia média do pacote[22]: 10
+Latencia média do pacote[23]: 11
+Latencia média do pacote[24]: 3
+Latencia média do pacote[25]: 2
+Latencia média do pacote[26]: 5
+Latencia média do pacote[27]: 4
+Latencia média do pacote[28]: 5
+Latencia média do pacote[29]: 8
+Latencia média do pacote[30]: 7
+Latencia média do pacote[31]: 9
+Latencia média do pacote[32]: 5
+Latencia média do pacote[33]: 4
+Latencia média do pacote[34]: 3
+Latencia média do pacote[35]: 5
+Latencia média do pacote[36]: 5
+Latencia média do pacote[37]: 10
+Latencia média do pacote[38]: 9
+Latencia média do pacote[39]: 8
+Latencia média do pacote[40]: 2
+Latencia média do pacote[41]: 7
+Latencia média do pacote[42]: 8
+Latencia média do pacote[43]: 4
+Latencia média do pacote[44]: 7
+Latencia média do pacote[45]: 8
+Latencia média do pacote[46]: 7
+Latencia média do pacote[47]: 9
+Latencia média do pacote[48]: 4
+Latencia média do pacote[49]: 3
+Latencia média do pacote[50]: 6
+Latencia média do pacote[51]: 5
+Latencia média do pacote[52]: 5
+Latencia média do pacote[53]: 7
+Latencia média do pacote[54]: 7
+Latencia média do pacote[55]: 8
+Latencia média do pacote[56]: 6
+Latencia média do pacote[57]: 6
+Latencia média do pacote[58]: 4
+Latencia média do pacote[59]: 6
+Latencia média do pacote[60]: 6
+Latencia média do pacote[61]: 6
+Latencia média do pacote[62]: 8
+Latencia média do pacote[63]: 8
 
 
 Menor Latência: 1
-Maior Latência: 49
-Latência Média da simulação: 10
+Maior Latência: 12
+Latência Média da simulação: 5

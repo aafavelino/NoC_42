@@ -36,6 +36,21 @@ SC_MODULE (roteador)
 	std::string name;
 
 	int canal_vt;
+	int leste_fila_prio[QT_CANAIS_VIRTUAIS];
+	int oeste_fila_prio[QT_CANAIS_VIRTUAIS];
+	int norte_fila_prio[QT_CANAIS_VIRTUAIS];
+	int sul_fila_prio[QT_CANAIS_VIRTUAIS];
+	int local_fila_prio[QT_CANAIS_VIRTUAIS];
+
+	int fila_virtual[QT_CANAIS_VIRTUAIS];
+
+	int canal_norte;
+	int canal_sul;
+	int canal_leste;
+	int canal_oeste;
+	int canal_local;
+
+
 
 	// Ver isso aqui DEPOISSSS
 	Flit in_data; //n+2 data + bop + eop
@@ -89,6 +104,22 @@ SC_MODULE (roteador)
 
 
 	SC_CTOR(roteador) { 
+
+		for (int i = 0; i < QT_CANAIS_VIRTUAIS; ++i)
+		{
+			leste_fila_prio[i] = 0;
+			oeste_fila_prio[i] = 0;
+			norte_fila_prio[i] = 0;
+			sul_fila_prio[i] = 0;
+			local_fila_prio[i] = 0;
+
+		}
+
+		for (int i = 0; i < QT_CANAIS_VIRTUAIS; ++i)
+		{
+			fila_virtual[i] = QT_CANAIS_VIRTUAIS - i;
+		}
+
 		cf_norte = new controle_fluxo("controle_de_fluxo_buffer_Norte");
 		cf_sul = new controle_fluxo("controle_de_fluxo_buffer_Sul");
 		cf_leste = new controle_fluxo("controle_de_fluxo_buffer_Leste");

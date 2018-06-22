@@ -8,17 +8,17 @@ void Roteamento::rotear_odd_even() {
 	//ODD
 	if (portaAnterior == LOCAL)
 	{
-		if (cordenada_destino.y > cordenada.y )
+		if (std::get<1>(destino) > std::get<1>(origem))
 		{
 			portaDestino = LESTE;
-		} else if (cordenada_destino.y < cordenada.y)
+		} else if (std::get<1>(destino) < std::get<1>(origem))
 		{
 			portaDestino = OESTE;
-		} else if (cordenada_destino.x > cordenada.x)
+		} else if (std::get<0>(destino) > std::get<0>(origem))
 		{
 			portaDestino = SUL;
 
-		} else if (cordenada_destino.x < cordenada.x)
+		} else if (std::get<0>(destino) < std::get<0>(origem))
 		{
 			portaDestino = NORTE;
 		}
@@ -27,18 +27,18 @@ void Roteamento::rotear_odd_even() {
 		{
 			if (portaAnterior == NORTE or portaAnterior == SUL)
 			{
-				if (cordenada_destino.y > cordenada.y )
+				if (std::get<1>(destino) > std::get<1>(origem) )
 					portaDestino = LESTE;
-			 	else if (cordenada_destino.x > cordenada.x)
+			 	else if (std::get<0>(destino) > std::get<0>(origem))
 					portaDestino = SUL;
-				else if (cordenada_destino.x < cordenada.x)
+				else if (std::get<0>(destino) < std::get<0>(origem))
 					portaDestino = NORTE;
 				else 
 					portaDestino = LOCAL;
 			}  else {
-				if (cordenada_destino.y < cordenada.y)
+				if (std::get<1>(destino) < std::get<1>(origem))
 					portaDestino = OESTE;
-				else if (cordenada_destino.y > cordenada.y )
+				else if (std::get<1>(destino) > std::get<1>(origem) )
 					portaDestino = LESTE;
 				else 
 					portaDestino = LOCAL;
@@ -46,16 +46,16 @@ void Roteamento::rotear_odd_even() {
 		} else { // even
 			if (portaAnterior == OESTE)
 			{
-				if (cordenada_destino.y > cordenada.y )
+				if (std::get<1>(destino) > std::get<1>(origem) )
 					portaDestino = LESTE;
-				else if (cordenada_destino.y < cordenada.y)
+				else if (std::get<1>(destino) < std::get<1>(origem))
 					portaDestino = OESTE;
 				else 
 					portaDestino = LOCAL;
 			} else {
-				if (cordenada_destino.x > cordenada.x)
+				if (std::get<0>(destino) > std::get<0>(origem))
 					portaDestino = SUL;
-				else if (cordenada_destino.x < cordenada.x)
+				else if (std::get<0>(destino) < std::get<0>(origem))
 					portaDestino = NORTE;
 				else 
 					portaDestino = LOCAL;
@@ -70,16 +70,16 @@ void Roteamento::rotear_odd_even() {
 
 void Roteamento::rotear_xy()
 {	
-	if (cordenada_destino.y > cordenada.y )
+	if (std::get<1>(destino) > std::get<1>(origem) )
 	{
 		portaDestino = LESTE;
-	} else if (cordenada_destino.y < cordenada.y)
+	} else if (std::get<1>(destino) < std::get<1>(origem))
 	{
 		portaDestino = OESTE;
-	} else if (cordenada_destino.x > cordenada.x)
+	} else if (std::get<0>(destino) > std::get<0>(origem))
 	{
 		portaDestino = SUL;
-	} else if (cordenada_destino.x < cordenada.x)
+	} else if (std::get<0>(destino) < std::get<0>(origem))
 	{
 		portaDestino = NORTE;
 	} else {
@@ -89,16 +89,16 @@ void Roteamento::rotear_xy()
 
 void Roteamento::rotear_west_first() 
 {
-	if (cordenada_destino.y < cordenada.y)
+	if (std::get<1>(destino) < std::get<1>(origem))
 	{
 		portaDestino = OESTE;
-	} else if (cordenada_destino.y > cordenada.y )
+	} else if (std::get<1>(destino) > std::get<1>(origem) )
 	{
 		portaDestino = LESTE;
-	} else if (cordenada_destino.x > cordenada.x)
+	} else if (std::get<0>(destino) > std::get<0>(origem))
 	{
 		portaDestino = SUL;
-	} else if (cordenada_destino.x < cordenada.x)
+	} else if (std::get<0>(destino) < std::get<0>(origem))
 	{
 		portaDestino = NORTE;
 	} else {
@@ -108,16 +108,16 @@ void Roteamento::rotear_west_first()
 
 void Roteamento::rotear_north_last()
 {
-		if (cordenada_destino.y < cordenada.y)
+		if (std::get<1>(destino) < std::get<1>(origem))
 		{
 			portaDestino = OESTE;
-		} else if (cordenada_destino.y > cordenada.y )
+		} else if (std::get<1>(destino) > std::get<1>(origem) )
 		{
 			portaDestino = LESTE;
-		} else if (cordenada_destino.x > cordenada.x)
+		} else if (std::get<0>(destino) > std::get<0>(origem))
 		{
 			portaDestino = SUL;
-		} else if (cordenada_destino.x < cordenada.x)
+		} else if (std::get<0>(destino) < std::get<0>(origem))
 		{
 			portaDestino = NORTE;
 		} else {
@@ -129,18 +129,18 @@ void Roteamento::rotear_north_last()
 void Roteamento::rotear_negative_first()
 {
 
-	if (cordenada_destino.y < cordenada.y)
+	if (std::get<1>(destino) < std::get<1>(origem))
 	{
 		portaDestino = OESTE;
-	} else if (cordenada_destino.x > cordenada.x)
+	} else if (std::get<0>(destino) > std::get<0>(origem))
 	{
 		portaDestino = SUL;
-	} else if ((cordenada_destino.y >= cordenada.y) and (cordenada_destino.x <= cordenada.x))
+	} else if ((std::get<1>(destino) >= std::get<1>(origem)) and (std::get<0>(destino) <= std::get<0>(origem)))
 	{
-		if (cordenada_destino.y > cordenada.y)
+		if (std::get<1>(destino) > std::get<1>(origem))
 		{
 			portaDestino = LESTE;
-		} else if (cordenada_destino.x < cordenada.x)
+		} else if (std::get<0>(destino) < std::get<0>(origem))
 		{
 			portaDestino = NORTE;
 		} else {
@@ -148,12 +148,12 @@ void Roteamento::rotear_negative_first()
 		}
 	}	
 
-	if ((cordenada_destino.x >= cordenada.x) and (cordenada_destino.y >= cordenada.y))
+	if ((std::get<0>(destino) >= std::get<0>(origem)) and (std::get<1>(destino) >= std::get<1>(origem)))
 	{
-		if (cordenada_destino.x > cordenada.x)
+		if (std::get<0>(destino) > std::get<0>(origem))
 		{
 			portaDestino = SUL;
-		} else if (cordenada_destino.y > cordenada.y)
+		} else if (std::get<1>(destino) > std::get<1>(origem))
 		{
 			portaDestino = LESTE;
 		} else {

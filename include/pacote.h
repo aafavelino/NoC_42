@@ -15,47 +15,46 @@ public:
 // 0 0 2 0 23 1 1 0
 // end
 
-
-// — sintaxes:
-
-
-// Mesh padrão:  xs ys xd yd #flits idleCycles size prioridade_pct
-//       xs: X source; xd: X dest
-//       xs: Y source; xd: Y dest             
+// Mesh padrão:  
+// 	     xs ys xd yd tamanho_pct idleCycles prioridade_pct
+//       xs: X source; 
+// 		 xd: X dest
+//       xs: Y source; 
+// 		 xd: Y dest             
 //       idleCycles: De quanto em quanto tempo é enviado 
-//       size: quantas vezes o pacote é reenviado pela rede.
 //       prioridade_pct: prioridade do pacote com canais virtuais, se não tiver canais a prioridade é 0...
 
-	int last_flit; // pegar o ciclo que o último flit é enviado
-	int first_flit; // pegar o ciclo que o primeiro flit é enviado
-	int xs, ys; //ok
-	int xd, yd; //ok
-	int qt_flits; //ok - falta coisas
-	int idleCycles; //ok
-	int size; // falta implementar
-	int contador_ciclos; //ok
-	int contador_size; // falta implementar
-	int contador_flits; //ok - falta coisas 
+
+	std::queue<Flit> fila_flits;
+	std::tuple<int, int> origem;
+	std::tuple<int, int> destino;
+	int tamanho_pct;
+	int idleCycles; 
 	int prioridade;
-	bool stop;
-	Flit flits;
-	Pacote(int xs, int ys, int xd, int yd, int qt_flits, int idleCycles, int size, int prioridade) {
-		this->stop = false;
-		this->last_flit = 0;
-		this->first_flit = 0;
-		this->contador_ciclos = 0;
-		this->contador_size = 0;
-		this->contador_flits = 0;
-		this->xs = xs;
-		this->ys = ys;
-		this->xd = xd;
-		this->yd = yd;
-		this->qt_flits = qt_flits;
+	int first_flit = 0;
+	int last_flit = 0;
+	int contador_flits = 0;
+	int contador_ciclos = 0;
+	Flit flit;
+	Pacote(int xs, int ys, int xd, int yd, int tamanho_pct, int idleCycles, int prioridade, int id) {
+		this->origem = std::make_tuple (xs,ys);
+		this->destino = std::make_tuple (xd,yd);
+		this->tamanho_pct = tamanho_pct;
 		this->idleCycles = idleCycles;
-		this->size = size;
 		this->prioridade = prioridade;
-		flits.cordenadas_f.x = xd;
-		flits.cordenadas_f.y = yd;		
+		this->flit.destino = destino;
+		this->flit.prioridade = prioridade;
+		this->flit.id = id;
+		for (int i = 0; i < tamanho_pct; ++i)
+		{
+			this->flit.begin = -1;
+			if(i == 0)
+				this->flit.begin = id;
+			else if(i == (tamanho_pct-1))
+				this->flit.end = id;
+			
+			fila_flits.push(flit);
+		}
 	};
 };
 

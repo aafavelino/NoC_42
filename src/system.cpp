@@ -13,7 +13,7 @@ void REDE::comunicacao_externa()
 		
 		if (y==0)
 		{
-			// cout << sc_time_stamp() << endl;
+			cout << Clk << clock << endl;
 			clock++;
 
 

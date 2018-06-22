@@ -4,15 +4,15 @@
 #define OESTE 3
 #define LOCAL 4
 
-
 // Dimensões da Rede
 // Suporta até 17x17
-#define LARGURA_REDE 10
-#define ALTURA_REDE 10
+#define LARGURA_REDE 5
+#define ALTURA_REDE 5
 
-
-// Defina o tamanho do buffer aqui!
-#define TAMANHO_BUFFER 10
+// // Defina o tamanho do buffer aqui!
+// #define TAMANHO_BUFFER 10
 
 // Defina a quantidade de canais virtuais aqui!
-#define QT_CANAIS_VIRTUAIS 3
+#define QT_CANAIS_VIRTUAIS 4
+
+

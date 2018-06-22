@@ -10,16 +10,12 @@
 class Flit 
 {
 public:
-	int payload;
 	int ciclo;
 	int begin;
+	int prioridade;
 	int end = -1;
-	int stop = false;
-	struct cordenadas
-	{
-		int x;
-		int y;
-	}cordenadas_f;
+	int id;
+	std::tuple<int, int> destino;
 };
 
 #endif
