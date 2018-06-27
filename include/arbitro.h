@@ -16,9 +16,11 @@ class Arbitro
 {
 public:
 	sc_uint<32> portaDestino;
+	int arquivo[3];
 	int buffercircular[5];
 	int prioridade;
 	int rotatividade = 1;
+	int arbitragem = -1;
 
 	Arbitro();
 	void addSolicitacao(int);

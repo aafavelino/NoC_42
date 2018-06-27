@@ -27,5 +27,5 @@ int Buffer::isEmpty(int x) {
 
 int Buffer::espaco(int x) {
 	// cout << "Buffer Size :" <<  (TAMANHO_BUFFER - this->size[x])<< endl;
-	return (this->size[x] < TAMANHO_BUFFER) ? (TAMANHO_BUFFER - this->size[x]): 0;
+	return (this->size[x] < arquivo[0]) ? (arquivo[0] - this->size[x]): 0;
 }

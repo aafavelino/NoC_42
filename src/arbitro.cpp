@@ -5,6 +5,10 @@
 #include "arbitro.h"
 
 Arbitro::Arbitro() {
+	FILE *config;
+	config = fopen("configuracoes.txt","r");
+	fscanf(config,"tmb %i, arb %i, rot %i",&arquivo[0], &arquivo[1], &arquivo[2]);
+	fclose(config);
 	for (int i = 0; i < 5; ++i)
 		buffercircular[i] = 0;
 	prioridade = -1;
@@ -23,45 +27,87 @@ void Arbitro::remSolicitacao(int port)
 
 void Arbitro::setPrioridade()
 {
-	#ifdef ESTATICA
-		for (int i = 0; i < 5; ++i)
-		{
-			if (buffercircular[i] == 1)
+
+	std::vector<int> prioridades;
+	switch (arquivo[1]) {
+		case 1:
+			for (int i = 0; i < 5; ++i)
 			{
-				prioridade = i;
-				return;
-			}
-		}				
-	#endif
+				if (buffercircular[i] == 1)
+				{
+					prioridade = i;
+					return;
+				}
+			}			
+		break;
+		case 2:
+			
+			for (int i = 0; i < 5; ++i)
+				if (buffercircular[i] == 1){
+					prioridades.push_back(i);
+					buffercircular[i] = 0;
+				}
+			// cout << "prioridades " <<prioridades.size()-1 << "   " << prioridades[prioridades.size()-2] << endl;
+			prioridade = prioridades[prioridades.size()-1];
 
-	#ifdef ROTATIVA
-		std::vector<int> prioridades;
-		for (int i = 0; i < 5; ++i)
-			if (buffercircular[i] == 1){
-				prioridades.push_back(i);
-				buffercircular[i] = 0;
-			}
-		// cout << "prioridades " <<prioridades.size()-1 << "   " << prioridades[prioridades.size()-2] << endl;
-		prioridade = prioridades[prioridades.size()-1];
+			prioridades.pop_back();
+			return;		
+		break;
+		case 3:
+			
+			for (int i = 0; i < 5; ++i)
+				if (buffercircular[i] == 1){
+					prioridades.push_back(i);
+					buffercircular[i] = 0;
+				}
 
-		prioridades.pop_back();
-		return;
-	#endif
+			std::function<int (int, int)> func = [](int i, int j) { return rand() % i + j; };
+			
+			prioridade = prioridades[func(prioridades.size(), 0)];
+			prioridades.erase (prioridades.begin(),prioridades.begin()+prioridades.size());
+			return;		
+		break;
+	}
 
-	#ifdef RANDOMICA
-		std::vector<int> prioridades;
-		for (int i = 0; i < 5; ++i)
-			if (buffercircular[i] == 1){
-				prioridades.push_back(i);
-				buffercircular[i] = 0;
-			}
+	// #ifdef ESTATICA
+	// 	for (int i = 0; i < 5; ++i)
+	// 	{
+	// 		if (buffercircular[i] == 1)
+	// 		{
+	// 			prioridade = i;
+	// 			return;
+	// 		}
+	// 	}				
+	// #endif
 
-		std::function<int (int, int)> func = [](int i, int j) { return rand() % i + j; };
+	// #ifdef ROTATIVA
+	// 	std::vector<int> prioridades;
+	// 	for (int i = 0; i < 5; ++i)
+	// 		if (buffercircular[i] == 1){
+	// 			prioridades.push_back(i);
+	// 			buffercircular[i] = 0;
+	// 		}
+	// 	// cout << "prioridades " <<prioridades.size()-1 << "   " << prioridades[prioridades.size()-2] << endl;
+	// 	prioridade = prioridades[prioridades.size()-1];
+
+	// 	prioridades.pop_back();
+	// 	return;
+	// #endif
+
+	// #ifdef RANDOMICA
+	// 	std::vector<int> prioridades;
+	// 	for (int i = 0; i < 5; ++i)
+	// 		if (buffercircular[i] == 1){
+	// 			prioridades.push_back(i);
+	// 			buffercircular[i] = 0;
+	// 		}
+
+	// 	std::function<int (int, int)> func = [](int i, int j) { return rand() % i + j; };
 		
-		prioridade = prioridades[func(prioridades.size(), 0)];
-		prioridades.erase (prioridades.begin(),prioridades.begin()+prioridades.size());
-		return;
-	#endif
+	// 	prioridade = prioridades[func(prioridades.size(), 0)];
+	// 	prioridades.erase (prioridades.begin(),prioridades.begin()+prioridades.size());
+	// 	return;
+	// #endif
 
 }
 

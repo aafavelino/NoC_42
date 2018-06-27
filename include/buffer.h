@@ -17,7 +17,7 @@ SC_MODULE (Buffer)
 {
 
 public:
-	int TAMANHO_BUFFER;
+	int arquivo[3];
 	std::queue<Flit> flit;
     int size[QT_CANAIS_VIRTUAIS];
 
@@ -41,7 +41,7 @@ public:
 	SC_CTOR(Buffer) {
 		FILE *config;
 		config = fopen("configuracoes.txt","r");
-		fscanf(config,"tmb %i",&TAMANHO_BUFFER);
+		fscanf(config,"tmb %i, arb %i, rot %i",&arquivo[0], &arquivo[1], &arquivo[2]);
 		fclose(config);
 		// cout << "TAMANHO_BUFFER " << TAMANHO_BUFFER << endl;
 		for (int i = 0; i < QT_CANAIS_VIRTUAIS; ++i)

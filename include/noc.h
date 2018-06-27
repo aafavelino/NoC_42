@@ -21,6 +21,7 @@ using namespace std;
 
 SC_MODULE (Noc)
 {
+	int arquivo[3];
 	bool ver_leste[ALTURA_REDE][LARGURA_REDE];
 	bool ver_oeste[ALTURA_REDE][LARGURA_REDE];
 	bool ver_sul[ALTURA_REDE][LARGURA_REDE];
@@ -56,6 +57,12 @@ SC_MODULE (Noc)
 	}
 	SC_CTOR(Noc) 
 	{ 	
+
+		FILE *config;
+		config = fopen("configuracoes.txt","r");
+		fscanf(config,"tmb %i, arb %i, rot %i",&arquivo[0], &arquivo[1], &arquivo[2]);
+		fclose(config);
+
 		finish = false;
 		cont_vetor = 0;
 

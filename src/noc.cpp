@@ -107,27 +107,26 @@ void Noc::simulacao()
 				}
 				noc[x][y]->roteamento_local.destino =  noc[x][y]->buffer_local_entrada->buffer_virtual[noc[x][y]->canal_local].front().destino;
 
-				#ifdef NEGATIVE_FIRST
-				noc[x][y]->roteamento_local.rotear_negative_first();
-				#endif
+				switch(arquivo[2]) {
+					case 1:
+						noc[x][y]->roteamento_local.rotear_negative_first();
+					break;
+					case 2:
+						noc[x][y]->roteamento_local.rotear_xy();
+					break;
+					case 3:
+						noc[x][y]->roteamento_local.rotear_north_last();
+					break;
+					case 4:
+						noc[x][y]->roteamento_local.rotear_west_first();
+					break;
+					case 5:
+						(x%2==0)? noc[x][y]->roteamento_local.odd_even = 0: noc[x][y]->roteamento_local.odd_even = 1;
+						noc[x][y]->roteamento_local.portaAnterior = LOCAL;
+						noc[x][y]->roteamento_local.rotear_odd_even();					
+					break;																				
+				}
 
-				#ifdef XY
-				noc[x][y]->roteamento_local.rotear_xy();
-				#endif	
-
-				#ifdef NORTH_LAST
-				noc[x][y]->roteamento_local.rotear_north_last();
-				#endif
-
-				#ifdef WEST_FIRST	
-				noc[x][y]->roteamento_local.rotear_west_first();
-				#endif
-
-				#ifdef ODD_EVEN	
-				(x%2==0)? noc[x][y]->roteamento_local.odd_even = 0: noc[x][y]->roteamento_local.odd_even = 1;
-				noc[x][y]->roteamento_local.portaAnterior = LOCAL;
-				noc[x][y]->roteamento_local.rotear_odd_even();
-				#endif
 
 				if (noc[x][y]->roteamento_local.portaDestino == SUL)
 				{
@@ -380,28 +379,26 @@ void Noc::simulacao()
 				noc[x][y]->roteamento_norte.destino = noc[x][y]->buffer_norte->buffer_virtual[noc[x][y]->canal_norte].front().destino;
 				
 				
+				switch(arquivo[2]) {
+					case 1:
+						noc[x][y]->roteamento_norte.rotear_negative_first();
+					break;
+					case 2:
+						noc[x][y]->roteamento_norte.rotear_xy();
+					break;
+					case 3:
+						noc[x][y]->roteamento_norte.rotear_north_last();
+					break;
+					case 4:
+						noc[x][y]->roteamento_norte.rotear_west_first();
+					break;
+					case 5:
+						(x%2==0)? noc[x][y]->roteamento_norte.odd_even = 0: noc[x][y]->roteamento_norte.odd_even = 1;
+						noc[x][y]->roteamento_norte.portaAnterior = NORTE;
+						noc[x][y]->roteamento_norte.rotear_odd_even();					
+					break;																				
+				}
 
-				#ifdef NEGATIVE_FIRST
-				noc[x][y]->roteamento_norte.rotear_negative_first();
-				#endif
-
-				#ifdef XY
-				noc[x][y]->roteamento_norte.rotear_xy();
-				#endif	
-
-				#ifdef NORTH_LAST
-				noc[x][y]->roteamento_norte.rotear_north_last();
-				#endif
-
-				#ifdef WEST_FIRST	
-				noc[x][y]->roteamento_norte.rotear_west_first();
-				#endif	
-
-				#ifdef ODD_EVEN	
-				(x%2==0)? noc[x][y]->roteamento_norte.odd_even = 0: noc[x][y]->roteamento_norte.odd_even = 1;
-				noc[x][y]->roteamento_norte.portaAnterior = NORTE;
-				noc[x][y]->roteamento_norte.rotear_odd_even();
-				#endif	
 
 				if (noc[x][y]->roteamento_norte.portaDestino == LESTE)
 				{
@@ -501,28 +498,27 @@ void Noc::simulacao()
 			if (ver_sul[x][y])
 			{
 				noc[x][y]->roteamento_sul.destino = noc[x][y]->buffer_sul->buffer_virtual[noc[x][y]->canal_sul].front().destino;
-				
-				#ifdef NEGATIVE_FIRST
-				noc[x][y]->roteamento_sul.rotear_negative_first();
-				#endif
+	
+				switch(arquivo[2]) {
+					case 1:
+						noc[x][y]->roteamento_sul.rotear_negative_first();
+					break;
+					case 2:
+						noc[x][y]->roteamento_sul.rotear_xy();
+					break;
+					case 3:
+						noc[x][y]->roteamento_sul.rotear_north_last();
+					break;
+					case 4:
+						noc[x][y]->roteamento_sul.rotear_west_first();
+					break;
+					case 5:
+						(x%2==0)? noc[x][y]->roteamento_sul.odd_even = 0: noc[x][y]->roteamento_sul.odd_even = 1;
+						noc[x][y]->roteamento_sul.portaAnterior = SUL;
+						noc[x][y]->roteamento_sul.rotear_odd_even();					
+					break;																				
+				}			
 
-				#ifdef XY
-				noc[x][y]->roteamento_sul.rotear_xy();
-				#endif	
-
-				#ifdef NORTH_LAST
-				noc[x][y]->roteamento_sul.rotear_north_last();
-				#endif
-
-				#ifdef WEST_FIRST	
-				noc[x][y]->roteamento_sul.rotear_west_first();
-				#endif	
-
-				#ifdef ODD_EVEN	
-				(x%2==0)? noc[x][y]->roteamento_sul.odd_even = 0: noc[x][y]->roteamento_sul.odd_even = 1;
-				noc[x][y]->roteamento_sul.portaAnterior = SUL;
-				noc[x][y]->roteamento_sul.rotear_odd_even();
-				#endif	
 
 				if (noc[x][y]->roteamento_sul.portaDestino == LESTE)
 				{
@@ -621,29 +617,26 @@ void Noc::simulacao()
 
 				noc[x][y]->roteamento_leste.destino = noc[x][y]->buffer_leste->buffer_virtual[noc[x][y]->canal_leste].front().destino;
 				
+				switch(arquivo[2]) {
+					case 1:
+						noc[x][y]->roteamento_leste.rotear_negative_first();
+					break;
+					case 2:
+						noc[x][y]->roteamento_leste.rotear_xy();
+					break;
+					case 3:
+						noc[x][y]->roteamento_leste.rotear_north_last();
+					break;
+					case 4:
+						noc[x][y]->roteamento_leste.rotear_west_first();
+					break;
+					case 5:
+						(x%2==0)? noc[x][y]->roteamento_leste.odd_even = 0: noc[x][y]->roteamento_leste.odd_even = 1;
+						noc[x][y]->roteamento_leste.portaAnterior = LESTE;
+						noc[x][y]->roteamento_leste.rotear_odd_even();					
+					break;																				
+				}
 
-
-				#ifdef NEGATIVE_FIRST
-				noc[x][y]->roteamento_leste.rotear_negative_first();
-				#endif
-
-				#ifdef XY
-				noc[x][y]->roteamento_leste.rotear_xy();
-				#endif	
-
-				#ifdef NORTH_LAST
-				noc[x][y]->roteamento_leste.rotear_north_last();
-				#endif
-
-				#ifdef WEST_FIRST	
-				noc[x][y]->roteamento_leste.rotear_west_first();
-				#endif	
-
-				#ifdef ODD_EVEN	
-				(x%2==0)? noc[x][y]->roteamento_leste.odd_even = 0: noc[x][y]->roteamento_leste.odd_even = 1;
-				noc[x][y]->roteamento_leste.portaAnterior = LESTE;
-				noc[x][y]->roteamento_leste.rotear_odd_even();
-				#endif	
 
 
 				if (noc[x][y]->roteamento_leste.portaDestino == LESTE)
@@ -745,27 +738,27 @@ void Noc::simulacao()
 				noc[x][y]->roteamento_oeste.destino = noc[x][y]->buffer_oeste->buffer_virtual[noc[x][y]->canal_oeste].front().destino;
 						
 
-				#ifdef NEGATIVE_FIRST
-				noc[x][y]->roteamento_oeste.rotear_negative_first();
-				#endif
+				switch(arquivo[2]) {
+					case 1:
+						noc[x][y]->roteamento_oeste.rotear_negative_first();
+					break;
+					case 2:
+						noc[x][y]->roteamento_oeste.rotear_xy();
+					break;
+					case 3:
+						noc[x][y]->roteamento_oeste.rotear_north_last();
+					break;
+					case 4:
+						noc[x][y]->roteamento_oeste.rotear_west_first();
+					break;
+					case 5:
+						(x%2==0)? noc[x][y]->roteamento_oeste.odd_even = 0: noc[x][y]->roteamento_oeste.odd_even = 1;
+						noc[x][y]->roteamento_oeste.portaAnterior = OESTE;
+						noc[x][y]->roteamento_oeste.rotear_odd_even();					
+					break;																				
+				}
 
-				#ifdef XY
-				noc[x][y]->roteamento_oeste.rotear_xy();
-				#endif	
 
-				#ifdef NORTH_LAST
-				noc[x][y]->roteamento_oeste.rotear_north_last();
-				#endif
-
-				#ifdef WEST_FIRST	
-				noc[x][y]->roteamento_oeste.rotear_west_first();
-				#endif	
-
-				#ifdef ODD_EVEN	
-				(x%2==0)? noc[x][y]->roteamento_oeste.odd_even = 0: noc[x][y]->roteamento_oeste.odd_even = 1;
-				noc[x][y]->roteamento_oeste.portaAnterior = OESTE;
-				noc[x][y]->roteamento_oeste.rotear_odd_even();
-				#endif	
 
 				if (noc[x][y]->roteamento_oeste.portaDestino == LESTE)
 				{

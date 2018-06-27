@@ -1,1 +1,9 @@
-tmb 8
+tmb 4, arb 3, rot 2
+
+
+
+Parâmetros:
+
+1- Tamanho do Buffer > 0
+2- Arbitragens: 1: Estática, 2: Rotativa, 3: Randômica
+3- Roteamentos: 1: Negative first, 2: XY, 3: North last, 4: West first, 5: Odd even	

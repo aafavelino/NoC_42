@@ -14,7 +14,7 @@ using namespace std;
 
 int sc_main (int argc, char* argv[]) {
 
-	sc_clock clock("clock", 10000, SC_NS, 10000, 10000, SC_NS);
+	sc_clock clock("clock", 1, SC_NS, 1, 1, SC_NS);
 	Noc *simulation = new Noc("NoC");
 	simulation->Clk(clock);
 	int **padrao_tfg;
