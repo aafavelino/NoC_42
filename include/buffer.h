@@ -34,10 +34,15 @@ public:
 	int isEmpty(int);
 	int espaco(int);
 
+	~Buffer() {
+		free(size);
+	}
+
 	SC_CTOR(Buffer) {
 		FILE *config;
 		config = fopen("configuracoes.txt","r");
 		fscanf(config,"tmb %i",&TAMANHO_BUFFER);
+		fclose(config);
 		// cout << "TAMANHO_BUFFER " << TAMANHO_BUFFER << endl;
 		for (int i = 0; i < QT_CANAIS_VIRTUAIS; ++i)
 		{

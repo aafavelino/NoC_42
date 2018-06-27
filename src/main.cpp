@@ -14,7 +14,7 @@ using namespace std;
 
 int sc_main (int argc, char* argv[]) {
 
-	sc_clock clock("clock", 1, SC_NS, 1, 1, SC_NS);
+	sc_clock clock("clock", 10000, SC_NS, 10000, 10000, SC_NS);
 	Noc *simulation = new Noc("NoC");
 	simulation->Clk(clock);
 	int **padrao_tfg;
@@ -56,11 +56,32 @@ int sc_main (int argc, char* argv[]) {
 	for (int i = 0; i < size_pct; ++i)
 	{
 		media += simulation->pacotes_tg[i].last_flit - simulation->pacotes_tg[i].first_flit;
-		cout << "Latência pacote["<< i<<"] "<< simulation->pacotes_tg[i].last_flit - simulation->pacotes_tg[i].first_flit << endl;
+		// cout << "Latência pacote["<< i<<"] "<< simulation->pacotes_tg[i].last_flit - simulation->pacotes_tg[i].first_flit << endl;
 	}
 
 	cout << endl << endl <<"Lat. Média: "<< media/size_pct << endl;
 	 // cout << buffer_virtual[0].size() << endl;
+
+
+	ofstream vazoes ("vazoes.txt");
+
+
+	for (int i = 0; i < ALTURA_REDE; ++i)
+	{
+	    for (int j = 0; j < LARGURA_REDE; ++j)
+	    {
+	      if ((i-1)>=0)
+	        vazoes << "["<<i<<"]["<<j<<"]->["<<i-1<<"]["<<j<<"]: " <<((double)simulation->throughput[i][j]->saida_norte/(double)simulation->clock) <<endl;
+	      if ((i+1)<ALTURA_REDE)
+	        vazoes << "["<<i<<"]["<<j<<"]->["<<i+1<<"]["<<j<<"]: " <<((double)simulation->throughput[i][j]->saida_sul/(double)simulation->clock) <<endl;
+	      if ((j+1) < LARGURA_REDE)
+	        vazoes << "["<<i<<"]["<<j<<"]->["<<i<<"]["<<j+1<<"]: " <<((double)simulation->throughput[i][j]->saida_leste/(double)simulation->clock) <<endl;
+	      if ((j-1)>=0) 
+	        vazoes << "["<<i<<"]["<<j<<"]->["<<i<<"]["<<j-1<<"]: " <<((double)simulation->throughput[i][j]->saida_oeste/(double)simulation->clock) <<endl;
+	        vazoes << endl;
+	    }
+
+	}
 
   	return 0;
 }

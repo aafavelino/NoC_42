@@ -6,13 +6,13 @@
 
 // Dimensões da Rede
 // Suporta até 17x17
-#define LARGURA_REDE 5
-#define ALTURA_REDE 5
+#define LARGURA_REDE 16
+#define ALTURA_REDE 16
 
 // // Defina o tamanho do buffer aqui!
 // #define TAMANHO_BUFFER 10
 
 // Defina a quantidade de canais virtuais aqui!
-#define QT_CANAIS_VIRTUAIS 4
+#define QT_CANAIS_VIRTUAIS 2
 
 

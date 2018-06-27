@@ -36,6 +36,8 @@ public:
 	int contador_flits = 0;
 	int contador_ciclos = 0;
 	Flit flit;
+
+
 	Pacote(int xs, int ys, int xd, int yd, int tamanho_pct, int idleCycles, int prioridade, int id) {
 		this->origem = std::make_tuple (xs,ys);
 		this->destino = std::make_tuple (xd,yd);

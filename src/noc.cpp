@@ -8,6 +8,7 @@ bool teste = false;
 
 
 void Noc::interface() {
+	
 // *************************** Interface para injetar flits ****************************
 			if (cont_vetor == pacotes_tg.size())
 				sc_stop();	

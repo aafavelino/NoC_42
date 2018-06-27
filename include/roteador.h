@@ -101,7 +101,26 @@ SC_MODULE (roteador)
 	void confirmacao_buffer();
 	void execute_retorno_controle_de_fluxo();
 
-
+	~roteador() {
+		free(buffer_norte);
+		free(buffer_sul);
+		free(buffer_leste);
+		free(buffer_oeste);
+		free(buffer_local);
+		free(buffer_norte_saida);
+		free(buffer_sul_saida);
+		free(buffer_leste_saida);
+		free(buffer_oeste_saida);
+		free(buffer_local_entrada);
+		free(cf_norte);
+		free(cf_sul);
+		free(cf_leste);
+		free(cf_oeste);
+		free(cf_saida_norte);
+		free(cf_saida_sul);
+		free(cf_saida_leste);
+		free(cf_saida_oeste);	
+	}
 
 	SC_CTOR(roteador) { 
 

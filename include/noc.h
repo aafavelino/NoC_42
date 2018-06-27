@@ -50,7 +50,10 @@ SC_MODULE (Noc)
 	void simulacao();
 	void interface();
 
-
+	~Noc() {
+		free(noc);
+		free(throughput);
+	}
 	SC_CTOR(Noc) 
 	{ 	
 		finish = false;
@@ -98,9 +101,12 @@ SC_MODULE (Noc)
 	{
 		for (int j = 0; j < LARGURA_REDE; ++j)
 		{
+			// cout << i << " " << j << " "<< roteadores_nomes[rt_cont] << endl;
 			noc[i][j] = new roteador(roteadores_nomes[rt_cont]);
+			// cout << i << " " << j << " "<< roteadores_nomes[rt_cont] << endl;
+
 			throughput[i][j] = new Throughput();
-			noc[i][j]->name = roteadores_nomes[rt_cont];
+			// noc[i][j]->name = roteadores_nomes[rt_cont];
 			rt_cont++;
 		}
 	}
@@ -114,32 +120,32 @@ SC_MODULE (Noc)
 			if (x == 0)
 			{	
 				
-				//printf("rede[ %d ][ %d ]->cf_norte->in_val(ground_connection_val[%d]\n",i,j,cont);
-				//printf("rede[ %d ][ %d ]->cf_norte->in_ack(ground_connection_val[%d]\n",i,j,cont);
+				//printf("noc[ %d ][ %d ]->cf_norte->in_val(ground_connection_val[%d]\n",x,y,cont);
+				//printf("noc[ %d ][ %d ]->cf_norte->in_ack(ground_connection_val[%d]\n",x,y,cont);
 				noc[x][y]->cf_norte->in_val(ground_connection_val[cont]);
 				noc[x][y]->cf_norte->in_ack(ground_connection_ack[cont]);
 				cont++;
 			}
 			if (y == 0)
 			{	
-				//printf("rede[ %d ][ %d ]->cf_oeste->in_val(ground_connection_val[%d]\n",i,j,cont);
-				//printf("rede[ %d ][ %d ]->cf_oeste->in_ack(ground_connection_val[%d]\n",i,j,cont);				
+				//printf("noc[ %d ][ %d ]->cf_oeste->in_val(ground_connection_val[%d]\n",x,y,cont);
+				//printf("noc[ %d ][ %d ]->cf_oeste->in_ack(ground_connection_val[%d]\n",x,y,cont);				
 				noc[x][y]->cf_oeste->in_val(ground_connection_val[cont]);
 				noc[x][y]->cf_oeste->in_ack(ground_connection_ack[cont]);
 				cont++;
 			}
 			if (x == ALTURA_REDE-1)
 			{	
-				//printf("rede[ %d ][ %d ]->cf_sul->in_val(ground_connection_val[ %d)\n",i,j,cont);					
-				//printf("rede[ %d ][ %d ]->cf_sul->in_ack(ground_connection_val[ %d)\n",i,j,cont);			
+				//printf("noc[ %d ][ %d ]->cf_sul->in_val(ground_connection_val[ %d)\n",x,y,cont);					
+				//printf("noc[ %d ][ %d ]->cf_sul->in_ack(ground_connection_val[ %d)\n",x,y,cont);			
 				noc[x][y]->cf_sul->in_val(ground_connection_val[cont]);
 				noc[x][y]->cf_sul->in_ack(ground_connection_ack[cont]);
 				cont++;
 			}
 			if (y == LARGURA_REDE-1)
 			{	
-				//printf("rede[ %d ][ %d ]->cf_leste->in_val(ground_connection_val[%d]\n",i,j,cont);
-				//printf("rede[ %d ][ %d ]->cf_leste->in_ack(ground_connection_val[%d]\n",i,j,cont);				
+				//printf("noc[ %d ][ %d ]->cf_leste->in_val(ground_connection_val[%d]\n",x,y,cont);
+				//printf("noc[ %d ][ %d ]->cf_leste->in_ack(ground_connection_val[%d]\n",x,y,cont);				
 				noc[x][y]->cf_leste->in_val(ground_connection_val[cont]);
 				noc[x][y]->cf_leste->in_ack(ground_connection_ack[cont]);
 				cont++;
