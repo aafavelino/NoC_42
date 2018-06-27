@@ -1,6 +1,22 @@
-tg 3
-0 0 0 1 10 10 0
-0 0 0 2 10 10 0
-0 0 0 3 10 10 0
+tg 12
+0 0 0 1 2 1 0
+0 0 1 0 2 1 0
+0 0 1 1 2 1 0
+0 1 0 0 2 1 0
+0 1 1 0 2 1 0
+0 1 1 1 2 1 0
+1 0 0 0 2 1 0
+1 0 0 1 2 1 0
+1 0 1 1 2 1 0
+1 1 0 0 2 1 0
+1 1 0 1 2 1 0
+1 1 1 0 2 1 0
 
 
+
+Parâmetros:
+1,2- Tupla do tipo <x,x> origem
+3,4- Tupla do tipo <x,x> destino
+5- Tamanho do pacote
+6- Idle Cycles
+7- Prioridade do pacote
