@@ -15,17 +15,7 @@ Existe um arquivo com um exemplo de como compilar tanto no mac quanto no linux. 
 
 
 
-
-```mermaid
-sequenceDiagram
-
-Compilar  ->> Padrão de Tráfego: Compile os arquivos definidos no compiler.sh
-Padrão de Tráfego->>Config. da simulação: Defina o padrão de tráfego desejado em traffic.txt
-Config. da simulação ->> Executar Simulação: Informe as configurações em configurações.txt
-Executar Simulação->> Resultados: Para cada saída haverá um diretório criado com dia e hora da simulação
-Note right of Resultados: Neste diretório criado haverá um arquivo do padrão de tráfego usado, o arquivo de configurações, o arquivo de latências e de vazões.
-
-```
+![Execução:](https://photos.app.goo.gl/D3D73AkVknkJzSg4A)
 
  1.  Você pode definir o tamanho dos buffers, Arbitragem e Roteamento. No arquivo **configurações.txt**
  2. Em traffic.txt é definido o padrão de tráfego que pode ser gerado com alguns arquivos.cpp encontrados no diretório padroes de trafego/ executando um simples arquivo c++11. 
