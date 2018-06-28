@@ -15,7 +15,7 @@ Existe um arquivo com um exemplo de como compilar tanto no mac quanto no linux. 
 
 
 
-![Execução:](https://photos.app.goo.gl/D3D73AkVknkJzSg4A)
+[Execução:](https://photos.app.goo.gl/D3D73AkVknkJzSg4A)
 
  1.  Você pode definir o tamanho dos buffers, Arbitragem e Roteamento. No arquivo **configurações.txt**
  2. Em traffic.txt é definido o padrão de tráfego que pode ser gerado com alguns arquivos.cpp encontrados no diretório padroes de trafego/ executando um simples arquivo c++11. 
