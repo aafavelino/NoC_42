@@ -17,7 +17,9 @@ Existe um arquivo com um exemplo de como compilar tanto no mac quanto no linux. 
 
 
 ```mermaid
+
 sequenceDiagram
+
 Compilar  ->> Padrão de Tráfego: Compile os arquivos definidos no compiler.sh
 Padrão de Tráfego->>Config. da simulação: Defina o padrão de tráfego desejado em traffic.txt
 Config. da simulação ->> Executar Simulação: Informe as configurações em configurações.txt
