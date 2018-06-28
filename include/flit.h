@@ -10,8 +10,10 @@
 class Flit 
 {
 public:
+	int inicio = -1;
+	int fim = -1;
 	int ciclo;
-	int begin;
+	int begin = -1;
 	int prioridade;
 	int end = -1;
 	int id;

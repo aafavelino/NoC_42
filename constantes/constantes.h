@@ -13,6 +13,6 @@
 // #define TAMANHO_BUFFER 10
 
 // Defina a quantidade de canais virtuais aqui!
-#define QT_CANAIS_VIRTUAIS 2
+#define QT_CANAIS_VIRTUAIS 4
 
 

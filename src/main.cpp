@@ -12,6 +12,18 @@
 
 using namespace std;
 
+const std::string currentDateTime() {
+    time_t     now = time(0);
+    struct tm  tstruct;
+    char       buf[80];
+    tstruct = *localtime(&now);
+    strftime(buf, sizeof(buf), "%Y-%m-%d.%X", &tstruct);
+
+    return buf;
+}
+
+
+
 int sc_main (int argc, char* argv[]) {
 
 	sc_clock clock("clock", 1, SC_NS, 1, 1, SC_NS);
@@ -44,26 +56,57 @@ int sc_main (int argc, char* argv[]) {
 
   	
 	sc_start();	// Run the simulation till sc_stop is encountered
-	 // std::queue<Flit> flit;
-	 // std::vector<std::queue<Flit> > buffer_virtual;
-	 // buffer_virtual.push_back(flit);
-	 // buffer_virtual.push_back(flit);
 
-	 // buffer_virtual[0].pop();
-	 // buffer_virtual[0].pop();
+	std::string dir = currentDateTime();
+
+
+	char ch[100]="";
+	strcat(ch,"mkdir ");
+	strcat(ch,dir.c_str());
+	system(ch); 
+
+	cout << dir << endl;
+	ofstream latencias (dir+"/latencias.txt");
+
+
+
+	latencias << "Latências de cabeçalho:" << endl << endl;
+	double media_cab = 0;
+
+	for (int i = 0; i < size_pct; ++i)
+	{
+		media_cab += simulation->pacotes_tg[i].first_flit_end - simulation->pacotes_tg[i].first_flit;
+
+		latencias << "Latência cabeçalho["<< i<<"] "<< simulation->pacotes_tg[i].first_flit_end - simulation->pacotes_tg[i].first_flit << endl;
+	}
+
+	latencias << endl << "Lat. Média: "<< media_cab/size_pct << endl;
+
+	
+
+	latencias << endl << endl << "Latências de Pacote:" << endl << endl;
+
 
 	double media = 0;
 	for (int i = 0; i < size_pct; ++i)
 	{
 		media += simulation->pacotes_tg[i].last_flit - simulation->pacotes_tg[i].first_flit;
-		// cout << "Latência pacote["<< i<<"] "<< simulation->pacotes_tg[i].last_flit - simulation->pacotes_tg[i].first_flit << endl;
+		latencias << "Latência pacote["<< i<<"] "<< simulation->pacotes_tg[i].last_flit - simulation->pacotes_tg[i].first_flit << endl;
 	}
 
-	cout << endl << endl <<"Lat. Média: "<< media/size_pct << endl;
-	 // cout << buffer_virtual[0].size() << endl;
+	latencias << endl << "Lat. Média: "<< media/size_pct << endl;
 
 
-	ofstream vazoes ("vazoes.txt");
+
+	ofstream vazoes (dir+"/vazoes.txt");
+
+
+	char conf[100]="";
+	strcat(conf,"cp configuracoes.txt traffic.txt ");
+	strcat(conf,dir.c_str());
+	system(conf); 	
+
+	
 
 
 	for (int i = 0; i < ALTURA_REDE; ++i)

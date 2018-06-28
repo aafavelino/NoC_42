@@ -33,6 +33,7 @@ public:
 	int prioridade;
 	int first_flit = 0;
 	int last_flit = 0;
+	int first_flit_end = 0;
 	int contador_flits = 0;
 	int contador_ciclos = 0;
 	Flit flit;

@@ -24,7 +24,6 @@ void Noc::interface() {
 						if (pacotes_tg[itp].fila_flits.size() > 0)
 						{
 							pacotes_tg[itp].first_flit = clock;
-
 							noc[std::get<0>(pacotes_tg[itp].origem)][std::get<1>(pacotes_tg[itp].origem)]->buffer_local_entrada->din = pacotes_tg[itp].fila_flits.front();
 							noc[std::get<0>(pacotes_tg[itp].origem)][std::get<1>(pacotes_tg[itp].origem)]->buffer_local_entrada->add(pacotes_tg[itp].fila_flits.front().prioridade);
 							pacotes_tg[itp].fila_flits.pop();
@@ -421,6 +420,11 @@ void Noc::simulacao()
 				if (noc[x][y]->roteamento_norte.portaDestino == LOCAL)
 				{
 					// printf("Chegou pelo norte...\n");
+
+					if (noc[x][y]->buffer_norte->buffer_virtual[noc[x][y]->canal_norte].front().begin != -1) 
+					{
+						pacotes_tg[noc[x][y]->buffer_norte->buffer_virtual[noc[x][y]->canal_norte].front().begin].first_flit_end = clock;
+					}
 					
 					if (noc[x][y]->buffer_norte->buffer_virtual[noc[x][y]->canal_norte].front().end != -1)
 					{
@@ -541,7 +545,16 @@ void Noc::simulacao()
 				if (noc[x][y]->roteamento_sul.portaDestino == LOCAL)
 				{
 
+	
+
 					// printf("Chegou pelo sul...\n");
+
+
+					if (noc[x][y]->buffer_sul->buffer_virtual[noc[x][y]->canal_sul].front().begin != -1)
+					{
+						// latencias[noc[x][y]->buffer_sul->buffer_virtual[noc[x][y]->canal_sul].front().end].push_back(clock - noc[x][y]->buffer_sul->buffer_virtual[noc[x][y]->canal_sul].front().ciclo);
+						pacotes_tg[noc[x][y]->buffer_sul->buffer_virtual[noc[x][y]->canal_sul].front().begin].first_flit_end = clock;
+					}
 
 					if (noc[x][y]->buffer_sul->buffer_virtual[noc[x][y]->canal_sul].front().end != -1)
 					{
@@ -662,6 +675,13 @@ void Noc::simulacao()
 					
 					// printf("Chegou pelo leste...\n");
 
+					if (noc[x][y]->buffer_leste->buffer_virtual[noc[x][y]->canal_leste].front().begin != -1)
+					{
+					
+						pacotes_tg[noc[x][y]->buffer_leste->buffer_virtual[noc[x][y]->canal_leste].front().begin].first_flit_end = clock;
+						
+						
+					}
 
 					if (noc[x][y]->buffer_leste->buffer_virtual[noc[x][y]->canal_leste].front().end != -1)
 					{
@@ -782,12 +802,18 @@ void Noc::simulacao()
 					
 					// printf("Chegou pelo oeste...\n");
 
+					if (noc[x][y]->buffer_oeste->buffer_virtual[noc[x][y]->canal_oeste].front().begin != -1)
+					{
+						pacotes_tg[noc[x][y]->buffer_oeste->buffer_virtual[noc[x][y]->canal_oeste].front().begin].first_flit_end = clock;
+						
+					}
+
 					if (noc[x][y]->buffer_oeste->buffer_virtual[noc[x][y]->canal_oeste].front().end != -1)
 					{
 						pacotes_tg[noc[x][y]->buffer_oeste->buffer_virtual[noc[x][y]->canal_oeste].front().end].last_flit = clock;
 						cont_vetor++;
 					}
-				
+			
 							
 					noc[x][y]->buffer_local->din = noc[x][y]->buffer_oeste->buffer_virtual[noc[x][y]->canal_oeste].front();
 					noc[x][y]->buffer_oeste->remove(noc[x][y]->canal_oeste);
