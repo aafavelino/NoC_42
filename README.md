@@ -15,7 +15,7 @@ Existe um arquivo com um exemplo de como compilar tanto no mac quanto no linux. 
 
 
 
-![Diagram](https://photos.app.goo.gl/D3D73AkVknkJzSg4A)
+![Diagram](https://photos.app.goo.gl/hdh29JSuVvdER5PJ8)
 
 
  1.  Você pode definir o tamanho dos buffers, Arbitragem e Roteamento. No arquivo **configurações.txt**
