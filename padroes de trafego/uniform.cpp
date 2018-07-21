@@ -11,10 +11,11 @@ int main(int argc, char const *argv[])
     std::tuple<int, int> destino;
 
     int flits = atoi(argv[1]);
-    int idlecycles = atoi(argv[2]);
-    int prioridade = atoi(argv[3]);
+    int pacotes = atoi(argv[2]);
+    int idlecycles = atoi(argv[3]);
+    int prioridade = atoi(argv[4]);
 
-    int tam_rede = atoi(argv[4]);
+    int tam_rede = atoi(argv[5]);
 
     ofstream trafego ("../traffic.txt");
     trafego << "tg " << (tam_rede*tam_rede*tam_rede*tam_rede)-(tam_rede*tam_rede) << endl;
@@ -30,12 +31,8 @@ int main(int argc, char const *argv[])
 
 		 			origem = std::make_tuple (i,j);
 		 			destino = std::make_tuple (k,l);
-		 			if (origem != destino)
-		 			{
-		 				/* code */
-		 				trafego << i <<" " << j << " " << k << " " << l << " " << flits << " " << idlecycles << " " << prioridade << endl;
-		 			}
-		 			
+		 			if (origem != destino) 			
+		 				trafego << i <<" " << j << " " << k << " " << l << " " << pacotes <<" " << flits << " " << idlecycles << " " << prioridade << endl;
 		 		}
 		 	}
 		 } 
@@ -44,8 +41,9 @@ int main(int argc, char const *argv[])
 	trafego << endl << endl << endl << "Parâmetros:"<< endl <<
 										"1,2- Tupla do tipo <x,x> origem"<< endl <<
 										"3,4- Tupla do tipo <x,x> destino"<< endl<<
-										"5- Tamanho do pacote" << endl <<
-										"6- Idle Cycles" << endl <<
-										"7- Prioridade do pacote" << endl;
+										"5- Quantidade de pacotes" << endl <<
+										"6- Tamanho do pacote" << endl <<
+										"7- Idle Cycles" << endl <<
+										"8- Prioridade do pacote" << endl;
 	return 0;
 }

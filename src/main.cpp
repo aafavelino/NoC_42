@@ -45,15 +45,16 @@ int sc_main (int argc, char* argv[]) {
        padrao_tfg[i] = (int*) malloc(8 * sizeof(int));
 
     for (int i = 0; i < size_pct; ++i)
-    	fscanf(traffic,"%i %i %i %i %i %i %i", &padrao_tfg[i][0], &padrao_tfg[i][1], &padrao_tfg[i][2], &padrao_tfg[i][3], &padrao_tfg[i][4], &padrao_tfg[i][5], &padrao_tfg[i][6]);
+    	fscanf(traffic,"%i %i %i %i %i %i %i %i", &padrao_tfg[i][0], &padrao_tfg[i][1], &padrao_tfg[i][2], &padrao_tfg[i][3], &padrao_tfg[i][4], &padrao_tfg[i][5], &padrao_tfg[i][6], &padrao_tfg[i][7]);
     // Fim da leitura do arquivo de tráfego
     fclose(traffic);
 
   	for (int i = 0; i < size_pct; ++i)
-  		simulation->pacotes_tg.push_back(Pacote(padrao_tfg[i][0],padrao_tfg[i][1], padrao_tfg[i][2], padrao_tfg[i][3],  padrao_tfg[i][4],  padrao_tfg[i][5],  padrao_tfg[i][6], i));
+  		simulation->pacotes_tg.push_back(Pacote(padrao_tfg[i][0],padrao_tfg[i][1], padrao_tfg[i][2], padrao_tfg[i][3],  padrao_tfg[i][4],  padrao_tfg[i][5],  padrao_tfg[i][6],  padrao_tfg[i][7], i));
 
     simulation->latencias.resize(size_pct);
 
+    simulation->flit_stop =  padrao_tfg[0][4];
   	
 	sc_start();	// Run the simulation till sc_stop is encountered
 
@@ -70,31 +71,27 @@ int sc_main (int argc, char* argv[]) {
 
 
 
-	latencias << "Latências de cabeçalho:" << endl << endl;
-	double media_cab = 0;
-
-	for (int i = 0; i < size_pct; ++i)
-	{
-		media_cab += simulation->pacotes_tg[i].first_flit_end - simulation->pacotes_tg[i].first_flit;
-
-		latencias << "Latência cabeçalho["<< i<<"] "<< simulation->pacotes_tg[i].first_flit_end - simulation->pacotes_tg[i].first_flit << endl;
-	}
-
-	latencias << endl << "Lat. Média: "<< media_cab/size_pct << endl;
-
 	
 
-	latencias << endl << endl << "Latências de Pacote:" << endl << endl;
-
+	// latencias << "Latências de Pacote:" << endl << endl;
 
 	double media = 0;
+	double media_interna = 0;
 	for (int i = 0; i < size_pct; ++i)
 	{
-		media += simulation->pacotes_tg[i].last_flit - simulation->pacotes_tg[i].first_flit;
-		latencias << "Latência pacote["<< i<<"] "<< simulation->pacotes_tg[i].last_flit - simulation->pacotes_tg[i].first_flit << endl;
+		for (int j = 0; j < padrao_tfg[i][4]; ++j)
+		{
+			// cout << "Fluxo "<<i << " Pacote  "<< j << " Final " << simulation->pacotes_tg[i].ciclo_final[j] <<" criacao "<< simulation->pacotes_tg[i].ciclo_criacao[j] << endl;
+			media_interna +=  simulation->pacotes_tg[i].ciclo_final[j] - simulation->pacotes_tg[i].ciclo_criacao[j];
+			// latencias << "Latência pacote " <<j<< " no fluxo["<< i<<"] "<< simulation->pacotes_tg[i].ciclo_final[j] - simulation->pacotes_tg[i].ciclo_criacao[j] << endl;
+		}
+
+		media += (media_interna/padrao_tfg[i][4]);
+		media_interna = 0;
 	}
 
-	latencias << endl << "Lat. Média: "<< media/size_pct << endl;
+	// latencias << endl << "Lat. Média: "<< media/(size_pct) << endl;
+	latencias <<"Lat. Média: "<< media/(size_pct) << endl;
 
 
 
@@ -125,6 +122,28 @@ int sc_main (int argc, char* argv[]) {
 	    }
 
 	}
+
+	// latencias << endl << endl;
+	// double med_lat = 0;
+
+	// double med_abs = 0;
+
+	// for (int i = 0; i < size_pct; ++i)
+	// {
+	// 	for (int j = 0; j < simulation->latencias[i].size(); ++j)
+	// 	{
+	// 		// cout << "Latência absoluta pacote["<< i <<"] " << simulation->latencias[i][j] << endl;
+	// 		med_lat += simulation->latencias[i][j];
+	// 	}
+
+	// 	latencias << "Latência absoluta pacote["<< i <<"] "<<  med_lat/simulation->latencias[i].size() << endl;
+
+
+	// 	med_abs += (med_lat/simulation->latencias[i].size());
+	// 	med_lat = 0;
+	// }
+
+	// 	latencias << endl << "Média... :"<< med_abs/size_pct;
 
   	return 0;
 }

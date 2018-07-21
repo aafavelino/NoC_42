@@ -61,6 +61,7 @@ SC_MODULE (roteador)
 	Arbitro arbitro_sul;
 	Arbitro arbitro_leste;
 	Arbitro arbitro_oeste;
+	Arbitro arbitro_local;
 	
 	// Roteamentos...
 	Roteamento roteamento_norte;

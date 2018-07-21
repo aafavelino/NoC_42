@@ -21,11 +21,16 @@ using namespace std;
 
 SC_MODULE (Noc)
 {
+	std::tuple<int, int> nula;
+
+	int flit_stop = 0;
 	int arquivo[3];
 	bool ver_leste[ALTURA_REDE][LARGURA_REDE];
 	bool ver_oeste[ALTURA_REDE][LARGURA_REDE];
 	bool ver_sul[ALTURA_REDE][LARGURA_REDE];
 	bool ver_norte[ALTURA_REDE][LARGURA_REDE];
+
+	int injetado[ALTURA_REDE][LARGURA_REDE];
 
 	// Clock
  	sc_in<bool> Clk;
@@ -57,7 +62,7 @@ SC_MODULE (Noc)
 	}
 	SC_CTOR(Noc) 
 	{ 	
-
+		nula = std::make_tuple (-1,-1);
 		FILE *config;
 		config = fopen("configuracoes.txt","r");
 		fscanf(config,"tmb %i, arb %i, rot %i",&arquivo[0], &arquivo[1], &arquivo[2]);
@@ -108,6 +113,7 @@ SC_MODULE (Noc)
 	{
 		for (int j = 0; j < LARGURA_REDE; ++j)
 		{
+			injetado[i][j] = -1;
 			// cout << i << " " << j << " "<< roteadores_nomes[rt_cont] << endl;
 			noc[i][j] = new roteador(roteadores_nomes[rt_cont]);
 			// cout << i << " " << j << " "<< roteadores_nomes[rt_cont] << endl;

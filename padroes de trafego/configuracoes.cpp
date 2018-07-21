@@ -15,8 +15,7 @@ int main(int argc, char const *argv[])
 	trafego << endl << endl << endl << "Parâmetros:"<< endl <<
 										"1- Tamanho do Buffer > 0"<< endl <<
 										"2- Arbitragens: 1: Estática, 2: Rotativa, 3: Randômica"<< endl<<
-										"3- Roteamentos: 1: Negative first, 2: XY, 3: North last, 4: West first, 5: Odd even" << endl <<
-										"6- Idle Cycles" << endl;
+										"3- Roteamentos: 1: Negative first, 2: XY, 3: North last, 4: West first, 5: Odd even";
 
 										
 	return 0;

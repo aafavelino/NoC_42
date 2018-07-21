@@ -7,9 +7,11 @@
 
 #include <iostream>
 #include <systemc.h>
+#include <deque>
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
 #include "../constantes/constantes.h"
+#include "flit.h"
 
 
 class Arbitro 
@@ -17,14 +19,20 @@ class Arbitro
 public:
 	sc_uint<32> portaDestino;
 	int arquivo[3];
-	int buffercircular[5];
-	int prioridade;
-	int rotatividade = 1;
+	int buffercircular[5][2];
+	int prioridade = -1;
+	int rotatividade = 0;
 	int arbitragem = -1;
+	int id_pacote = -3;
+	bool arbitra = true;
+	bool livre = true;
+	std::deque<int> prioridades;
+	int conta = 0;
+
 
 	Arbitro();
-	void addSolicitacao(int);
-	void remSolicitacao(int);
+	void addSolicitacao(int, Flit);
+	void remSolicitacao(int, Flit);
 	void setPrioridade();
 	int checkPrioridade();
 	

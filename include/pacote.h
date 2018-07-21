@@ -28,18 +28,28 @@ public:
 	std::queue<Flit> fila_flits;
 	std::tuple<int, int> origem;
 	std::tuple<int, int> destino;
+	std::vector<int> ciclo_criacao;
+	std::vector<int> ciclo_final;
+	std::vector<int> contador;
+	std::deque<bool> injetado;
+	bool finalizado = false;
 	int tamanho_pct;
 	int idleCycles; 
 	int prioridade;
+	// tirar isso...
 	int first_flit = 0;
 	int last_flit = 0;
 	int first_flit_end = 0;
 	int contador_flits = 0;
 	int contador_ciclos = 0;
+	int pacotes;
+
 	Flit flit;
 
 
-	Pacote(int xs, int ys, int xd, int yd, int tamanho_pct, int idleCycles, int prioridade, int id) {
+	Pacote(int xs, int ys, int xd, int yd, int pacotes, int tamanho_pct, int idleCycles, int prioridade, int id) {
+		
+		this->pacotes =  pacotes;
 		this->origem = std::make_tuple (xs,ys);
 		this->destino = std::make_tuple (xd,yd);
 		this->tamanho_pct = tamanho_pct;
@@ -48,15 +58,19 @@ public:
 		this->flit.destino = destino;
 		this->flit.prioridade = prioridade;
 		this->flit.id = id;
-		for (int i = 0; i < tamanho_pct; ++i)
-		{
-			this->flit.begin = -1;
-			if(i == 0)
-				this->flit.begin = id;
-			else if(i == (tamanho_pct-1))
-				this->flit.end = id;
-			
-			fila_flits.push(flit);
+		for (int s = 0; s < pacotes; ++s){
+			for (int i = 0; i < tamanho_pct; ++i)
+			{
+				this->flit.id = id;
+				this->flit.begin = -1;
+				this->flit.end = -1;
+				if(i == 0)
+					this->flit.begin = id;
+				if(i == (tamanho_pct-1))
+					this->flit.end = id;
+				
+				fila_flits.push(flit);
+			}
 		}
 	};
 };

@@ -10,108 +10,111 @@ Arbitro::Arbitro() {
 	fscanf(config,"tmb %i, arb %i, rot %i",&arquivo[0], &arquivo[1], &arquivo[2]);
 	fclose(config);
 	for (int i = 0; i < 5; ++i)
-		buffercircular[i] = 0;
+		for (int j = 0; j < 2; ++j)
+			buffercircular[i][j] = -1;
 	prioridade = -1;
 }
 
-void Arbitro::addSolicitacao(int port) 
-{
-	buffercircular[port] = 1;
+void Arbitro::addSolicitacao(int port, Flit flit) 
+{	
+
+	if (flit.begin != -1)
+	{
+		buffercircular[port][0] = 1;
+		buffercircular[port][1] = flit.id;
+		// arbitra = true;
+		// livre =  false;		
+	}
+
+	if (livre)
+	{
+		arbitra = true;
+		livre =  false;	
+	}
 }
 
-void Arbitro::remSolicitacao(int port) 
+void Arbitro::remSolicitacao(int x, Flit flit)
 {
-	buffercircular[port] = 0;
+	if (flit.end == id_pacote)
+	{
+		buffercircular[x][0] = -1;
+		buffercircular[x][1] = -1;
+		livre =  true;	
+		prioridade = -1;
+	}
 }
 
+int roda = 0;
 
 void Arbitro::setPrioridade()
 {
 
-	std::vector<int> prioridades;
-	switch (arquivo[1]) {
-		case 1:
-			for (int i = 0; i < 5; ++i)
-			{
-				if (buffercircular[i] == 1)
+	if (arbitra)
+	{
+
+		
+		switch (arquivo[1]) {
+			case 1:
+				arbitra =  false;
+				for (int i = 4; i >= 0; --i)
+				{
+					if (buffercircular[i][0] == 1)
+					{
+						prioridade = i;
+						id_pacote = buffercircular[i][1];
+						buffercircular[i][0] = -1;
+						buffercircular[i][1] = -1;
+
+						return;
+					}
+				}			
+			break;
+			case 2:
+				arbitra =  false;
+				roda:;
+				if (buffercircular[roda][0] == 1) 
+				{
+					id_pacote = buffercircular[roda][1];
+					prioridade = roda;
+					buffercircular[roda][0] = -1;
+					buffercircular[roda][1] = -1;
+				} else {
+					if (roda == 4)
+					{
+						roda = 0;
+					} else {
+						roda++;
+					}
+					goto roda;
+				}
+				return;		
+			break;
+			case 3:
+				arbitra =  false;
+				std::function<int (int, int)> func = [](int i, int j){return rand() % i + j;};
+				arbitra =  false;
+				volta:;
+				int i = func(5,0);
+				if (buffercircular[i][0] == 1)
 				{
 					prioridade = i;
+					id_pacote = buffercircular[i][1];
+					buffercircular[i][0] = -1;
+					buffercircular[i][1] = -1;
 					return;
+				} else {
+					goto volta;
 				}
-			}			
-		break;
-		case 2:
-			
-			for (int i = 0; i < 5; ++i)
-				if (buffercircular[i] == 1){
-					prioridades.push_back(i);
-					buffercircular[i] = 0;
-				}
-			// cout << "prioridades " <<prioridades.size()-1 << "   " << prioridades[prioridades.size()-2] << endl;
-			prioridade = prioridades[prioridades.size()-1];
-
-			prioridades.pop_back();
-			return;		
-		break;
-		case 3:
-			
-			for (int i = 0; i < 5; ++i)
-				if (buffercircular[i] == 1){
-					prioridades.push_back(i);
-					buffercircular[i] = 0;
-				}
-
-			std::function<int (int, int)> func = [](int i, int j) { return rand() % i + j; };
-			
-			prioridade = prioridades[func(prioridades.size(), 0)];
-			prioridades.erase (prioridades.begin(),prioridades.begin()+prioridades.size());
-			return;		
-		break;
+				
+								
+				
+			break;
+		}
 	}
-
-	// #ifdef ESTATICA
-	// 	for (int i = 0; i < 5; ++i)
-	// 	{
-	// 		if (buffercircular[i] == 1)
-	// 		{
-	// 			prioridade = i;
-	// 			return;
-	// 		}
-	// 	}				
-	// #endif
-
-	// #ifdef ROTATIVA
-	// 	std::vector<int> prioridades;
-	// 	for (int i = 0; i < 5; ++i)
-	// 		if (buffercircular[i] == 1){
-	// 			prioridades.push_back(i);
-	// 			buffercircular[i] = 0;
-	// 		}
-	// 	// cout << "prioridades " <<prioridades.size()-1 << "   " << prioridades[prioridades.size()-2] << endl;
-	// 	prioridade = prioridades[prioridades.size()-1];
-
-	// 	prioridades.pop_back();
-	// 	return;
-	// #endif
-
-	// #ifdef RANDOMICA
-	// 	std::vector<int> prioridades;
-	// 	for (int i = 0; i < 5; ++i)
-	// 		if (buffercircular[i] == 1){
-	// 			prioridades.push_back(i);
-	// 			buffercircular[i] = 0;
-	// 		}
-
-	// 	std::function<int (int, int)> func = [](int i, int j) { return rand() % i + j; };
-		
-	// 	prioridade = prioridades[func(prioridades.size(), 0)];
-	// 	prioridades.erase (prioridades.begin(),prioridades.begin()+prioridades.size());
-	// 	return;
-	// #endif
-
 }
 
 int Arbitro::checkPrioridade()
 {
+	// printf("%s %i\n", "Prioridade em ", prioridade);
 	return prioridade;
 }

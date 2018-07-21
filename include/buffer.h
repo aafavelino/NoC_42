@@ -28,6 +28,7 @@ public:
 
 	sc_int<4>  wr; //Entrada que vem do controle de fluxo
 	sc_int<4>  wok; //Saída que volta para o buffer
+	int id = -1;
 
 	void add(int);
 	void remove(int);
