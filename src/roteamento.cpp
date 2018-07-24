@@ -70,97 +70,98 @@ void Roteamento::rotear_odd_even() {
 
 void Roteamento::rotear_xy()
 {	
-	if (std::get<1>(destino) > std::get<1>(origem) )
-	{
+	if (std::get<1>(destino) > std::get<1>(origem))
 		portaDestino = LESTE;
-	} else if (std::get<1>(destino) < std::get<1>(origem))
-	{
+	else if (std::get<1>(destino) < std::get<1>(origem))
 		portaDestino = OESTE;
-	} else if (std::get<0>(destino) > std::get<0>(origem))
-	{
+	else if (std::get<0>(destino) > std::get<0>(origem))
 		portaDestino = SUL;
-	} else if (std::get<0>(destino) < std::get<0>(origem))
-	{
+	else if (std::get<0>(destino) < std::get<0>(origem))
 		portaDestino = NORTE;
-	} else {
+	else 
 		portaDestino = LOCAL;
-	}
+	
 }
 
 void Roteamento::rotear_west_first() 
 {
 	if (std::get<1>(destino) < std::get<1>(origem))
-	{
 		portaDestino = OESTE;
-	} else if (std::get<1>(destino) > std::get<1>(origem) )
-	{
-		portaDestino = LESTE;
-	} else if (std::get<0>(destino) > std::get<0>(origem))
-	{
-		portaDestino = SUL;
-	} else if (std::get<0>(destino) < std::get<0>(origem))
-	{
+	else if (std::get<0>(destino) < std::get<0>(origem))
 		portaDestino = NORTE;
-	} else {
+	else if (std::get<0>(destino) > std::get<0>(origem))
+		portaDestino = SUL;
+	else if (std::get<1>(destino) > std::get<1>(origem))
+		portaDestino = LESTE;
+	else 
 		portaDestino = LOCAL;
-	}
+	
 }
 
 void Roteamento::rotear_north_last()
 {
-		if (std::get<1>(destino) < std::get<1>(origem))
-		{
-			portaDestino = OESTE;
-		} else if (std::get<1>(destino) > std::get<1>(origem) )
-		{
-			portaDestino = LESTE;
-		} else if (std::get<0>(destino) > std::get<0>(origem))
-		{
+		if (std::get<0>(destino) > std::get<0>(origem))
 			portaDestino = SUL;
-		} else if (std::get<0>(destino) < std::get<0>(origem))
-		{
+		else if (std::get<1>(destino) < std::get<1>(origem))
+			portaDestino = OESTE;
+		else if (std::get<1>(destino) > std::get<1>(origem))
+			portaDestino = LESTE;
+		else if (std::get<0>(destino) < std::get<0>(origem))
 			portaDestino = NORTE;
-		} else {
+		else 
 			portaDestino = LOCAL;
-		}
+		
 
 }
 
 void Roteamento::rotear_negative_first()
 {
 
-	if (std::get<1>(destino) < std::get<1>(origem))
-	{
-		portaDestino = OESTE;
-	} else if (std::get<0>(destino) > std::get<0>(origem))
-	{
-		portaDestino = SUL;
-	} else if ((std::get<1>(destino) >= std::get<1>(origem)) and (std::get<0>(destino) <= std::get<0>(origem)))
-	{
-		if (std::get<1>(destino) > std::get<1>(origem))
-		{
-			portaDestino = LESTE;
-		} else if (std::get<0>(destino) < std::get<0>(origem))
-		{
-			portaDestino = NORTE;
-		} else {
-			portaDestino = LOCAL;
-		}
-	}	
+	// if (std::get<1>(destino) < std::get<1>(origem))
+	// {
+	// 	portaDestino = OESTE;
+	// } else if (std::get<0>(destino) > std::get<0>(origem))
+	// {
+	// 	portaDestino = SUL;
+	// } else if ((std::get<1>(destino) >= std::get<1>(origem)) and (std::get<0>(destino) <= std::get<0>(origem)))
+	// {
+	// 	if (std::get<1>(destino) > std::get<1>(origem))
+	// 	{
+	// 		portaDestino = LESTE;
+	// 	} else if (std::get<0>(destino) < std::get<0>(origem))
+	// 	{
+	// 		portaDestino = NORTE;
+	// 	} else {
+	// 		portaDestino = LOCAL;
+	// 	}
+	// }	
 
-	if ((std::get<0>(destino) >= std::get<0>(origem)) and (std::get<1>(destino) >= std::get<1>(origem)))
-	{
-		if (std::get<0>(destino) > std::get<0>(origem))
+	// if ((std::get<0>(destino) >= std::get<0>(origem)) and (std::get<1>(destino) >= std::get<1>(origem)))
+	// {
+	// 	if (std::get<0>(destino) > std::get<0>(origem))
+	// 	{
+	// 		portaDestino = SUL;
+	// 	} else if (std::get<1>(destino) > std::get<1>(origem))
+	// 	{
+	// 		portaDestino = LESTE;
+	// 	} else {
+	// 		portaDestino = LOCAL;
+	// 	}
+	// }
+    if (std::get<1>(destino) < std::get<1>(origem)|| std::get<0>(destino) > std::get<0>(origem)) // check negative directions first
+    {
+		// note: one or both negative directions could be added
+		if (std::get<1>(destino) < std::get<1>(origem)) portaDestino = OESTE;
+		else if (std::get<0>(destino) > std::get<0>(origem)) portaDestino = SUL;
+    } 
+    else  // no negative direction to process, check if positive ones are needed
+		if (std::get<1>(destino) > std::get<1>(origem)|| std::get<0>(destino) < std::get<0>(origem)) 
 		{
-			portaDestino = SUL;
-		} else if (std::get<1>(destino) > std::get<1>(origem))
-		{
-			portaDestino = LESTE;
-		} else {
-			portaDestino = LOCAL;
-		}
-	}
-
+		    if (std::get<1>(destino) > std::get<1>(origem)) portaDestino = LESTE;
+		    else if (std::get<0>(destino) < std::get<0>(origem)) portaDestino = NORTE;
+		} 
+	else // both x and y were already reached
+	    portaDestino = LOCAL;
 }
 
 

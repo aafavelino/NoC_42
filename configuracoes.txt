@@ -1,4 +1,4 @@
-tmb 10, arb 1, rot 2
+tmb 8, arb 1, rot 4
 
 
 
