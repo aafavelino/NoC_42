@@ -67,6 +67,9 @@ int sc_main (int argc, char* argv[]) {
     // Fim da leitura do arquivo de tráfego
     fclose(traffic);
 
+    std::queue<bool> fila_aux;
+
+
     int x_ant = padrao_tfg[0][0];
     int y_ant = padrao_tfg[0][1];
     int contador = 0;
@@ -75,6 +78,8 @@ int sc_main (int argc, char* argv[]) {
     auxiliar.push_back(Pacote(padrao_tfg[0][0],padrao_tfg[0][1], padrao_tfg[0][2], padrao_tfg[0][3],  padrao_tfg[0][4],  padrao_tfg[0][5],  padrao_tfg[0][6],  padrao_tfg[0][7], 0));
     simulation->pacotes_tgf.push_back(auxiliar);
     simulation->pacotes_verify.push_back(false);
+    simulation->pacotes_verify_pacote.push_back(fila_aux);
+
     auxiliar.pop_front();
 
     simulation->pacotes_tg.push_back(Pacote(padrao_tfg[0][0],padrao_tfg[0][1], padrao_tfg[0][2], padrao_tfg[0][3],  padrao_tfg[0][4],  padrao_tfg[0][5],  padrao_tfg[0][6],  padrao_tfg[0][7], 0));
@@ -89,6 +94,8 @@ int sc_main (int argc, char* argv[]) {
     		auxiliar.push_back(Pacote(padrao_tfg[i][0],padrao_tfg[i][1], padrao_tfg[i][2], padrao_tfg[i][3],  padrao_tfg[i][4],  padrao_tfg[i][5],  padrao_tfg[i][6],  padrao_tfg[i][7], contador));
     		simulation->pacotes_tgf.push_back(auxiliar);
     		simulation->pacotes_verify.push_back(false);
+    		simulation->pacotes_verify_pacote.push_back(fila_aux);
+
 
     		auxiliar.pop_front();
     		posicao++;
@@ -96,6 +103,8 @@ int sc_main (int argc, char* argv[]) {
   			contador++;
   			simulation->pacotes_tgf[posicao].push_back(Pacote(padrao_tfg[i][0],padrao_tfg[i][1], padrao_tfg[i][2], padrao_tfg[i][3],  padrao_tfg[i][4],  padrao_tfg[i][5],  padrao_tfg[i][6],  padrao_tfg[i][7], contador));
 		    simulation->pacotes_verify.push_back(false);
+    		simulation->pacotes_verify_pacote.push_back(fila_aux);
+
   		}
 
   		simulation->pacotes_tg.push_back(Pacote(padrao_tfg[i][0],padrao_tfg[i][1], padrao_tfg[i][2], padrao_tfg[i][3],  padrao_tfg[i][4],  padrao_tfg[i][5],  padrao_tfg[i][6],  padrao_tfg[i][7], contador));
@@ -117,6 +126,8 @@ int sc_main (int argc, char* argv[]) {
 
 		}
     }
+
+    
 
 
 
@@ -157,7 +168,7 @@ int sc_main (int argc, char* argv[]) {
 		{
 			// cout << "Fluxo "<<i << " Pacote  "<< j << " Final " << simulation->pacotes_tg[i].ciclo_final[j] <<" criacao "<< simulation->pacotes_tg[i].ciclo_criacao[j] << endl;
 			media_interna +=  simulation->pacotes_tg[i].ciclo_final[j] - simulation->pacotes_tg[i].ciclo_criacao[j];
-			// latencias << "Latência pacote " <<j<< " no fluxo["<< i<<"] "<< simulation->pacotes_tg[i].ciclo_final[j] - simulation->pacotes_tg[i].ciclo_criacao[j] << endl;
+			latencias << "Latência pacote " <<j<< " no fluxo["<< i<<"] "<< simulation->pacotes_tg[i].ciclo_final[j] - simulation->pacotes_tg[i].ciclo_criacao[j] << endl;
 		}
 
 		media += (media_interna/padrao_tfg[i][4]);

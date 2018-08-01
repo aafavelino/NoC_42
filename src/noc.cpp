@@ -11,7 +11,6 @@ std::tuple<int, int> origem;
 
 
 int org = 0;
-bool liberado = false;
 
 // *************************** Interface para injetar flits ****************************
 void Noc::interface() {
@@ -24,17 +23,26 @@ void Noc::interface() {
 		if (pacotes_tgf[i].size() != 0)
 		{
 			pacotes_tgf[i].front().contador_ciclos++;
-		}		
+		}			
 	}
+
+
+	for (int i = 0; i < pacotes_tgf.size(); ++i)
+	{	
+		if (pacotes_tgf[i].front().contador_ciclos >= pacotes_tgf[i].front().idleCycles){
+		
+    		pacotes_verify[i] = true;
+
+    		pacotes_verify_pacote[i].push(true);
+
+		}		
+	}	
 
 	for (int i = 0; i < pacotes_tgf.size(); ++i)
 	{
-		if (pacotes_tgf[i].front().contador_ciclos >= pacotes_tgf[i].front().idleCycles){
-			liberado = true;
-    		pacotes_verify[i] = true;
 
-		}
-		if (pacotes_tgf[i].size() != 0 and pacotes_verify[i])
+	if (pacotes_verify_pacote[i].size() != 0)
+		if (pacotes_tgf[i].size() != 0 and pacotes_verify_pacote[i].front()==true)
 		{
 
 			noc[std::get<0>(pacotes_tgf[i].front().origem)][std::get<1>(pacotes_tgf[i].front().origem)]->buffer_local_entrada->din = pacotes_tgf[i].front().fila_flits.front();
@@ -42,17 +50,16 @@ void Noc::interface() {
 			
 
 			pacotes_tg[pacotes_tgf[i].front().fila_flits.front().id].ciclo_criacao.push_back(clock);
-			pacotes_tgf[i].front().fila_flits.pop();
-
-			// if (pacotes_tgf[i].front().fila_flits.front().begin != -1)
-			// {
-			// 	pacotes_tgf[i].front().contador_ciclos -= pacotes_tgf[i].front().idleCycles ;		
-			// }	
+			
 
 			if (pacotes_tgf[i].front().fila_flits.front().end != -1)
 			{
-				pacotes_verify[i] = false;	
+				
+				pacotes_verify_pacote[i].pop();
+
 			}	
+
+			pacotes_tgf[i].front().fila_flits.pop();
 
 			if (pacotes_tgf[i].front().fila_flits.size() == 0)
 			{

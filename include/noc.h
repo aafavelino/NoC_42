@@ -41,6 +41,7 @@ SC_MODULE (Noc)
 	std::vector<Pacote> pacotes_tg;
 	std::vector<std::deque<Pacote>> pacotes_tgf;
 	std::vector<bool> pacotes_verify;
+	std::vector<std::queue<bool>> pacotes_verify_pacote;
 	std::vector<vector<int> > latencias;
 
 	// Criando uma Rede Altura x Largura
