@@ -43,7 +43,7 @@ public:
 	int contador_flits = 0;
 	int contador_ciclos = 0;
 	int pacotes;
-
+	int id;
 	Flit flit;
 
 
@@ -58,6 +58,7 @@ public:
 		this->flit.destino = destino;
 		this->flit.prioridade = prioridade;
 		this->flit.id = id;
+		this->id = id;
 		for (int s = 0; s < pacotes; ++s){
 			for (int i = 0; i < tamanho_pct; ++i)
 			{

@@ -11,103 +11,57 @@ std::tuple<int, int> origem;
 
 
 int org = 0;
-
+bool liberado = false;
 
 // *************************** Interface para injetar flits ****************************
 void Noc::interface() {
-	origem = nula;
 	clock++;
-
-	for (int i = 0; i < pacotes_tg.size(); ++i)
-		pacotes_tg[i].contador_ciclos++;
-	
-	if (cont_vetor == (pacotes_tg.size()*flit_stop))
+	if (cont_vetor == (stop*flit_stop))
 		sc_stop();	
 
-
-	if (clock == 1)
+	for (int i = 0; i < pacotes_tgf.size(); ++i)
 	{
-		// Criar os primeiros pacotes...
-		for (int i = 0; i < pacotes_tg.size(); ++i)
+		if (pacotes_tgf[i].size() != 0)
 		{
-			pacotes_tg[i].injetado.push_back(true);
-			// pacotes_tg[i].ciclo_criacao.push_back(clock);
-			pacotes_tg[i].contador.push_back(1);
-		}
-	} 
-
-
-
-
-
-
-
-
-	for (int i = 0; i < pacotes_tg.size(); ++i)
-	{
-		if (pacotes_tg[i].contador_ciclos >= pacotes_tg[i].idleCycles)
-		{
-			if (pacotes_tg[i].contador.size() < pacotes_tg[i].pacotes)
-			{
-
-				// pacotes_tg[i].ciclo_criacao.push_back(clock);
-				pacotes_tg[i].injetado.push_back(true);
-				if (pacotes_tg[i].injetado[0] == false)
-				{
-					pacotes_tg[i].injetado.pop_front();
-				}
-				pacotes_tg[i].contador_ciclos = 0;
-				pacotes_tg[i].contador.push_back(1);
-			}
-		}
+			pacotes_tgf[i].front().contador_ciclos++;
+		}		
 	}
 
-	for (int i = 0; i < pacotes_tg.size(); ++i)
+	for (int i = 0; i < pacotes_tgf.size(); ++i)
 	{
-		if (pacotes_tg[i].fila_flits.size() > 0)
+		if (pacotes_tgf[i].front().contador_ciclos >= pacotes_tgf[i].front().idleCycles){
+			liberado = true;
+    		pacotes_verify[i] = true;
+
+		}
+		if (pacotes_tgf[i].size() != 0 and pacotes_verify[i])
 		{
-			if (pacotes_tg[i].injetado[0] != false)
-			{	
-				if (origem == pacotes_tg[i].origem)
-				{				
-					goto next;
 
-				} else if (origem == nula)
-				{
-					origem = pacotes_tg[i].origem;	
-				} else if (origem != pacotes_tg[i].origem and origem != nula) 
-				{
-					origem = pacotes_tg[i].origem;
-				}
-				// cout << "opa " << noc[std::get<0>(pacotes_tg[i].origem)][std::get<1>(pacotes_tg[i].origem)]->buffer_local_entrada->size[0]<< endl;
-				if (noc[std::get<0>(pacotes_tg[i].origem)][std::get<1>(pacotes_tg[i].origem)]->buffer_local_entrada->id == i or noc[std::get<0>(pacotes_tg[i].origem)][std::get<1>(pacotes_tg[i].origem)]->buffer_local_entrada->id == -1 )
-				{
-					noc[std::get<0>(pacotes_tg[i].origem)][std::get<1>(pacotes_tg[i].origem)]->buffer_local_entrada->id = i;
-					if (pacotes_tg[i].fila_flits.front().begin != -1){
-						// cout << "id " << i << " CLK " << clock << endl;
-						pacotes_tg[i].ciclo_criacao.push_back(clock);
-					}
-					if (pacotes_tg[i].fila_flits.front().end != -1){
-						if (pacotes_tg[i].injetado.size() == 1)
-						{
-							pacotes_tg[i].injetado[0] = false;
-						} else {
-							pacotes_tg[i].injetado.pop_front();
-						}
-	
-					}
-					noc[std::get<0>(pacotes_tg[i].origem)][std::get<1>(pacotes_tg[i].origem)]->buffer_local_entrada->din = pacotes_tg[i].fila_flits.front();
-					noc[std::get<0>(pacotes_tg[i].origem)][std::get<1>(pacotes_tg[i].origem)]->buffer_local_entrada->add(pacotes_tg[i].fila_flits.front().prioridade);
-					pacotes_tg[i].fila_flits.pop();
+			noc[std::get<0>(pacotes_tgf[i].front().origem)][std::get<1>(pacotes_tgf[i].front().origem)]->buffer_local_entrada->din = pacotes_tgf[i].front().fila_flits.front();
+			noc[std::get<0>(pacotes_tgf[i].front().origem)][std::get<1>(pacotes_tgf[i].front().origem)]->buffer_local_entrada->add(pacotes_tgf[i].front().fila_flits.front().prioridade);
+			
 
-					if (pacotes_tg[i].fila_flits.size() == 0)
-					{
-						noc[std::get<0>(pacotes_tg[i].origem)][std::get<1>(pacotes_tg[i].origem)]->buffer_local_entrada->id = -1;
-					}
-				}
+			pacotes_tg[pacotes_tgf[i].front().fila_flits.front().id].ciclo_criacao.push_back(clock);
+			pacotes_tgf[i].front().fila_flits.pop();
+
+			// if (pacotes_tgf[i].front().fila_flits.front().begin != -1)
+			// {
+			// 	pacotes_tgf[i].front().contador_ciclos -= pacotes_tgf[i].front().idleCycles ;		
+			// }	
+
+			if (pacotes_tgf[i].front().fila_flits.front().end != -1)
+			{
+				pacotes_verify[i] = false;	
+			}	
+
+			if (pacotes_tgf[i].front().fila_flits.size() == 0)
+			{
+
+				pacotes_tgf[i].pop_front();
+
+
 			}
 		}
-		next:;	
 	}
 
 

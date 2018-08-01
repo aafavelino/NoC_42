@@ -74,10 +74,10 @@ void Roteamento::rotear_xy()
 		portaDestino = LESTE;
 	else if (std::get<1>(destino) < std::get<1>(origem))
 		portaDestino = OESTE;
-	else if (std::get<0>(destino) > std::get<0>(origem))
-		portaDestino = SUL;
 	else if (std::get<0>(destino) < std::get<0>(origem))
 		portaDestino = NORTE;
+	else if (std::get<0>(destino) > std::get<0>(origem))
+		portaDestino = SUL;
 	else 
 		portaDestino = LOCAL;
 	

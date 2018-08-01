@@ -48,11 +48,8 @@ int roda = 0;
 
 void Arbitro::setPrioridade()
 {
-
 	if (arbitra)
-	{
-
-		
+	{	
 		switch (arquivo[1]) {
 			case 1:
 				arbitra =  false;
@@ -104,10 +101,7 @@ void Arbitro::setPrioridade()
 					return;
 				} else {
 					goto volta;
-				}
-				
-								
-				
+				}	
 			break;
 		}
 	}

@@ -24,6 +24,7 @@ SC_MODULE (Noc)
 	std::tuple<int, int> nula;
 
 	int flit_stop = 0;
+	int stop;
 	int arquivo[3];
 	bool ver_leste[ALTURA_REDE][LARGURA_REDE];
 	bool ver_oeste[ALTURA_REDE][LARGURA_REDE];
@@ -38,7 +39,8 @@ SC_MODULE (Noc)
 
  	//Vector de pacotes recebidos pelo padrão de tráfego...
 	std::vector<Pacote> pacotes_tg;
-
+	std::vector<std::deque<Pacote>> pacotes_tgf;
+	std::vector<bool> pacotes_verify;
 	std::vector<vector<int> > latencias;
 
 	// Criando uma Rede Altura x Largura
