@@ -40,6 +40,7 @@ SC_MODULE (Noc)
  	//Vector de pacotes recebidos pelo padrão de tráfego...
 	std::vector<Pacote> pacotes_tg;
 	std::vector<std::deque<Pacote>> pacotes_tgf;
+	
 	std::vector<bool> pacotes_verify;
 	std::vector<std::queue<bool>> pacotes_verify_pacote;
 	std::vector<vector<int> > latencias;

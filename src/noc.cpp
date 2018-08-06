@@ -29,12 +29,14 @@ void Noc::interface() {
 
 	for (int i = 0; i < pacotes_tgf.size(); ++i)
 	{	
+		if (pacotes_tgf[i].size() != 0)
 		if (pacotes_tgf[i].front().contador_ciclos >= pacotes_tgf[i].front().idleCycles){
 		
-    		pacotes_verify[i] = true;
+    		// pacotes_verify[i] = true;
 
     		pacotes_verify_pacote[i].push(true);
-
+    		pacotes_tg[pacotes_tgf[i].front().fila_flits.front().id].ciclo_criacao.push_back(clock);
+    		pacotes_tgf[i].front().contador_ciclos = 0;
 		}		
 	}	
 
@@ -49,24 +51,19 @@ void Noc::interface() {
 			noc[std::get<0>(pacotes_tgf[i].front().origem)][std::get<1>(pacotes_tgf[i].front().origem)]->buffer_local_entrada->add(pacotes_tgf[i].front().fila_flits.front().prioridade);
 			
 
-			pacotes_tg[pacotes_tgf[i].front().fila_flits.front().id].ciclo_criacao.push_back(clock);
+			// pacotes_tg[pacotes_tgf[i].front().fila_flits.front().id].ciclo_criacao.push_back(clock);
 			
 
 			if (pacotes_tgf[i].front().fila_flits.front().end != -1)
 			{
-				
 				pacotes_verify_pacote[i].pop();
-
 			}	
 
 			pacotes_tgf[i].front().fila_flits.pop();
 
 			if (pacotes_tgf[i].front().fila_flits.size() == 0)
 			{
-
 				pacotes_tgf[i].pop_front();
-
-
 			}
 		}
 	}

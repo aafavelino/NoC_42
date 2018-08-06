@@ -10,7 +10,9 @@
 #include "noc.h"
 #include <math.h>
 #include <queue>
-#include <ctime>        
+#include <ctime>    
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */    
 
 using namespace std;
 
@@ -32,6 +34,7 @@ int myrandom (int i)
 	return std::rand()%i;
 }
 
+std::function<int (int, int)> func = [](int i, int j){return rand() % i + j;};
 
 int sc_main (int argc, char* argv[]) {
 
@@ -64,6 +67,37 @@ int sc_main (int argc, char* argv[]) {
     	fscanf(traffic,"%i %i %i %i %i %i %i %i", &padrao_tfg[i][0], &padrao_tfg[i][1], &padrao_tfg[i][2], &padrao_tfg[i][3], &padrao_tfg[i][4], &padrao_tfg[i][5], &padrao_tfg[i][6], &padrao_tfg[i][7]);
    	
     }
+
+
+
+	if (atoi(argv[3]) == 1)
+	{
+
+
+	    int fluxos = atoi(argv[1]) * atoi(argv[2]);
+	    int value = fluxos-1;
+	    int topo = value;
+	    for (int i = 0; i < fluxos; ++i)
+	    {
+	    	for (int j = i*value; j < topo; ++j)
+	    	{
+	    		swap(padrao_tfg[j],padrao_tfg[(j + (rand() % (int)((topo-1) - j + 1)))]);
+	    	}
+	    	topo += value;
+	    }
+	}
+
+
+	ofstream tfgPAD ("traffic.txt");
+
+	tfgPAD << "tg " << size_pct << endl;
+
+	for (int i = 0; i < size_pct; ++i){
+		tfgPAD << padrao_tfg[i][0] << " "<<padrao_tfg[i][1]<< " "<< padrao_tfg[i][2]<< " "<< padrao_tfg[i][3]<< " "<<  padrao_tfg[i][4]<< " "<<  padrao_tfg[i][5]<< " "<<  padrao_tfg[i][6]<< " "<<  padrao_tfg[i][7] << endl;
+	}
+
+
+
     // Fim da leitura do arquivo de tráfego
     fclose(traffic);
 
@@ -117,15 +151,7 @@ int sc_main (int argc, char* argv[]) {
 
     simulation->flit_stop =  padrao_tfg[0][4];
 
-    if (atoi(argv[1]) == 1)
-    {
-		for (int i = 0; i < simulation->pacotes_tgf.size(); ++i){
-			
-	 		std::random_shuffle ( simulation->pacotes_tgf[i].begin(), simulation->pacotes_tgf[i].end() );
-	  		std::random_shuffle ( simulation->pacotes_tgf[i].begin(), simulation->pacotes_tgf[i].end(), myrandom);
 
-		}
-    }
 
     
 
